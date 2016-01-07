@@ -1,0 +1,158 @@
+<include file="Public:header"/>
+<div>筛选:
+<select name="type" id="type" onchange="searchUser()">
+	<option value="">全部</option>
+	<option value="1" <if condition="$type eq 1">selected="selected"</if>>无上级</option>
+	<option value="2" <if condition="$type eq 2">selected="selected"</if>>一位上级</option>
+	<option value="3" <if condition="$type eq 3">selected="selected"</if>>二位上级</option>
+	<option value="4" <if condition="$type eq 4">selected="selected"</if>>三位上级</option>
+</select>
+<span>
+<input type='text' id='user_id' placeholder="ID号查询" value="">
+<input type="button" id="pay_time"  value="按时间排序" onclick="timeSort()">
+<input type='button' value='搜索' onclick='searchUser();'>
+</span>
+
+</div>
+<div>
+<form method="post" action="{:U('Admin/User/upexcel')}" enctype="multipart/form-data">
+<span style="float:left">导入虚拟用户</span><span style="float:left"><input  type="file" name="file_stu" /></span><span  style="float:left"><input type="submit"  value="提交" /></span>
+</form>
+</div>
+
+<script>
+function timeSort() {
+	var type = $("#type").val();
+	var time_sort = 1;
+	var docurl = "{:U('Admin/User/index')}"+'&type='+type+'&sort='+time_sort;
+	if (docurl != "") {
+	   open(docurl,'_self');
+	}
+}
+ 
+function searchUser()
+{
+	var type = $("#type").val();
+	var id = $("#user_id").val();
+	var docurl = "{:U('Admin/User/index')}"+'&type='+type+'&id='+id;
+	open(docurl,'_self');
+
+}
+
+</script>
+
+<div class="col-sm-12 widget-container-span">
+	<div class="widget-box transparent">
+		<div class="widget-body">
+			<div class="widget-main padding-12 no-padding-left no-padding-right">
+				<div class="tab-content padding-4">
+					<div id="home1" class="tab-pane in active">
+						<div class="row">
+							<div class="col-xs-12 no-padding-right">
+								<div class="table-responsive">
+									<table id="sample-table-1"
+										class="table table-striped table-bordered table-hover">
+										<thead>
+											<tr>
+												<th class="center"><label> <input
+														type="checkbox" class="ace"> <span class="lbl"></span>
+												</label></th>
+												<th>ID</th>
+												<th>微信昵称</th>
+												<th>微信头像<a href="javascript:;" onclick="levelSort(this)" title="desc" name='a_cnt'>排序</a></th>
+												<th>用户名<a href="javascript:;" onclick="levelSort(this)" title="desc" name='b_cnt'>排序</a></th>
+												<th>邮箱<a href="javascript:;" onclick="levelSort(this)" title="desc" name='c_cnt'>排序</a></th>
+												<th>联系方式</th>
+												<th>送货地址</th>
+												<th>加入时间</th>
+											</tr>
+										</thead>
+
+										<tbody>
+										<volist name="result" id="result">
+											<tr>
+												<td class="center"><label> <input
+														type="checkbox" class="ace"> <span class="lbl"></span>
+												</label></td>
+												
+												<td <if condition="$result.dummy eq 1">style="background-color:red;"</if>>{$result.id}<if condition="$result.member eq 1">已成为会员</if></td>
+												<php>
+												$wx_info = json_decode($result['wx_info'],true);
+												
+												echo "<td>$wx_info[nickname]</td>";
+												$img = !empty($wx_info['headimgurl'])?$wx_info['headimgurl']:'./Application/Tpl/App/default/Public/Static/images/defult.jpg';
+												echo "<td><img src='".$img."' width='40px;' height='40px;'></td>";
+												</php>
+												
+												
+												<td>{$result.username}</td>
+												<td>{$result.email}</td>
+												<td>{$result.phone}</td>
+												<td>{$result.address}</td>
+												<td>{$result.time}</td>
+											</tr>
+											<tr>
+											<td></td>
+											<td></td>
+											<td>推荐详细</td>
+											<td><a href="index.php?g=Admin&m=User&a=index&level=1&level_id={$result.id}" >一级:{$result.a_cnt}人</a></td>
+											<td><a href="index.php?g=Admin&m=User&a=index&level=2&level_id={$result.id}" >二级:{$result.b_cnt}人</a></td>
+											<td><a href="index.php?g=Admin&m=User&a=index&level=3&level_id={$result.id}" >三级:{$result.c_cnt}人</a></td>
+											<td>可提现佣金:{$result.price}元;已提现：{$result.tx_price}</td>
+                                            <td>{$result.l_id}|{$result.l_b}|{$result.l_c}</td>
+                                            <td><a href="index.php?g=Admin&m=User&a=adduser&l_id={$result.id}" class="btn btn-white btn-sm">添加下级</a><a href="index.php?g=Admin&m=User&a=pushpoints&id={$result.id}" class="btn btn-white btn-sm">推送积分</a></td>
+											</tr>
+										</volist>
+										</tbody>
+									</table>
+									<div class="pagination" style="margin:0px;">
+									    {$page}<input type=text id='goto' style="width:40px;border:1px solid #ccc;margin:3px;" /><input type=button id="goto_button" value="转到" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			function levelSort(obj) {
+				
+				var val = obj.name;
+				var sort = obj.title;
+				var asort = val+' '+sort;
+				var docurl = "{:U('Admin/User/index')}"+'&type='+type+'&asort='+ asort;
+			
+				if (docurl != "") {
+				   open(docurl,'_self');
+				}
+				
+			}
+			function addSubmenu(o) {
+				var subid = $(o).parent().prev().prev().html();
+				$('select[name="parent"]').val(subid);
+				$('input[name="addmenu"]').val('0');
+				$('input[name="name"]').val('');
+				
+				$('#myTab li').eq(1).find('a').click();
+			}
+			function reSubmenu(o){
+				var name = $(o).parent().prev().html().replace(/&nbsp;/g,'').replace('├─','');
+				var pid = $(o).parent().prev().prev().attr('parent');
+				var subid = $(o).parent().prev().prev().html();
+				$('select[name="parent"]').val(pid);
+				$('input[name="name"]').val(name);
+				$('input[name="addmenu"]').val(subid);
+				$('#myTab li').eq(1).find('a').click();
+			}
+			$(function(){
+				$("#goto_button").click(function(){
+					if($("#goto").val())
+					location='index.php?g=Admin&m=User&a=index&p=' + $("#goto").val();
+				})
+			})
+		</script>
+	</div>
+</div>

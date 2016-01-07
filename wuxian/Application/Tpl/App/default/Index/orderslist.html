@@ -1,0 +1,272 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>超级无限人脉</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="../Public/Static/css/foods.css?t=333" rel="stylesheet"
+	type="text/css">
+<script type="text/javascript" src="../Public/Static/js/jquery.min.js"></script>
+<script type="text/javascript" src="../Public/Static/js/wemall.js?14115"></script>
+<script type="text/javascript" src="../Public/Static/js/alert.js"></script>
+<script type="text/javascript">
+document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+	WeixinJSBridge.call('hideOptionMenu');
+});
+var appurl = '__APP__';
+var rooturl = '__ROOT__';
+
+$(function () {
+	$("#all_cnt").click(function(){
+		$(".member_cnt").toggle();
+		if($(this).find('img').attr("src")=="../Public/Static/images/arrow_unclick.png")
+		{
+			$(this).find('img').attr("src","../Public/Static/images/arrow_click.png");
+		}
+		else
+		{
+			$(this).find('img').attr("src","../Public/Static/images/arrow_unclick.png");
+		}
+	});
+	
+	$("#all_price").click(function(){
+		$(".price_cnt").toggle();
+		if($(this).find('img').attr("src")=="../Public/Static/images/arrow_unclick.png")
+		{
+			$(this).find('img').attr("src","../Public/Static/images/arrow_click.png");
+		}
+		else
+		{
+			$(this).find('img').attr("src","../Public/Static/images/arrow_unclick.png");
+		}
+	});
+	
+	$("#memeber_url").click(function(){
+		$(".memeber_url").toggle();
+		if($(this).find('img').attr("src")=="../Public/Static/images/arrow_unclick.png")
+		{
+			$(this).find('img').attr("src","../Public/Static/images/arrow_click.png");
+		}
+		else
+		{
+			$(this).find('img').attr("src","../Public/Static/images/arrow_unclick.png");
+		}
+	});
+	
+	$("#all_buy").click(function(){
+		$(".buy_cnt").toggle();
+		if($(this).find('img').attr("src")=="../Public/Static/images/arrow_unclick.png")
+		{
+			$(this).find('img').attr("src","../Public/Static/images/arrow_click.png");
+		}
+		else
+		{
+			$(this).find('img').attr("src","../Public/Static/images/arrow_unclick.png");
+		}
+	});
+	$(".fans").click(function(){
+		location="/hufen/list.php?uid={$users.uid}";
+	})
+	
+});
+
+</script>
+<!-- tianshi.lomedia.com.cn Baidu tongji analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+var hm = document.createElement("script");
+hm.src = "//hm.baidu.com/hm.js?d4254b715086304dcf37fab38e56efba";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body class="sanckbg mode_webapp">
+	<div id="member-container" style="display: block;">
+
+		<div class="menu_header">
+			<div class="menu_topbar">
+				<div id="menu" class="sort ">
+					<a href="">分销详情</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="div_header">
+        	<div style=" height:8px;"></div>
+			<span style='float:left;margin-left:10px;margin-right:10px;'>
+				<php>
+					$wx_info = json_decode($users['wx_info'],true);
+					$img = !empty($wx_info['headimgurl'])?$wx_info['headimgurl']:'../Public/Static/images/defult.jpg';
+					echo "<img src='".$img."' width='70px;' height='70px;' style='border-radius:50%; border:5px solid rgba(255,255,255,.6)'>";
+				</php>
+			</span>
+			<span class="header_right">
+            <div style="height:10px;"></div>
+				<div class="header_l_di">
+					<span  style=" color:#fff !important; font-size:14px; margin-top:10px;">昵称：<php> echo $wx_info['nickname'];</php></span>&nbsp;&nbsp;
+                    <span style=" display:none;">会员ID号：7{$users.id}</span>
+					<!--<a style='color:red' href="./index.php?g=App&m=Member&a=index&uid={$users.uid}">账号设置</a>-->
+				</div>
+				<!--span>积分：{$users.jifen}</span-->
+				<div style="display:none;"><span>用户等级：
+				<if condition="$users.member eq 1">
+					VIP会员 <span style="margin-left:1em;">(<a style='color:blue' href='./index.php?g=App&m=Index&a=index'>VIP会员续费</a>)</span>
+				<elseif condition="$users.member eq 2" />
+					临时会员  <span style="margin-left:1em;">(<a style='color:blue' href='./index.php?g=App&m=Index&a=index'>升级VIP会员</a>)</span>
+				<else/>				
+					游客 <span style="margin-left:1em;">(<a style='color:blue' href='/index.php?g=App&m=Index&a=trial&uid={$users.uid}'>领取3天试用</a>)</span>				
+				</if>
+				</span></div>
+				<div>
+                	
+                <span style=" color:#fff !important; font-size:14px;">关注时间：<php>echo date('Y-m-d',$wx_info['subscribe_time']);</php>
+				
+				&nbsp;&nbsp;<!--<a style='color:red' href="./index.php?g=App&m=Member&a=logout">退出登录</a>--></span></div>
+				
+			</span>
+		</div>
+        
+        <div class="con_ds0" <if condition="$etype eq 1"> style="display: block !important;" </if> >
+		<!-- {$all_cnt}人脉 -->
+		<div class="div_table">
+		<table cellpadding="0" cellspacing="0"  style='height:35px;text-align:center;background-color:#fff;border:0px' border=0>
+			<tr style="border:0px"  border=0><td style="background-color:#fff; color:#000; font-size:16px; padding-top:6px;border-right:1px solid #929292;" valign="middle">积分总额</td><td style="border-left:1px solid #fff;background-color:#fff;color:#000; font-size:16px; padding-top:6px;" valign="middle">已提积分</td>
+            </tr>
+            <tr style="border:0px"  border=0><td style="background-color:#fff; color:#fb4444; font-size:14px; text-align:center; padding-bottom:10px;border-right:1px solid #929292;" valign="middle">{$users.price}</td><td style="border-left:1px solid #fff;background-color:#fff;color:#fb4444; font-size:14px;border-right:1px solid #929292; text-align:center; padding-bottom:10px;"  valign="middle">{$get_end_price}</td>
+            </tr>  
+		</table>
+		</div>
+		<div class="cardexplain" style="TEXT-ALIGN: center;color:#000;font-size:14px; display:none;"></div>
+		<div class="cardexplain" style="TEXT-ALIGN: center;color:#000;font-size:14px; display:none;">您的邀请人是【{$l_name}】</div>
+		
+        <style type="text/css">
+            #gongao{width:auto;height:30px;overflow:hidden;line-height:30px;font-size:13px;font-family:'Microsoft Yahei';background:#DDE5ED;color:#0C77CF;font-weight:bold;}
+            #gongao #scroll_begin, #gongao #scroll_end{display:inline}
+        </style>
+        <script type="text/javascript">
+            function ScrollImgLeft(){
+                var speed=50;
+                var scroll_begin = document.getElementById("scroll_begin");
+                var scroll_end = document.getElementById("scroll_end");
+                var scroll_div = document.getElementById("scroll_div");
+                scroll_end.innerHTML=scroll_begin.innerHTML;
+                function Marquee(){
+                    if(scroll_end.offsetWidth-scroll_div.scrollLeft<=0)
+                        scroll_div.scrollLeft-=scroll_begin.offsetWidth;
+                    else
+                        scroll_div.scrollLeft++;
+                }
+                var MyMar=setInterval(Marquee,speed);
+                scroll_div.onmouseover=function() {clearInterval(MyMar);}
+                scroll_div.onmouseout=function() {MyMar=setInterval(Marquee,speed);}
+            }
+        </script>
+        <div id="gongao">
+            <div style="margin-left: auto;margin-right: auto;overflow:hidden;height:24px;width:300px; white-space:nowrap;" id="scroll_div" class="scroll_div">
+                <div id="scroll_begin">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;确认收货后，才可以积分兑现&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;确认收货后，才可以积分兑现</div>
+                <div id="scroll_end"></div>
+            </div>
+            <script type="text/javascript">ScrollImgLeft();</script>
+        </div>
+        
+	
+	<div >
+
+		<div class="menu_header">
+			<div class="menu_topbar">
+				<div id="menu" class="sort ">
+					<a href="">查看我的订单</a>
+				</div>
+			</div>
+		</div>
+
+		<div>
+			<ul class="round" style="margin:0;padding:0;border-radius:0;border:0px;border-bottom:1px solid #C6C6C6">
+				<table width="100%" border="0" cellpadding="0" cellspacing="0" class="cpbiaoge">
+					<tr>
+						<td> <span>订单详情</span><!-- <span style='float:right'><a href='javascript:$("#ticket").click();' style='color:red;'>获取推广二维码>>></a></span>--> </td>
+					</tr>
+				</table>
+			</ul>
+		</div>
+		<style>
+        .round li b{width:20%;display:inline-block;overflow:hidden;text-align:center;vertical-align:middle;padding:5px 0px;}
+		.round li b:nth-child(1) {width:33%;}
+		.round li b:nth-child(4) {width:25%;}
+		.oredr_btn{display: block; padding: 2px 10px 2px 10px;margin:2px 0;border-radius:4px;color:#fff;}
+		.btn_pay{background-color:#10a64f;}
+		.order_btn0{ display: block; margin: 10px auto; height: 30px !important; line-height: 30px !important; text-align: center; width: 70%; border-radius: 5px; color: #fff;}
+		.btn_confirm{background-color:#008b09;}
+		.btn_return{background-color:#aaa0a0;}
+        </style>
+		<div class="cardexplain">
+			<div id="page_tag_load" hidefocus="true"
+				style="display: none; z-index: 10;">
+				<div class="btn-group"
+					style="position: fixed; font-size: 12px; width: 220px; bottom: 80px; left: 50%; margin-left: -110px; z-index: 999;">
+					<div class="del" style="font-size: 14px;">
+						<img src="../Public/Static/images/ajax-loader.gif" alt="loader">正在获取订单...
+					</div>
+				</div>
+			</div>
+			<ul class="round"  id="orderlistinsert" style='color:#000;font-size:12px;'>
+				<!--插入订单ul-->
+                <li><b>订单号</b><b>金额</b><b>订单状态</b><b>操作</b></li>
+                <volist name="result" id="orders">
+                <li><b>{$orders.orderid}</b><b>{$orders.totalprice}</b>
+                <b><if condition="$orders.pay_status eq 1"><if condition="$orders['order_status'] eq 0">未发货</if><if condition="$orders['order_status'] eq 1">已发货</if><if condition="$orders['order_status'] eq 2">已收货</if><if condition="$orders['order_status'] eq 3">已完成</if><if condition="$orders['order_status'] eq 4">已退货</if><else/>未支付</if></b><b><if condition="$orders.pay_status eq 0"><a href="{$orders.pay_url}" class="order_btn0 btn_pay">去支付</a></if><if condition="$orders['order_status'] eq 1"><a href="{:U('App/Index/confirm_order',array('id'=>$orders['orderid']))}" class="order_btn0 btn_confirm">确认收货</a><a href="javascript:;" onClick="confirm('确认退款您的剩余积分将不能提现')?location.href='{:U(\'App/Index/txpublish\',array(\'id\'=>$orders[id]))}':''" class="order_btn0 btn_return">申请退款</a></if></b></li>
+                </volist>
+			</ul>
+		</div>
+	</div>
+
+	<div class="footermenu"><!--./index.php?g=App&m=Index&a=index-->
+		<ul>
+			<li><a href="/index.php?g=App&m=Index&a=member&etype=1" > <img src="../Public/Static/images/21.png">
+					<p>首  页</p>
+			</a></li>
+			<li><a href="/index.php?g=App&m=Index&a=yunorder"> <img src="../Public/Static/images/22.png">
+					<p>微商云订单</p>
+			</a></li>
+			<li id="member" style=" position:relative;"><a href="javascript:void(0)"><img src="../Public/Static/images/23.png">
+					<p>客  服</p>
+                    <img class="fefu_img" style="  position: absolute; bottom: 51px; width: 200%; height: auto; display:none; left: -50%;" src="../Public/Static/images/kefu.jpg" />
+			</a></li>
+			<li><a href="/index.php?g=App&m=Index&a=member&etype=3" <if condition="$etype eq 3">class="active"</if> > <img src="../Public/Static/images/24.png">
+					<p>我的二维码</p>
+			</a></li>
+		</ul>
+	</div>
+    
+	<script>
+	window.onload=function(){
+		if($_GET['page_type']=='order')
+		{
+			user();
+		}
+	}
+	$(function(){
+		$("#member").click(function(){
+		$(".imgshow").toggle();
+		});
+		
+		$(".closebtn").click(function(){
+			$(".imgshow").toggle();
+		});
+	})
+	
+	
+	</script>
+    
+         <div class="imgshow">
+				<span class="close"><a href="javascript:;" class="closebtn"><img src="../Public/Static/images/closebtn.png"></a></span>
+				<img src="../Public/Static/images/kefu.jpg" id="showimg" style="box-shadow: 0px 0px 3px #fff" ;="">
+				<div class="fontcss">
+					<font style="color:#ea222e;margin-top: 3px;">1、长按识别二维码<br>2、添加时请注明来自：<b>人脉</b></font>
+				</div>
+		</div>
+    
+</body>
+</html>

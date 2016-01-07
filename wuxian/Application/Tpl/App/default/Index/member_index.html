@@ -1,0 +1,104 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>超级无限人脉</title>
+		<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<link href="./Application/Tpl/App/default/Public/Static/css/foods.css?t=333" rel="stylesheet"
+			type="text/css">
+			<script type="text/javascript" src="./Application/Tpl/App/default/Public/Static/js/jquery.min.js"></script>
+			<script type="text/javascript" src="./Application/Tpl/App/default/Public/Static/js/wemall.js?14115"></script>
+			<script type="text/javascript" src="./Application/Tpl/App/default/Public/Static/js/alert.js"></script>
+			<script type="text/javascript">
+			var appurl = '__APP__';
+			var rooturl = '__ROOT__';
+			</script>
+			<style type="text/css">
+				#portrait_src {
+					width: 65px;
+					float: left;
+					height: 65px;
+				}
+			</style>
+		<!-- tianshi.lomedia.com.cn Baidu tongji analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+var hm = document.createElement("script");
+hm.src = "//hm.baidu.com/hm.js?d4254b715086304dcf37fab38e56efba";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+		<body class="sanckbg mode_webapp">
+			<div id="tx-container">
+				<div class="div_header">
+					<span style='float:left;margin-left:10px;margin-right:10px; margin-top:10px;'>
+						<php>
+							$wx_info = json_decode($users['wx_info'],true);
+							echo "<img src='".$wx_info['headimgurl']."' width='70px;' height='70px;' style='border-radius:50%;'>";
+						</php>
+					</span>
+					<span class="header_right" style=" color:#fff;">
+						<div><span  style=" color:#fff !important; font-size:14px;">昵称：<php> echo $wx_info['nickname'];</php></span></div>
+                        <div style="display:none;"><span  style=" color:#fff !important; font-size:14px;">会员ID：{$users.id}  <if condition="$users.member eq 1"><php>if(isset($dongjia_time) && !empty($dongjia_time)){echo "<span>会员剩余时间:$dongjia_time天</span>";}</php></if></span></div>
+						<div style="display:none;"><span>会员：<if condition="$users.member eq 1">是<else/>否(<a style='color:red' href='./index.php?g=App&m=Index&a=index'>点击链接成为会员</a>)</if></span></div>
+						<div><span>关注时间：<php>echo date('Y-m-d',$wx_info['subscribe_time']);</php></span></div>
+						
+					</span>
+				</div>
+				<section class="order">
+					<form method="post" enctype="multipart/form-data">
+						<div class="contact-info">
+							<ul>
+								<li class="title" style="text-align: center;">用户信息</li>
+								<li>
+									<table style="padding: 0; margin: 0; width: 100%;">
+										<tbody>
+											<tr>
+												<td width="80px"><label for="price" class="ui-input-text">登陆账号：</label></td>
+												<td>
+													<div class="ui-input-text">
+														<input name="login" placeholder="" value="{$users.login}" type="text"
+														class="ui-input-text">
+													</div>
+												</td>
+											</tr>
+											<tr>
+												<td width="80px"><label for="bank_name" class="ui-input-text">密码：</label></td>
+												<td>
+													<div class="ui-input-text">
+														<input name="password" type="password" class="ui-input-text">
+													</div>
+													<span>留空则不修改</span>
+												</td>
+											</tr>
+
+											<tr>
+												<td width="80px"><label for="bank_name" class="ui-input-text">头像设置：</label></td>
+												<td>
+													<div>
+														<?php if ($wx_info['headimgurl']) { ?>
+														<div class="por">
+															<img src="{$wx_info['headimgurl']}" id="portrait_src">
+														</div>
+														<?php } ?>
+														<input name="avatar" value="{$wx_info['headimgurl']}" type="file">
+													</div>
+												</td>
+											</tr>
+											
+										</tbody>
+									</table>
+									<div class="footReturn">
+										<input type="submit" class="submit" value="确定提交" style="margin: 0 auto;">
+									</div>
+								</li>
+							</ul>
+						</div>
+					</form>
+				</section>
+			</div>
+		</body>
+	</html>

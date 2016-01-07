@@ -1,0 +1,2171 @@
+[ 2015-12-22T09:57:38+08:00 ] 188.166.87.189 /
+NOTIC: [2] include(./Public/Conf/config.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory D:\WWW\tianshi\Application\Conf\config.php 第 14 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening './Public/Conf/config.php' for inclusion (include_path='.;C:\php\pear;D:\WWW\tianshi\Core/Extend/Vendor/') D:\WWW\tianshi\Application\Conf\config.php 第 14 行.
+NOTIC: [8] Use of undefined constant DB_HOST - assumed 'DB_HOST' D:\WWW\tianshi\Application\Conf\config.php 第 17 行.
+NOTIC: [8] Use of undefined constant DB_NAME - assumed 'DB_NAME' D:\WWW\tianshi\Application\Conf\config.php 第 18 行.
+NOTIC: [8] Use of undefined constant DB_USER - assumed 'DB_USER' D:\WWW\tianshi\Application\Conf\config.php 第 19 行.
+NOTIC: [8] Use of undefined constant DB_PWD - assumed 'DB_PWD' D:\WWW\tianshi\Application\Conf\config.php 第 20 行.
+NOTIC: [8] Use of undefined constant DB_PREFIX - assumed 'DB_PREFIX' D:\WWW\tianshi\Application\Conf\config.php 第 21 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001116s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001234s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T09:57:39+08:00 ] 188.166.87.189 /index.php?g=App&m=Member&a=login
+NOTIC: [2] include(./Public/Conf/config.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory D:\WWW\tianshi\Application\Conf\config.php 第 14 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening './Public/Conf/config.php' for inclusion (include_path='.;C:\php\pear;D:\WWW\tianshi\Core/Extend/Vendor/') D:\WWW\tianshi\Application\Conf\config.php 第 14 行.
+NOTIC: [8] Use of undefined constant DB_HOST - assumed 'DB_HOST' D:\WWW\tianshi\Application\Conf\config.php 第 17 行.
+NOTIC: [8] Use of undefined constant DB_NAME - assumed 'DB_NAME' D:\WWW\tianshi\Application\Conf\config.php 第 18 行.
+NOTIC: [8] Use of undefined constant DB_USER - assumed 'DB_USER' D:\WWW\tianshi\Application\Conf\config.php 第 19 行.
+NOTIC: [8] Use of undefined constant DB_PWD - assumed 'DB_PWD' D:\WWW\tianshi\Application\Conf\config.php 第 20 行.
+NOTIC: [8] Use of undefined constant DB_PREFIX - assumed 'DB_PREFIX' D:\WWW\tianshi\Application\Conf\config.php 第 21 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000844s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000936s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.008347s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008434s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000764s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000734s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000842s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000920s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003473s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001136s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001210s ]
+
+[ 2015-12-22T10:13:32+08:00 ] 140.207.54.79 /index.php?g=Admin&m=Wechat&a=index&signature=0087d08f8e0630760c9d7d2db2fca94bf754db83&timestamp=1450750409&nonce=955281040
+NOTIC: [2] include(./Public/Conf/config.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory D:\WWW\tianshi\Application\Conf\config.php 第 14 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening './Public/Conf/config.php' for inclusion (include_path='.;C:\php\pear;D:\WWW\tianshi\Core/Extend/Vendor/') D:\WWW\tianshi\Application\Conf\config.php 第 14 行.
+NOTIC: [8] Use of undefined constant DB_HOST - assumed 'DB_HOST' D:\WWW\tianshi\Application\Conf\config.php 第 17 行.
+NOTIC: [8] Use of undefined constant DB_NAME - assumed 'DB_NAME' D:\WWW\tianshi\Application\Conf\config.php 第 18 行.
+NOTIC: [8] Use of undefined constant DB_USER - assumed 'DB_USER' D:\WWW\tianshi\Application\Conf\config.php 第 19 行.
+NOTIC: [8] Use of undefined constant DB_PWD - assumed 'DB_PWD' D:\WWW\tianshi\Application\Conf\config.php 第 20 行.
+NOTIC: [8] Use of undefined constant DB_PREFIX - assumed 'DB_PREFIX' D:\WWW\tianshi\Application\Conf\config.php 第 21 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000802s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000933s ]
+NOTIC: [2] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: php_network_getaddresses: getaddrinfo failed: ��֪��������������  D:\WWW\tianshi\Core\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] php_network_getaddresses: getaddrinfo failed: ��֪��������������  (trying to connect via tcp://DB_HOST:3306) D:\WWW\tianshi\Core\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: php_network_getaddresses: getaddrinfo failed: ��֪��������������  D:\WWW\tianshi\Core\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+ERR: php_network_getaddresses: getaddrinfo failed: ��֪�������������� 
+
+[ 2015-12-22T10:15:03+08:00 ] 111.30.141.47 /
+NOTIC: [2] include(./Public/Conf/config.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory D:\WWW\tianshi\Application\Conf\config.php 第 14 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening './Public/Conf/config.php' for inclusion (include_path='.;C:\php\pear;D:\WWW\tianshi\Core/Extend/Vendor/') D:\WWW\tianshi\Application\Conf\config.php 第 14 行.
+NOTIC: [8] Use of undefined constant DB_HOST - assumed 'DB_HOST' D:\WWW\tianshi\Application\Conf\config.php 第 17 行.
+NOTIC: [8] Use of undefined constant DB_NAME - assumed 'DB_NAME' D:\WWW\tianshi\Application\Conf\config.php 第 18 行.
+NOTIC: [8] Use of undefined constant DB_USER - assumed 'DB_USER' D:\WWW\tianshi\Application\Conf\config.php 第 19 行.
+NOTIC: [8] Use of undefined constant DB_PWD - assumed 'DB_PWD' D:\WWW\tianshi\Application\Conf\config.php 第 20 行.
+NOTIC: [8] Use of undefined constant DB_PREFIX - assumed 'DB_PREFIX' D:\WWW\tianshi\Application\Conf\config.php 第 21 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000828s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000931s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T10:15:03+08:00 ] 123.151.64.142 /
+NOTIC: [2] include(./Public/Conf/config.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory D:\WWW\tianshi\Application\Conf\config.php 第 14 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening './Public/Conf/config.php' for inclusion (include_path='.;C:\php\pear;D:\WWW\tianshi\Core/Extend/Vendor/') D:\WWW\tianshi\Application\Conf\config.php 第 14 行.
+NOTIC: [8] Use of undefined constant DB_HOST - assumed 'DB_HOST' D:\WWW\tianshi\Application\Conf\config.php 第 17 行.
+NOTIC: [8] Use of undefined constant DB_NAME - assumed 'DB_NAME' D:\WWW\tianshi\Application\Conf\config.php 第 18 行.
+NOTIC: [8] Use of undefined constant DB_USER - assumed 'DB_USER' D:\WWW\tianshi\Application\Conf\config.php 第 19 行.
+NOTIC: [8] Use of undefined constant DB_PWD - assumed 'DB_PWD' D:\WWW\tianshi\Application\Conf\config.php 第 20 行.
+NOTIC: [8] Use of undefined constant DB_PREFIX - assumed 'DB_PREFIX' D:\WWW\tianshi\Application\Conf\config.php 第 21 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000824s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000920s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T10:15:05+08:00 ] 1.189.211.191 /index.php?g=App&m=Index&a=yunorder
+NOTIC: [2] include(./Public/Conf/config.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory D:\WWW\tianshi\Application\Conf\config.php 第 14 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening './Public/Conf/config.php' for inclusion (include_path='.;C:\php\pear;D:\WWW\tianshi\Core/Extend/Vendor/') D:\WWW\tianshi\Application\Conf\config.php 第 14 行.
+NOTIC: [8] Use of undefined constant DB_HOST - assumed 'DB_HOST' D:\WWW\tianshi\Application\Conf\config.php 第 17 行.
+NOTIC: [8] Use of undefined constant DB_NAME - assumed 'DB_NAME' D:\WWW\tianshi\Application\Conf\config.php 第 18 行.
+NOTIC: [8] Use of undefined constant DB_USER - assumed 'DB_USER' D:\WWW\tianshi\Application\Conf\config.php 第 19 行.
+NOTIC: [8] Use of undefined constant DB_PWD - assumed 'DB_PWD' D:\WWW\tianshi\Application\Conf\config.php 第 20 行.
+NOTIC: [8] Use of undefined constant DB_PREFIX - assumed 'DB_PREFIX' D:\WWW\tianshi\Application\Conf\config.php 第 21 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000781s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000885s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [2] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: php_network_getaddresses: getaddrinfo failed: ��֪��������������  D:\WWW\tianshi\Core\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] php_network_getaddresses: getaddrinfo failed: ��֪��������������  (trying to connect via tcp://DB_HOST:3306) D:\WWW\tianshi\Core\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: php_network_getaddresses: getaddrinfo failed: ��֪��������������  D:\WWW\tianshi\Core\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+ERR: php_network_getaddresses: getaddrinfo failed: ��֪�������������� 
+
+[ 2015-12-22T10:15:05+08:00 ] 101.226.89.122 /index.php?g=App&m=Index&a=yunorder
+NOTIC: [2] include(./Public/Conf/config.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory D:\WWW\tianshi\Application\Conf\config.php 第 14 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening './Public/Conf/config.php' for inclusion (include_path='.;C:\php\pear;D:\WWW\tianshi\Core/Extend/Vendor/') D:\WWW\tianshi\Application\Conf\config.php 第 14 行.
+NOTIC: [8] Use of undefined constant DB_HOST - assumed 'DB_HOST' D:\WWW\tianshi\Application\Conf\config.php 第 17 行.
+NOTIC: [8] Use of undefined constant DB_NAME - assumed 'DB_NAME' D:\WWW\tianshi\Application\Conf\config.php 第 18 行.
+NOTIC: [8] Use of undefined constant DB_USER - assumed 'DB_USER' D:\WWW\tianshi\Application\Conf\config.php 第 19 行.
+NOTIC: [8] Use of undefined constant DB_PWD - assumed 'DB_PWD' D:\WWW\tianshi\Application\Conf\config.php 第 20 行.
+NOTIC: [8] Use of undefined constant DB_PREFIX - assumed 'DB_PREFIX' D:\WWW\tianshi\Application\Conf\config.php 第 21 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000641s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000733s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T10:15:05+08:00 ] 101.226.89.122 /index.php?g=App&m=Member&a=login
+NOTIC: [2] include(./Public/Conf/config.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory D:\WWW\tianshi\Application\Conf\config.php 第 14 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening './Public/Conf/config.php' for inclusion (include_path='.;C:\php\pear;D:\WWW\tianshi\Core/Extend/Vendor/') D:\WWW\tianshi\Application\Conf\config.php 第 14 行.
+NOTIC: [8] Use of undefined constant DB_HOST - assumed 'DB_HOST' D:\WWW\tianshi\Application\Conf\config.php 第 17 行.
+NOTIC: [8] Use of undefined constant DB_NAME - assumed 'DB_NAME' D:\WWW\tianshi\Application\Conf\config.php 第 18 行.
+NOTIC: [8] Use of undefined constant DB_USER - assumed 'DB_USER' D:\WWW\tianshi\Application\Conf\config.php 第 19 行.
+NOTIC: [8] Use of undefined constant DB_PWD - assumed 'DB_PWD' D:\WWW\tianshi\Application\Conf\config.php 第 20 行.
+NOTIC: [8] Use of undefined constant DB_PREFIX - assumed 'DB_PREFIX' D:\WWW\tianshi\Application\Conf\config.php 第 21 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001214s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001304s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.001473s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001556s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000546s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000534s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000437s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000595s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002311s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000689s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000764s ]
+
+[ 2015-12-22T10:15:11+08:00 ] 1.189.211.191 /index.php?g=App&m=Index&a=yunorder
+NOTIC: [2] include(./Public/Conf/config.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory D:\WWW\tianshi\Application\Conf\config.php 第 14 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening './Public/Conf/config.php' for inclusion (include_path='.;C:\php\pear;D:\WWW\tianshi\Core/Extend/Vendor/') D:\WWW\tianshi\Application\Conf\config.php 第 14 行.
+NOTIC: [8] Use of undefined constant DB_HOST - assumed 'DB_HOST' D:\WWW\tianshi\Application\Conf\config.php 第 17 行.
+NOTIC: [8] Use of undefined constant DB_NAME - assumed 'DB_NAME' D:\WWW\tianshi\Application\Conf\config.php 第 18 行.
+NOTIC: [8] Use of undefined constant DB_USER - assumed 'DB_USER' D:\WWW\tianshi\Application\Conf\config.php 第 19 行.
+NOTIC: [8] Use of undefined constant DB_PWD - assumed 'DB_PWD' D:\WWW\tianshi\Application\Conf\config.php 第 20 行.
+NOTIC: [8] Use of undefined constant DB_PREFIX - assumed 'DB_PREFIX' D:\WWW\tianshi\Application\Conf\config.php 第 21 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000640s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000731s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [2] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: php_network_getaddresses: getaddrinfo failed: ��֪��������������  D:\WWW\tianshi\Core\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] php_network_getaddresses: getaddrinfo failed: ��֪��������������  (trying to connect via tcp://DB_HOST:3306) D:\WWW\tianshi\Core\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: php_network_getaddresses: getaddrinfo failed: ��֪��������������  D:\WWW\tianshi\Core\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+ERR: php_network_getaddresses: getaddrinfo failed: ��֪�������������� 
+
+[ 2015-12-22T10:15:14+08:00 ] 140.207.54.78 /index.php?g=Admin&m=Wechat&a=index&signature=24121cdea01b9038393c76960ca8022d7ec3cf10&timestamp=1450750511&nonce=1704347790
+NOTIC: [2] include(./Public/Conf/config.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory D:\WWW\tianshi\Application\Conf\config.php 第 14 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening './Public/Conf/config.php' for inclusion (include_path='.;C:\php\pear;D:\WWW\tianshi\Core/Extend/Vendor/') D:\WWW\tianshi\Application\Conf\config.php 第 14 行.
+NOTIC: [8] Use of undefined constant DB_HOST - assumed 'DB_HOST' D:\WWW\tianshi\Application\Conf\config.php 第 17 行.
+NOTIC: [8] Use of undefined constant DB_NAME - assumed 'DB_NAME' D:\WWW\tianshi\Application\Conf\config.php 第 18 行.
+NOTIC: [8] Use of undefined constant DB_USER - assumed 'DB_USER' D:\WWW\tianshi\Application\Conf\config.php 第 19 行.
+NOTIC: [8] Use of undefined constant DB_PWD - assumed 'DB_PWD' D:\WWW\tianshi\Application\Conf\config.php 第 20 行.
+NOTIC: [8] Use of undefined constant DB_PREFIX - assumed 'DB_PREFIX' D:\WWW\tianshi\Application\Conf\config.php 第 21 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000679s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000778s ]
+NOTIC: [2] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: php_network_getaddresses: getaddrinfo failed: ��֪��������������  D:\WWW\tianshi\Core\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] php_network_getaddresses: getaddrinfo failed: ��֪��������������  (trying to connect via tcp://DB_HOST:3306) D:\WWW\tianshi\Core\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: php_network_getaddresses: getaddrinfo failed: ��֪��������������  D:\WWW\tianshi\Core\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+ERR: php_network_getaddresses: getaddrinfo failed: ��֪�������������� 
+
+[ 2015-12-22T10:15:19+08:00 ] 140.207.54.77 /index.php?g=Admin&m=Wechat&a=index&signature=b8fabafd86a183d2d58c2dcaed2eba50d8e9778f&timestamp=1450750517&nonce=690573331
+NOTIC: [2] include(./Public/Conf/config.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory D:\WWW\tianshi\Application\Conf\config.php 第 14 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening './Public/Conf/config.php' for inclusion (include_path='.;C:\php\pear;D:\WWW\tianshi\Core/Extend/Vendor/') D:\WWW\tianshi\Application\Conf\config.php 第 14 行.
+NOTIC: [8] Use of undefined constant DB_HOST - assumed 'DB_HOST' D:\WWW\tianshi\Application\Conf\config.php 第 17 行.
+NOTIC: [8] Use of undefined constant DB_NAME - assumed 'DB_NAME' D:\WWW\tianshi\Application\Conf\config.php 第 18 行.
+NOTIC: [8] Use of undefined constant DB_USER - assumed 'DB_USER' D:\WWW\tianshi\Application\Conf\config.php 第 19 行.
+NOTIC: [8] Use of undefined constant DB_PWD - assumed 'DB_PWD' D:\WWW\tianshi\Application\Conf\config.php 第 20 行.
+NOTIC: [8] Use of undefined constant DB_PREFIX - assumed 'DB_PREFIX' D:\WWW\tianshi\Application\Conf\config.php 第 21 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000653s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001216s ]
+NOTIC: [2] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: php_network_getaddresses: getaddrinfo failed: ��֪��������������  D:\WWW\tianshi\Core\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] php_network_getaddresses: getaddrinfo failed: ��֪��������������  (trying to connect via tcp://DB_HOST:3306) D:\WWW\tianshi\Core\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: php_network_getaddresses: getaddrinfo failed: ��֪��������������  D:\WWW\tianshi\Core\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+ERR: php_network_getaddresses: getaddrinfo failed: ��֪�������������� 
+
+[ 2015-12-22T10:15:32+08:00 ] 140.207.54.80 /index.php?g=Admin&m=Wechat&a=index&signature=319b2a57d4cb7101bd79514275262ae6390d8294&timestamp=1450750529&nonce=258236844
+NOTIC: [2] include(./Public/Conf/config.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory D:\WWW\tianshi\Application\Conf\config.php 第 14 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening './Public/Conf/config.php' for inclusion (include_path='.;C:\php\pear;D:\WWW\tianshi\Core/Extend/Vendor/') D:\WWW\tianshi\Application\Conf\config.php 第 14 行.
+NOTIC: [8] Use of undefined constant DB_HOST - assumed 'DB_HOST' D:\WWW\tianshi\Application\Conf\config.php 第 17 行.
+NOTIC: [8] Use of undefined constant DB_NAME - assumed 'DB_NAME' D:\WWW\tianshi\Application\Conf\config.php 第 18 行.
+NOTIC: [8] Use of undefined constant DB_USER - assumed 'DB_USER' D:\WWW\tianshi\Application\Conf\config.php 第 19 行.
+NOTIC: [8] Use of undefined constant DB_PWD - assumed 'DB_PWD' D:\WWW\tianshi\Application\Conf\config.php 第 20 行.
+NOTIC: [8] Use of undefined constant DB_PREFIX - assumed 'DB_PREFIX' D:\WWW\tianshi\Application\Conf\config.php 第 21 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000650s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000747s ]
+NOTIC: [2] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: php_network_getaddresses: getaddrinfo failed: ��֪��������������  D:\WWW\tianshi\Core\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] php_network_getaddresses: getaddrinfo failed: ��֪��������������  (trying to connect via tcp://DB_HOST:3306) D:\WWW\tianshi\Core\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: php_network_getaddresses: getaddrinfo failed: ��֪��������������  D:\WWW\tianshi\Core\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+ERR: php_network_getaddresses: getaddrinfo failed: ��֪�������������� 
+
+[ 2015-12-22T10:15:49+08:00 ] 1.189.211.191 /index.php?g=App&m=Index&a=yunorder
+NOTIC: [2] include(./Public/Conf/config.php) [<a href='function.include'>function.include</a>]: failed to open stream: No such file or directory D:\WWW\tianshi\Application\Conf\config.php 第 14 行.
+NOTIC: [2] include() [<a href='function.include'>function.include</a>]: Failed opening './Public/Conf/config.php' for inclusion (include_path='.;C:\php\pear;D:\WWW\tianshi\Core/Extend/Vendor/') D:\WWW\tianshi\Application\Conf\config.php 第 14 行.
+NOTIC: [8] Use of undefined constant DB_HOST - assumed 'DB_HOST' D:\WWW\tianshi\Application\Conf\config.php 第 17 行.
+NOTIC: [8] Use of undefined constant DB_NAME - assumed 'DB_NAME' D:\WWW\tianshi\Application\Conf\config.php 第 18 行.
+NOTIC: [8] Use of undefined constant DB_USER - assumed 'DB_USER' D:\WWW\tianshi\Application\Conf\config.php 第 19 行.
+NOTIC: [8] Use of undefined constant DB_PWD - assumed 'DB_PWD' D:\WWW\tianshi\Application\Conf\config.php 第 20 行.
+NOTIC: [8] Use of undefined constant DB_PREFIX - assumed 'DB_PREFIX' D:\WWW\tianshi\Application\Conf\config.php 第 21 行.
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000692s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000795s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [2] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: php_network_getaddresses: getaddrinfo failed: ��֪��������������  D:\WWW\tianshi\Core\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: [2002] php_network_getaddresses: getaddrinfo failed: ��֪��������������  (trying to connect via tcp://DB_HOST:3306) D:\WWW\tianshi\Core\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+NOTIC: [2] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: php_network_getaddresses: getaddrinfo failed: ��֪��������������  D:\WWW\tianshi\Core\Lib\Driver\Db\DbMysql.class.php 第 109 行.
+ERR: php_network_getaddresses: getaddrinfo failed: ��֪�������������� 
+
+[ 2015-12-22T10:34:53+08:00 ] 140.207.54.76 /index.php?g=Admin&m=Wechat&a=index&signature=9c81a8e5ac0ca6d119860158aec8ca0a18da3774&timestamp=1450751693&nonce=976639308
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000987s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001119s ]
+SQL: SHOW COLUMNS FROM `wemall_wxconfig` [ RunTime:0.002797s ]
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000463s ]
+
+[ 2015-12-22T10:35:00+08:00 ] 1.189.211.191 /index.php?g=App&m=Index&a=member&refresh=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000678s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000794s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000617s ]
+
+[ 2015-12-22T10:35:07+08:00 ] 1.189.211.191 /index.php?g=App&m=Index&a=member&refresh=1&code=011c8d057968ab5583b9dc1dbca7cfeg&state=
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000646s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000759s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000338s ]
+SQL: SHOW COLUMNS FROM `wemall_user` [ RunTime:0.002972s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000538s ]
+SQL: SHOW COLUMNS FROM `wemall_order_level` [ RunTime:0.002100s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 11287 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 10:35:07' )  [ RunTime:0.000492s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SHOW COLUMNS FROM `wemall_order` [ RunTime:0.004943s ]
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 10:35:07' )  [ RunTime:0.000404s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+SQL: SHOW COLUMNS FROM `wemall_info` [ RunTime:0.002254s ]
+SQL: SELECT * FROM `wemall_info` LIMIT 1   [ RunTime:0.000283s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000424s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000514s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 1 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000621s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 2 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000546s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 3 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000414s ]
+SQL: SHOW COLUMNS FROM `wemall_tx_record` [ RunTime:0.002420s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 0 ) AND ( `uid` = 11287 ) LIMIT 1   [ RunTime:0.000385s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 1 ) AND ( `uid` = 11287 ) LIMIT 1   [ RunTime:0.000234s ]
+NOTIC: [8] Undefined variable: gebie D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 905 行.
+SQL: SELECT * FROM `wemall_tx_record` WHERE ( `uid` = 11287 )  [ RunTime:0.000263s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000373s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000353s ]
+SQL: SELECT sum(`totalprice`) as total FROM `wemall_order_level` inner join `wemall_order` on `wemall_order_level`.`order_id` =  `wemall_order`.`orderid` where `level_id`=11287 [ RunTime:0.000778s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `id` = 11286 ) LIMIT 1   [ RunTime:0.000465s ]
+NOTIC: [8] Undefined index: etype D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 964 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.018931s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019119s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000651s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000587s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000419s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000579s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002483s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000782s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000855s ]
+
+[ 2015-12-22T10:35:15+08:00 ] 1.189.211.191 /index.php?g=App&m=Index&a=member&etype=3
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000809s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000915s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000492s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 11287 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 10:35:14' )  [ RunTime:0.000405s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 10:35:14' )  [ RunTime:0.000286s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+SQL: SELECT * FROM `wemall_info` LIMIT 1   [ RunTime:0.000231s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000301s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000376s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 1 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000394s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 2 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000367s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 3 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000386s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 0 ) AND ( `uid` = 11287 ) LIMIT 1   [ RunTime:0.000252s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 1 ) AND ( `uid` = 11287 ) LIMIT 1   [ RunTime:0.000279s ]
+NOTIC: [8] Undefined variable: gebie D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 905 行.
+SQL: SELECT * FROM `wemall_tx_record` WHERE ( `uid` = 11287 )  [ RunTime:0.000271s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000377s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000373s ]
+SQL: SELECT sum(`totalprice`) as total FROM `wemall_order_level` inner join `wemall_order` on `wemall_order_level`.`order_id` =  `wemall_order`.`orderid` where `level_id`=11287 [ RunTime:0.000708s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `id` = 11286 ) LIMIT 1   [ RunTime:0.000307s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.002027s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002119s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000728s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000604s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000558s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000611s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002720s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000762s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000899s ]
+
+[ 2015-12-22T10:35:15+08:00 ] 61.151.218.119 /index.php?g=App&m=Index&a=member&etype=3
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000724s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000829s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T10:35:15+08:00 ] 61.151.218.119 /index.php?g=App&m=Member&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000642s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000743s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.001414s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001503s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000563s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000892s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000578s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000689s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003116s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000796s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000891s ]
+
+[ 2015-12-22T10:35:17+08:00 ] 1.189.211.191 /index.php?g=App&m=Index&a=yunorder
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000626s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000721s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000452s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 11287 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 10:35:17' )  [ RunTime:0.000425s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 10:35:17' )  [ RunTime:0.000274s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000302s ]
+
+[ 2015-12-22T11:21:50+08:00 ] 1.189.211.191 /index.php?g=App&m=Index&a=yunorder
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000885s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000988s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000649s ]
+
+[ 2015-12-22T11:21:50+08:00 ] 1.189.211.191 /index.php?g=App&m=Index&a=yunorder&code=0119de9351891f20ef46e2f9a6ca1b7U&state=
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000766s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000879s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000349s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000824s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 11287 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 11:21:50' )  [ RunTime:0.000636s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 11:21:50' )  [ RunTime:0.000530s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000354s ]
+
+[ 2015-12-22T11:21:50+08:00 ] 1.189.211.191 /index.php?g=App&m=Index&a=yunorder&code=0212883a8898961134281929ab1e93fe&state=
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000708s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000807s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000478s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 11287 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 11:21:50' )  [ RunTime:0.000435s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 11:21:50' )  [ RunTime:0.000367s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000353s ]
+
+[ 2015-12-22T11:21:51+08:00 ] 1.189.211.191 /index.php?g=App&m=Index&a=yunorder&code=04183492bbe57386c278f1240d6aa9bh&state=
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000662s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000767s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000467s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 11287 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 11:21:51' )  [ RunTime:0.000437s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 11:21:51' )  [ RunTime:0.000275s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000331s ]
+
+[ 2015-12-22T11:21:53+08:00 ] 1.189.211.191 /index.php?g=App&m=Index&a=member&refresh=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000849s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000976s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000328s ]
+
+[ 2015-12-22T11:21:53+08:00 ] 1.189.211.191 /index.php?g=App&m=Index&a=member&refresh=1&code=02111b6400103addd6e279c02fe6c1er&state=
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000683s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000780s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000335s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000610s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 11287 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 11:21:53' )  [ RunTime:0.000445s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 11:21:53' )  [ RunTime:0.000293s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+SQL: SELECT * FROM `wemall_info` LIMIT 1   [ RunTime:0.000505s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000307s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000381s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 1 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000360s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 2 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000351s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 3 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000365s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 0 ) AND ( `uid` = 11287 ) LIMIT 1   [ RunTime:0.000890s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 1 ) AND ( `uid` = 11287 ) LIMIT 1   [ RunTime:0.000315s ]
+NOTIC: [8] Undefined variable: gebie D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 905 行.
+SQL: SELECT * FROM `wemall_tx_record` WHERE ( `uid` = 11287 )  [ RunTime:0.000273s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000378s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000382s ]
+SQL: SELECT sum(`totalprice`) as total FROM `wemall_order_level` inner join `wemall_order` on `wemall_order_level`.`order_id` =  `wemall_order`.`orderid` where `level_id`=11287 [ RunTime:0.000821s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `id` = 11286 ) LIMIT 1   [ RunTime:0.000323s ]
+NOTIC: [8] Undefined index: etype D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 964 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.001877s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001980s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000725s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000565s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000451s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000718s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002694s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000757s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000832s ]
+
+[ 2015-12-22T11:21:53+08:00 ] 1.189.211.191 /index.php?g=App&m=Index&a=member&refresh=1&code=001ff71424a5785659148eaa9c40cb4W&state=
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000785s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000888s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000420s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000660s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 11287 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 11:21:53' )  [ RunTime:0.000531s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 11:21:53' )  [ RunTime:0.000292s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+SQL: SELECT * FROM `wemall_info` LIMIT 1   [ RunTime:0.000207s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000291s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000375s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 1 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000390s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 2 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000350s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 3 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000358s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 0 ) AND ( `uid` = 11287 ) LIMIT 1   [ RunTime:0.000245s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 1 ) AND ( `uid` = 11287 ) LIMIT 1   [ RunTime:0.000225s ]
+NOTIC: [8] Undefined variable: gebie D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 905 行.
+SQL: SELECT * FROM `wemall_tx_record` WHERE ( `uid` = 11287 )  [ RunTime:0.000242s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000404s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000356s ]
+SQL: SELECT sum(`totalprice`) as total FROM `wemall_order_level` inner join `wemall_order` on `wemall_order_level`.`order_id` =  `wemall_order`.`orderid` where `level_id`=11287 [ RunTime:0.000714s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `id` = 11286 ) LIMIT 1   [ RunTime:0.000310s ]
+NOTIC: [8] Undefined index: etype D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 964 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.001731s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001824s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000680s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000967s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000568s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000619s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003074s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000708s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000784s ]
+
+[ 2015-12-22T11:36:57+08:00 ] 66.249.65.34 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001076s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001232s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T11:36:58+08:00 ] 66.249.65.25 /index.php?g=App&m=Member&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000914s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001015s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.001689s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001791s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000662s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000688s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000621s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000731s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002905s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000899s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000971s ]
+
+[ 2015-12-22T11:45:25+08:00 ] 61.135.190.221 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001021s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001158s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T11:45:25+08:00 ] 61.135.190.221 /index.php?g=App&m=Member&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000771s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000868s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.001628s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001715s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000612s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000634s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000500s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000690s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002642s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000821s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000894s ]
+
+[ 2015-12-22T11:45:38+08:00 ] 61.135.190.221 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000797s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000900s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T11:45:38+08:00 ] 61.135.190.221 /index.php?g=App&m=Member&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000669s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000775s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.002685s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002853s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000691s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000498s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000431s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000665s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002544s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000735s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000810s ]
+
+[ 2015-12-22T11:49:57+08:00 ] 66.249.65.38 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000739s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000848s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T11:49:58+08:00 ] 66.249.65.32 /index.php?g=App&m=Member&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000792s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000896s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.001602s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001690s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000666s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000604s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000530s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000673s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002674s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000801s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000878s ]
+
+[ 2015-12-22T12:00:07+08:00 ] 157.55.39.95 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000841s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000950s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T13:53:05+08:00 ] 140.207.54.77 /index.php?g=Admin&m=Wechat&a=index&signature=c10c886d7518368090c86bcb40f2ab5dc0152ae4&timestamp=1450763585&nonce=694699286
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000871s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000980s ]
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000751s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwwlLyvjZZbpMZ2N2FPCcg1k' ) LIMIT 1   [ RunTime:0.000591s ]
+SQL: INSERT INTO `wemall_user` (`wx_info`,`uid`,`price`) VALUES ('{\"subscribe\":1,\"openid\":\"owzjOwwlLyvjZZbpMZ2N2FPCcg1k\",\"nickname\":\"\\u5fe7\\u90c1\\u6ef4@\\u7231\",\"sex\":1,\"language\":\"zh_CN\",\"city\":\"\\u9ed4\\u897f\\u5357\",\"province\":\"\\u8d35\\u5dde\",\"country\":\"\\u4e2d\\u56fd\",\"headimgurl\":\"http:\\/\\/wx.qlogo.cn\\/mmopen\\/Tqc9JOicq48qxxpM6BeQB0tDH8vua8eDeqdmB07Ciak4Htkdl2zZab8fR8SOh4YiahYXWX1Qte16Osiba4BO82E43eaxu4zs6LXq\\/0\",\"subscribe_time\":1450763584,\"remark\":\"\",\"groupid\":0}','owzjOwwlLyvjZZbpMZ2N2FPCcg1k',2) [ RunTime:0.000644s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwwlLyvjZZbpMZ2N2FPCcg1k' ) LIMIT 1   [ RunTime:0.000491s ]
+SQL: UPDATE `wemall_user` SET `wx_info`='{\"subscribe\":1,\"openid\":\"owzjOwwlLyvjZZbpMZ2N2FPCcg1k\",\"nickname\":\"\\u5fe7\\u90c1\\u6ef4@\\u7231\",\"sex\":1,\"language\":\"zh_CN\",\"city\":\"\\u9ed4\\u897f\\u5357\",\"province\":\"\\u8d35\\u5dde\",\"country\":\"\\u4e2d\\u56fd\",\"headimgurl\":\"http:\\/\\/wx.qlogo.cn\\/mmopen\\/Tqc9JOicq48qxxpM6BeQB0tDH8vua8eDeqdmB07Ciak4Htkdl2zZab8fR8SOh4YiahYXWX1Qte16Osiba4BO82E43eaxu4zs6LXq\\/0\",\"subscribe_time\":1450763584,\"remark\":\"\",\"groupid\":0}',`uid`='owzjOwwlLyvjZZbpMZ2N2FPCcg1k',`price`=2 WHERE ( `id` = 12464 ) [ RunTime:0.000408s ]
+
+[ 2015-12-22T13:53:29+08:00 ] 140.207.54.80 /index.php?g=Admin&m=Wechat&a=index&signature=e9f2cbb0f4b51cbf6b6785ae187a702ce1da4b2f&timestamp=1450763609&nonce=838862810
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000731s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000829s ]
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000363s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwwlLyvjZZbpMZ2N2FPCcg1k' ) LIMIT 1   [ RunTime:0.000348s ]
+NOTIC: [8] Undefined variable: user_info D:\WWW\tianshi\Application\Lib\Action\Admin\WechatAction.class.php 第 1072 行.
+SQL: DELETE FROM `wemall_user` WHERE ( `id` = 12464 ) [ RunTime:0.000369s ]
+
+[ 2015-12-22T14:25:07+08:00 ] 140.207.54.79 /index.php?g=Admin&m=Wechat&a=index&signature=d99df186fb37e30a33d7422a03341b6b95e7e933&timestamp=1450765506&nonce=948348805
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000757s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000940s ]
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000614s ]
+
+[ 2015-12-22T14:25:07+08:00 ] 111.30.131.199 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000690s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000793s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T14:25:07+08:00 ] 123.151.42.48 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000646s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000745s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T14:25:07+08:00 ] 1.189.211.191 /index.php?g=App&m=Index&a=member&refresh=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000791s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000893s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000332s ]
+
+[ 2015-12-22T14:25:07+08:00 ] 1.189.211.191 /index.php?g=App&m=Index&a=member&refresh=1&code=0316eef21eb5b0713ebac95dae59acb9&state=
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000768s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000876s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000350s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000948s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 11287 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 14:25:07' )  [ RunTime:0.000827s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 14:25:07' )  [ RunTime:0.000585s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+SQL: SELECT * FROM `wemall_info` LIMIT 1   [ RunTime:0.000467s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000305s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000377s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 1 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000391s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 2 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000356s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 3 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000576s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 0 ) AND ( `uid` = 11287 ) LIMIT 1   [ RunTime:0.000666s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 1 ) AND ( `uid` = 11287 ) LIMIT 1   [ RunTime:0.000235s ]
+NOTIC: [8] Undefined variable: gebie D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 905 行.
+SQL: SELECT * FROM `wemall_tx_record` WHERE ( `uid` = 11287 )  [ RunTime:0.000254s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000378s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000362s ]
+SQL: SELECT sum(`totalprice`) as total FROM `wemall_order_level` inner join `wemall_order` on `wemall_order_level`.`order_id` =  `wemall_order`.`orderid` where `level_id`=11287 [ RunTime:0.000776s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `id` = 11286 ) LIMIT 1   [ RunTime:0.000286s ]
+NOTIC: [8] Undefined index: etype D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 964 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.001801s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001899s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000759s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000582s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000878s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000812s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003301s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000902s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001003s ]
+
+[ 2015-12-22T14:25:12+08:00 ] 1.189.211.191 /index.php?g=App&m=Index&a=member&etype=3
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000717s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000817s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000442s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 11287 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 14:25:12' )  [ RunTime:0.000409s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 14:25:12' )  [ RunTime:0.000334s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+SQL: SELECT * FROM `wemall_info` LIMIT 1   [ RunTime:0.000221s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000331s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000389s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 1 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000360s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 2 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000351s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 3 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000356s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 0 ) AND ( `uid` = 11287 ) LIMIT 1   [ RunTime:0.000247s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 1 ) AND ( `uid` = 11287 ) LIMIT 1   [ RunTime:0.000230s ]
+NOTIC: [8] Undefined variable: gebie D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 905 行.
+SQL: SELECT * FROM `wemall_tx_record` WHERE ( `uid` = 11287 )  [ RunTime:0.000246s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000344s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000361s ]
+SQL: SELECT sum(`totalprice`) as total FROM `wemall_order_level` inner join `wemall_order` on `wemall_order_level`.`order_id` =  `wemall_order`.`orderid` where `level_id`=11287 [ RunTime:0.000704s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `id` = 11286 ) LIMIT 1   [ RunTime:0.000281s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.002372s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002499s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000863s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000612s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000509s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000674s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002862s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000834s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000915s ]
+
+[ 2015-12-22T14:25:14+08:00 ] 1.189.211.191 /index.php?g=App&m=Index&a=member&etype=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000955s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001079s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000467s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 11287 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 14:25:14' )  [ RunTime:0.000458s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 14:25:14' )  [ RunTime:0.000287s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+SQL: SELECT * FROM `wemall_info` LIMIT 1   [ RunTime:0.000216s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000332s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000382s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 1 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000412s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 2 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000365s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 3 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000367s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 0 ) AND ( `uid` = 11287 ) LIMIT 1   [ RunTime:0.000291s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 1 ) AND ( `uid` = 11287 ) LIMIT 1   [ RunTime:0.000244s ]
+NOTIC: [8] Undefined variable: gebie D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 905 行.
+SQL: SELECT * FROM `wemall_tx_record` WHERE ( `uid` = 11287 )  [ RunTime:0.000297s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000365s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000387s ]
+SQL: SELECT sum(`totalprice`) as total FROM `wemall_order_level` inner join `wemall_order` on `wemall_order_level`.`order_id` =  `wemall_order`.`orderid` where `level_id`=11287 [ RunTime:0.000770s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `id` = 11286 ) LIMIT 1   [ RunTime:0.000363s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.001922s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002018s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000784s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000597s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000540s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000683s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002816s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000850s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000934s ]
+
+[ 2015-12-22T14:25:14+08:00 ] 112.65.193.15 /index.php?g=App&m=Index&a=member&etype=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000729s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000839s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T14:25:14+08:00 ] 112.65.193.15 /index.php?g=App&m=Member&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000727s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000821s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.001556s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001640s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000570s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000557s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000494s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000632s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002450s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000793s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000864s ]
+
+[ 2015-12-22T14:25:17+08:00 ] 1.189.211.191 /index.php?g=App&m=Index&a=member_info&type=1&id=11287
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000749s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000844s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: user D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 200 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `id` = 11287 ) LIMIT 1   [ RunTime:0.000436s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_user` WHERE ( `l_id` = 11287 ) LIMIT 1   [ RunTime:0.000267s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `l_id` = 11287 ) LIMIT 0,10   [ RunTime:0.000412s ]
+SQL: SELECT * FROM `wemall_info` LIMIT 1   [ RunTime:0.000220s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.011136s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011235s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000703s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000574s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000506s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000650s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002666s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000843s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000924s ]
+
+[ 2015-12-22T14:25:18+08:00 ] 101.226.33.219 /index.php?g=App&m=Index&a=member_info&type=1&id=11287
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001050s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001155s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: user D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 200 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `id` = 11287 ) LIMIT 1   [ RunTime:0.000450s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_user` WHERE ( `l_id` = 11287 ) LIMIT 1   [ RunTime:0.000274s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `l_id` = 11287 ) LIMIT 0,10   [ RunTime:0.000392s ]
+SQL: SELECT * FROM `wemall_info` LIMIT 1   [ RunTime:0.000215s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.001886s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001974s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000791s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000679s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000533s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000656s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002888s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000763s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000866s ]
+
+[ 2015-12-22T14:25:20+08:00 ] 1.189.211.191 /index.php?g=App&m=Index&a=member&etype=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000943s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001059s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000469s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 11287 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 14:25:20' )  [ RunTime:0.000410s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 14:25:20' )  [ RunTime:0.000282s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+SQL: SELECT * FROM `wemall_info` LIMIT 1   [ RunTime:0.000234s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000303s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000428s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 1 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000358s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 2 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000352s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 3 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000365s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 0 ) AND ( `uid` = 11287 ) LIMIT 1   [ RunTime:0.000259s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 1 ) AND ( `uid` = 11287 ) LIMIT 1   [ RunTime:0.000228s ]
+NOTIC: [8] Undefined variable: gebie D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 905 行.
+SQL: SELECT * FROM `wemall_tx_record` WHERE ( `uid` = 11287 )  [ RunTime:0.000247s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000344s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000356s ]
+SQL: SELECT sum(`totalprice`) as total FROM `wemall_order_level` inner join `wemall_order` on `wemall_order_level`.`order_id` =  `wemall_order`.`orderid` where `level_id`=11287 [ RunTime:0.000712s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `id` = 11286 ) LIMIT 1   [ RunTime:0.000280s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.001883s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001974s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000792s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000683s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000646s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000807s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003177s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000866s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000945s ]
+
+[ 2015-12-22T14:25:22+08:00 ] 1.189.211.191 /index.php?g=App&m=Index&a=orderslist
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000771s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000881s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000690s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 11287 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 14:25:22' )  [ RunTime:0.000464s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 14:25:22' )  [ RunTime:0.000283s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000335s ]
+SQL: SELECT * FROM `wemall_order` WHERE ( `user_id` = 11287 ) ORDER BY id desc  [ RunTime:0.000332s ]
+NOTIC: [8] Undefined index: id D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 1005 行.
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 0 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.000219s ]
+NOTIC: [8] Undefined index: id D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 1010 行.
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 1 ) AND ( `uid` = null ) LIMIT 1   [ RunTime:0.000217s ]
+SQL: SELECT * FROM `wemall_info` LIMIT 1   [ RunTime:0.000223s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: all_cnt D:\WWW\tianshi\Application\Runtime\Cache\App\19d28593c856db197b7cb0821ca01cfb.php 第 126 行.
+NOTIC: [8] Undefined variable: l_name D:\WWW\tianshi\Application\Runtime\Cache\App\19d28593c856db197b7cb0821ca01cfb.php 第 136 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.014805s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014897s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000672s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000586s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000519s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.001160s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003199s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000880s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000957s ]
+
+[ 2015-12-22T14:25:22+08:00 ] 101.226.102.97 /index.php?g=App&m=Index&a=orderslist
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000765s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000856s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T14:25:22+08:00 ] 101.226.102.97 /index.php?g=App&m=Member&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000754s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000863s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.001837s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001937s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000633s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000594s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000508s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000675s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002619s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000985s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001059s ]
+
+[ 2015-12-22T14:25:24+08:00 ] 1.189.211.191 /index.php?g=App&m=Index&a=member&etype=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000761s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000874s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000451s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 11287 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 14:25:24' )  [ RunTime:0.000443s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 14:25:24' )  [ RunTime:0.000283s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+SQL: SELECT * FROM `wemall_info` LIMIT 1   [ RunTime:0.000223s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000319s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000374s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 1 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000368s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 2 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000426s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 3 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000366s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 0 ) AND ( `uid` = 11287 ) LIMIT 1   [ RunTime:0.000255s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 1 ) AND ( `uid` = 11287 ) LIMIT 1   [ RunTime:0.000234s ]
+NOTIC: [8] Undefined variable: gebie D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 905 行.
+SQL: SELECT * FROM `wemall_tx_record` WHERE ( `uid` = 11287 )  [ RunTime:0.000259s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000362s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 11287 ) LIMIT 1   [ RunTime:0.000383s ]
+SQL: SELECT sum(`totalprice`) as total FROM `wemall_order_level` inner join `wemall_order` on `wemall_order_level`.`order_id` =  `wemall_order`.`orderid` where `level_id`=11287 [ RunTime:0.000733s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `id` = 11286 ) LIMIT 1   [ RunTime:0.000311s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.001987s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002079s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000802s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000685s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000564s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000654s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002914s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000823s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000920s ]
+
+[ 2015-12-22T14:25:27+08:00 ] 1.189.211.191 /index.php?g=App&m=Index&a=yunorder
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000651s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000746s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000454s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 11287 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 14:25:27' )  [ RunTime:0.000437s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 14:25:27' )  [ RunTime:0.000278s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwzKzOgJ89TJAf-zseEFJTqU' ) LIMIT 1   [ RunTime:0.000319s ]
+
+[ 2015-12-22T14:26:35+08:00 ] 113.108.80.206 /index.php?g=Admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000764s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000861s ]
+NOTIC: [8] Undefined index: wadmin D:\WWW\tianshi\Application\Lib\Action\Admin\PublicAction.class.php 第 7 行.
+
+[ 2015-12-22T14:26:35+08:00 ] 113.108.80.206 /index.php?g=Admin&m=Login&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000762s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000869s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.009234s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009332s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000616s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000590s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000546s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000636s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002600s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000766s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000846s ]
+
+[ 2015-12-22T14:27:08+08:00 ] 222.171.48.81 /index.php?g=Admin
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000892s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001005s ]
+NOTIC: [8] Undefined index: wadmin D:\WWW\tianshi\Application\Lib\Action\Admin\PublicAction.class.php 第 7 行.
+
+[ 2015-12-22T14:27:08+08:00 ] 222.171.48.81 /index.php?g=Admin&m=Login&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000733s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000829s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.001626s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001708s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000620s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000556s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000535s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000632s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002599s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000756s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000839s ]
+
+[ 2015-12-22T14:28:11+08:00 ] 222.171.48.81 /index.php?g=Admin&m=Login&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000751s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000857s ]
+SQL: SHOW COLUMNS FROM `wemall_admin` [ RunTime:0.003477s ]
+SQL: SELECT * FROM `wemall_admin` WHERE ( `username` = 'admin' ) AND ( `password` = '3c808ea9481b65912613f565df4734f2' ) LIMIT 1   [ RunTime:0.000455s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.007599s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.007693s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000520s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000532s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000450s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000561s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002290s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000819s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000903s ]
+
+[ 2015-12-22T14:28:12+08:00 ] 222.171.48.81 /index.php?g=Admin&m=Index&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000847s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000976s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.012139s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012263s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000715s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000733s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000563s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000710s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003017s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000901s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001017s ]
+
+[ 2015-12-22T14:28:14+08:00 ] 222.171.48.81 /index.php?g=App&m=Index&a=index&uid=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000855s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001011s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = '1' ) LIMIT 1   [ RunTime:0.000415s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = null ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 14:28:14' )  [ RunTime:0.000435s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 14:28:14' )  [ RunTime:0.000308s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+SQL: SELECT * FROM `wemall_info` LIMIT 1   [ RunTime:0.000308s ]
+SQL: SHOW COLUMNS FROM `wemall_menu` [ RunTime:0.002250s ]
+SQL: SELECT * FROM `wemall_menu`  [ RunTime:0.000235s ]
+SQL: SHOW COLUMNS FROM `wemall_good` [ RunTime:0.002141s ]
+SQL: SELECT * FROM `wemall_good`  [ RunTime:0.000300s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = '1' ) LIMIT 1   [ RunTime:0.000265s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = '1' ) LIMIT 1   [ RunTime:0.000255s ]
+SQL: SHOW COLUMNS FROM `wemall_alipay` [ RunTime:0.002247s ]
+SQL: SELECT * FROM `wemall_alipay` LIMIT 1   [ RunTime:0.000225s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order` WHERE ( `pay_status` = 1 ) AND ( `time` >= '2015-12-22 00:00:00' ) LIMIT 1   [ RunTime:0.000564s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: etype D:\WWW\tianshi\Application\Runtime\Cache\App\056718f0d09ec78ccecbc846ff9e6bdd.php 第 190 行.
+NOTIC: [8] Use of undefined constant price - assumed 'price' D:\WWW\tianshi\Application\Runtime\Cache\App\056718f0d09ec78ccecbc846ff9e6bdd.php 第 225 行.
+NOTIC: [8] Use of undefined constant price - assumed 'price' D:\WWW\tianshi\Application\Runtime\Cache\App\056718f0d09ec78ccecbc846ff9e6bdd.php 第 230 行.
+NOTIC: [8] Undefined variable: etype D:\WWW\tianshi\Application\Runtime\Cache\App\056718f0d09ec78ccecbc846ff9e6bdd.php 第 429 行.
+NOTIC: [8] Undefined variable: etype D:\WWW\tianshi\Application\Runtime\Cache\App\056718f0d09ec78ccecbc846ff9e6bdd.php 第 484 行.
+NOTIC: [8] Undefined variable: etype D:\WWW\tianshi\Application\Runtime\Cache\App\056718f0d09ec78ccecbc846ff9e6bdd.php 第 493 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.016813s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016896s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000649s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000493s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000481s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000602s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002437s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000669s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000760s ]
+
+[ 2015-12-22T14:28:14+08:00 ] 222.171.48.81 /index.php?g=Admin&m=Index&a=set
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000634s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000732s ]
+SQL: SELECT * FROM `wemall_info` LIMIT 1   [ RunTime:0.000273s ]
+NOTIC: [2] simplexml_load_file() [<a href='function.simplexml-load-file'>function.simplexml-load-file</a>]: I/O warning : failed to load external entity &quot;./Application/Tpl/Appdefault/config.xml&quot; D:\WWW\tianshi\Application\Lib\Action\Admin\IndexAction.class.php 第 76 行.
+NOTIC: [2048] Creating default object from empty value D:\WWW\tianshi\Application\Lib\Action\Admin\IndexAction.class.php 第 80 行.
+SQL: SELECT * FROM `wemall_alipay` LIMIT 1   [ RunTime:0.000414s ]
+SQL: SELECT * FROM `wemall_admin`  [ RunTime:0.000230s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: page D:\WWW\tianshi\Application\Runtime\Cache\Admin\f92ef9bea6d7a689b702a61ef3240030.php 第 368 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.015258s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015372s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000536s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000574s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000405s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000552s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002303s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000710s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000792s ]
+
+[ 2015-12-22T14:28:15+08:00 ] 222.171.48.81 /index.php?g=Admin&m=Order&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000728s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000827s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order` LIMIT 1   [ RunTime:0.000252s ]
+SQL: SELECT * FROM `wemall_order` ORDER BY id desc LIMIT 0,10   [ RunTime:0.000401s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( 1=1 AND id='12461' ) LIMIT 1   [ RunTime:0.000342s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( 1=1 AND id='12459' ) LIMIT 1   [ RunTime:0.000289s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( 1=1 AND id='12414' ) LIMIT 1   [ RunTime:0.000282s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( 1=1 AND id='12457' ) LIMIT 1   [ RunTime:0.000252s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( 1=1 AND id='12456' ) LIMIT 1   [ RunTime:0.000314s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( 1=1 AND id='12455' ) LIMIT 1   [ RunTime:0.000258s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( 1=1 AND id='12448' ) LIMIT 1   [ RunTime:0.000256s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( 1=1 AND id='12447' ) LIMIT 1   [ RunTime:0.000272s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( 1=1 AND id='12444' ) LIMIT 1   [ RunTime:0.000257s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( 1=1 AND id='12442' ) LIMIT 1   [ RunTime:0.000295s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Use of undefined constant cartdata - assumed 'cartdata' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant price - assumed 'price' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant order_info - assumed 'order_info' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 206 行.
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 206 行.
+NOTIC: [8] Use of undefined constant order_info - assumed 'order_info' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 207 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 207 行.
+NOTIC: [8] Use of undefined constant cartdata - assumed 'cartdata' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant price - assumed 'price' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant order_info - assumed 'order_info' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 206 行.
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 206 行.
+NOTIC: [8] Use of undefined constant order_info - assumed 'order_info' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 207 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 207 行.
+NOTIC: [8] Use of undefined constant cartdata - assumed 'cartdata' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant price - assumed 'price' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant order_info - assumed 'order_info' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 206 行.
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 206 行.
+NOTIC: [8] Use of undefined constant order_info - assumed 'order_info' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 207 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 207 行.
+NOTIC: [8] Use of undefined constant cartdata - assumed 'cartdata' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant price - assumed 'price' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant order_info - assumed 'order_info' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 206 行.
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 206 行.
+NOTIC: [8] Use of undefined constant order_info - assumed 'order_info' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 207 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 207 行.
+NOTIC: [8] Use of undefined constant cartdata - assumed 'cartdata' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant price - assumed 'price' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant order_info - assumed 'order_info' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 206 行.
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 206 行.
+NOTIC: [8] Use of undefined constant order_info - assumed 'order_info' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 207 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 207 行.
+NOTIC: [8] Use of undefined constant cartdata - assumed 'cartdata' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant price - assumed 'price' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant order_info - assumed 'order_info' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 206 行.
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 206 行.
+NOTIC: [8] Use of undefined constant order_info - assumed 'order_info' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 207 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 207 行.
+NOTIC: [8] Use of undefined constant cartdata - assumed 'cartdata' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant price - assumed 'price' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant order_info - assumed 'order_info' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 206 行.
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 206 行.
+NOTIC: [8] Use of undefined constant order_info - assumed 'order_info' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 207 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 207 行.
+NOTIC: [8] Use of undefined constant cartdata - assumed 'cartdata' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant price - assumed 'price' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant order_info - assumed 'order_info' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 206 行.
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 206 行.
+NOTIC: [8] Use of undefined constant order_info - assumed 'order_info' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 207 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 207 行.
+NOTIC: [8] Use of undefined constant cartdata - assumed 'cartdata' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant price - assumed 'price' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant order_info - assumed 'order_info' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 206 行.
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 206 行.
+NOTIC: [8] Use of undefined constant order_info - assumed 'order_info' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 207 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 207 行.
+NOTIC: [8] Use of undefined constant cartdata - assumed 'cartdata' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant price - assumed 'price' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 198 行.
+NOTIC: [8] Use of undefined constant order_info - assumed 'order_info' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 206 行.
+NOTIC: [8] Use of undefined constant num - assumed 'num' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 206 行.
+NOTIC: [8] Use of undefined constant order_info - assumed 'order_info' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 207 行.
+NOTIC: [8] Use of undefined constant name - assumed 'name' D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 207 行.
+NOTIC: [8] Undefined variable: menulist D:\WWW\tianshi\Application\Runtime\Cache\Admin\f233e51ff1b18da38643aefc712bfc4f.php 第 261 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.020442s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020545s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000680s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000498s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000459s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000601s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002460s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000943s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001044s ]
+
+[ 2015-12-22T14:28:16+08:00 ] 222.171.48.81 /index.php/App/Index/fetchgooddetail
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000827s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000940s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000628s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000704s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_good` WHERE ( `id` = 22 ) LIMIT 1   [ RunTime:0.000358s ]
+
+[ 2015-12-22T14:28:17+08:00 ] 222.171.48.81 /index.php?g=Admin&m=User&a=index
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000704s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000807s ]
+NOTIC: [8] Undefined index: id D:\WWW\tianshi\Application\Lib\Action\Admin\UserAction.class.php 第 16 行.
+NOTIC: [8] Undefined index: type D:\WWW\tianshi\Application\Lib\Action\Admin\UserAction.class.php 第 17 行.
+NOTIC: [8] Undefined index: level D:\WWW\tianshi\Application\Lib\Action\Admin\UserAction.class.php 第 19 行.
+NOTIC: [8] Undefined index: level_id D:\WWW\tianshi\Application\Lib\Action\Admin\UserAction.class.php 第 20 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_user` LIMIT 1   [ RunTime:0.000276s ]
+SQL: SELECT * FROM `wemall_user` ORDER BY id desc LIMIT 0,12   [ RunTime:0.000519s ]
+SQL: SELECT `id`,`uid`,`price` FROM `wemall_tx_record` WHERE ( `uid` IN ('12462','12461','12459','12458','12457','12456','12455','12452','12449','12448','12447','12446') )  [ RunTime:0.000322s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\Admin\UserAction.class.php 第 102 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.013605s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013771s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000669s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000589s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000414s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000545s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002431s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000693s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000765s ]
+
+[ 2015-12-22T14:41:11+08:00 ] 140.207.54.80 /index.php?g=Admin&m=Wechat&a=index&signature=39f4d3223ba32739ec10804c8f8bfa0ed026036d&timestamp=1450766471&nonce=696250165
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000762s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000883s ]
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000601s ]
+
+[ 2015-12-22T14:41:12+08:00 ] 111.30.141.47 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000854s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000965s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T14:41:13+08:00 ] 123.151.42.49 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000669s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000778s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T14:41:14+08:00 ] 60.219.166.190 /index.php?g=App&m=Index&a=member&refresh=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000647s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000751s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000422s ]
+
+[ 2015-12-22T14:41:14+08:00 ] 60.219.166.190 /index.php?g=App&m=Index&a=member&refresh=1&code=031f73f55aeb2e2aa547fb24ce9d2340&state=
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000746s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000864s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000330s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw1kiq1yi6bD3jC_gpbrynj4' ) LIMIT 1   [ RunTime:0.000920s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 12462 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 14:41:14' )  [ RunTime:0.000643s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 14:41:14' )  [ RunTime:0.000498s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+SQL: SELECT * FROM `wemall_info` LIMIT 1   [ RunTime:0.000421s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw1kiq1yi6bD3jC_gpbrynj4' ) LIMIT 1   [ RunTime:0.000355s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 12462 ) LIMIT 1   [ RunTime:0.000350s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 1 ) AND ( `level_id` = 12462 ) LIMIT 1   [ RunTime:0.000355s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 2 ) AND ( `level_id` = 12462 ) LIMIT 1   [ RunTime:0.000335s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 3 ) AND ( `level_id` = 12462 ) LIMIT 1   [ RunTime:0.000339s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 0 ) AND ( `uid` = 12462 ) LIMIT 1   [ RunTime:0.000443s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 1 ) AND ( `uid` = 12462 ) LIMIT 1   [ RunTime:0.000218s ]
+NOTIC: [8] Undefined variable: gebie D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 905 行.
+SQL: SELECT * FROM `wemall_tx_record` WHERE ( `uid` = 12462 )  [ RunTime:0.000208s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `level_id` = 12462 ) LIMIT 1   [ RunTime:0.000345s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 12462 ) LIMIT 1   [ RunTime:0.000325s ]
+SQL: SELECT sum(`totalprice`) as total FROM `wemall_order_level` inner join `wemall_order` on `wemall_order_level`.`order_id` =  `wemall_order`.`orderid` where `level_id`=12462 [ RunTime:0.000436s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `id` = 0 ) LIMIT 1   [ RunTime:0.000257s ]
+NOTIC: [8] Undefined index: etype D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 964 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.001684s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001772s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000685s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000489s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000425s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000575s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002374s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000692s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000765s ]
+
+[ 2015-12-22T14:41:25+08:00 ] 140.207.54.79 /index.php?g=Admin&m=Wechat&a=index&signature=ff30aa6b4b0789f2b6e00c99a72889ab235bd73b&timestamp=1450766485&nonce=423159952
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000676s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000794s ]
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000340s ]
+
+[ 2015-12-22T15:42:41+08:00 ] 140.207.54.73 /index.php?g=Admin&m=Wechat&a=index&signature=de95f434d21b458010afd9b9e23726dfd60a9da7&timestamp=1450770160&nonce=2103592359
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000743s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000844s ]
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000603s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw9RN8m9KwfTbLLNGTgwFnfg' ) LIMIT 1   [ RunTime:0.000577s ]
+SQL: INSERT INTO `wemall_user` (`wx_info`,`uid`,`price`) VALUES ('{\"subscribe\":1,\"openid\":\"owzjOw9RN8m9KwfTbLLNGTgwFnfg\",\"nickname\":\"Perfect one \\u5c0f\\u80e1\\u3002\",\"sex\":1,\"language\":\"zh_CN\",\"city\":\"\\u90d1\\u5dde\",\"province\":\"\\u6cb3\\u5357\",\"country\":\"\\u4e2d\\u56fd\",\"headimgurl\":\"http:\\/\\/wx.qlogo.cn\\/mmopen\\/Tqc9JOicq48pPsjpBN52JOMx7wHl5y0o9HnwawOYTAOPBRhW6UxSdXoGb9LvsOOmQWr39PCH6ib3nbvjTpN2ctTg\\/0\",\"subscribe_time\":1450770160,\"remark\":\"\",\"groupid\":0}','owzjOw9RN8m9KwfTbLLNGTgwFnfg',2) [ RunTime:0.000610s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw9RN8m9KwfTbLLNGTgwFnfg' ) LIMIT 1   [ RunTime:0.000415s ]
+SQL: UPDATE `wemall_user` SET `wx_info`='{\"subscribe\":1,\"openid\":\"owzjOw9RN8m9KwfTbLLNGTgwFnfg\",\"nickname\":\"Perfect one \\u5c0f\\u80e1\\u3002\",\"sex\":1,\"language\":\"zh_CN\",\"city\":\"\\u90d1\\u5dde\",\"province\":\"\\u6cb3\\u5357\",\"country\":\"\\u4e2d\\u56fd\",\"headimgurl\":\"http:\\/\\/wx.qlogo.cn\\/mmopen\\/Tqc9JOicq48pPsjpBN52JOMx7wHl5y0o9HnwawOYTAOPBRhW6UxSdXoGb9LvsOOmQWr39PCH6ib3nbvjTpN2ctTg\\/0\",\"subscribe_time\":1450770160,\"remark\":\"\",\"groupid\":0}',`uid`='owzjOw9RN8m9KwfTbLLNGTgwFnfg',`price`=2 WHERE ( `id` = 12465 ) [ RunTime:0.000509s ]
+
+[ 2015-12-22T15:43:03+08:00 ] 171.8.158.7 /index.php?g=App&m=Index&a=member
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000673s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000776s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000336s ]
+
+[ 2015-12-22T15:43:04+08:00 ] 171.8.158.7 /index.php?g=App&m=Index&a=member&code=03143bad78be4617a6a520771271696n&state=
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000675s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000782s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000324s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw9RN8m9KwfTbLLNGTgwFnfg' ) LIMIT 1   [ RunTime:0.000558s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 12465 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 15:43:04' )  [ RunTime:0.000844s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 15:43:04' )  [ RunTime:0.000538s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+SQL: SELECT * FROM `wemall_info` LIMIT 1   [ RunTime:0.000585s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw9RN8m9KwfTbLLNGTgwFnfg' ) LIMIT 1   [ RunTime:0.000556s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 12465 ) LIMIT 1   [ RunTime:0.000569s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 1 ) AND ( `level_id` = 12465 ) LIMIT 1   [ RunTime:0.000470s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 2 ) AND ( `level_id` = 12465 ) LIMIT 1   [ RunTime:0.000469s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 3 ) AND ( `level_id` = 12465 ) LIMIT 1   [ RunTime:0.000508s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 0 ) AND ( `uid` = 12465 ) LIMIT 1   [ RunTime:0.000617s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 1 ) AND ( `uid` = 12465 ) LIMIT 1   [ RunTime:0.000241s ]
+NOTIC: [8] Undefined variable: gebie D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 905 行.
+SQL: SELECT * FROM `wemall_tx_record` WHERE ( `uid` = 12465 )  [ RunTime:0.000201s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `level_id` = 12465 ) LIMIT 1   [ RunTime:0.000335s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 12465 ) LIMIT 1   [ RunTime:0.000330s ]
+SQL: SELECT sum(`totalprice`) as total FROM `wemall_order_level` inner join `wemall_order` on `wemall_order_level`.`order_id` =  `wemall_order`.`orderid` where `level_id`=12465 [ RunTime:0.000361s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `id` = 0 ) LIMIT 1   [ RunTime:0.000245s ]
+NOTIC: [8] Undefined index: etype D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 964 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.001651s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001740s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000642s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000509s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000442s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000567s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002361s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000672s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000744s ]
+
+[ 2015-12-22T15:43:04+08:00 ] 180.153.206.13 /index.php?g=App
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000714s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000809s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T15:43:04+08:00 ] 180.153.206.13 /index.php?g=App&m=Member&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001296s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001478s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.002054s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002167s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000733s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000672s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000443s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000578s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002673s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.001226s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001316s ]
+
+[ 2015-12-22T15:43:06+08:00 ] 180.153.206.16 /index.php?g=App
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000865s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000966s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T15:43:06+08:00 ] 180.153.206.16 /index.php?g=App&m=Member&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000855s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000951s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.001780s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001863s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000710s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000677s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000587s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000713s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002885s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000867s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000940s ]
+
+[ 2015-12-22T15:43:31+08:00 ] 140.207.54.75 /index.php?g=Admin&m=Wechat&a=index&signature=9630b1ff2962e9c9fea6993974f3b2a2b8c161e5&timestamp=1450770211&nonce=532918062
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000719s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000827s ]
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000365s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw9RN8m9KwfTbLLNGTgwFnfg' ) LIMIT 1   [ RunTime:0.000325s ]
+NOTIC: [8] Undefined variable: user_info D:\WWW\tianshi\Application\Lib\Action\Admin\WechatAction.class.php 第 1072 行.
+SQL: DELETE FROM `wemall_user` WHERE ( `id` = 12465 ) [ RunTime:0.000335s ]
+
+[ 2015-12-22T15:48:23+08:00 ] 140.207.54.80 /index.php?g=Admin&m=Wechat&a=index&signature=3c354a4048243ed99ebab392f4f2793e95639528&timestamp=1450770502&nonce=608107570
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000979s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001119s ]
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000410s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw30l4SHMlze8C4gxVpfyOTU' ) LIMIT 1   [ RunTime:0.000403s ]
+SQL: INSERT INTO `wemall_user` (`wx_info`,`uid`,`price`) VALUES ('{\"subscribe\":1,\"openid\":\"owzjOw30l4SHMlze8C4gxVpfyOTU\",\"nickname\":\"\\u848b\\u54e5\\u6d41\\u91cf\",\"sex\":1,\"language\":\"zh_CN\",\"city\":\"\\u957f\\u6c99\",\"province\":\"\\u6e56\\u5357\",\"country\":\"\\u4e2d\\u56fd\",\"headimgurl\":\"http:\\/\\/wx.qlogo.cn\\/mmopen\\/Tqc9JOicq48orSVB3EI9FVf159Nja2P7Y7UCtEFsSIk3dklj50kbNszyDeue5zLwKk2oppDRicpDynzYibfKLB9N6mCoiaEtXfPE\\/0\",\"subscribe_time\":1450770502,\"remark\":\"\",\"groupid\":0}','owzjOw30l4SHMlze8C4gxVpfyOTU',2) [ RunTime:0.000538s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw30l4SHMlze8C4gxVpfyOTU' ) LIMIT 1   [ RunTime:0.000378s ]
+SQL: UPDATE `wemall_user` SET `wx_info`='{\"subscribe\":1,\"openid\":\"owzjOw30l4SHMlze8C4gxVpfyOTU\",\"nickname\":\"\\u848b\\u54e5\\u6d41\\u91cf\",\"sex\":1,\"language\":\"zh_CN\",\"city\":\"\\u957f\\u6c99\",\"province\":\"\\u6e56\\u5357\",\"country\":\"\\u4e2d\\u56fd\",\"headimgurl\":\"http:\\/\\/wx.qlogo.cn\\/mmopen\\/Tqc9JOicq48orSVB3EI9FVf159Nja2P7Y7UCtEFsSIk3dklj50kbNszyDeue5zLwKk2oppDRicpDynzYibfKLB9N6mCoiaEtXfPE\\/0\",\"subscribe_time\":1450770502,\"remark\":\"\",\"groupid\":0}',`uid`='owzjOw30l4SHMlze8C4gxVpfyOTU',`price`=2 WHERE ( `id` = 12466 ) [ RunTime:0.000388s ]
+
+[ 2015-12-22T15:48:34+08:00 ] 140.207.54.80 /index.php?g=Admin&m=Wechat&a=index&signature=8bf0ee95a095ee76aad5fb1994d402b03fe9f722&timestamp=1450770514&nonce=1707973951
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000654s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000763s ]
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000359s ]
+
+[ 2015-12-22T15:48:37+08:00 ] 106.16.82.95 /index.php?g=App&m=Index&a=member
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000655s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000753s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000342s ]
+
+[ 2015-12-22T15:48:38+08:00 ] 106.16.82.95 /index.php?g=App&m=Index&a=member&code=0319b33e85458ce39f20814b3b7fe2ao&state=
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000662s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000760s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000346s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw30l4SHMlze8C4gxVpfyOTU' ) LIMIT 1   [ RunTime:0.000582s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 12466 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 15:48:38' )  [ RunTime:0.000462s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 15:48:38' )  [ RunTime:0.000341s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+SQL: SELECT * FROM `wemall_info` LIMIT 1   [ RunTime:0.000307s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw30l4SHMlze8C4gxVpfyOTU' ) LIMIT 1   [ RunTime:0.000300s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 12466 ) LIMIT 1   [ RunTime:0.000367s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 1 ) AND ( `level_id` = 12466 ) LIMIT 1   [ RunTime:0.000340s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 2 ) AND ( `level_id` = 12466 ) LIMIT 1   [ RunTime:0.000466s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 3 ) AND ( `level_id` = 12466 ) LIMIT 1   [ RunTime:0.000483s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 0 ) AND ( `uid` = 12466 ) LIMIT 1   [ RunTime:0.000253s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 1 ) AND ( `uid` = 12466 ) LIMIT 1   [ RunTime:0.000214s ]
+NOTIC: [8] Undefined variable: gebie D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 905 行.
+SQL: SELECT * FROM `wemall_tx_record` WHERE ( `uid` = 12466 )  [ RunTime:0.000219s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `level_id` = 12466 ) LIMIT 1   [ RunTime:0.000384s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 12466 ) LIMIT 1   [ RunTime:0.000329s ]
+SQL: SELECT sum(`totalprice`) as total FROM `wemall_order_level` inner join `wemall_order` on `wemall_order_level`.`order_id` =  `wemall_order`.`orderid` where `level_id`=12466 [ RunTime:0.000390s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `id` = 0 ) LIMIT 1   [ RunTime:0.000237s ]
+NOTIC: [8] Undefined index: etype D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 964 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.001843s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001944s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000667s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000485s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000424s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000596s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002401s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000721s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000794s ]
+
+[ 2015-12-22T15:48:50+08:00 ] 106.16.82.95 /index.php?g=App&m=Index&a=tx&etype=2
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000956s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001077s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000339s ]
+
+[ 2015-12-22T15:48:51+08:00 ] 106.16.82.95 /index.php?g=App&m=Index&a=tx&etype=2&code=0216bf87fa24401e077c1c85c85ba2f9&state=
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000711s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000815s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000323s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw30l4SHMlze8C4gxVpfyOTU' ) LIMIT 1   [ RunTime:0.000504s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 12466 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 15:48:51' )  [ RunTime:0.000422s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 15:48:51' )  [ RunTime:0.000262s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+SQL: SELECT * FROM `wemall_info` LIMIT 1   [ RunTime:0.000196s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw30l4SHMlze8C4gxVpfyOTU' ) LIMIT 1   [ RunTime:0.000273s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 12466 ) LIMIT 1   [ RunTime:0.000349s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 1 ) AND ( `level_id` = 12466 ) LIMIT 1   [ RunTime:0.000355s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 2 ) AND ( `level_id` = 12466 ) LIMIT 1   [ RunTime:0.000328s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 3 ) AND ( `level_id` = 12466 ) LIMIT 1   [ RunTime:0.000341s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 0 ) AND ( `uid` = 12466 ) LIMIT 1   [ RunTime:0.000227s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 1 ) AND ( `uid` = 12466 ) LIMIT 1   [ RunTime:0.000201s ]
+NOTIC: [8] Use of undefined constant confirm_price - assumed 'confirm_price' D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 1326 行.
+NOTIC: [8] Use of undefined constant add_over_price - assumed 'add_over_price' D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 1326 行.
+SQL: SELECT * FROM `wemall_tx_record` WHERE ( `uid` = 12466 )  [ RunTime:0.000222s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `level_id` = 12466 ) LIMIT 1   [ RunTime:0.000365s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 12466 ) LIMIT 1   [ RunTime:0.000334s ]
+SQL: SELECT sum(`totalprice`) as total FROM `wemall_order_level` inner join `wemall_order` on `wemall_order_level`.`order_id` =  `wemall_order`.`orderid` where `level_id`=12466 [ RunTime:0.000372s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `id` = 0 ) LIMIT 1   [ RunTime:0.000237s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.016284s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016399s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000805s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000619s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000419s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000594s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002672s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000712s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000804s ]
+
+[ 2015-12-22T15:49:03+08:00 ] 106.16.82.95 /index.php/App/Index/addtxorder
+INFO: [ route_check ] --START--
+INFO: CheckRoute Behavior ::run [ RunTime:0.000832s ]
+INFO: [ route_check ] --END-- [ RunTime:0.000951s ]
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001353s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001460s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: openid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 1410 行.
+NOTIC: [8] Use of undefined constant value - assumed 'value' D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 1414 行.
+NOTIC: [8] Use of undefined constant value - assumed 'value' D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 1415 行.
+NOTIC: [8] Use of undefined constant value - assumed 'value' D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 1416 行.
+NOTIC: [8] Use of undefined constant value - assumed 'value' D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 1417 行.
+NOTIC: [8] Use of undefined constant value - assumed 'value' D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 1418 行.
+NOTIC: [8] Use of undefined constant value - assumed 'value' D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 1419 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw30l4SHMlze8C4gxVpfyOTU' ) LIMIT 1   [ RunTime:0.000457s ]
+
+[ 2015-12-22T15:49:06+08:00 ] 106.16.82.95 /index.php?g=App&m=Index&a=member&code=0319b33e85458ce39f20814b3b7fe2ao&state=
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000624s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000757s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw30l4SHMlze8C4gxVpfyOTU' ) LIMIT 1   [ RunTime:0.000621s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 12466 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 15:49:06' )  [ RunTime:0.000568s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 15:49:06' )  [ RunTime:0.000671s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+SQL: SELECT * FROM `wemall_info` LIMIT 1   [ RunTime:0.000368s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw30l4SHMlze8C4gxVpfyOTU' ) LIMIT 1   [ RunTime:0.000401s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 12466 ) LIMIT 1   [ RunTime:0.000396s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 1 ) AND ( `level_id` = 12466 ) LIMIT 1   [ RunTime:0.000392s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 2 ) AND ( `level_id` = 12466 ) LIMIT 1   [ RunTime:0.000356s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 3 ) AND ( `level_id` = 12466 ) LIMIT 1   [ RunTime:0.000622s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 0 ) AND ( `uid` = 12466 ) LIMIT 1   [ RunTime:0.000261s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 1 ) AND ( `uid` = 12466 ) LIMIT 1   [ RunTime:0.000217s ]
+NOTIC: [8] Undefined variable: gebie D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 905 行.
+SQL: SELECT * FROM `wemall_tx_record` WHERE ( `uid` = 12466 )  [ RunTime:0.000252s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `level_id` = 12466 ) LIMIT 1   [ RunTime:0.000354s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 12466 ) LIMIT 1   [ RunTime:0.000350s ]
+SQL: SELECT sum(`totalprice`) as total FROM `wemall_order_level` inner join `wemall_order` on `wemall_order_level`.`order_id` =  `wemall_order`.`orderid` where `level_id`=12466 [ RunTime:0.000414s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `id` = 0 ) LIMIT 1   [ RunTime:0.000270s ]
+NOTIC: [8] Undefined index: etype D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 964 行.
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.001804s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001906s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000752s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000593s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000613s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000653s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002860s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000780s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000854s ]
+
+[ 2015-12-22T15:49:10+08:00 ] 140.207.54.80 /index.php?g=Admin&m=Wechat&a=index&signature=5f72965f0d535b54e16c175d36bd070594b3fd12&timestamp=1450770550&nonce=1471213053
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000694s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000810s ]
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000486s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw30l4SHMlze8C4gxVpfyOTU' ) LIMIT 1   [ RunTime:0.000569s ]
+NOTIC: [8] Undefined variable: user_info D:\WWW\tianshi\Application\Lib\Action\Admin\WechatAction.class.php 第 1072 行.
+SQL: DELETE FROM `wemall_user` WHERE ( `id` = 12466 ) [ RunTime:0.000610s ]
+
+[ 2015-12-22T15:57:44+08:00 ] 218.241.98.199 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001176s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001317s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T15:57:44+08:00 ] 218.241.98.199 /index.php?g=App&m=Member&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000643s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000742s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.001428s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001512s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000504s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000483s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000462s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000543s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002242s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000680s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000752s ]
+
+[ 2015-12-22T16:03:47+08:00 ] 195.242.80.26 /?author=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000789s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000890s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T16:03:48+08:00 ] 195.242.80.26 /index.php?g=App&m=Member&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000725s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000822s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.001462s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001546s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000503s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000493s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000442s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000546s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002204s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000693s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000770s ]
+
+[ 2015-12-22T16:21:50+08:00 ] 157.55.39.210 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000759s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000876s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T17:39:41+08:00 ] 106.120.173.130 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000700s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000820s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T17:40:45+08:00 ] 106.120.173.130 /index.php?g=App&m=Member&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000540s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000642s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.001300s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001437s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000422s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000460s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000341s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000503s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001925s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000721s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000800s ]
+
+[ 2015-12-22T18:15:26+08:00 ] 111.30.137.183 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000671s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000779s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T18:15:26+08:00 ] 221.209.189.59 /index.php?g=App&m=Index&a=yunorder
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000702s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000799s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.016439s ]
+
+[ 2015-12-22T18:15:26+08:00 ] 123.151.38.94 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000937s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001096s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T18:15:27+08:00 ] 221.209.189.59 /index.php?g=App&m=Index&a=yunorder&code=031a3ab4e468522f7dd54afee1ab3702&state=
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000467s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000566s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000346s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw8QLE6zLX2lyEr97NDdtjZc' ) LIMIT 1   [ RunTime:0.022214s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 12366 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 18:15:27' )  [ RunTime:0.001340s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 18:15:27' )  [ RunTime:0.000763s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw8QLE6zLX2lyEr97NDdtjZc' ) LIMIT 1   [ RunTime:0.000335s ]
+
+[ 2015-12-22T18:15:29+08:00 ] 221.209.189.59 /index.php?g=App&m=Index&a=goods_detail&goods_id=22
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000581s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw8QLE6zLX2lyEr97NDdtjZc' ) LIMIT 1   [ RunTime:0.000686s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 12366 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 18:15:29' )  [ RunTime:0.000399s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 18:15:29' )  [ RunTime:0.000261s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+SQL: SELECT * FROM `wemall_good` WHERE ( `id` = 22 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.000496s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw8QLE6zLX2lyEr97NDdtjZc' ) LIMIT 1   [ RunTime:0.000286s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `member` = 1 ) AND ( `dummy` = 0 ) ORDER BY id desc LIMIT 0,15   [ RunTime:0.049288s ]
+SQL: SELECT * FROM `wemall_info` LIMIT 1   [ RunTime:0.000636s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: alipay D:\WWW\tianshi\Application\Runtime\Cache\App\ebfcaceb942e4af0f1588e21258e432b.php 第 159 行.
+NOTIC: [8] Undefined variable: etype D:\WWW\tianshi\Application\Runtime\Cache\App\ebfcaceb942e4af0f1588e21258e432b.php 第 276 行.
+NOTIC: [8] Undefined variable: etype D:\WWW\tianshi\Application\Runtime\Cache\App\ebfcaceb942e4af0f1588e21258e432b.php 第 340 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.036571s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.036668s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000564s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000425s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000413s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000499s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002110s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000576s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000650s ]
+
+[ 2015-12-22T18:15:29+08:00 ] 180.153.214.188 /index.php?g=App&m=Index&a=goods_detail&goods_id=22
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000565s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000675s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T18:15:29+08:00 ] 180.153.214.188 /index.php?g=App&m=Member&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000473s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000570s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.000998s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001081s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000333s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000789s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000353s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000425s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002158s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000583s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000658s ]
+
+[ 2015-12-22T18:33:32+08:00 ] 218.241.98.199 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000954s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001061s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T18:33:32+08:00 ] 218.241.98.199 /index.php?g=App&m=Member&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000469s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000558s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.001019s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001101s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000415s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000404s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000337s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000464s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001817s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000601s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000670s ]
+
+[ 2015-12-22T19:40:56+08:00 ] 183.60.243.240 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000768s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T19:40:58+08:00 ] 183.60.243.240 /index.php?g=App&m=Member&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000495s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000612s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.001460s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001557s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000498s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000468s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000408s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000532s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002103s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000712s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000787s ]
+
+[ 2015-12-22T20:15:57+08:00 ] 140.207.54.76 /index.php?g=Admin&m=Wechat&a=index&signature=baaa16d34cf5ee5338177fbfbb4fb337f74bbcbd&timestamp=1450786556&nonce=1084577250
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000683s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000823s ]
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.031838s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw_mDhugU116_inv4TAZnVyM' ) LIMIT 1   [ RunTime:0.019258s ]
+SQL: INSERT INTO `wemall_user` (`wx_info`,`uid`,`price`) VALUES ('{\"subscribe\":1,\"openid\":\"owzjOw_mDhugU116_inv4TAZnVyM\",\"nickname\":\"Mr.steven\",\"sex\":1,\"language\":\"zh_CN\",\"city\":\"\",\"province\":\"\\u5e7f\\u5c9b\",\"country\":\"\\u65e5\\u672c\",\"headimgurl\":\"http:\\/\\/wx.qlogo.cn\\/mmopen\\/skHLwueXDJ97mmDXYg4ticVdzyHibC8Qs2Y7OOVJAPhn1wZl16EvpIyx8snOMtzPXJMJiaEkzr0yu6GNibib3WASvyjDmNiaKMWm3R\\/0\",\"subscribe_time\":1450786555,\"remark\":\"\",\"groupid\":0}','owzjOw_mDhugU116_inv4TAZnVyM',2) [ RunTime:0.006092s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw_mDhugU116_inv4TAZnVyM' ) LIMIT 1   [ RunTime:0.000541s ]
+SQL: UPDATE `wemall_user` SET `wx_info`='{\"subscribe\":1,\"openid\":\"owzjOw_mDhugU116_inv4TAZnVyM\",\"nickname\":\"Mr.steven\",\"sex\":1,\"language\":\"zh_CN\",\"city\":\"\",\"province\":\"\\u5e7f\\u5c9b\",\"country\":\"\\u65e5\\u672c\",\"headimgurl\":\"http:\\/\\/wx.qlogo.cn\\/mmopen\\/skHLwueXDJ97mmDXYg4ticVdzyHibC8Qs2Y7OOVJAPhn1wZl16EvpIyx8snOMtzPXJMJiaEkzr0yu6GNibib3WASvyjDmNiaKMWm3R\\/0\",\"subscribe_time\":1450786555,\"remark\":\"\",\"groupid\":0}',`uid`='owzjOw_mDhugU116_inv4TAZnVyM',`price`=2 WHERE ( `id` = 12467 ) [ RunTime:0.000503s ]
+
+[ 2015-12-22T21:05:20+08:00 ] 140.207.54.77 /index.php?g=Admin&m=Wechat&a=index&signature=9823e6961b5cfe9ab5598e64c9922a6a2f51da7f&timestamp=1450789519&nonce=595546060
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000763s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000868s ]
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000675s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwysHdRbycGv1nZMDoJv4kXo' ) LIMIT 1   [ RunTime:0.000586s ]
+SQL: INSERT INTO `wemall_user` (`wx_info`,`uid`,`price`) VALUES ('{\"subscribe\":1,\"openid\":\"owzjOwysHdRbycGv1nZMDoJv4kXo\",\"nickname\":\"AA\\u4e3d\\u4e3d\",\"sex\":2,\"language\":\"zh_CN\",\"city\":\"\\u65b0\\u4e61\",\"province\":\"\\u6cb3\\u5357\",\"country\":\"\\u4e2d\\u56fd\",\"headimgurl\":\"http:\\/\\/wx.qlogo.cn\\/mmopen\\/Tqc9JOicq48oINicMcT8VLOmOY1br7eIrtXCz5ltZDDDFicURpcAFQ63aptia2kNfsuwGIhhq7EkeUEOTzVDmog1CfGLL6fEkTfE\\/0\",\"subscribe_time\":1450789519,\"remark\":\"\",\"groupid\":0}','owzjOwysHdRbycGv1nZMDoJv4kXo',2) [ RunTime:0.000690s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwysHdRbycGv1nZMDoJv4kXo' ) LIMIT 1   [ RunTime:0.000419s ]
+SQL: UPDATE `wemall_user` SET `wx_info`='{\"subscribe\":1,\"openid\":\"owzjOwysHdRbycGv1nZMDoJv4kXo\",\"nickname\":\"AA\\u4e3d\\u4e3d\",\"sex\":2,\"language\":\"zh_CN\",\"city\":\"\\u65b0\\u4e61\",\"province\":\"\\u6cb3\\u5357\",\"country\":\"\\u4e2d\\u56fd\",\"headimgurl\":\"http:\\/\\/wx.qlogo.cn\\/mmopen\\/Tqc9JOicq48oINicMcT8VLOmOY1br7eIrtXCz5ltZDDDFicURpcAFQ63aptia2kNfsuwGIhhq7EkeUEOTzVDmog1CfGLL6fEkTfE\\/0\",\"subscribe_time\":1450789519,\"remark\":\"\",\"groupid\":0}',`uid`='owzjOwysHdRbycGv1nZMDoJv4kXo',`price`=2 WHERE ( `id` = 12468 ) [ RunTime:0.000454s ]
+
+[ 2015-12-22T21:05:35+08:00 ] 140.207.54.76 /index.php?g=Admin&m=Wechat&a=index&signature=c89c48fa6c0bc9c60ea1c5fa911a86b90663e3d5&timestamp=1450789535&nonce=592378680
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000729s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000835s ]
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000361s ]
+
+[ 2015-12-22T21:05:35+08:00 ] 111.30.132.190 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000740s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000853s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T21:05:35+08:00 ] 111.161.57.49 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000701s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000799s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T21:05:37+08:00 ] 120.212.73.54 /index.php?g=App&m=Index&a=hufen&list=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000718s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000823s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000398s ]
+
+[ 2015-12-22T21:05:46+08:00 ] 120.212.73.54 /index.php?g=App&m=Index&a=hufen&list=1&code=011f71bf4a6b97f49525fd2ecb02cb09&state=
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000712s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000828s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000376s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwysHdRbycGv1nZMDoJv4kXo' ) LIMIT 1   [ RunTime:0.000532s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 12468 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 21:05:46' )  [ RunTime:0.028124s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 21:05:46' )  [ RunTime:0.031321s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+
+[ 2015-12-22T21:09:01+08:00 ] 120.212.73.54 /index.php?g=App&m=Index&a=member&refresh=1&etype=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000816s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000922s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000637s ]
+
+[ 2015-12-22T21:09:02+08:00 ] 120.212.73.54 /index.php?g=App&m=Index&a=member&refresh=1&etype=1&code=021e13828f07b80bf32b0a4895475ecx&state=
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000769s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000865s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000322s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwysHdRbycGv1nZMDoJv4kXo' ) LIMIT 1   [ RunTime:0.000544s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 12468 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 21:09:02' )  [ RunTime:0.000675s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 21:09:02' )  [ RunTime:0.000542s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+SQL: SELECT * FROM `wemall_info` LIMIT 1   [ RunTime:0.022128s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOwysHdRbycGv1nZMDoJv4kXo' ) LIMIT 1   [ RunTime:0.000428s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 12468 ) LIMIT 1   [ RunTime:0.000555s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 1 ) AND ( `level_id` = 12468 ) LIMIT 1   [ RunTime:0.000524s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 2 ) AND ( `level_id` = 12468 ) LIMIT 1   [ RunTime:0.000500s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_order_level` WHERE ( `status` = 3 ) AND ( `level_id` = 12468 ) LIMIT 1   [ RunTime:0.000511s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 0 ) AND ( `uid` = 12468 ) LIMIT 1   [ RunTime:0.013943s ]
+SQL: SELECT SUM(price) AS tp_sum FROM `wemall_tx_record` WHERE ( `status` = 1 ) AND ( `uid` = 12468 ) LIMIT 1   [ RunTime:0.000249s ]
+NOTIC: [8] Undefined variable: gebie D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 905 行.
+SQL: SELECT * FROM `wemall_tx_record` WHERE ( `uid` = 12468 )  [ RunTime:0.000240s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `level_id` = 12468 ) LIMIT 1   [ RunTime:0.000401s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `status` = 0 ) AND ( `level_id` = 12468 ) LIMIT 1   [ RunTime:0.000344s ]
+SQL: SELECT sum(`totalprice`) as total FROM `wemall_order_level` inner join `wemall_order` on `wemall_order_level`.`order_id` =  `wemall_order`.`orderid` where `level_id`=12468 [ RunTime:0.000493s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `id` = 0 ) LIMIT 1   [ RunTime:0.001514s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.004391s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004498s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000979s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000566s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000474s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000724s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002943s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000766s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000850s ]
+
+[ 2015-12-22T21:09:12+08:00 ] 120.212.73.54 /index.php?g=App&m=Index&a=jifen_info&type=1&id=12468
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000740s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000846s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: user D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 265 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `id` = 12468 ) LIMIT 1   [ RunTime:0.000485s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wemall_order_level` WHERE ( `level_id` = 12468 ) AND ( `status` = 3 ) LIMIT 1   [ RunTime:0.000423s ]
+NOTIC: [8] Undefined variable: Page D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 280 行.
+NOTIC: [8] Trying to get property of non-object D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 280 行.
+NOTIC: [8] Undefined variable: Page D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 280 行.
+NOTIC: [8] Trying to get property of non-object D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 280 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `id` = 12468 ) LIMIT ,   [ RunTime:0.000173s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+ [ SQL语句 ] : SELECT * FROM `wemall_user` WHERE ( `id` = 12468 ) LIMIT ,  
+SQL: SELECT `order_id`,`level_id`,`price`,`active_time` FROM `wemall_order_level` WHERE ( `level_id` = 12468 ) AND ( `status` = 3 ) ORDER BY active_time desc LIMIT 0,10   [ RunTime:0.000452s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 291 行.
+SQL: SELECT * FROM `wemall_info` LIMIT 1   [ RunTime:0.000361s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.033142s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.033276s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000584s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000606s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000464s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000602s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002461s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000748s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000823s ]
+
+[ 2015-12-22T21:10:56+08:00 ] 140.207.54.73 /index.php?g=Admin&m=Wechat&a=index&signature=b4af30702a2dac6480328a9a1dec716f1bec1d5a&timestamp=1450789856&nonce=1068493880
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000649s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000764s ]
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000345s ]
+
+[ 2015-12-22T21:10:58+08:00 ] 112.103.174.164 /index.php?g=App&m=Index&a=hufen&list=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000512s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000610s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000402s ]
+
+[ 2015-12-22T21:10:58+08:00 ] 112.103.174.164 /index.php?g=App&m=Index&a=hufen&list=1&code=0215c88c026f46f700e68f7c40218ede&state=
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000579s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000358s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw_wF2weg3t9rQls-OdO_Z-M' ) LIMIT 1   [ RunTime:0.000587s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 11687 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 21:10:58' )  [ RunTime:0.000439s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 21:10:58' )  [ RunTime:0.000278s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+
+[ 2015-12-22T21:11:04+08:00 ] 140.207.54.73 /index.php?g=Admin&m=Wechat&a=index&signature=701afb683f31041fa73b29b27ffa113f899f85c4&timestamp=1450789864&nonce=1205929803
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000653s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000803s ]
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000378s ]
+
+[ 2015-12-22T21:11:05+08:00 ] 42.103.57.37 /index.php?g=App&m=Index&a=hufen&list=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000547s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000654s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw_wF2weg3t9rQls-OdO_Z-M' ) LIMIT 1   [ RunTime:0.000462s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 11687 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 21:11:05' )  [ RunTime:0.000491s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 21:11:05' )  [ RunTime:0.000279s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+
+[ 2015-12-22T21:12:58+08:00 ] 140.207.54.75 /index.php?g=Admin&m=Wechat&a=index&signature=d5ef17fe6df64e4745fd12f39e7fc52adffd31a8&timestamp=1450789978&nonce=1970081912
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000663s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000763s ]
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000334s ]
+
+[ 2015-12-22T21:12:59+08:00 ] 123.165.83.33 /index.php?g=App&m=Index&a=hufen&list=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000472s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000574s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw_wF2weg3t9rQls-OdO_Z-M' ) LIMIT 1   [ RunTime:0.000450s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 11687 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 21:12:59' )  [ RunTime:0.000420s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 21:12:59' )  [ RunTime:0.000270s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+
+[ 2015-12-22T21:17:44+08:00 ] 140.207.54.75 /index.php?g=Admin&m=Wechat&a=index&signature=350d29e74908db72fd90e0448bd6986ae8e7f14e&timestamp=1450790264&nonce=710173384
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000669s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000793s ]
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000341s ]
+
+[ 2015-12-22T21:17:45+08:00 ] 101.226.33.224 /index.php?g=App&m=Index&a=hufen&list=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000575s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000688s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T21:17:45+08:00 ] 101.226.33.224 /index.php?g=App&m=Member&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000500s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000610s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.001182s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001266s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000459s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000445s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000409s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000478s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001990s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000634s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000715s ]
+
+[ 2015-12-22T21:17:45+08:00 ] 123.165.81.26 /index.php?g=App&m=Index&a=hufen&list=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000727s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000928s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000330s ]
+
+[ 2015-12-22T21:17:46+08:00 ] 123.165.83.50 /index.php?g=App&m=Index&a=hufen&list=1&code=0310099b233a0ce72c88bfe06cd3e33q&state=
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000480s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000586s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000382s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw_wF2weg3t9rQls-OdO_Z-M' ) LIMIT 1   [ RunTime:0.000525s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 11687 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 21:17:46' )  [ RunTime:0.000426s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 21:17:46' )  [ RunTime:0.000316s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+
+[ 2015-12-22T21:17:49+08:00 ] 101.226.66.21 /index.php?g=App&m=Index&a=hufen&list=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000657s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000761s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T21:17:49+08:00 ] 101.226.66.21 /index.php?g=App&m=Member&a=login
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000477s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000571s ]
+INFO: [ view_parse ] --START--
+INFO: ParseTemplate Behavior ::run [ RunTime:0.001027s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.001119s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000410s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000410s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000339s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000475s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001831s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000601s ]
+INFO: [ view_end ] --END-- [ RunTime:0.000682s ]
+
+[ 2015-12-22T21:17:54+08:00 ] 61.49.57.61 /
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000490s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000599s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+NOTIC: [8] Undefined index: uid D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 61 行.
+
+[ 2015-12-22T23:42:01+08:00 ] 140.207.54.75 /index.php?g=Admin&m=Wechat&a=index&signature=91b9c2be9702216fd5227d0f74b7ed1356e4cd6e&timestamp=1450798920&nonce=1126324392
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000658s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000757s ]
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000680s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw5K8smDymKeTwQRy3g29DgU' ) LIMIT 1   [ RunTime:0.000669s ]
+SQL: INSERT INTO `wemall_user` (`wx_info`,`uid`,`price`) VALUES ('{\"subscribe\":1,\"openid\":\"owzjOw5K8smDymKeTwQRy3g29DgU\",\"nickname\":\"A\\u0f24\\u0f7c\\u6f9c\\u5ead\\u96c6\\u0f04\\ud83c\\udfc6\\u5927\\u7fe0\\u513f\",\"sex\":2,\"language\":\"zh_CN\",\"city\":\"\\u6cf0\\u5b89\",\"province\":\"\\u5c71\\u4e1c\",\"country\":\"\\u4e2d\\u56fd\",\"headimgurl\":\"http:\\/\\/wx.qlogo.cn\\/mmopen\\/skHLwueXDJic2FlrVOyEEVicSkgLpqwUkQdMBf5Thcb8wESZ1kOtFUN2rxsooQ3lHXjzKyDXDN7fMPcbaXiaz6Y7335uojkblJK\\/0\",\"subscribe_time\":1450798920,\"remark\":\"\",\"groupid\":0}','owzjOw5K8smDymKeTwQRy3g29DgU',2) [ RunTime:0.000899s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw5K8smDymKeTwQRy3g29DgU' ) LIMIT 1   [ RunTime:0.000445s ]
+SQL: UPDATE `wemall_user` SET `wx_info`='{\"subscribe\":1,\"openid\":\"owzjOw5K8smDymKeTwQRy3g29DgU\",\"nickname\":\"A\\u0f24\\u0f7c\\u6f9c\\u5ead\\u96c6\\u0f04\\ud83c\\udfc6\\u5927\\u7fe0\\u513f\",\"sex\":2,\"language\":\"zh_CN\",\"city\":\"\\u6cf0\\u5b89\",\"province\":\"\\u5c71\\u4e1c\",\"country\":\"\\u4e2d\\u56fd\",\"headimgurl\":\"http:\\/\\/wx.qlogo.cn\\/mmopen\\/skHLwueXDJic2FlrVOyEEVicSkgLpqwUkQdMBf5Thcb8wESZ1kOtFUN2rxsooQ3lHXjzKyDXDN7fMPcbaXiaz6Y7335uojkblJK\\/0\",\"subscribe_time\":1450798920,\"remark\":\"\",\"groupid\":0}',`uid`='owzjOw5K8smDymKeTwQRy3g29DgU',`price`=2 WHERE ( `id` = 12469 ) [ RunTime:0.000460s ]
+
+[ 2015-12-22T23:42:06+08:00 ] 140.207.54.75 /index.php?g=Admin&m=Wechat&a=index&signature=3ecabac1750d9133ce803020d6926e0988dd8125&timestamp=1450798926&nonce=1786276760
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000508s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000607s ]
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000426s ]
+
+[ 2015-12-22T23:42:06+08:00 ] 39.85.88.83 /index.php?g=App&m=Index&a=yunorder
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000694s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000810s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000343s ]
+
+[ 2015-12-22T23:42:07+08:00 ] 39.85.88.83 /index.php?g=App&m=Index&a=yunorder&code=041462dbb67ab7cf1cd04e83f966eedg&state=
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000694s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000895s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000355s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw5K8smDymKeTwQRy3g29DgU' ) LIMIT 1   [ RunTime:0.001421s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 12469 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 23:42:07' )  [ RunTime:0.000984s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 23:42:07' )  [ RunTime:0.000521s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw5K8smDymKeTwQRy3g29DgU' ) LIMIT 1   [ RunTime:0.000279s ]
+
+[ 2015-12-22T23:42:11+08:00 ] 39.85.88.83 /index.php?g=App&m=Index&a=goods_detail&goods_id=22
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000515s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000643s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw5K8smDymKeTwQRy3g29DgU' ) LIMIT 1   [ RunTime:0.000550s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 12469 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 23:42:11' )  [ RunTime:0.000412s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 23:42:11' )  [ RunTime:0.000264s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+SQL: SELECT * FROM `wemall_good` WHERE ( `id` = 22 ) AND ( `status` = 1 ) LIMIT 1   [ RunTime:0.034058s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw5K8smDymKeTwQRy3g29DgU' ) LIMIT 1   [ RunTime:0.000298s ]
+SQL: SELECT * FROM `wemall_user` WHERE ( `member` = 1 ) AND ( `dummy` = 0 ) ORDER BY id desc LIMIT 0,15   [ RunTime:0.003047s ]
+SQL: SELECT * FROM `wemall_info` LIMIT 1   [ RunTime:0.000502s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Undefined variable: alipay D:\WWW\tianshi\Application\Runtime\Cache\App\ebfcaceb942e4af0f1588e21258e432b.php 第 159 行.
+NOTIC: [8] Undefined variable: etype D:\WWW\tianshi\Application\Runtime\Cache\App\ebfcaceb942e4af0f1588e21258e432b.php 第 276 行.
+NOTIC: [8] Undefined variable: etype D:\WWW\tianshi\Application\Runtime\Cache\App\ebfcaceb942e4af0f1588e21258e432b.php 第 340 行.
+INFO: ParseTemplate Behavior ::run [ RunTime:0.002219s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002345s ]
+INFO: [ view_filter ] --START--
+INFO: ContentReplace Behavior ::run [ RunTime:0.000907s ]
+INFO: TokenBuild Behavior ::run [ RunTime:0.000719s ]
+INFO: WriteHtmlCache Behavior ::run [ RunTime:0.000729s ]
+INFO: ShowRuntime Behavior ::run [ RunTime:0.000876s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.003559s ]
+INFO: [ view_end ] --START--
+INFO: ShowPageTrace Behavior ::run [ RunTime:0.000923s ]
+INFO: [ view_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-12-22T23:42:15+08:00 ] 39.85.88.83 /index.php?g=App&m=Index&a=hufen&list=1
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.001028s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001287s ]
+NOTIC: [8] Undefined index: debug D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 5 行.
+SQL: SELECT * FROM `wemall_user` WHERE ( `uid` = 'owzjOw5K8smDymKeTwQRy3g29DgU' ) LIMIT 1   [ RunTime:0.000570s ]
+SQL: SELECT * FROM `wemall_order_level` WHERE ( `level_id` = 12469 ) AND ( `status` = 2 ) AND ( `active_time` <= '2015-12-22 23:42:15' )  [ RunTime:0.000466s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 102 行.
+SQL: SELECT * FROM `wemall_order` WHERE ( `order_status` = 1 ) AND ( `pay_status` = 1 ) AND ( `time` <= '2015-12-21 23:42:15' )  [ RunTime:0.000309s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\WWW\tianshi\Application\Lib\Action\App\IndexAction.class.php 第 134 行.
+
+[ 2015-12-22T23:42:15+08:00 ] 140.207.54.75 /index.php?g=Admin&m=Wechat&a=index&signature=41d956cf2098029a658dc86a0a1ad0258565dc0f&timestamp=1450798935&nonce=856640684
+INFO: [ app_begin ] --START--
+INFO: ReadHtmlCache Behavior ::run [ RunTime:0.000673s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000792s ]
+SQL: SELECT * FROM `wemall_wxconfig` WHERE ( `id` = 1 ) LIMIT 1   [ RunTime:0.000429s ]
+

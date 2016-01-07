@@ -1,0 +1,87 @@
+<include file="Public:header"/>
+<div class="col-sm-12 widget-container-span">
+	<div class="widget-box transparent">
+		<div class="widget-body">
+			<div class="widget-main padding-12 no-padding-left no-padding-right">
+				<div class="tab-content padding-4">
+					<div id="home1" class="tab-pane in active">
+						<div class="row">
+							<div class="col-xs-12 no-padding-right">
+								<div class="table-responsive">
+									<table id="sample-table-1"
+										class="table table-striped table-bordered table-hover">
+										<thead>
+											<tr>
+												<th class="center"><label> <input
+														type="checkbox" class="ace"> <span class="lbl"></span>
+												</label></th>
+												<th>ID</th>
+												<th>微信昵称</th>
+												<th>微信头像</th>
+												<th>性别</th>
+												<th>所在地</th>
+												<th>操作</th>
+											</tr>
+										</thead>
+
+										<tbody>
+										<volist name="result" id="result">
+											<tr>
+												<td class="center"><label> <input
+														type="checkbox" class="ace"> <span class="lbl"></span>
+												</label></td>
+												
+												<td >{$result.id}</td>
+												
+												<td>{$result.nickname}</td>
+												<php>
+												$img = !empty($result['headimgurl']) ? 'http://'.$_SERVER['HTTP_HOST'].'/Public/Uploads/'.$result['headimgurl']:'./Application/Tpl/App/default/Public/Static/images/defult.jpg';
+												echo "<td><img src='".$img."' width='40px;' height='40px;'></td>";
+												</php>
+												<td><if condition="$result['sex'] eq 1">男<elseif condition="$result['sex'] eq 2" />女<elseif condition="$result['sex'] eq 0" />保密</if></td>
+												<td>{$result.country}{$result.province}{$result.city}</td>
+												<td><a href="index.php?g=Admin&m=User&a=insertuser&id={$result.id}&l_id={$l_id}" class="btn btn-white btn-sm">选中</a></td>
+											</tr>
+											
+										</volist>
+										</tbody>
+									</table>
+									<div class="pagination" style="margin:0px;">
+									    {$page}<input type=text id='goto' style="width:40px;border:1px solid #ccc;margin:3px;" /><input type=button id="goto_button" value="转到" />
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript">
+			function addSubmenu(o) {
+				var subid = $(o).parent().prev().prev().html();
+				$('select[name="parent"]').val(subid);
+				$('input[name="addmenu"]').val('0');
+				$('input[name="name"]').val('');
+				
+				$('#myTab li').eq(1).find('a').click();
+			}
+			function reSubmenu(o){
+				var name = $(o).parent().prev().html().replace(/&nbsp;/g,'').replace('├─','');
+				var pid = $(o).parent().prev().prev().attr('parent');
+				var subid = $(o).parent().prev().prev().html();
+				$('select[name="parent"]').val(pid);
+				$('input[name="name"]').val(name);
+				$('input[name="addmenu"]').val(subid);
+				$('#myTab li').eq(1).find('a').click();
+			}
+			$(function(){
+				$("#goto_button").click(function(){
+					if($("#goto").val())
+					location='index.php?g=Admin&m=User&a=adduser&p=' + $("#goto").val();
+				})
+			})
+		</script>
+	</div>
+</div>

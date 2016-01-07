@@ -1,0 +1,98 @@
+<include file="Public:header"/>
+<div class="col-sm-12 widget-container-span">
+	<div class="widget-box transparent">
+		<div class="widget-body">
+			<div class="widget-main padding-12 no-padding-left no-padding-right">
+				<div class="tab-content padding-4">
+					<div id="home1" class="tab-pane in active">
+                        <!--内容-->
+						<form class="form-horizontal J_ajaxForm" enctype="multipart/form-data" id="myform" action="{:U('Admin/User/insertuser')}" method="post">
+							<div class="tabbable">
+								<div class="tab-content">
+									<div class="tab-pane active">
+										<table cellpadding="2" cellspacing="2" width="100%">
+											<tbody>
+											
+												<tr>
+													<td>微信名:</td>
+													<td><input type="text" class="input" name="nickname" value="" id="name" ></td>
+												</tr>
+												<tr>
+													<td>头像:</td>
+													<td><input multiple="multiple" type="file" name="headimgurl">
+													<p class="help-block">允许的附件文件类型: jpg,gif,png,jpeg并且图片大小小于200k.</p></td>
+												</tr>
+                                                <tr>
+                                                	<td>城市</td>
+                                                    <td>
+                                                    <div class="field" id="set_city">
+                                                    	<select name="country"><option value="中国">中国</option></select>
+                                                    	<select class="prov" name="province" ></select>
+                                                    	<select class="city" name="city" ></select>
+                                                    </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+													<td>性别:</td>
+													<td>
+                                                    	<select name="sex">
+                                                        <option value="0" >保密</option>
+                                                    	<option value="1" >男</option>
+                                                        <option value="2" >女</option>
+                                                        </select>
+                                                    </td>
+												</tr>
+                                                
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+							<div class="form-actions">
+							<input type="hidden" class="input" name="l_id" value="{$l_id}" >
+                            <!--<input type="hidden" class="input" name="l_b" value="{$l_b}" >
+                            <input type="hidden" class="input" name="l_c" value="{$l_c}" >
+                            <input type="hidden" class="input" name="add" value="{$add}" >-->
+                            
+                            <button class="btn btn-primary btn_submit J_ajax_submit_btn" type="submit">提交</button><a class="btn" href="">返回</a>
+							</div>
+						</form>
+						<!--内容-->
+					</div>
+
+				</div>
+			</div>
+		</div>
+<script type="text/javascript" src="__PUBLIC__/Plugin/style/js/jquery.cityselect.js?0709"></script>
+<script type="text/javascript">
+var myprovince='' ; 
+var mycity='' ;
+$(function(){ 
+	$("#set_city").citySelect({ 
+		prov:myprovince,  
+		city:mycity 
+	});	
+}); 
+</script>		
+		<script type="text/javascript">
+			function addSubmenu(o) {
+				var subid = $(o).parent().prev().prev().html();
+				$('select[name="parent"]').val(subid);
+				$('input[name="addmenu"]').val('0');
+				$('input[name="name"]').val('');
+				
+				$('#myTab li').eq(1).find('a').click();
+			}
+			function reSubmenu(o){
+				var name = $(o).parent().prev().html().replace(/&nbsp;/g,'').replace('├─','');
+				var pid = $(o).parent().prev().prev().attr('parent');
+				var subid = $(o).parent().prev().prev().html();
+				$('select[name="parent"]').val(pid);
+				$('input[name="name"]').val(name);
+				$('input[name="addmenu"]').val(subid);
+				$('#myTab li').eq(1).find('a').click();
+			}
+		
+		</script>
+	</div>
+</div>

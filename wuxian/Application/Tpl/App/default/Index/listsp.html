@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>超级无限人脉</title>
+    <link href="../Public/Static/css/base.css" type="text/css" rel="stylesheet">
+    <link href="../Public/Static/css/index.css" type="text/css" rel="stylesheet">
+    <link href="../Public/Static/css/search_result.css" type="text/css" rel="stylesheet">
+    <link href="../Public/Static/css/itemListTemplate.css" type="text/css" rel="stylesheet">
+<!-- tianshi.lomedia.com.cn Baidu tongji analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+var hm = document.createElement("script");
+hm.src = "//hm.baidu.com/hm.js?d4254b715086304dcf37fab38e56efba";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+
+<body>
+    <header id="common_hd" class="c_txt rel ellipsis_common_hd">
+        <a style="display: block;" href="index.php?g=App&m=Index&a=fenlei" id="hd_back" class="abs comm_p8 hide">返回</a>
+        <h1 class="hd_tle bold" id="item_classes_des">微商圈商城中心</h1>
+        <a href="index.php?g=App&m=Index&a=index_info" style="display: block;" id="hd_enterShop" class="hide abs">
+            <span id="hd_enterShop_img" class="abs"><!--<img style="display: block;" class="block" src="%E5%BE%AE%E5%BA%97_files/vshop326928912-1429226459.jpg" height="32" width="32">--></span></a>
+    </header>
+    <div style="display: none;" id="index_loading" class="loading">&nbsp;</div>
+    <section id="search-content">
+        <div style="display: block;" class="i_wrap margin_auto rel hide" id="item_classes_list_wrap">
+            <ul class="i_ul rel" id="hot_ul">
+                <php>
+                    foreach($goods as $a) { echo '
+                    <li class="i_li left">
+                        <a href="index.php?g=App&m=Index&a=index_info&id='.$a['id'].'"><img src="__PUBLIC__/Uploads/'.$a['image'].'">
+                            <div class="i_li_img_div abs wrap">
+                                <div class="i_li_img_div_inner"><span class="sellerOut"><!--<img src="%E5%BE%AE%E5%BA%97_files/vshop326928912-142948527484-2476610.png">--></span></div>
+                            </div>
+                            <p class="i_txt">产品名称：'.$a['name'].'</p>
+                            <p class="i_pri_wrap">&nbsp;&nbsp;产品单价：<span class="i_pri">¥'.$a['price'].'元</span></p>
+                        </a>
+                    </li>'; }
+                </php>
+            </ul>
+            <div class="clear"></div>
+        </div>
+    </section>
+    <p id="scroll_loading_txt" class="loading hide">&nbsp;</p>
+    <div id="item_empty" class="hide c_txt">对不起，该分类下暂无商品</div>
+   <script src="../Public/Static/js/itemListTemplate.js"></script>
+    <script src="../Public/Static/js/piwik.js" async="" defer="defer" type="text/javascript"></script>
+    
+
+</body>
+
+</html>

@@ -1,0 +1,1 @@
+"D:\phpStudy\php53\php.exe" -f "D:\sever\tianshiweishang\test.php"

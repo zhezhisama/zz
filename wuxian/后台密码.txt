@@ -1,0 +1,10 @@
+
+
+
+后台地址
+http://你的域名/index.php?g=Admin&m=Index&a=index
+账号密码： admin   admin999
+
+
+后台刷粉管理
+账号密码：  admin    admin000

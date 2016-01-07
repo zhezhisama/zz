@@ -1,0 +1,265 @@
+<?php if (!defined('THINK_PATH')) exit();?><html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>超级无限人脉</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="../Public/Static/css/foods.css?444" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="../Public/Static/js/jquery.min.js"></script>
+<script type="text/javascript" src="../Public/Static/js/wemall.js"></script>
+<script type="text/javascript" src="../Public/Static/js/alert.js"></script>
+<script type="text/javascript">
+var appurl = '__APP__';
+var rooturl = '__ROOT__';
+
+</script>
+<style>
+
+.pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px
+}
+
+.pagination > li {
+    display: inline
+}
+
+.pagination > li > a, .pagination > li > span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.428571429;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd
+}
+
+.pagination > li:first-child > a, .pagination > li:first-child > span {
+    margin-left: 0;
+    border-bottom-left-radius: 4px;
+    border-top-left-radius: 4px
+}
+
+.pagination > li:last-child > a, .pagination > li:last-child > span {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px
+}
+
+.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus {
+    background-color: #eee
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+    z-index: 2;
+    color: #fff;
+    cursor: default;
+    background-color: #428bca;
+    border-color: #428bca
+}
+
+.pagination > .disabled > span, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus {
+    color: #999;
+    cursor: not-allowed;
+    background-color: #fff;
+    border-color: #ddd
+}
+
+.pagination-lg > li > a, .pagination-lg > li > span {
+    padding: 10px 16px;
+    font-size: 18px
+}
+
+.pagination-lg > li:first-child > a, .pagination-lg > li:first-child > span {
+    border-bottom-left-radius: 6px;
+    border-top-left-radius: 6px
+}
+
+.pagination-lg > li:last-child > a, .pagination-lg > li:last-child > span {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px
+}
+
+.pagination-sm > li > a, .pagination-sm > li > span {
+    padding: 5px 10px;
+    font-size: 12px
+}
+
+.pagination-sm > li:first-child > a, .pagination-sm > li:first-child > span {
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px
+}
+
+.pagination-sm > li:last-child > a, .pagination-sm > li:last-child > span {
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px
+}
+
+.pager {
+    padding-left: 0;
+    margin: 20px 0;
+    text-align: center;
+    list-style: none
+}
+
+.pager:before, .pager:after {
+    display: table;
+    content: " "
+}
+
+.pager:after {
+    clear: both
+}
+
+.pager:before, .pager:after {
+    display: table;
+    content: " "
+}
+
+.pager:after {
+    clear: both
+}
+
+.pager li {
+    display: inline
+}
+
+.pager li > a, .pager li > span {
+    display: inline-block;
+    padding: 5px 14px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px
+}
+
+.pager li > a:hover, .pager li > a:focus {
+    text-decoration: none;
+    background-color: #eee
+}
+
+.pager .next > a, .pager .next > span {
+    float: right
+}
+
+.pager .previous > a, .pager .previous > span {
+    float: left
+}
+
+.pager .disabled > a, .pager .disabled > a:hover, .pager .disabled > a:focus, .pager .disabled > span {
+    color: #999;
+    cursor: not-allowed;
+    background-color: #fff
+}
+
+</style>
+<!-- tianshi.lomedia.com.cn Baidu tongji analytics -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+var hm = document.createElement("script");
+hm.src = "//hm.baidu.com/hm.js?d4254b715086304dcf37fab38e56efba";
+var s = document.getElementsByTagName("script")[0];
+s.parentNode.insertBefore(hm, s);
+})();
+</script>
+</head>
+<body class="sanckbg mode_webapp">
+
+	<div id="member-container" style="display: block;">
+		
+		<div class="div_header">
+        	<div style="height:8px;"></div>
+			<span style='float:left;margin-left:10px;margin-right:10px;'>
+				<?php $wx_info = json_decode($users['wx_info'],true); $img = !empty($wx_info['headimgurl'])?$wx_info['headimgurl']:'../Public/Static/images/defult.jpg'; echo "<img src='".$img."' width='70px;' height='70px;' style='border-radius:50%; border:5px solid rgba(255,255,255,.6)'>"; ?>
+			</span>
+			<span class="header_right">
+            	<div style="height:10px;"></div>
+				<div class="header_l_di"><span  style=" color:#fff !important; font-size:14px; margin-top:10px;">昵称：<?php echo $wx_info['nickname']; ?></span>&nbsp;&nbsp;</div>
+				<div style="display:none;"><span>会员：<?php if($users["member"] == 1): ?>是<?php else: ?>否(<a style='color:red' href='./index.php?g=App&m=Index&a=index'>点击链接成为会员</a>)<?php endif; ?></span></div>
+				<div><span  style=" color:#fff !important; font-size:14px; margin-top:10px;">关注时间：<?php echo date('Y-m-d',$wx_info['subscribe_time']); ?></span></div>
+				<div style="display:none;"><span>会员ID：<?php echo ($users["id"]); ?>  <?php if($users["member"] == 1): if(isset($dongjia_time) && !empty($dongjia_time)){echo "<span>会员剩余时间:$dongjia_time天</span>";} endif; ?></span></div>
+			</span>
+		</div>
+		
+		<div class="div_table" style='background-color:#e61945;height:20px;padding:10px; color:#fff; text-align:center;'>
+			<?php echo ($count_desc); ?>
+		</div>
+		
+		<div style="text-align:center; margin:5 auto; display: none;">
+			<span ><input style="width:60%;border: 1px solid #D00A0A;height: 40px; padding-left:15px;"  id="name" name="name" placeholder="请输入会员ID" value="" type="text" ></span>
+			<span><input style="width:20%;margin-left:10px;border: 1px solid #D00A0A;height: 40px;" type='button' onclick='search_user();' value='搜索'></span>
+		</div>
+		
+		<div class="cardexplain">
+			<ul class="round_user">
+				<?php if(is_array($jifenresult)): $i = 0; $__LIST__ = $jifenresult;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$jifenresult): $mod = ($i % 2 );++$i;?><li>
+						<div style="">
+							<span style='float:left;margin-left:10px;margin-right:10px;margin-top:5px;'>
+							<?php $wx_info = json_decode($jifenresult['wx_info'],true); $img = !empty($wx_info['headimgurl'])?$wx_info['headimgurl']:'../Public/Static/images/defult.jpg'; echo "<img src='".$img."' width='40px;' height='40px;'>"; ?>
+							</span>
+							<span class="header_right" style="margin-top:5px;">
+								<div class="header_l_di"><span>昵称：<?php echo $wx_info['nickname']; ?></span></div>
+								<div><span>获得积分数量:<?php echo $jifenresult['price']; ?></span></div>
+								<div><span>关注时间：<?php echo date('Y-m-d',$wx_info['subscribe_time']); ?></span>&nbsp;&nbsp;<span>会员ID：<?php echo ($jifenresult["user_id"]); ?>  </span></div>
+							</span>
+						</div>
+					</li><?php endforeach; endif; else: echo "" ;endif; ?>
+			</ul>
+		</div>
+        <div class="pagination" style="margin:0 auto; width: 80%;">
+		<?php echo ($page); ?>
+		</div>
+	</div>
+	
+    
+    	<div class="footermenu"><!--./index.php?g=App&m=Index&a=index-->
+		<ul>
+			<li ><a href="/index.php?g=App&m=Index&a=member&etype=1"> <img src="../Public/Static/images/21.png">
+					<p>首  页</p>
+			</a></li>
+			<li><a href="/index.php?g=App&m=Index&a=yunorder"> <img src="../Public/Static/images/22.png">
+					<p>微商云订单</p>
+			</a></li>
+			<li id="member" style=" position:relative;"><a href="javascript:void(0)"><img src="../Public/Static/images/23.png">
+					<p>客  服</p>
+                    <img class="fefu_img" style="  position: absolute; bottom: 51px; width: 200%; height: auto; display:none; left: -50%;" src="../Public/Static/images/kefu.jpg" />
+			</a></li>
+			<li><a href="/index.php?g=App&m=Index&a=member&etype=3"> <img src="../Public/Static/images/24.png">
+					<p>我的二维码</p>
+			</a></li>
+		</ul>
+	</div>
+    
+    
+             <div class="imgshow">
+				<span class="close"><a href="javascript:;" class="closebtn"><img src="../Public/Static/images/closebtn.png"></a></span>
+				<img src="../Public/Static/images/kefu.jpg" id="showimg" style="box-shadow: 0px 0px 3px #fff" ;="">
+				<div class="fontcss">
+					<font style="color:#ea222e;margin-top: 3px;">1、长按识别二维码<br>2、添加时请注明来自：<b>人脉</b></font>
+				</div>
+		</div>
+    
+    
+	<script>
+	
+	function search_user()
+	{
+			var user = $('#name').val();
+			location.href='./index.php?g=App&m=Index&a=member_info&type='+$_GET['type']+'&id='+$_GET['id']+'&user='+user;
+	}
+
+	$(function(){
+		$("#member").click(function(){
+		$(".imgshow").toggle();
+		});
+		
+		$(".closebtn").click(function(){
+			$(".imgshow").toggle();
+		});
+	})
+	</script>
+	
+	
+</body>
+</html>
