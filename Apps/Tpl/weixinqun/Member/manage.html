@@ -1,0 +1,95 @@
+<include file="Member:header1" />
+  <!-- 内容 START -->
+  
+  
+    <div class="center-content mt20">
+      <div class="wrap w1200">
+        <include file="Member:left" />
+        
+          <div class="centerContent ml10">
+                <div class="centerTitle">
+                    <span class="centerICON icon_6">
+                    </span>
+                    <h2>
+                       <switch name="publish_type_status" >
+                          <case value="44" break="1">已发布的微信群</case>
+                          <case value="48" break="1">已发布的个人微信</case>
+                          <case value="47" break="1">已发布的公众号</case>
+                          <case value="1" break="1">已发布的货源</case>
+                        </switch>
+                    </h2>
+                </div>
+                <div class="centerDisArea">
+          
+          
+          
+            <table align="center" border="1" bordercolor="#e3e7ea" width="90%">
+              <tbody>
+                <tr>
+                  <td align="center" height="40" valign="middle" width="10%">ID{$total}</td>
+                  <td align="center" height="40" valign="middle" width="25%">标题</td>
+                  <td align="center" height="40" valign="middle" width="15%">栏目</td>
+                  <th align="center" height="40" valign="middle" width="15%">状态</th>
+                  <td align="center" height="40" valign="middle" width="15%">添加时间</td>
+                  <td align="center" height="40" valign="middle" width="20%">操作</td>
+                </tr>
+                <volist name="list" id="vo">
+                  <tr>
+                    <td align="center" height="40" valign="middle">{$vo.id}</td>
+                    <td align="center" height="40" valign="middle">
+                        <if condition="$vo.status eq 1">
+                           <a href="{:U('Weixin/show',array('id'=>$vo['id']))}" target='_blank'>{$vo.title}</a>
+                        <else />
+                            {$vo.title}
+                        </if>
+                        
+                    </td>
+                    <td align="center" height="40" valign="middle">{$vo.catid|getCategoryName}</td>
+                    <td align="center" height="40" valign="middle">
+                        <if condition="$vo.status eq 1">
+                            已审核
+                        <elseif condition="$vo.status eq 2" />
+                            待审核
+                        <elseif condition="$vo.status eq 0" />
+                            已禁用
+                        <else />
+                            未通过
+                        </if>
+                    </td>
+                    <td align="center" height="40" valign="middle">{$vo.create_time|toDate='Y-m-d H:i'}</td>
+                    <td align="center" height="40" valign="middle">
+                        <span class="qwstr" <if condition="$vo['status'] eq 1">onclick="qwbox('{$vo.id}','{$vo.publish_type_id}')" title="打开抢位窗"<else />onclick="alert('未审核不能抢位')" title="未审核不能抢位"</if>>抢位</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{:U('Member/edit',array('id'=>$vo['id']))}">修改</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:;" onclick="foreverdel({:U('Member/delete',array('id'=>$vo['id']))});">删除</a>
+                    </td>
+                  </tr>
+                </volist>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 内容 END -->
+    <div id="light">
+      <iframe marginheight="0" marginwidth="0" scrolling="no" id="iframepage" name="iframepage" frameborder="0" height="250" width="600"></iframe>
+    </div>
+    <div id="sl_box"></div>
+    <script>
+      var obj = $('#light');
+      var objbg = $('#sl_box');
+      var objiframe=$('#iframepage');
+      objbg.click(function(){close()});
+      function qwbox(id,tid)
+      {
+          obj.show();
+          objbg.show();
+		  var Furl = "/member-showQw-id-"+id+"-tid-"+tid+".html";
+          objiframe.attr('src',Furl);
+      }
+      function close()
+      {
+          obj.hide();
+          objbg.hide();
+          objiframe.attr('src','');
+      }
+    </script>
+<include file="Member:footer" />    

@@ -1,0 +1,169 @@
+﻿<include file="Public:header1" />
+<link href="__PUBLIC__/css/common.css" rel="stylesheet" type="text/css">
+<!-- 头部 END -->
+<style type="text/css">
+<!--
+.STYLE1 {color: #FF0000}
+-->
+</style>
+<div class="hy mt5 clear">
+  <div class="w1000 wrap">
+    <div class="c-content command">
+      <div class="c-top">
+        <p>
+          我的位置：<a href="index.php">首页</a> &gt; <span class="b_nav"><volist name="position" id="vo"> <a href="{:U('Weixin/index',array('id'=>$vo['id']))}">{$vo.catname}</a> &gt; </volist>
+        </p>
+      </div>
+      <div class="c-left fLeft">
+        <div class="box1">
+          
+          <div class="fLeft b1">
+            <p>
+                <img src="<empty name='data.qrcode'>../Public/images/nopic.gif<else />
+                <if condition="$data.tupian eq '1'" >{$data.qrcode}<else />__ROOT__/Uploads{$data.qrcode}</if>
+                </empty>" alt="{$data.pubaccount}" width="250" /> 
+                           </p>
+            <p class="flip">
+	    <notempty name='prevdata.id'>
+              <a class="fixed-btn" rel="prev" href="{:U('Weixin/show',array('id'=>$prevdata['id']))}" title="{$prevdata.pubaccount}"><i class="pre"></i>上一篇</a>
+	    </notempty>
+	    <notempty name='nextdata.id'>
+              <a class="fixed-btn" rel="next" href="{:U('Weixin/show',array('id'=>$nextdata['id']))}" title="{$nextdata.pubaccount}"><i class="next"></i>下一篇</a>
+	    </notempty>
+            </p>
+          </div>
+          <div class="fRight b2">
+          	<h4>{$data.pubaccount}</h4>
+            <p><strong>微信号：</strong><span style="color:#318000;">{$data.wxaccount}</span><span style="margin-left:40px;color:#f00;">(群满员可加群主)</span></p>
+            <p><strong>QQ号：</strong>{$data.qq}</p>
+            <p><strong>关注度：</strong><span class="STYLE1">{$data.hits}人关注</span></p>
+            <p><strong>评价度：</strong><img alt="星级" src="http://weixinqun.xiaoxiaowu.info/Apps/Tpl/weixinqun/Public/images/xx5.jpg" /></p>
+            <p>
+              <strong>地区：</strong><a href="" title="{$data.province|getAreasName}"><b>{$data.province|getAreasName}</b></a>/<a href="" title="{$data.city|getAreasName}"><b>{$data.city|getAreasName}</b></a>            </p>
+            <p>
+              <strong>发布时间：</strong>{$data.create_time|toDate='Y-m-d'}            </p>
+            <p><strong>简介：</strong>{$data.content|strip_tags|msubstr=0,40} </p>
+            <br>
+            <div>
+             <!-- <div class="gb">
+                <span class="zan" onclick="xh(this,{$data['id']},'xh')">
+                  <em class="txt_num" id="znum9537" znum="{$data.xh}">
+				  {$data.xh}</em>
+                </span>
+                <span class="cai" onclick="xh(this,{$data['id']},'nxh')">
+                  <em class="txt_num" id="cnum9537" cnum="{$data.nxh}">{$data.nxh}
+                  </em>
+                </span>              </div>-->
+            </div>
+            <br>
+            <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"></div>
+          </div>
+        </div>
+        <div class="box2">
+          <h4>你可能对下面的微信群也感兴趣</h4>
+          <ul>
+            <yufu:weixin catid="'.$data['catid'].'" order="rand()" num="15">
+            <li>
+              <a href="{:U('Weixin/show',array('id'=>$weixin['id']))}" title="{$weixin.pubaccount}" target='_blank'>
+                <img src="<empty name='weixin.logo'><empty name='weixin.weblogo'>../Public/images/nopic.gif<else />{$weixin.weblogo}</empty><else />
+                <if condition="$weixin.tupian eq '1'" >{$weixin.qrcode}<else />__ROOT__/Uploads{$weixin.qrcode}</if>
+                </empty>" width="80" height="80">
+              </a>
+              <p><a href="{:U('Weixin/show',array('id'=>$weixin['id']))}" title="{$weixin.pubaccount}" target='_blank' style=" height: 30px; line-height: 30px;">{$weixin.pubaccount|msubstr=0,5}</a></p>
+            </li>
+            </yufu:weixin>
+          </ul>
+        </div>
+       <div class="comment" style="display:none;">
+        <if condition="$data['iscomment'] eq 1">
+          <eq name="iscomment" value="1">
+            <eq name="commenttype" value="2">
+              <div class="comment">
+                <yufu:other settag="duoshuo" />
+              </div>
+            </eq>
+            <eq name="commenttype" value="1">
+              <?php $url=U('Weixin/addcomment');?>
+              <include file="Public:comment" /> </eq>
+          </eq>
+        </if>
+      </div>
+       
+      </div>
+      <include file="Public:right_block" />
+    </div>
+  </div>
+</div>
+<script>
+function praise(id,tid,ztype){
+    var urls="/user-praise.html";
+    var zid="#znum"+id;
+    var cid="#cnum"+id;
+    var znum=parseInt($(zid).attr('znum'));
+    var cnum=parseInt($(cid).attr('cnum'));
+    $.ajax({type: "post",dataType: "json",url: urls,data: "json=1&id="+id+"&cid="+tid+"&ztype="+ztype,success: function(result){if(result.type){if(ztype==1){znum=znum+1;$(zid).attr('znum',znum);$(zid).html(znum);}else{cnum=cnum-1;$(cid).attr('cnum',cnum);$(cid).html(cnum);}alert(result.msg);}else{alert(result.msg);}}});
+}
+</script>
+
+<script type="text/javascript">    $(function(){
+        $('#pubaccount').click(function(){
+            alert('a');
+            copyToClipBoard("aaaaaaaaaaaaaaa");
+        })
+        
+    })
+    function xh(cur,id,type){
+       $.get("{:U('Weixin/xh')}",{id:id,type:type},function(data){
+            if(data.status==1){
+                $(cur).children('em').html(data.info);
+            }else{
+                
+                alert(data.info);
+            }
+            
+       });
+    }
+</script>
+<script type="text/javascript" language="javascript">        //复制到剪切板js代码
+        function copyToClipBoard(s) {
+            
+            //alert(s);
+            if (window.clipboardData) {
+                window.clipboardData.setData("Text", s);
+                alert("已经复制到剪切板！"+ "\n" + s);
+            } else if (navigator.userAgent.indexOf("Opera") != -1) {
+                window.location = s;
+            } else if (window.netscape) {
+
+                try {
+                    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                } catch (e) {
+                    alert("被浏览器拒绝！\n请在浏览器地址栏输入'about:config'并回车\n然后将'signed.applets.codebase_principal_support'设置为'true'");
+                }
+                var clip = Components.classes['@mozilla.org/widget/clipboard;1'].createInstance(Components.interfaces.nsIClipboard);
+                if (!clip)
+                    return;
+                var trans = Components.classes['@mozilla.org/widget/transferable;1'].createInstance(Components.interfaces.nsITransferable);
+                if (!trans)
+                    return;
+                trans.addDataFlavor('text/unicode');
+                var str = new Object();
+                var len = new Object();
+                var str = Components.classes["@mozilla.org/supports-string;1"].createInstance(Components.interfaces.nsISupportsString);
+                var copytext = s;
+                str.data = copytext;
+                trans.setTransferData("text/unicode", str, copytext.length * 2);
+                var clipid = Components.interfaces.nsIClipboard;
+                if (!clip)
+                    return false;
+                clip.setData(trans, null, clipid.kGlobalClipboard);
+                alert("已经复制到剪切板！" + "\n" + s)
+            }else{
+
+            }
+        }
+    </script>
+
+<!-- 底部 START -->
+<include file="Public:footer" />
+

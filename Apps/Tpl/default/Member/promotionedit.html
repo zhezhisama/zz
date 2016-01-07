@@ -1,0 +1,196 @@
+<include file="Member:header" />
+<div class="loginmask"></div>
+<div id="loginalert">
+  <div class="pd20 loginpd"><i class="closealert fr"></i>
+    <div class="clear"></div>
+    <div class="loginwrap">
+      <div class="loginh">
+        <div class="fl">会员登录</div>
+        <div class="fr">还没有账号<a id="sigup_now" href="" onclick="return false;">立即注册</a></div>
+        <div class="clear"></div>
+      </div>
+      <div class="clear"></div>
+       <form method='post' id="form1123" action="{:U('Member/checkLogin')}" >
+        <div class="logininput">
+          <input type="text" id="account" name="account" class="loginusername" placeholder="用户名" />
+          <input type="password" id="password" name="password"   placeholder="******"/>
+          <input type="text" id="verify" name="verify" placeholder="验证码" class="yzm"/>
+           <img id="verifyImg" src="{:U('Member/verify')}" onClick="fleshVerify()" border="0" alt="点击刷新验证码" style="cursor:pointer; margin-top:10px; width:95px;" align="absmiddle"></div>
+        <div class="loginbtn">
+          <div class="loginsubmit fl">
+            <input type="submit" value="登录" />
+            <div class="loginsubmiting">
+              <div class="loginsubmiting_inner"></div>
+            </div>
+          </div>
+        </div>
+      
+      </form>
+    </div>
+  </div>
+  <div class="bk10"></div>
+  <div class="thirdlogin">
+    <div class="pd50">
+      <div class="mt10 mb10" style="color:#666; line-height:35px">用第三方帐号直接登录</div>
+      <ul>
+        <li id="sinal"title="暂未开通敬请期待"><a href="">微博账号登录</a></li>
+        <li id="qql"title="暂未开通敬请期待"><a href="">QQ账号登录</a></li>
+        <div class="clear"></div>
+      </ul>
+      <div class="bk10"></div>
+    </div>
+  </div>
+</div>
+<div id="reg_setp">
+  <div class="back_setp">返回</div>
+  <div class="blogo"><img src="../Public/images/logo.png" width="191" height="70" />
+    <p style="color:#D03322; font-size:14px; line-height:20px; text-align:right;">-----会员注册</p>
+  </div>
+  <div class="regbox" id="setp_quicklogin">
+   <form method='post' id="form1" action="{:U('Member/checkRegister')}" >
+      <li>
+        <p>用户名:<span id="accounterror" class="red">*</span></p>
+        <input type="text" id="account" name="account" class="u" placeholder="用户名"/>
+      </li>
+      <li>
+        <p>密码:<span id="passworderror" class="red">*</span></p>
+        <input type="password" id="password" name="password" class="u" placeholder="******"/>
+      </li>
+      <li>
+        <p>确认密码:<span id="repassworderror" class="red">*</span></p>
+        <input type="password" id="repassword" name="repassword" class="u" placeholder=""/>
+      </li>
+      <li>
+        <p>邮箱:<span id="emailerror" class="red">*</span></p>
+        <input type="text" id="email" name="email" class="u"/>
+      </li>
+      <li>
+        <p>昵称:<span id="nicknameerror" class="red">*</span></p>
+        <input type="text" id="nickname" name="nickname" class="u" placeholder="昵称"/>
+      </li>
+      <li style="height:30px;">
+        <input type="text" class="chimg" id="verify" name="verify" placeholder="验证码"/>
+         <img id="verifyImg" src="{:U('Member/verify')}" onClick="fleshVerify()" border="0" alt="点击刷新验证码" style="cursor:pointer; width:75px;" align="absmiddle"></li>
+      <div class="bk10"></div>
+      <li>
+        <input type="submit" value="登录" class="gologin">
+      </li>
+     
+    </form>
+  </div>
+</div>
+<script type="text/javascript">
+    $(function(){
+        $.formValidator.initConfig({formID:"form1",debug:false,submitOnce:true,
+		onError:function(msg,obj,errorlist){
+			alert(msg);
+		},
+		submitAfterAjaxPrompt : '有数据正在异步验证，请稍等...'
+	});
+        $("#pubaccountid").formValidator({onShow:"请选择公众账号",onFocus:"选择绑定的公众账号!",onCorrect:"输入正确"}).inputValidator({min:1,onError: "请选择公众账号!"});
+        $("#title").formValidator({onShow:"请输入活动标题",onFocus:"活动标题必须填写",onCorrect:"输入正确"}).inputValidator({min:1,onError:"请输入活动标题!"});
+        $("#thumb").formValidator({onShow:"小于不超过512KB,支持jpg,gif,png格式!",onFocus:"上传活动图片",onCorrect:"输入正确！"});   
+        $("#content").formValidator({onShow:"请输入公号介绍",onFocus:"至少要输入5个汉字<br>或10个字符",onCorrect:"输入正确"}).inputValidator({min:10,onError:"你输入的介绍长度不正确,<br>请确认"});        
+       
+    });
+</script>
+<div class="main">
+
+<include file="Member:left" />
+  <div class="mrightbox fl">
+    <div class="member_detail">添加促销活动</div>
+    <div class="member_content">
+     <form method='post' id="form1" name="form1" action="{:U('Member/promotionedit')}"  enctype="multipart/form-data">
+                    <div>
+                        <label>选择公号：</label>
+                        <select id="pubaccountid" name="pubaccountid">
+                          <option value="" >请选择</option>
+                            <volist name="pubaccountlist" id="pubvo">
+                                <option value="{$pubvo['id']}" <eq name="pubvo.id" value="$vo.pubaccountid">selected="selected"</eq>>{$pubvo['pubaccount']}</option>
+                            </volist>
+                        </select>
+                        <span id="pubaccountidTip"></span>
+                    </div>
+                    <div>
+                        <label>标题：</label>
+                        <input type="text" name="title" id="title" value="{$vo.title}" class="ipt8">
+                        <span id="titleTip"></span>
+                    </div>
+                   
+                    <div>
+                        <label>上传图片：</label>
+                        
+                        <notempty name="vo.thumb">
+                        <span>
+                        <input type="hidden" name="thumb" value="{$vo.thumb}">
+                        <img src="__ROOT__/Uploads/{$vo.thumb}" name="thumb" width="120" height="60" />
+                        <a href="javascript:;" onclick="foreverdelthumb(this,'thumb');" title="你确定要删除图片吗？">删除图片</a>
+                        </span>
+                        <else/>
+                        <input type="file" name="thumb" id="thumb" class="ipt5" />
+                        <span id="thumbTip"></span>
+                        </notempty>
+                        
+                    </div>
+                    
+                    <div>
+                        <label>是否允许评论：</label>
+                        <input type="radio" name="iscomment" value="1" checked="checked" style="margin-top: 5px;"><span>&nbsp;允许评论&nbsp;&nbsp;</span><input type="radio" name="iscomment" value="0" style="margin-top: 5px;"><span>&nbsp;不允许评论</span>
+                        <span class="star"></span>
+                    </div>
+                    <div>
+                         <label>活动介绍：</label>
+                         <textarea name="content" id="content" cols="40" rows="5">{$vo.content}</textarea>
+                         <span id="contentTip"></span>
+                    </div>
+                    <div>
+                        <label>title：</label>
+                        <input type="text" name="sitetitle" value="{$vo.sitetitle}" class="ipt6">
+                        <span class="star"></span>
+                        <span class="tip">网页title标签的设置。如果不填，默认为公众账号</span>
+                    </div>
+                    <div>
+                        <label>keywords：</label>
+                        <input type="text" name="keywords" value="{$vo.keywords}" class="ipt5">
+                        <span class="star"></span>
+                        <span class="tip">网页meta标签keywords网页关键词的，利于搜索。多关键词之间</span>
+                        <div style="color: #999999;padding-left: 140px;">用空格隔开</div>
+                    </div>
+                    <div>
+                        <label>description：</label>
+                        <textarea name="description" cols="40" rows="5">{$vo.description}</textarea>
+                        <span class="star"></span>
+                        <span class="tip">网页meta标签<br />description网页<br />描述的设置，利于搜索</span>
+                        
+                    </div>
+                  <div>
+                      <label>&nbsp;</label>
+                      <input type="hidden" name="id" value="{$vo.id}">
+                      <input type="submit" id="submit" value="提 交" class="submit">
+                  </div>
+                  
+               </form>
+    </div>
+  </div>
+</div>
+<div class="bk10"></div>
+<div id="rightButton">
+ <ul id="right_ul">
+       <li id="right_ewm" onmousemove="$('#ewm').show();" onmouseout="$('#ewm').hide();">
+      <p id="ewm" style="display:none"><img src="../Public/images/octwein.jpg" /></p>
+    </li>
+    <li id="right_qq" class="right_ico" show="qq" hide="tel"></li>
+    <li id="right_tel" class="right_ico" show="tel" hide="qq"></li>
+    <li id="right_tip" class="png">
+      <p class="flagShow_p1 flag_tel">商务合作</p>
+      <p class="flagShow_p2 flag_tel line91">023-58101029 </p>
+      <p class="lxname">匡先生</p>
+      <p class="flagShow_p1 flag_qq">咨询QQ</p>
+      <p class="flagShow_p2 flag_qq"><a href="http://wpa.qq.com/msgrd?v=3&uin=75943938&site=qq&menu=yes" target="_blank"><img border="0" src="../Public/images/qqon.png"></a><span>75943938</span></p>
+    </li>
+    </ul>
+</div>
+<div id="backToTop"><a href="javascript:;" onfocus="this.blur();" class="backToTop_a png"></a></div>
+<!--[if lte IE 6]><script src="js/phone/PNG.js" type="text/javascript"></script><script>        if( typeof(PNG) == 'object') PNG.fix('.png');
+    </script><![endif]-->
+<include file="Member:footer" />

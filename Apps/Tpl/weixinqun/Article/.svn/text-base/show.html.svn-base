@@ -1,0 +1,64 @@
+<include file="Public:header" />
+<!-- 头部 END -->
+<div class="hy mt20 clear">
+  <div class="w1000 wrap">
+    <div class="c-content command">
+      <div class="c-top">
+        <p>我的位置：<a href="http://ys.qunduoduo.com/">首页</a> &gt; 
+          <volist name="position" id="vo">
+            <a href="{:U('Article/index',array('id'=>$vo['id']))}">{$vo.catname}</a> &gt; 
+          </volist>
+        </p>
+      </div>
+      <div class="c-left fLeft">
+        <div style="min-height:980px;border-bottom:none;" class="box1">
+            <h4>{$data.title}</h4>
+          <p class="article-info">作者：管理员&nbsp;&nbsp;&nbsp;&nbsp;浏览{$data.hits}次&nbsp;&nbsp;&nbsp;&nbsp;更新时间：{$data.create_time|toDate='Y-m-d H:i'}</p>
+          <div class="summary"> 
+            <span class="bg-blue">摘要</span>
+            {$data.content|strip_tags|msubstr=0,40}
+          </div>
+          <div style="margin-top:10px;" id="article_content">
+            {$data.content}
+          </div>
+          <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"> <a class="bds_tsina"></a> <a class="bds_qzone"></a> <a class="bds_tqq"></a> <a class="bds_tieba"></a> <a class="bds_renren"></a> <a class="bds_sqq"></a> <span class="bds_more">更多</span> <a class="shareCount"></a>
+          </div>
+
+          <div class="spec_topic">
+            <span>
+              <empty name="prevdata">第一篇<else /><a href="{:U('Article/show',array('id'=>$prevdata['id']))}" target="_blank">上一篇：{$prevdata['title']|msubstr=0,20}</a></empty>
+            </span>
+            <span>
+              <empty name="nextdata">最后一篇<else />下一篇：<a href="{:U('Article/show',array('id'=>$nextdata['id']))}" target="_blank">{$nextdata['title']|msubstr=0,20}</a></empty></span>
+            </span>
+          </div>
+        <!--
+          <div class="news">
+            <div class="title">相关新闻</div>
+            <div class="list">
+              <ul>
+                <li><a href="http://ys.qunduoduo.com/archives-13445.html" title="微商如何才能赚钱？">微商如何才能赚钱？</a><span class="time">2014-12-06</span>
+                </li>
+                <li><a href="http://ys.qunduoduo.com/archives-12621.html" title="朋友圈营销技巧分析">朋友圈营销技巧分析</a><span class="time">2014-12-04</span>
+                </li>
+                <li><a href="http://ys.qunduoduo.com/archives-11157.html" title="微信开店应用哪家更划算">微信开店应用哪家更划算</a><span class="time">2014-12-01</span>
+                </li>
+                <li><a href="http://ys.qunduoduo.com/archives-10393.html" title="传统企业如何利用线下线上活动做营销">传统企业如何利用线下线上活动做营销</a><span class="time">2014-11-29</span>
+                </li>
+                <li><a href="http://ys.qunduoduo.com/archives-10392.html" title="关于微信运营的几个关键问题">关于微信运营的几个关键问题</a><span class="time">2014-11-29</span>
+                </li>
+                <li><a href="http://ys.qunduoduo.com/archives-10389.html" title="微信营销的方式分为哪些">微信营销的方式分为哪些</a><span class="time">2014-11-29</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        -->
+        </div>
+      </div>
+      <include file="Public:right_block" />
+    </div>
+  </div>
+</div>
+<!-- 底部 START -->
+<include file="Public:footer" />
+

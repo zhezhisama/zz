@@ -1,0 +1,91 @@
+<include file="Public:header" />
+<!-- 头部 END -->
+
+<div class="hotTags">
+  <div class="first">热门标签<span class="arrow arrow_right"></span></div>
+  <a <php> if($wcatid == 0){echo 'class="z-sel"';}</php> href="{:U('Weixin/order',array('catid'=>$catid,'wcatid'=>$vo['id'],'or'=>$or,'time'=>$time))}">全部</a> 
+  <volist name="catidlist" key="k" id="vo">
+  <if condition="$k lt 16">
+    <a <php> if($wcatid == $vo['id']){echo 'class="z-sel"';}</php> href="{:U('Weixin/order',array('catid'=>$catid,'wcatid'=>$vo['id'],'or'=>$or,'time'=>$time))}">{$vo.catname}</a>
+    </if>
+  </volist>
+</div>
+
+
+<div class="leader mt20">
+  <div class="w1000 wrap command">
+    <div class="l-sort">
+      <div class="d2 sort_btn" style="border-bottom:1px solid #eee;">
+      <p <php>if($catid == 44){echo 'class="active"'; }</php> ><a href="{:U('Weixin/order',array('catid'=>44))}">微信群</a></p>
+        <p <php>if($catid == 48){echo 'class="active"'; }</php>><a href="{:U('Weixin/order',array('catid'=>48))}">个人微信</a></p>
+        <p <php>if($catid == 47){echo 'class="active"'; }</php>><a href="{:U('Weixin/order',array('catid'=>47))}">公众号</a></p>
+        <p <php>if($catid == 1){echo 'class="active"'; }</php>><a href="{:U('Weixin/order',array('catid'=>1))}">微商货源</a></p>
+      </div>
+      <div class="d2"> <span class="fLeft"><strong>类型:</strong></span>
+        <ul class="fLeft">
+          
+
+        <li <php> if($wcatid == 0){echo 'class="active"';}</php> ><a href="{:U('Weixin/order',array('catid'=>$catid,'wcatid'=>$vo['id'],'or'=>$or,'time'=>$time))}">全部</a></li>
+          <volist name="catidlist" id="vo">
+          <li <php> if($wcatid == $vo['id']){echo 'class="active"';}</php> ><a href="{:U('Weixin/order',array('catid'=>$catid,'wcatid'=>$vo['id'],'or'=>$or,'time'=>$time))}">{$vo.catname}</a></li>
+          </volist>
+        </ul>
+      </div>
+      <div class="d2"> <span class="fLeft"><strong>排序:</strong></span>
+        <ul class="fLeft">
+        <li <php>if($or == 'hits'){echo 'class="active"';}</php>><a href="{:U('Weixin/order',array('catid'=>$catid,'wcatid'=>$wcatid,'or'=>'hits','time'=>$time))}">人气最高</a></li>
+            <li <php>if($or == 'xh'){echo 'class="active"';}</php> ><a href="{:U('Weixin/order',array('catid'=>$catid,'wcatid'=>$wcatid,'or'=>'xh','time'=>$time))}">点赞最高</a></li>
+          </ul>
+      </div>
+      <div class="d2"> <span class="fLeft"><strong>时间:</strong></span>
+        <ul class="fLeft">
+        <li <php>if($time == 0){echo 'class="active"';}</php>><a href="{:U('Weixin/order',array('catid'=>$catid,'wcatid'=>$wcatid,'or'=>$or,'time'=>''))}">不限</a></li>
+          <li <php>if($time == 3){echo 'class="active"';}</php>><a href="{:U('Weixin/order',array('catid'=>$catid,'wcatid'=>$wcatid,'or'=>'hits','time'=>3))}">三天内</a></li>
+          <li <php>if($time == 7){echo 'class="active"';}</php> ><a href="{:U('Weixin/order',array('catid'=>$catid,'wcatid'=>$wcatid,'or'=>'hits','time'=>7))}">本周</a></li>
+          <li <php>if($time == 30){echo 'class="active"';}</php>><a href="{:U('Weixin/order',array('catid'=>$catid,'wcatid'=>$wcatid,'or'=>'hits','time'=>30))}">一月内</a></li>
+         </ul>
+      </div>
+    </div>
+    <table class="top" cellpadding="0" cellspacing="0" align="center" border="0" width="96%">
+      <tbody><tr>
+        <th height="40" width="8%"></th>
+        <th width="17%">微信群主</th>
+        <th width="15%">微信群号</th>
+        <th width="25%">群号简介</th>
+        <th width="10%"> </th>
+        <th width="15%"></th>
+      </tr>
+      <volist name="list" id="vo">
+      <tr>
+        <td class="item1" align="center" height="100">1</td>
+        <td class="item2" valign="middle"><span class="fLeft"><a href="{:U('Weixin/turnshow',array('id'=>$vo['id']))}"><img src="/Uploads{$vo.logo}" alt="{$vo.title}" title="{$vo.title}" height="80" width="80"></a></span><span class="name">{$vo.title}</span></td>
+        <td class="item3">qq13739</td>
+        <td><a href=" {:U('Weixin/turnshow',array('id'=>$vo['id']))}">{$vo.pubaccount}</a></td>
+        <td><span style="color:red;">查看：{$vo.hits}</span></td>
+        <td class="item4">
+        <div class="zancai"><span onclick="praise(this,{$vo.id},'xh');"><i class="zan"></i><em class="txt_num" id="{$vo.id}" znum="94">{$vo.xh}</em></span><span onclick="praise(this,{$vo.id},'nxh');"><i class="cai"></i><em class="txt_num" id="cnum{$vo.id}" cnum="-22">{$vo.nxh}</em></span></div>
+      </td>
+      </volist>
+<script>
+function praise(cur,id,type){
+       $.get("{:U('Weixin/xh')}",{id:id,type:type},function(data){
+            if(data.status==1){
+                $(cur).children('em').html(data.info);
+            }else{
+                
+                alert(data.info);
+            }
+            
+       });
+    }
+</script>
+
+    </tbody></table>
+          <div class="pageNo vm center">
+                 {$page}
+                 <!-- <a class="selected">1</a><a href="http://ys.qunduoduo.com/phb-9-wx-0-or-7-da-7-page-2.html" title="页 2">2</a><a href="http://ys.qunduoduo.com/phb-9-wx-0-or-7-da-7-page-3.html" title="页 3">3</a><a href="http://ys.qunduoduo.com/phb-9-wx-0-or-7-da-7-page-4.html" title="页 4">4</a><a href="http://ys.qunduoduo.com/phb-9-wx-0-or-7-da-7-page-5.html" title="页 5">5</a>...<a href="http://ys.qunduoduo.com/phb-9-wx-0-or-7-da-7-page-32.html">32</a><a href="http://ys.qunduoduo.com/phb-9-wx-0-or-7-da-7-page-2.html" class="pageNext"><b>&gt;</b></a> -->
+            </div>
+           
+  </div>
+</div>
+<include file="Public:footer" />

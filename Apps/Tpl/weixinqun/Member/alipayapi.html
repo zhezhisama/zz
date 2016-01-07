@@ -1,0 +1,146 @@
+<include file="Member:header1" />
+
+<div class="center-content mt20">
+		<div class="wrap w1200">
+        
+        <include file="Member:left" />
+        
+    <div class="centerContent ml10">
+                <div class="centerTitle">
+                    <span class="centerICON icon_6">
+                    </span>
+                    <h2>
+                        在线充值
+                    </h2>
+                </div>
+    
+    
+    <div class="centerDisArea">
+                <div class="form">
+                    <div>
+                        <label>费用：</label>
+                        <span>{$paymoney}</span><span>元</span>
+                        
+                    </div>
+                    <div>
+                        <label>合计：</label>
+                        <span style="font-size: 22px;font-family: Georgia,Arial;font-weight: 700;color: #FF0000;}">{$paymoney}</span><span>元</span>
+                    </div>
+                    
+                    <div>
+                        <label>支付方式：</label>
+                        
+                        <span>{$paytypename}</span>
+                    </div>
+                    
+                    <div align="center" id="qrcode">
+					</div>
+                    
+                    <div>
+                        {$html_text}
+                    </div>
+                  
+                  </div>  
+            </div>
+        </div>
+            
+            
+</div>
+
+<script type="text/javascript" src="../Public/js/qrcode.js"></script>
+<script type="text/javascript">
+var url = "{$code_url}";
+var payid = "{$pay_id}";
+if(url)
+{
+	//参数1表示图像大小，取值范围1-10；参数2表示质量，取值范围'L','M','Q','H'
+	var qr = qrcode(10, 'M');
+	qr.addData(url);
+	qr.make();
+	var wording=document.createElement('p');
+	wording.innerHTML = "扫我，扫我";
+	var code=document.createElement('DIV');
+	code.innerHTML = qr.createImgTag();
+	var element=document.getElementById("qrcode");
+	element.appendChild(wording);
+	element.appendChild(code);
+	setTimeout('checkStatus()',3000); //指定1秒刷新一次 
+}
+//规定时间扫描支付状态
+
+function checkStatus(){
+
+	$.ajax({
+		type : 'POST',
+		url : 'index.php?m=Member&a=checkStatus',
+		data : { payid : payid },
+		success: function (data){
+			if(data.error == 0){
+				alert(data.message);
+				window.location.href="index.php?m=Member&a=paylist";
+			}else{
+				//alert('继续');
+				setTimeout('checkStatus()',3000); //指定1秒刷新一次 
+			}
+			
+		}
+	});
+	
+}
+
+
+    function starttime(){
+        var starttime=$("#starttime").val();
+        var endtime=$("#endtime").val();
+        
+        if(starttime==="" || endtime===""){
+            return;
+        }
+
+        if(starttime>endtime){
+           alert('结束日期不能小于开始日期');
+           $("#intergral").val('');
+        }else{
+            //计算出相差天数
+            var days=daysBetween(starttime,endtime)+1;
+            var intergralnum=$('#recommendid option:selected').attr('name');
+            $("#intergral").val(days*intergralnum);
+        }
+    }
+        function endtime(){
+            var starttime=$("#starttime").val();
+            var endtime=$("#endtime").val();
+            if(starttime==="" || endtime===""){
+                return;
+            }
+       
+            if(starttime>endtime){
+               alert('结束日期不能小于开始日期');
+               $("#intergral").val('');
+            }else{
+        
+                //计算出相差天数
+                var days=daysBetween(starttime,endtime)+1;
+                var intergralnum=$('#recommendid option:selected').attr('name');
+                $("#intergral").val(days*intergralnum);
+            }
+        };
+
+function daysBetween(DateOne,DateTwo) 
+{  
+
+    var OneMonth = DateOne.substring(5,DateOne.lastIndexOf ('-')); 
+    var OneDay = DateOne.substring(DateOne.length,DateOne.lastIndexOf ('-')+1); 
+    var OneYear = DateOne.substring(0,DateOne.indexOf ('-'));
+
+    var TwoMonth = DateTwo.substring(5,DateTwo.lastIndexOf ('-')); 
+    var TwoDay = DateTwo.substring(DateTwo.length,DateTwo.lastIndexOf ('-')+1); 
+    var TwoYear = DateTwo.substring(0,DateTwo.indexOf ('-'));
+
+    var cha=((Date.parse(OneMonth+'/'+OneDay+'/'+OneYear)- Date.parse(TwoMonth+'/'+TwoDay+'/'+TwoYear))/86400000);   
+    return Math.abs(cha); 
+}
+
+</script>
+
+<include file="Public:footer" />

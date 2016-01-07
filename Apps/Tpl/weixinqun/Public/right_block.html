@@ -1,0 +1,80 @@
+<div class="c-right fRight">
+	<div class="box" style="overflow:hidden;">
+		 <h4>微商联盟</h4>
+		 		<ul>
+			<yufu:article catid="158" field="id,title" order="create_time desc" num="5">
+				<li class="bt"> <span class="fLeft" style="width:75%;"><a href="{:U('Article/show',array('id'=>$article['id']))}" title="{$article['title']}" target='_blank'>{$article['title']}</a></span> 
+				</li>
+			</yufu:article>
+		</ul>
+		<p style="height:30px;padding:5px 0;margin-top:10px;border-bottom:1px dashed #ccc;"> <span class="fLeft ml10" style="width:120px;color:red;"><b>微商交流与合作</b></span><span class="fLeft ml10"><a href="<yufu:other settag="wsjlhz" />" rel="nofollow" target="_blank"><img src="../Public/images/button_11.gif" title="微商交流与合作" alt="微商交流与合作"></a></span>
+		</p>
+		<p style="height:30px;padding:5px 0;border-bottom:1px dashed #ccc;"> <span class="fLeft ml10" style="width:120px;color:red;"><b>AAA微商交流</b></span><span class="fLeft ml10"><a href="<yufu:other settag="aaawsjl" />" rel="nofollow" target="_blank"><img src="../Public/images/button_11.gif" title="AAA微商交流" alt="AAA微商交流"></a></span>
+		</p>
+		<p style="height:30px;padding:5px 0;border-bottom:1px dashed #ccc;"> <span class="fLeft ml10" style="width:120px;color:red;"><b>微商运营咨询</b></span><span class="fLeft ml10"><a href="<yufu:other settag="hyq" />" rel="nofollow" target="_blank"><img src="../Public/images/button_11.gif" title="微商货源群" alt="微商货源群"></a></span>
+		</p>
+	</div>
+	<div class="box">
+		 <h4>本周给力排行
+
+        <span class="fRight mr10">
+
+          <a href="{:U('Weixin/order',array('id'=>'89'))}">更多&gt;</a>
+
+        </span>
+
+      </h4>
+		<ul id="ph-list">
+			<yufu:weixin catid="53" field="id,logo,pubaccount,hits" order="hits desc" num="8">
+				<li>
+					<div class="cover-img cover"> <a href="{:U('Weixin/show',array('id'=>$weixin['id']))}" class="cr" title="{$weixin.pubaccount}"><img src="<empty name='weixin.logo'><empty name='weixin.weblogo'>../Public/images/nopic.gif<else />{$weixin.weblogo}</empty><else />
+                    <if condition="$weixin.tupian eq '1'" >{$weixin.logo}<else />__ROOT__/Uploads{$weixin.logo}</if>
+                    </empty>" alt="{$weixin.pubaccount}" title="{$weixin.pubaccount}" height="50" width="50"></a>
+					</div>
+					<div class="name"> <a href="{:U('Weixin/show',array('id'=>$weixin['id']))}" title="{$weixin.pubaccount}">{$weixin.pubaccount}</a>
+					</div>
+				</li>
+			</yufu:weixin>
+		</ul>
+	</div>
+	<div class="box">
+		 <h4>最新收录
+
+        <span class="fRight mr10">
+
+          <a href="{:U('Weixin/news',array('id'=>'90'))}">更多&gt;</a>
+
+        </span>
+
+      </h4>
+		<ul id="ph-list">
+			<yufu:weixin catid="53" field="id,logo,pubaccount" order="create_time desc" num="8">
+				<li>
+					<div class="cover-img cover"> <a href="{:U('Weixin/show',array('id'=>$weixin['id']))}" class="cr" title="{$weixin.pubaccount|msubstr=0,6}"><img src="<empty name='weixin.logo'><empty name='weixin.weblogo'>../Public/images/nopic.gif<else />{$weixin.weblogo}</empty><else />
+                    <if condition="$weixin.tupian eq '1'" >{$weixin.logo}<else />{$weixin.logo}</if>
+                    </empty>" alt="{$weixin.pubaccount|msubstr=0,6}" title="{$weixin.pubaccount|msubstr=0,6}" height="50" width="50"></a>
+					</div>
+					<div class="name"> <a href="{:U('Weixin/show',array('id'=>$weixin['id']))}" title="{$weixin.pubaccount}">{$weixin.pubaccount|msubstr=0,6}</a>
+					</div>
+				</li>
+			</yufu:weixin>
+		</ul>
+	</div>
+	<div class="box">
+		 <h4>微信资讯
+
+        <span class="fRight mr10">
+
+          <a href="{:U('Weixin/hot',array('id'=>'88'))}">更多&gt;</a>
+
+        </span>
+
+      </h4>
+		<ul>
+			<yufu:article catid="55" field="id,title" order="create_time desc" num="10">
+				<li class="bt"> <span class="fLeft" style="width:75%;"><a href="{:U('Article/show',array('id'=>$article['id']))}" title="{$article['title']}" target='_blank'>{$article['title']}</a></span> 
+				</li>
+			</yufu:article>
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,4 @@
+.brand-sort .d2 li.active {
+    color: #f6851f !important;
+    font-weight: bold;
+}

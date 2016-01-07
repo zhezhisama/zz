@@ -1,0 +1,18 @@
+
+    <div class="rbox">
+        <div class="rtit">本周排行榜<span><a href="{:U('Weixin/order',array('id'=>'89'))}" target="_blank">更多&gt;&gt;</a></span></div>
+        <div class="hot">
+            <ul>
+                <yufu:hits order="w" num="5" >
+                    <li>
+                        <div class="order">{$key+1}</div>
+                        <a href="{:U('Weixin/show',array('id'=>$hits['id']))}" title="{$hits.pubaccount}" target='_blank'>
+                        <img src="<empty name='hits.logo'><empty name='hits.weblogo'>../Public/images/nopic.gif<else />{$hits.weblogo}</empty><else />__ROOT__/Uploads{$hits.logo}</empty>" class='img' width="40" height="40">
+                        <div class="title">{$hits.pubaccount|msubstr=0,6}</div>
+                        <div class="sort">加关注</div>
+                        </a>
+                    </li>
+                </yufu:hits>
+            </ul>
+        </div>
+    </div>

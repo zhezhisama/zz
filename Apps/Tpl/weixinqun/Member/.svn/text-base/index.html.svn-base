@@ -1,0 +1,142 @@
+<include file="Member:header" />
+<div class="loginmask"></div>
+<div id="loginalert">
+  <div class="pd20 loginpd"><i class="closealert fr"></i>
+    <div class="clear"></div>
+    <div class="loginwrap">
+      <div class="loginh">
+        <div class="fl">会员登录</div>
+        <div class="fr">还没有账号<a id="sigup_now" href="" onclick="return false;">立即注册</a></div>
+        <div class="clear"></div>
+      </div>
+      <div class="clear"></div>
+      <form method='post' id="form1123" action="{:U('Member/checkLogin')}" >
+        <div class="logininput">
+          <input type="text" id="account" name="account" class="loginusername" placeholder="用户名" />
+          <input type="password" id="password" name="password"   placeholder="******"/>
+          <input type="text" id="verify" name="verify" placeholder="验证码" class="yzm"/>
+           <img id="verifyImg" src="{:U('Member/verify')}" onClick="fleshVerify()" border="0" alt="点击刷新验证码" style="cursor:pointer; margin-top:10px; width:95px;" align="absmiddle"></div>
+        <div class="loginbtn">
+          <div class="loginsubmit fl">
+            <input type="submit" value="登录" />
+            <div class="loginsubmiting">
+              <div class="loginsubmiting_inner"></div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="bk10"></div>
+  <div class="thirdlogin">
+    <div class="pd50">
+      <div class="mt10 mb10" style="color:#666; line-height:35px">用第三方帐号直接登录</div>
+      <ul>
+        <li id="sinal"title="暂未开通敬请期待"><a href="">微博账号登录</a></li>
+        <li id="qql"title="暂未开通敬请期待"><a href="">QQ账号登录</a></li>
+        <div class="clear"></div>
+      </ul>
+      <div class="bk10"></div>
+    </div>
+  </div>
+</div>
+<div id="reg_setp">
+  <div class="back_setp">返回</div>
+  <div class="blogo"><img src="../Public/images/logo.png" width="191" height="70" />
+    <p style="color:#D03322; font-size:14px; line-height:20px; text-align:right;">-----会员注册</p>
+  </div>
+  <div class="regbox" id="setp_quicklogin">
+    <form method='post' id="form1" action="{:U('Member/checkRegister')}" >
+      <li>
+        <p>用户名:<span id="accounterror" class="red">*</span></p>
+        <input type="text" id="account" name="account" class="u" placeholder="用户名"/>
+      </li>
+      <li>
+        <p>密码:<span id="passworderror" class="red">*</span></p>
+        <input type="password" id="password" name="password" class="u" placeholder="******"/>
+      </li>
+      <li>
+        <p>确认密码:<span id="repassworderror" class="red">*</span></p>
+        <input type="password" id="repassword" name="repassword" class="u" placeholder=""/>
+      </li>
+      <li>
+        <p>邮箱:<span id="emailerror" class="red">*</span></p>
+        <input type="text" id="email" name="email" class="u"/>
+      </li>
+      <li>
+        <p>昵称:<span id="nicknameerror" class="red">*</span></p>
+        <input type="text" id="nickname" name="nickname" class="u" placeholder="昵称"/>
+      </li>
+      <li style="height:30px;">
+        <input type="text" class="chimg" id="verify" name="verify" placeholder="验证码"/>
+         <img id="verifyImg" src="{:U('Member/verify')}" onClick="fleshVerify()" border="0" alt="点击刷新验证码" style="cursor:pointer; width:75px;" align="absmiddle"></li>
+      <div class="bk10"></div>
+      <li>
+        <input type="submit" value="登录" class="gologin">
+      </li>
+  
+    </form>
+  </div>
+</div>
+<div class="main">
+
+<include file="Member:left"/>
+  <div class="mrightbox fl">
+    <div class="member_detail">个人中心</div>
+    <table border="0" cellspacing="6" cellpadding="3">
+      <tbody>
+        <tr>
+          <th>头像：</th>
+          <td><img src="<empty name='data.thumb'>../Public/images/nopic.gif<else />__ROOT__/Uploads{$data.thumb}</empty>" width="80" height="80" /></td>
+        </tr>
+        <tr>
+          <th>用户名：</th>
+          <td>{$data.account}</td>
+        </tr>
+        <tr>
+          <th>昵称：</th>
+          <td>{$data.nickname}</td>
+        </tr>
+        <tr>
+          <th>会员组：</th>
+           <td>{$data.role_id|getGroupName}</td>
+        </tr>
+        <tr>
+          <th>帐户余额：</th>
+           <td><span class="intergral"><empty name="data.amount">0<else /> {$data.amount}</empty></span>元</td>
+        </tr>
+        <tr>
+          <th>积分点数：</th>
+          <td><span class="intergral"><empty name="data.intergral">0<else /> {$data.intergral}</empty></span>点</td>
+        </tr>
+        <tr>
+          <th>电子邮箱：</th>
+           <td>{$data.email}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div class="clear10"></div>
+<div class="bk10"></div>
+<div id="rightButton">
+ <ul id="right_ul">
+       <li id="right_ewm" onmousemove="$('#ewm').show();" onmouseout="$('#ewm').hide();">
+      <p id="ewm" style="display:none"><img src="../Public/images/octwein.jpg" /></p>
+    </li>
+    <li id="right_qq" class="right_ico" show="qq" hide="tel"></li>
+    <li id="right_tel" class="right_ico" show="tel" hide="qq"></li>
+    <li id="right_tip" class="png">
+      <p class="flagShow_p1 flag_tel">商务合作</p>
+      <p class="flagShow_p2 flag_tel line91">023-58101029 </p>
+      <p class="lxname">匡先生</p>
+      <p class="flagShow_p1 flag_qq">咨询QQ</p>
+      <p class="flagShow_p2 flag_qq"><a href="http://wpa.qq.com/msgrd?v=3&uin=75943938&site=qq&menu=yes" target="_blank"><img border="0" src="../Public/images/qqon.png"></a><span>75943938</span></p>
+    </li>
+    </ul>
+</div>
+<div id="backToTop"><a href="javascript:;" onfocus="this.blur();" class="backToTop_a png"></a></div>
+<!--[if lte IE 6]><script src="js/phone/PNG.js" type="text/javascript"></script><script>        if( typeof(PNG) == 'object') PNG.fix('.png');
+    </script><![endif]-->
+
+<include file="Member:footer" />

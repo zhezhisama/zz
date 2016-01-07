@@ -1,0 +1,226 @@
+<include file="Public:header"/>
+<!--banner-->
+
+<div class="banner">
+  <div style="width:960px;  position:relative; z-index:10;">
+    <div class="lit">
+      <div class="dayhot">
+        <yufu:tuijian catid="53" recommendid="4" num="1" >
+          <p>今日推荐</p>
+          <div class="pic fl"><a href="{:U('Weixin/show',array('id'=>$tuijian['id']))}" target="_blank"><img src="<empty name='tuijian.logo'><empty name='tuijian.weblogo'>../Public/images/nopic.gif<else />{$tuijian.weblogo}</empty><else />__ROOT__/Uploads{$tuijian.logo}</empty>"></a></div>
+          <div class="tit fr"><a href="{:U('Weixin/show',array('id'=>$tuijian['id']))}" target="_blank" class="fz14"><strong>{$tuijian.pubaccount|msubstr=0,5}</strong></a></div>
+          <div class="xingji fr"><img src="../Public/images/xx{$tuijian.xingji}.jpg" /></div>
+          <div class="gz fr"><em style="color:#ff5500"></em>关注{$tuijian.hits}</em>次</div>
+          <a href="{:U('Weixin/show',array('id'=>$tuijian['id']))}" target="_blank" class="gogz">加关注</a> </yufu:tuijian>
+        <div class="mb"> <a href="<yufu:other settag="androidweixin" />" target="_blank" class="android">Android下载</a> <a href="<yufu:other settag="iphoneweixin" />" target="_blank" class="iphone">Iphone下载</a></div>
+      </div>
+      <p style=" border-top:1px dashed #ccc;"> <a href="http://ma.rengzan.com/" target="_blank"><img src="../Public/images/2top_pic2.jpg" border="0" width="210" height="95" /></a></p>
+      <p style=" border-top:1px dashed #ccc;"><a href="{:U('Content/index',array('id'=>138))}" target="_blank"><img src="../Public/images/wytjgzh.gif" border="0" width="210" height="95" /></a></p>
+    </div>
+  </div>
+  <div id="banner">
+    <ul id="banner_img">
+      <li style="background:url(../Public/images/1hnav1.jpg) no-repeat center;  display:list-item;"><a href="{:U('Member/add')}" title="扔赞网" target="_blank">
+        <div class="wrapper"></div>
+        </a></li>
+      <li style="background:url(../Public/images/3lunbo3.jpg) no-repeat center;"><a href="{:U('Member/add')}" title="微信公众号导航" target="_blank">
+        <div class="wrapper"></div>
+        </a></li>
+      <li style="background:url(../Public/images/2lunbo2.jpg) no-repeat center;"><a href="{:U('Member/add')}" title="微信网站" target="_blank">
+        <div class="wrapper"></div>
+        </a></li>
+      <li style="background:url(../Public/images/jiuzhou1920x390-9.jpg) no-repeat center;"><a href="{:U('Member/add')}" title="微信导航" target="_blank">
+        <div class="wrapper"></div>
+        </a></li>
+      <li style="background:url(../Public/images/1lunbo1.jpg) no-repeat center;"><a href="{:U('Member/add')}" title="微信推广网站" target="_blank">
+        <div class="wrapper"></div>
+        </a></li>
+    </ul>
+    <div id="banner_ctr">
+      <div id="drag_ctr"></div>
+      <ul>
+        <li style="width:0px;"></li>
+        <li class="styclsa"><a href="#" target="_blank" class="astysa">banner1</a></li>
+        <li style="width:1px;"></li>
+        <li class="styclsa"><a href="#" target="_blank" class="astysa">banner2</a></li>
+        <li style="width:1px;"></li>
+        <li class="styclsa"><a href="#" target="_blank" class="astysa">banner3</a></li>
+        <li style="width:1px;"></li>
+        <li class="styclsa"><a href="#" target="_blank" class="astysa">banner4</a></li>
+        <li style="width:1px;"></li>
+        <li class="styclsa"><a href="#" target="_blank" class="astysa">banner5</a></li>
+        <li style="width:1px;"></li>
+      </ul>
+    </div>
+  </div>
+  <script type="text/javascript" src="../Public/js/fashionfoucs.js"></script>
+</div>
+</div>
+<!--body-->
+<div class="bk10"></div>
+<div class="main">
+  <div class="announce fl bder">
+    <ul class="ann-tit fl">
+      <em class="zh">公告</em><em class="en fb">Announce</em>
+    </ul>
+    <div id="announ" class="anlist fr">
+      <ul>
+        <yufu:announce field="id,title" order="create_time desc" num="5">
+          <li><a href="{:U('Announce/show',array('id'=>$announce['id']))}" target=_blank>{$announce.title|msubstr=0,18}</a></li>
+        </yufu:announce>
+      </ul>
+    </div>
+    <script type="text/javascript">        $(function(){
+            startmarquee('announ',48,1,500,3000);
+        })
+        </script>
+  </div>
+  <div class="slnum fr"><span>热词搜索：</span>
+    <div class="ci fl" style="float:left;">
+      <yufu:search field="search" order="hits desc" num="3">
+        <?php $keyword=urlencode($search['search']);?>
+        <a href="{:U('Weixin/search',array('keyword'=>$keyword,'id'=>126))}" target="_blank" class="b">{$search.search}</a>&nbsp;</yufu:search>
+    </div>
+  </div>
+  <div class="bk10"></div>
+  <div class="leftbox fl">
+    <div class="box">
+      <ul class="countbox">
+        <li class="allcount"> {$allcount}
+          <p>总共收录</p>
+        </li>
+        <li class="daycount"> {$daycount}
+          <p>今日收录</p>
+        </li>
+      </ul>
+    </div>
+    <div class="bk10"></div>
+    <div class="news box">
+  
+      <h2>微活动<a href="{:U('Promotion/index',array('id'=>'131'))}" class="more">more</a></h2>
+      <ul>
+        <yufu:promotion catid="131" field="id,title" order="create_time desc" num="5" >
+          <li> <a href="{:U('Promotion/show',array('id'=>$promotion['id']))}" title="{$promotion['title']}" target='_blank'>{$promotion['title']}</a> </li>
+        </yufu:promotion>
+      </ul>
+    </div>
+    <div class="bk10"></div>
+    <a href="http://gOpe.cn" target="_blank"><img src="../Public/images/index250.jpg"></a>
+    <div class="bk10"></div>
+    <div class="news box">
+      <h2>微资讯<a href="{:U('Article/index',array('id'=>'55'))}" class="more">more</a></h2>
+      <ul>
+        <yufu:article catid="55" field="id,title" order="create_time desc" num="5" >
+          <li> <a href="{:U('Article/show',array('id'=>$article['id']))}" title="{$article['title']}" target='_blank'>{$article['title']|msubstr=0,20}</a> </li>
+        </yufu:article>
+      </ul>
+    </div>
+    <div class="bk10"></div>
+    <div class="bk10"></div>
+    <div class="gzbox box">
+      <h2>今日排行榜<a href="{:U('Weixin/order',array('id'=>'89'))}" class="more">more</a></h2>
+      <ul>
+        <yufu:hits order="d" num="5" >
+          <li><i class="fl">{$key+1}</i><a href="{:U('Weixin/show',array('id'=>$hits['id']))}" title="{$hits.pubaccount}" target='_blank' class="fl mr10"> <img src="<empty name='hits.logo'><empty name='hits.weblogo'>../Public/images/nopic.gif<else />{$hits.weblogo}</empty><else />__ROOT__/Uploads{$hits.logo}</empty>" class='img' width="40" height="40"> </a>{$hits.pubaccount|msubstr=0,6}<a href="{:U('Weixin/show',array('id'=>$hits['id']))}" title="{$hits.pubaccount|msubstr=0,6}" target='_blank' class="gz">加关注</a></li>
+        </yufu:hits>
+      </ul>
+    </div>
+    <div class="bk10"></div>
+    <div class="gzbox box">
+      <h2>关注排行榜<a href="{:U('Weixin/order',array('id'=>'89'))}" class="more">more</a></h2>
+      <ul>
+        <yufu:weixin catid="53" field="id,logo,pubaccount,hits" order="hits desc" num="5" >
+          <li><i class="fl">{$key+1}</i><a href="{:U('Weixin/show',array('id'=>$weixin['id']))}" title="{$weixin.pubaccount}" target='_blank' class="fl mr10"><img src="<empty name='weixin.logo'><empty name='weixin.weblogo'>../Public/images/nopic.gif<else />{$weixin.weblogo}</empty><else />__ROOT__/Uploads{$weixin.logo}</empty>" class='img' width="40" height="40" /></a>{$weixin.pubaccount|msubstr=0,6}<a href="{:U('Weixin/show',array('id'=>$weixin['id']))}" title="{$weixin.pubaccount}" target='_blank' class="gz">加关注</a></li>
+        </yufu:weixin>
+      </ul>
+    </div>
+    <div class="bk10"></div>
+    <div class="gzbox box">
+      <h2>最新收录<a href="{:U('Weixin/news',array('id'=>'90'))}" target="_blank" class="more">more</a></h2>
+      <ul>
+        <yufu:weixin catid="53" field="id,logo,pubaccount" order="create_time desc" num="5" >
+          <li><i class="fl">{$key+1}</i><a href="{:U('Weixin/show',array('id'=>$weixin['id']))}" title="{$weixin.pubaccount}" target='_blank' class="fl mr10"><img src="<empty name='weixin.logo'><empty name='weixin.weblogo'>../Public/images/nopic.gif<else />{$weixin.weblogo}</empty><else />__ROOT__/Uploads{$weixin.logo}</empty>" class='img' width="40" height="40" /></a>{$weixin.pubaccount|msubstr=0,6}<a href="{:U('Weixin/show',array('id'=>$weixin['id']))}" title="{$weixin.pubaccount}" target='_blank' class="gz">加关注</a></li>
+        </yufu:weixin>
+      </ul>
+    </div>
+    <div class="bk10"></div>
+  </div>
+  <div class="rightbox fr">
+    <div class="itembox box">
+      <h2 style="font-size:16px;">热门推荐
+        <div class="itemsub"><a href="{:U('Content/index',array('id'=>138))}" style="color: red;" target="_blank">我要上推荐</a></div>
+        <a href="{:U('Weixin/hot',array('id'=>'88'))}" target="_blank" class="more" style="font-size:12px;">more</a></h2>
+      <ul>
+        <volist name="tjlist" id="tuijian" mod="18">
+        <eq name="mod" value="0"> <ul class="ibox_content popo" 
+          
+          <neq name="key" vlalue="0"> style="display: none;"</neq>
+          ></eq>
+        <li> <a href="{:U('Weixin/show',array('id'=>$tuijian['id']))}" title="{$tuijian.pubaccount}" target='_blank'><img src="<empty name='tuijian.logo'><empty name='tuijian.weblogo'>../Public/images/nopic.gif<else />{$tuijian.weblogo}</empty><else />__ROOT__/Uploads{$tuijian.logo}</empty>" width="80" height="80"/></a>
+          <p><a href="{:U('Weixin/show',array('id'=>$tuijian['id']))}" title="{$tuijian.pubaccount}" target='_blank'>{$tuijian.pubaccount|msubstr=0,6}</a></p>
+        </li>
+        <eq name="mod" value="13">
+      </ul>
+      </eq>
+      </volist>
+      </ul>
+    </div>
+    <volist name="categorylist" id="category1">
+      <volist name="category1.pid" id="category2" mod="6">
+        <div class="itembox box">
+        
+        
+        
+          <h2 style="font-size:16px;">{$category2['catname']}
+            <div class="itemsub">
+              <volist name="category2.pid" id="category3">
+                <if condition="$category3['status'] eq 1"> <a href="{:U('Weixin/index',array('id'=>$category3['id']))}" title="{$category3['catname']}" target="_blank">{$category3['catname']}</a> </if>
+              </volist>
+            </div>
+            <a href="{:U('Weixin/index',array('id'=>$category2['id']))}" title="{$category2['catname']}" target="_blank" class="more" style="font-size:12px;">more</a></h2>
+          <ul>
+            <?php
+                    $catlist = D('Category')->where('status=1')->select();	
+                    $idlist = $category2['id'].','.getChildId($catlist,$category2['id']);  
+                    $idlist= substr($idlist, 0, strlen($idlist)-1);
+                    ?>
+            <yufu:tuijian catid="'.$idlist.'" recommendid="2" num="18" >
+              <li> <a href="{:U('Weixin/show',array('id'=>$tuijian['id']))}" title="{$tuijian.pubaccount}" target='_blank'><img src="<empty name='tuijian.logo'><empty name='tuijian.weblogo'>../Public/images/nopic.gif<else />{$tuijian.weblogo}</empty><else />__ROOT__/Uploads{$tuijian.logo}</empty>" width="80" height="80"/></a>
+                <p><a href="{:U('Weixin/show',array('id'=>$tuijian['id']))}" title="{$tuijian.pubaccount}" target='_blank'>{$tuijian.pubaccount|msubstr=0,6}</a></p>
+              </li>
+            </yufu:tuijian>
+          </ul>
+        </div>
+      </volist>
+    </volist>
+  </div>
+  <div class="bk10"></div>
+  <div class="link box"> <span class="fz16">友情链接：</span>
+    <volist name="list" id="vo">
+      <if condition="$vo['type'] eq 0 ">
+        <if condition="$vo['linktype'] eq 0"> <a href="{$vo.url}" target="_blank">{$vo.name}</a> </if>
+      </if>
+    </volist>
+    <a href="{:U('Link/index')}">更多>></a></div>
+</div>
+<div class="bk10"></div>
+<div id="rightButton">
+  <ul id="right_ul">
+    <li id="right_ewm" onmousemove="$('#ewm').show();" onmouseout="$('#ewm').hide();">
+      <p id="ewm" style="display:none"><img src="../Public/images/octwein.jpg" /></p>
+    </li>
+    <li id="right_qq" class="right_ico" show="qq" hide="tel"></li>
+    <li id="right_tel" class="right_ico" show="tel" hide="qq"></li>
+    <li id="right_tip" class="png">
+      <p class="flagShow_p1 flag_tel">商务合作</p>
+      <p class="flagShow_p2 flag_tel line91">023-58101029 </p>
+      <p class="lxname">匡先生</p>
+      <p class="flagShow_p1 flag_qq">咨询QQ</p>
+      <p class="flagShow_p2 flag_qq"><a href="http://wpa.qq.com/msgrd?v=3&uin=2052977199&site=qq&menu=yes" target="_blank"><img border="0" src="../Public/images/qqon.png"></a><span>75943938</span></p>
+    </li>
+  </ul>
+</div>
+<div id="backToTop"><a href="javascript:;" onfocus="this.blur();" class="backToTop_a png"></a></div>
+<!--[if lte IE 6]><script src="js/phone/PNG.js" type="text/javascript"></script><script>        if( typeof(PNG) == 'object') PNG.fix('.png');
+    </script><![endif]-->
+<include file="Public:footer"/> 

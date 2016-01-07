@@ -1,0 +1,160 @@
+<include file="Member:header1" />
+<!-- 内容 START -->
+<script type="text/javascript" language="JavaScript">
+    <!--
+    $(function(){
+
+        $('#form1').ajaxForm({
+            beforeSubmit:  checkForm, 
+            success:       complete, 
+            dataType: 'json'
+        });
+
+        function checkForm(){
+            if( '' === $.trim($('#account').val())){
+                alert('用户名不能为空');
+                return false;
+            }
+            if( '' === $.trim($('#password').val())){
+                alert('密码不能为空');
+                return false;
+            }
+            if( $.trim($('#repassword').val()) !== $.trim($('#password').val())){
+                alert('密码与确认密码不一致');
+                return false;
+            }
+        }
+        function complete(data){
+            if (data.status===1){
+                alert('注册成功！');
+                window.location.href="{:U('Member/login')}";
+            }else{
+                alert(data.info);
+            }
+        }
+        /*
+        $("#account").blur(function(){
+            var account=$("#account").val();
+            $.post("{:U('Member/checkAccount')}",{account:account}, function(data){
+                   $("#accounterror").html(data['info']);
+            });
+        });
+        $("#password").blur(function(){
+            var password=$("#password").val();
+            if(password===""){
+                $("#passworderror").html("密码不能空！"); 
+            }else{
+                $("#passworderror").html("*"); 
+            }
+        });
+        $("#repassword").blur(function(){
+            var password=$("#password").val();
+            var repassword=$("#repassword").val();
+            if(repassword!==password){
+                $("#repassworderror").html("密码与确认密码不一致！"); 
+            }else{
+                $("#repassworderror").html("*"); 
+            }
+        });
+        $("#nickname").blur(function(){
+            var nickname=$("#nickname").val();
+            if(nickname===""){
+               $("#nicknameerror").html("昵称不能空！"); 
+            }else{
+                $("#nicknameerror").html("*"); 
+            }
+        });
+*/
+        
+    });
+    //验证码刷新
+    function fleshVerify(){ 
+        //重载验证码
+        $('#verifyImg').attr('src',"{:U('Member/verify',array('t'=>time()))}");
+    }
+    //-->
+</script>
+<!-- login-bg start -->
+<div class="login-bg clear">
+  <div class="wrap w1000" style="position:relative;">
+    <div id="reg">
+            <ul class="processbar">
+              <li class="step11"><span class="selspan">注册</span></li>
+                <li class="step02"><span>登录</span></li>
+                <li class="step03"><span>发布</span></li>
+                <li class="step04"><span><a href="http://weixinqun.xiaoxiaowu.info/archives-1318.html" title="抢位规则">抢位</a></span></li>
+                <li class="step05"><span>审核</span></li>
+            </ul>
+        </div>
+      <div class="logo-area fLeft"></div>
+        <div class="main-content fLeft">
+          <div class="left fLeft">
+              <p>注册新用户</p>
+                <form method='post' id="form1" action="{:U('Member/checkRegister')}" >
+                  <div class="d1">
+                    <span>注册邮箱:</span>
+                    <input id="email" name="email" class="i3" type="text">
+                    <span id="accounterror" class="red">*</span>
+                  </div>
+                  <div class="d1">
+                    <span>用户名:</span>
+                    <input id="account" name="account" class="i1" type="text">
+                  </div>
+                  <div class="d1">
+                    <span>密 码:</span>
+                    <input name="password" id="password" class="i2" type="password">
+                  </div>
+                  <div class="d1">
+                    <span>确认密码:</span>
+                    <input name="repassword" id="repassword" class="i2" type="password">
+                  </div>
+                  <div class="d1">
+                    <span>验证码:</span>
+                    <input type="text" style="width: 95px;" id="verify" name="verify" class="i4"> 
+                    <img id="verifyImg" src="{:U('Member/verify')}" onClick="fleshVerify()" border="0" alt="点击刷新验证码" style="cursor:pointer" align="absmiddle">
+                  </div>
+                  <div class="d1"><span>&nbsp;</span><input name="action" value="save" type="hidden"><input class="b1" value="注 册" type="submit"></div>
+                </form>
+            </div>
+            <div class="right fRight">
+              <p>已有帐号？ <a href="{:U('Member/login')}">直接登录</a></p>
+                <!--<div class="del"><span>其他帐号登录</span></div>
+                <p class="p1"><a href=""><span class="b1"><i class="qq"></i>QQ登录</span></a><span class="b2"><i class="weibo"></i>微博登录</span></p<!-->
+            </div>
+        </div>
+    </div>
+</div><!-- login-bg end -->
+
+<!-- tips start -->
+<div class="tips mt20 clear">
+  <div class="wrap w1000">
+      <div class="tips-content fLeft">
+          <ul>
+              <li>
+                  <div class="d1"><img src="../Public/images/qun_view.png" alt="微信群查看" height="102" width="102"></div>
+                    <div class="d2">
+                      <h3>微信群查看</h3>
+                        <p>交友、娱乐、推广，你所喜欢的群在这里都有！</p>
+                    </div>
+                </li>
+                <li>
+                  <div class="d1"><img src="../Public/images/qun_release.png" alt="微信群发布" height="102" width="102"></div>
+                    <div class="d2">
+                      <h3>微信群发布</h3>
+                        <p>自己为自己代言，你的群都可以通过这里展示。</p>
+                    </div>
+                </li>
+                <li>
+                  <div class="d1"><img src="../Public/images/qun_tj.png" alt="微信群推广" height="102" width="102"></div>
+                    <div class="d2">
+                      <h3>微信群推广</h3>
+                        <p>品牌没有知名度，推广很难做，来这里试试吧~</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div><!-- tips end -->
+<!-- 内容 END -->
+   
+<include file="Member:footer" />    

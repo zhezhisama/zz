@@ -1,0 +1,13 @@
+
+    <div class="rbox">
+        <div class="rtit">微信资讯<span><a href="{:U('Article/index',array('id'=>'55'))}" target="_blank">更多&gt;&gt;</a></span></div>
+        <div class="article">
+            <ul>
+                <yufu:article catid="55" field="id,title" order="create_time desc" num="8" >
+                    <li>
+                        <a href="{:U('Article/show',array('id'=>$article['id']))}" target='_blank'>{$article['title']}</a>
+                    </li>
+                </yufu:article>
+            </ul>
+        </div>
+    </div>

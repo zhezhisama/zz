@@ -1,0 +1,219 @@
+<include file="Public:header"/>
+<!-- col-tab start -->
+<div class="col-tab mt20 clear">
+  <div class="wrap w1000">
+    <div class="col-tab-content fLeft">
+      <ul>
+        <volist name="zcategorylist" id="category" key="k">
+          <li <eq name="so.id" value="$category['id']">class="active"</eq>> 
+          <eq name="so.id" value="category['id']">
+                  {$category['catname']}
+          <else/>
+            <a class="ti" href="{:U('Weixin/index',array('id'=>$category['id']))}" title="{$category['catname']}">{$category['catname']}
+            </a>
+          </eq>
+          </li>
+        </volist>
+      </ul>
+      <span class="add fRight" onclick="location='{:U('Member/add')}'">申请收录</span>
+    </div>
+  </div>
+</div>
+<!-- col-tab end -->
+<!-- assort start -->
+<div class="assort mt10 clear">
+  <div class="wrap w1000">
+    <div class="assort-content fLeft">
+      <div class="d1">
+        <span class="fLeft"><strong>地区:</strong></span>
+        <ul class="expend" id="citybox">
+          <li class="<eq name='so.area' value='0'>active</eq>">
+          <a href="{:U('Weixin/index',array('area'=>0,'id'=>$so['id']))}">全部</a>
+          </li>
+          <volist name="recommendlist" id="vo">
+          <li class="fdiy <eq name='so.area' value='$vo.id'>active</eq>">
+          <a href="{:U('Weixin/index',array('area'=>$vo['id'],'id'=>$so['id']))}" title="{$vo['area_name']}">{$vo['area_name']}</a> &nbsp;
+          </li>
+          </volist>
+          <empty name="childAreaList">
+            <volist name="province" id="vo">
+            <li class="diy <eq name='so.area' value='$vo.id'>active</eq>">
+            <span>
+            <a href="{:U('Weixin/index',array('id'=>$so['id'],'province'=>$vo['id']))}" title="{$vo['area_name']}">{$vo['area_name']}</a>
+            </span>
+            </li>
+            </volist>
+          <else/>
+            <li class="diy active">
+            <span>
+            <a>{$province_name}</a>&gt;
+            </span>
+            </li>
+            <volist name="childAreaList" id="vo">
+            <li class="diy <eq name='so.area' value='$vo.id'>active</eq>">
+            <span>
+            <a href="{:U('Weixin/index',array('id'=>$so['id'],'area'=>$vo['id']))}" title="{$vo['area_name']}">{$vo['area_name']}</a>
+            </span>
+            </li>
+            </volist>
+          </empty>
+        </ul>
+        <span class="more" id="citymore"><img src="../Public/images/sortMore.jpg" height="28" width="67"></span>
+      </div>
+      <div class="d2">
+        <span class="fLeft"><strong>类型:</strong></span>
+        <ul class="fLeft">
+          <li class="<eq name='so.catid' value='0'>active</eq>">【<a href="{:U('Weixin/index',array('catid'=>0,'area'=>$so['area'],'id'=>$so['id'],'between'=>$so['between'],'o'=>$so['o'],'display'=>$so['display']))}">全部</a>】</li>
+          <volist name="zcategorylist" id="category1">
+            <if condition="$category1['id'] eq $so['id']">
+            <volist name="category1.pid" id="category2">
+            <li class="<eq name='so.catid' value='$category2.id'>active</eq>">【<a href="{:U('Weixin/index',array('catid'=>$category2['id'],'area'=>$so['area'],'id'=>$so['id'],'between'=>$so['between'],'o'=>$so['o'],'display'=>$so['display']))}">{$category2['catname']}</a>】
+            </li>
+            </volist>
+            </if>
+          </volist>
+        </ul>
+      </div>
+      <div class="d2">
+        <span class="fLeft"><strong>时间:</strong></span>
+        <ul class="fLeft">
+          <li class="<eq name='so.between' value='0'>active</eq>"><a href="{:U('Weixin/index',array('catid'=>$so['catid'],'area'=>$so['area'],'id'=>$so['id'],'between'=>0,'o'=>$so['o'],'display'=>$so['display']))}">不限</a></li>
+          <li class="<eq name='so.between' value='3'>active</eq>"><a href="{:U('Weixin/index',array('catid'=>$so['catid'],'area'=>$so['area'],'id'=>$so['id'],'between'=>'3','o'=>$so['o'],'display'=>$so['display']))}">三天内</a></li>
+          <li class="<eq name='so.between' value='7'>active</eq>"><a href="{:U('Weixin/index',array('catid'=>$so['catid'],'area'=>$so['area'],'id'=>$so['id'],'between'=>'7','o'=>$so['o'],'display'=>$so['display']))}">本周内</a></li>
+          <li class="<eq name='so.between' value='30'>active</eq>"><a href="{:U('Weixin/index',array('catid'=>$so['catid'],'area'=>$so['area'],'id'=>$so['id'],'between'=>'30','o'=>$so['o'],'display'=>$so['display']))}">一月内</a></li>
+        </ul>
+      </div>
+      <div class="d3" style="border-top:1px solid #eee;">
+        <div class="fLeft">
+          当前位置： <a href="/">首页</a> &gt; 
+         <volist name="position" id="vo">
+          <eq name="vo['id']" value="87"> <a href="{:U('Weixin/area',array('id'=>$vo['id']))}">{$vo.catname}</a>&nbsp;&gt;
+            <volist name="positionarea" id="voarea">
+              <neq name='voarea.level' value='0'>
+                <present name="voarea.province"> <a href="{:U('Weixin/index',array('catid'=>$voarea['id'],'province'=>$voarea['province']))}">{$voarea.areaname}</a> </present>
+                <eq name="voarea.level" value='1'> <a href="{:U('Weixin/index',array('catid'=>$position[0]['id'],'province'=>$voarea['id']))}">{$voarea.areaname}</a>&nbsp;&gt; </eq>
+                <eq name="voarea.level" value='2'> <a href="{:U('Weixin/index',array('catid'=>$position[0]['id'],'city'=>$voarea['id']))}">{$voarea.areaname}</a> </eq>
+              </neq>
+            </volist>
+            <else />
+            <a href="{:U('Weixin/index',array('id'=>$vo['id']))}">{$vo.catname}</a> </eq>
+          &gt; </volist> 
+          共有 <span class="fs">{$count}</span> 个<if condition="$id eq 44">群<elseif condition="$id eq 48">个人号<else/>公众号</if>
+        </div>
+        <div class="fRight">
+          <ul>
+            <if condition='$so.o eq 33'>
+              <li class="m1"><a href="{:U('Weixin/index',array('catid'=>$so['catid'],'area'=>$so['area'],'id'=>$so['id'],'between'=>$so['between'],'o'=>3,'display'=>$so['display']))}" class="<if condition='$so.o eq 33'>on icon_up</if>">按上传时间</a></li>
+            <elseif condition='$so.o eq 3'/>
+              <li class="m1"><a href="{:U('Weixin/index',array('catid'=>$so['catid'],'area'=>$so['area'],'id'=>$so['id'],'between'=>$so['between'],'o'=>33,'display'=>$so['display']))}" class="<if condition='$so.o eq 3'>on icon_down</if>">按上传时间</a></li>
+            <else/>
+              <li><a href="{:U('Weixin/index',array('catid'=>$so['catid'],'area'=>$so['area'],'id'=>$so['id'],'between'=>$so['between'],'o'=>3,'display'=>$so['display']))}" >按上传时间</a></li>
+            </if>
+            <if condition='$so.o eq 22'>
+              <li class="m1"><a href="{:U('Weixin/index',array('catid'=>$so['catid'],'area'=>$so['area'],'id'=>$so['id'],'between'=>$so['between'],'o'=>2,'display'=>$so['display']))}" class="<if condition='$so.o eq 22'>on icon_up</if>">按人气</a></li>
+            <elseif condition='$so.o eq 2'/>
+              <li class="m1"><a href="{:U('Weixin/index',array('catid'=>$so['catid'],'area'=>$so['area'],'id'=>$so['id'],'between'=>$so['between'],'o'=>22,'display'=>$so['display']))}" class="<if condition='$so.o eq 2'>on icon_down</if>">按人气</a></li>
+            <else/>
+              <li><a href="{:U('Weixin/index',array('catid'=>$so['catid'],'area'=>$so['area'],'id'=>$so['id'],'between'=>$so['between'],'o'=>2,'display'=>$so['display']))}" >按人气</a></li>
+            </if>
+            <if condition='$so.o eq 11'>
+              <li class="m1"><a href="{:U('Weixin/index',array('catid'=>$so['catid'],'area'=>$so['area'],'id'=>$so['id'],'between'=>$so['between'],'o'=>1,'display'=>$so['display']))}" class="<if condition='$so.o eq 11'>on icon_up</if>">按点赞数</a></li>
+            <elseif condition='$so.o eq 1'/>
+              <li class="m1"><a href="{:U('Weixin/index',array('catid'=>$so['catid'],'area'=>$so['area'],'id'=>$so['id'],'between'=>$so['between'],'o'=>11,'display'=>$so['display']))}" class="<if condition='$so.o eq 1'>on icon_down</if>">按点赞数</a></li>
+            <else/>
+              <li><a href="{:U('Weixin/index',array('catid'=>$so['catid'],'area'=>$so['area'],'id'=>$so['id'],'between'=>$so['between'],'o'=>1,'display'=>$so['display']))}" >按点赞数</a></li>
+            </if>
+            <li class="m2"><a href="{:U('Weixin/index',array('catid'=>$so['catid'],'area'=>$so['area'],'id'=>$so['id'],'between'=>$so['between'],'o'=>$so['o'],'display'=>'grid'))}" class="<eq name='so.display' value='grid'>on</eq>">大图</a></li>
+            <li class="m3"><a href="{:U('Weixin/index',array('catid'=>$so['catid'],'area'=>$so['area'],'id'=>$so['id'],'between'=>$so['between'],'o'=>$so['o'],'display'=>'list'))}"  class="<eq name='so.display' value='list'>on</eq>">列表</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- assort end -->
+<!-- qun start -->
+<div class="qun clear">
+  <div class="wrap w1000">
+    <div class="qun-content fLeft mt20">
+      <if condition="$so.display eq 'grid'">
+      <ul class="w1000">
+        <volist name="list" id="vo">
+        <li>
+        <div class="dt">
+          <neq name="vo['status']" value="1" length='12'>
+		  
+		   <img src="<empty name='vo.logo'><empty name='vo.weblogo'>../Public/images/nopic.gif<else />{$vo.weblogo}</empty><else />__ROOT__/Uploads{$vo.logo}</empty>" height="170" width="170"  alt="{$vo.pubaccount}">
+          <else />
+          <a href="{:U('Weixin/show',array('id'=>$vo['id']))}" target="_blank"><img src="<empty name='vo.logo'><empty name='vo.weblogo'>../Public/images/nopic.gif<else />{$vo.weblogo}</empty><else />__ROOT__/Uploads{$vo.logo}</empty>" height="170" width="170"  alt="{$vo.pubaccount}"></a>
+          </neq>
+        </div>
+        <div class="db">
+          <p class="p1">
+            <i class="title"></i>
+            <a href="{:U('Weixin/show',array('id'=>$vo['id']))}" title="{$vo.pubaccount}">{$vo.pubaccount|msubstr=0,7}</a>
+            <span class="view">
+              <a href="{:U('Weixin/show',array('id'=>$vo['id']))}">
+                <img src="../Public/images/c_view.jpg" alt="人气" height="18" width="20">
+              </a>
+            </span>
+          </p>
+          <p class="p2">
+            <span class="fLeft"><font class="fs">{$vo['past_time']}</font> 前上传</span><span class="fRight">查看：<font class="fs">{$vo.hits}</font></span>
+          </p>
+          <p class="p3">
+            {$vo.content|strip_tags|msubstr=0,16}
+          </p>
+        </div>
+        </li>
+        </volist>
+      </ul>
+      <else/>
+      <table bor="0" width="100%">
+        <tbody>
+          <volist name="list" id="vo">
+          <tr>
+            <td class="pt10 pb10" align="center" height="120" valign="middle">
+              <div class="box1">
+                <a href="{:U('Weixin/show',array('id'=>$vo['id']))}" title="{$vo.pubaccount}">
+                  <img src="<empty name='vo.logo'><empty name='vo.weblogo'>../Public/images/nopic.gif<else />{$vo.weblogo}</empty><else />__ROOT__/Uploads{$vo.logo}</empty>" height="100" width="100"  alt="{$vo.pubaccount}">
+                </a>
+              </div>
+              <div class="box2">
+                <p class="p1"><i class="title"></i><a href="{:U('Weixin/show',array('id'=>$vo['id']))}" title="{$vo.pubaccount}">{$vo.pubaccount|msubstr=0,7}</a>
+                </p>
+                <p class="p2"><span class="fLeft"><font class="fs">{$vo['past_time']}</font> 前上传</span><span class="fRight">查看：<font class="fs">{$vo.hits}</font></span>
+                </p>
+                <p class="p3">{$vo.content|strip_tags|msubstr=0,16}</p>
+              </div>
+              <div class="box3">
+                <a href="{:U('Weixin/show',array('id'=>$vo['id']))}" title="{$vo.pubaccount}">
+                  <img src="../Public/images/add1.jpg" title="添加" height="32" width="32">
+                </a>
+              </div>
+            </td>
+          </tr>
+          </volist>
+        </tbody>
+      </table>
+      </if>
+      <div class="pageNo vm center">
+        {$page}
+      </div>
+    </div>
+  </div>
+</div>
+<!-- qun end -->
+</script>
+<script>
+$("#citymore").toggle(function(){
+    $(".diy").show();
+    $(".fdiy").hide();
+    $("#citybox").toggleClass('expend');
+}, function() {
+   $(".fdiy").show();
+    $(".diy").hide();
+    $("#citybox").toggleClass('expend');
+});
+</script>
+<include file="Public:footer"/>

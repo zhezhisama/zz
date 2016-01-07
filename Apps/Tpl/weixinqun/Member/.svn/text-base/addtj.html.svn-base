@@ -1,0 +1,272 @@
+<include file="Member:header" />
+<div class="loginmask"></div>
+<div id="loginalert">
+  <div class="pd20 loginpd"><i class="closealert fr"></i>
+    <div class="clear"></div>
+    <div class="loginwrap">
+      <div class="loginh">
+        <div class="fl">会员登录</div>
+        <div class="fr">还没有账号<a id="sigup_now" href="" onclick="return false;">立即注册</a></div>
+        <div class="clear"></div>
+      </div>
+      <div class="clear"></div>
+    <form method='post' id="form1123" action="{:U('Member/checkLogin')}" >
+        <div class="logininput">
+          <input type="text" id="account" name="account" class="loginusername" placeholder="用户名" />
+          <input type="password" id="password" name="password"   placeholder="******"/>
+          <input type="text" id="verify" name="verify" placeholder="验证码" class="yzm"/>
+          <img id="verifyImg" src="{:U('Member/verify')}" onClick="fleshVerify()" border="0" alt="点击刷新验证码" style="cursor:pointer; margin-top:10px; width:95px;" align="absmiddle"></div>
+        <div class="loginbtn">
+          <div class="loginsubmit fl">
+            <input type="submit" value="登录" />
+            <div class="loginsubmiting">
+              <div class="loginsubmiting_inner"></div>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="bk10"></div>
+  <div class="thirdlogin">
+    <div class="pd50">
+      <div class="mt10 mb10" style="color:#666; line-height:35px">用第三方帐号直接登录</div>
+      <ul>
+        <li id="sinal"title="暂未开通敬请期待"><a href="">微博账号登录</a></li>
+        <li id="qql"title="暂未开通敬请期待"><a href="">QQ账号登录</a></li>
+        <div class="clear"></div>
+      </ul>
+      <div class="bk10"></div>
+    </div>
+  </div>
+</div>
+<div id="reg_setp">
+  <div class="back_setp">返回</div>
+   <div class="blogo"><img src="../Public/images/logo.png" width="191" height="70" />
+    <p style="color:#D03322; font-size:14px; line-height:20px; text-align:right;">-----会员注册</p>
+  </div>
+  <div class="regbox" id="setp_quicklogin">
+    <form method='post' id="form1" action="{:U('Member/checkRegister')}" >
+      <li>
+        <p>用户名:<span id="accounterror" class="red">*</span></p>
+        <input type="text" id="account" name="account" class="u" placeholder="用户名"/>
+      </li>
+      <li>
+        <p>密码:<span id="passworderror" class="red">*</span></p>
+        <input type="password" id="password" name="password" class="u" placeholder="******"/>
+      </li>
+      <li>
+        <p>确认密码:<span id="repassworderror" class="red">*</span></p>
+        <input type="password" id="repassword" name="repassword" class="u" placeholder=""/>
+      </li>
+      <li>
+        <p>邮箱:<span id="emailerror" class="red">*</span></p>
+        <input type="text" id="email" name="email" class="u"/>
+      </li>
+      <li>
+        <p>昵称:<span id="nicknameerror" class="red">*</span></p>
+        <input type="text" id="nickname" name="nickname" class="u" placeholder="昵称"/>
+      </li>
+      <li style="height:30px;">
+        <input type="text" class="chimg" id="verify" name="verify" placeholder="验证码"/>
+        <img id="verifyImg" src="{:U('Member/verify')}" onClick="fleshVerify()" border="0" alt="点击刷新验证码" style="cursor:pointer; width:75px;" align="absmiddle"></li>
+      <div class="bk10"></div>
+      <li>
+        <input type="submit" value="登录" class="gologin">
+      </li>
+    </form>
+  </div>
+</div>
+<link rel="stylesheet" type="text/css" href="../Public/js/jscal2.css"/>
+<link rel="stylesheet" type="text/css" href="../Public/js/border-radius.css"/>
+<link rel="stylesheet" type="text/css" href="../Public/js/win2k.css"/>
+<script type="text/javascript" src="../Public/js/calendar.js"></script>
+<script type="text/javascript" src="../Public/js/lang/en.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $.formValidator.initConfig({formID:"form1",debug:false,submitOnce:true,
+		onError:function(msg,obj,errorlist){
+			alert(msg);
+		},
+		submitAfterAjaxPrompt : '有数据正在异步验证，请稍等...'
+	});
+        $("#pubaccountid").formValidator({onShow:"请选择公众账号",onFocus:"选择绑定的公众账号!",onCorrect:"选择正确"}).inputValidator({min:1,onError: "请选择公众账号!"});
+        $("#recommendid").formValidator({onShow:"请选择推荐位置",onFocus:"推荐位置必须选择",onCorrect:"选择正确"}).inputValidator({min:1,onError:"请选择推荐位置!"});
+        $("#starttime,#endtime").formValidator({tipID:"timeTip",onShow:"请选择时间范围!",onFocus:"时间范围必选",onCorrect:"选择正确！"}).functionValidator({fun:allEmpty});;   
+        
+    });
+    function allEmpty(val,elem) { 
+        return ($("#starttime").val()==="" || $("#endtime").val()==="") ? '时间范围必选！' :true; 
+    } 
+</script>
+<div class="main">
+ <include file="Member:left" />
+  <div class="mrightbox fl">
+    <div class="member_detail">我要推荐</div>
+    <div class="member_content">
+      <form method='post' id="form1" name="form1" action="{:U('Member/addtj')}">
+        <div>
+          <label>选择公号：</label>
+          <select id="pubaccountid" name="wxid">
+                          <option value="" >请选择</option>
+                            <volist name="pubaccountlist" id="pubvo">
+                            <option value="{$pubvo['id']}">{$pubvo['pubaccount']}</option>
+                            </volist>
+                        </select>
+          <span id="pubaccountidTip"></span></div>
+        <div>
+          <label>推荐位置：</label>
+          <select id="recommendid" name="recommendid" >
+                            <option value="" name="">请选择</option>
+                            <volist name="recommendlist" id="recommendvo">
+                            <option value="{$recommendvo.id}" name="{$recommendvo.intergral}">{$recommendvo.recommendname}</option>
+                            </volist>
+                        </select>
+          <span id="recommendidTip"></span></div>
+        <div>
+          <label>时间范围：</label>
+           <input type="text" name="starttime" id="starttime" class="ipt3">
+                        <script type="text/javascript">
+                            Calendar.setup({
+                                weekNumbers: true,
+                                inputField : "starttime",
+                                trigger    : "starttime",
+                                dateFormat: "%Y-%m-%d",
+                                showTime: true,
+                                minuteStep: 1,
+                                onSelect   : function() {this.hide();starttime();}
+                            });
+                        </script>
+          <span>至</span>
+           <input type="text" name="endtime" id="endtime" class="ipt3">
+                        <script type="text/javascript">
+                            Calendar.setup({
+                                weekNumbers: true,
+                                inputField : "endtime",
+                                trigger    : "endtime",
+                                dateFormat: "%Y-%m-%d",
+                                showTime: true,
+                                minuteStep: 1,
+                                onSelect   : function() {this.hide();endtime();}
+                            });
+
+                        </script>
+          <span id="timeTip"></span></div>
+        <div>
+          <label>消费积分：</label>
+            <input type="text" name="intergral" id="intergral" class="ipt2" style="background: #E9E8E2;" readonly="readonly">
+
+        </div>
+        <div>
+          <label>推荐说明：</label>
+            <textarea readonly="readonly"><yufu:other settag="tjsm" /></textarea>
+        </div>
+        <div>
+          <label>&nbsp;</label>
+        <input type="submit" id="submit" value="提 交" class="submit">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+       $('#recommendid').change(function(){
+           
+           var starttime=$("#starttime").val();
+           var endtime=$("#endtime").val();
+           if(starttime!=="" && endtime!==""){
+       
+                //计算出相差天数
+                var days=daysBetween(starttime,endtime)+1;
+                var intergralnum=$('#recommendid option:selected').attr('name');
+                if(intergralnum===""){
+                    alert('请选择推荐位置');
+                }else{
+                    $("#intergral").val(days*intergralnum);
+                }
+           }
+       });
+    });
+    function starttime(){
+        var starttime=$("#starttime").val();
+        var endtime=$("#endtime").val();
+        
+        if(starttime==="" || endtime===""){
+            return;
+        }
+
+        if(starttime>endtime){
+           alert('结束日期不能小于开始日期');
+           $("#intergral").val('');
+        }else{
+            //计算出相差天数
+            var days=daysBetween(starttime,endtime)+1;
+            var intergralnum=$('#recommendid option:selected').attr('name');
+            if(intergralnum===""){
+                alert('请选择推荐位置');
+            }else{
+                $("#intergral").val(days*intergralnum);
+            }
+            
+        }
+    }
+    function endtime(){
+        var starttime=$("#starttime").val();
+        var endtime=$("#endtime").val();
+        if(starttime==="" || endtime===""){
+            return;
+        }
+
+        if(starttime>endtime){
+           alert('结束日期不能小于开始日期');
+           $("#intergral").val('');
+        }else{
+
+            //计算出相差天数
+            var days=daysBetween(starttime,endtime)+1;
+            var intergralnum=$('#recommendid option:selected').attr('name');
+            if(intergralnum===""){
+                alert('请选择推荐位置');
+            }else{
+                $("#intergral").val(days*intergralnum);
+            }
+            
+        }
+    }
+
+    function daysBetween(DateOne,DateTwo){  
+
+        var OneMonth = DateOne.substring(5,DateOne.lastIndexOf ('-')); 
+        var OneDay = DateOne.substring(DateOne.length,DateOne.lastIndexOf ('-')+1); 
+        var OneYear = DateOne.substring(0,DateOne.indexOf ('-'));
+
+        var TwoMonth = DateTwo.substring(5,DateTwo.lastIndexOf ('-')); 
+        var TwoDay = DateTwo.substring(DateTwo.length,DateTwo.lastIndexOf ('-')+1); 
+        var TwoYear = DateTwo.substring(0,DateTwo.indexOf ('-'));
+
+        var cha=((Date.parse(OneMonth+'/'+OneDay+'/'+OneYear)- Date.parse(TwoMonth+'/'+TwoDay+'/'+TwoYear))/86400000);   
+        return Math.abs(cha); 
+    }
+
+</script>
+<div class="bk10"></div>
+<div id="rightButton">
+  <ul id="right_ul">
+    <li id="right_ewm" onmousemove="$('#ewm').show();" onmouseout="$('#ewm').hide();">
+      <p id="ewm" style="display:none"><img src="../Public/images/octwein.jpg" /></p>
+    </li>
+    <li id="right_qq" class="right_ico" show="qq" hide="tel"></li>
+    <li id="right_tel" class="right_ico" show="tel" hide="qq"></li>
+    <li id="right_tip" class="png">
+      <p class="flagShow_p1 flag_tel">商务合作</p>
+      <p class="flagShow_p2 flag_tel line91">023-58101029 </p>
+      <p class="lxname">匡先生</p>
+      <p class="flagShow_p1 flag_qq">咨询QQ</p>
+      <p class="flagShow_p2 flag_qq"><a href="http://wpa.qq.com/msgrd?v=3&uin=75943938&site=qq&menu=yes" target="_blank"><img border="0" src="../Public/images/qqon.png"></a><span>75943938</span></p>
+    </li>
+  </ul>
+</div>
+<div id="backToTop"><a href="javascript:;" onfocus="this.blur();" class="backToTop_a png"></a></div>
+<include file="Member:footer" />

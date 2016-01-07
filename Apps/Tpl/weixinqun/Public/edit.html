@@ -1,0 +1,636 @@
+<include file="Member:header" />
+<script language="javascript" src="../Public/js/swfobject.js"></script>
+<script language="javascript" src="../Public/js/fullAvatarEditor.js"></script>
+<script type="text/javascript" src="../Public/js/area.js"></script>
+<script>var ajaxurl="{:U('Ajax/getArea')}"; var city="{$vo.city}"</script>
+<script type="text/javascript" src="../Public/js/select-option-disabled-emulation.js"></script>
+  <script type="text/javascript">
+    function change_publish_type(){
+      var publish_type_id = $("#publish_type_id").val();
+      //var url = "{:U('Member/add',array('publish_type_id'=>'\"+publish_type_id+\"'))}";
+      var url = "./index.php?m=Member&a=add&publish_type_id="+publish_type_id;
+
+      //var nodename='111111';
+          //var url="{:U('Weixin/delfile',array('id'=>$vo['id'],'file'=>'"+nodename+"'))}";
+          window.location.href = url;    
+      }
+  </script>
+  <!-- 内容 START -->
+  <div class="center-content mt20">
+    <div class="wrap w1000">
+      <include file="Member:left" />
+      <div class="right-content fRight">
+        <h2>修改</h2>
+
+        <div class="mainbody mt10">
+          <form method='post' id="form1" name="form1" action="{:U('Member/edit')}"  enctype="multipart/form-data">
+            <div class="">
+              <label>发布类别:</label>
+              <select class="s0 c42d" name="publish_type_id" id="publish_type_id" onchange="change_publish_type()">
+                <volist name="publish_type" id="ptvo">
+                    <option value="{$ptvo['id']}" <eq name="vo.publish_type_id" value="$ptvo.id">selected="selected"</eq>>
+                        {$ptvo['catname']}
+                    </option>
+                </volist> 
+              </select> 
+              <span style="color:red;font-size:12px;">提示：请选择正确的分类</span>
+            </div>
+            <table class="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td width="90" class="td1">栏目：</td>
+                  <td width="" class="td2">
+                    <input type="hidden" id="hidden_wxqtype" name="wxqtype" value="0"> 
+                    <span id="span_wxqtype">
+                      <select name="catid" id="catid">
+                        <option value="" >请选择</option>
+                        <volist name="categorylist" id="catvo">
+                          <if condition="$categorylist[$key]['level'] egt $categorylist[$key+1]['level']">
+                              <option value="{$catvo['id']}" <eq name="vo.catid" value="$catvo['id']">selected="selected"</eq>>
+                          <else />
+                          <option value="{$catvo['id']}" disabled="disabled">
+                          </if>
+
+                          <for start="1" end="$catvo['level']">
+                          &nbsp;&nbsp;
+                          </for>
+                          <if condition="$catvo['level'] gt 1">
+                          ├&nbsp;
+                          </if>
+                          {$catvo['catname']}
+                          </option>
+                        </volist> 
+                      </select>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <table class="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tbody>
+                <tr>
+                  <td width="90" class="td1">地区：</td>
+                  <td width="" class="td2">
+                    <input type="hidden" id="hidden_nativeplace" name="nativeplace" value="0"> 
+                    <span id="span_nativeplace">
+                      <select name="province" id="province">
+                          <option value="-1" selected>省份</option>
+                          <volist name="province" id="one">
+                              <option value="{$one.id}">{$one.area_name}</option>
+                          </volist>
+                      </select>
+                      <select name="city" id="city">
+                          <option value="-1">城市</option>
+                      </select>
+                      <span class="tip">全不选则默认中国，没有可以不选!</span>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <if condition="$publish_type_id eq 44">
+              <table cellspacing="0" cellpadding="0" border="0" width="100%" class="table">
+                <tbody>
+                  <tr>
+                    <td width="90" class="td1">QQ：</td>
+                    <td width="" class="td2">
+                      <input type="text" name="qq" id="qq" value="{$vo.qq}">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                  <tr>
+                    <td width="90" class="td1">群上限人数：</td>
+                    <td width="" class="td2">
+                      <select name="qun_shang_xian" id="qun_shang_xian">
+                                      <volist name="qun_shang_xian" id="qsxvo"  key="k">
+                                          <option value="{$k}" <eq name="vo.qun_shang_xian" value="$k">selected="selected"</eq>>
+                                              {$qsxvo}
+                                          </option>
+                                      </volist> 
+                                  </select>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                  <tr>
+                    <td width="90" class="td1">群现有人数：</td>
+                    <td width="" class="td2">
+                      <input type="text" name="renshu" id="renshu" style="width:200" value="{$vo.renshu}">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table" width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tbody>
+                  <tr>
+                    <td width="90" class="td1">群主微信号：</td>
+                    <td width="" class="td2">
+                      <input type="text" name="wxaccount" id="wxaccount" style="width:200" value="{$vo.wxaccount}">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="d1">
+                <label for="title">微信群名称:</label>
+                <input type="text" name="pubaccount" id="pubaccount" value="{$vo.pubaccount}" class="i1" onkeyup="value=value.substr(0,40);document.getElementById(&quot;strcount1&quot;).innerHTML=40-value.length;">
+                <label>还可输入<span id="strcount1">40</span>个字符</label>
+              </div>
+              <div class="d1">
+                <label for="content">微信群简介:</label>
+                <textarea name="content" id="content" style="margin-left:5px;width:400px;height:120px;" onkeyup="value=value.substr(0,255);document.getElementById(&quot;strcount&quot;).innerHTML=255-value.length;">{$vo.content}</textarea>
+                <p style="text-align:right;color:#aaa;width:520px;">还可以输入<span id="strcount">255</span>个字</p>
+              </div>
+              <div class="d1" id="fm1">
+                <label for="filedata2">封面：</label>
+                <div>
+                  <notempty name="vo.logo">
+                    <div>
+									<input type="hidden"  name="logo"  width="100" id="logo" value="{$vo.logo}">
+									<img id="logosrc"  width="100" src="__ROOT__/Uploads/{$vo.logo}">
+                    </div>
+                    <else/>
+				  <div>
+									<input type="hidden"  name="logo"  width="100" id="logo">
+									<img id="logosrc"  width="100" src="/404/fengmian.jpg">
+				  </div>
+				  </notempty>
+                </div>
+              </div>
+              <div class="d1" id="fm2">
+                <label for="filedata">二维码：</label>
+                <div>
+                  <notempty name="vo.qrcode">
+                  <div>
+									<input type="hidden"  name="qrcode"  width="100" id="qrcode"  value="{$vo.qrcode}">
+									<img id="qrcodesrc"  width="100" src="__ROOT__/Uploads/{$vo.qrcode}">
+                  </div>
+                  <else/>
+				  <div>
+									<input type="hidden"  name="qrcode"  width="100" id="qrcode">
+									<img id="qrcodesrc"  width="100" src="/404/erweima.jpg">
+				  </div>
+                  </notempty>
+                </div>
+              </div>
+            <elseif condition="$publish_type_id eq 48"/>
+              <table class="table" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tbody>
+                  <tr>
+                    <td class="td1" width="90">微信号：</td>
+                    <td class="td2" width="">
+                      <input type="text" name="wxaccount" id="wxaccount" value="{$vo.wxaccount}" style="width:200" type="text">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tbody>
+                  <tr>
+                    <td class="td1" width="90">手机号：</td>
+                    <td class="td2" width="">
+                      <input style="width:200" id="phone" name="phone" value="{$vo.phone}" type="text">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tbody>
+                  <tr>
+                    <td class="td1" width="90">QQ：</td>
+                    <td class="td2" width="">
+                      <input style="width:200" id="qq" name="qq" type="text" value="{$vo.qq}">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="d1">
+                <label for="title">昵称:</label>
+                <input name="pubaccount" id="pubaccount"  value="{$vo.pubaccount}" class="i1" onkeyup='value=value.substr(0,40);document.getElementById("strcount1").innerHTML=40-value.length;' type="text">
+                <label>还可输入<span id="strcount1">40</span>个字符</label>
+              </div>
+              <div class="d1">
+                <label for="content">简介:</label>
+                <textarea name="content" id="content" style="margin-left:5px;width:400px;height:120px;" onkeyup='value=value.substr(0,255);document.getElementById("strcount").innerHTML=255-value.length;'>{$vo.content}</textarea>
+                <p style="text-align:right;color:#aaa;width:520px;">还可以输入<span id="strcount">255</span>个字</p>
+              </div>
+              <div class="d1" id="fm1">
+                <label for="filedata2">封面：</label>
+                <div>
+                  <notempty name="vo.logo">
+                    <div>
+									<input type="hidden"  name="logo"  width="100" id="logo" value="{$vo.logo}">
+									<img id="logosrc"  width="100" src="__ROOT__/Uploads/{$vo.logo}">
+                    </div>
+                    <else/>
+				  <div>
+									<input type="hidden"  name="logo"  width="100" id="logo">
+									<img id="logosrc"  width="100" src="/404/fengmian.jpg">
+				  </div>
+				  </notempty>
+                </div>
+              </div>
+              <div class="d1" id="fm2">
+                <label for="filedata">二维码：</label>
+                <div>
+                  <notempty name="vo.qrcode">
+                  <div>
+									<input type="hidden"  name="qrcode"  width="100" id="qrcode"  value="{$vo.qrcode}">
+									<img id="qrcodesrc"  width="100" src="__ROOT__/Uploads/{$vo.qrcode}">
+                  </div>
+                  <else/>
+				  <div>
+									<input type="hidden"  name="qrcode"  width="100" id="qrcode">
+									<img id="qrcodesrc"  width="100" src="/404/erweima.jpg">
+				  </div>
+                  </notempty>
+                </div>
+              </div>
+            <elseif condition="$publish_type_id eq 47"/>
+              <table class="table" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tbody>
+                  <tr>
+                    <td class="td1" width="90">QQ：</td>
+                    <td class="td2" width="">
+                      <input style="width:200" id="qq" name="qq" type="text" value="{$vo.qq}">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tbody>
+                  <tr>
+                    <td class="td1" width="90">现有粉丝：</td>
+                    <td class="td2" width="">
+                      <input name="rensu" id="rensu" style="width:200" type="text" value="{$vo.rensu}">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="d1">
+                <label>类型:</label>&nbsp;
+                <input name="typeid" value="2" type="radio" <eq name="vo.typeid" value="1">checked</eq>>企业号 &nbsp;
+                <input name="typeid" value="1" type="radio" <eq name="vo.typeid" value="2">checked</eq>>订阅号
+              </div>
+              <div class="d1">
+                <label>认证:</label>&nbsp;
+                <input name="renzhen" value="1" type="radio" <eq name="vo.typeid" value="1">checked</eq>>已认证 &nbsp;
+                <input name="renzhen" value="2" type="radio" <eq name="vo.typeid" value="2">checked</eq>>未认证
+              </div>
+              <div class="d1">
+                <label for="title">公众号名称:</label>
+                <input name="pubaccount" id="pubaccount" class="i1" onkeyup='value=value.substr(0,40);document.getElementById("strcount1").innerHTML=40-value.length;' type="text" value="{$vo.pubaccount}">
+                <label>还可输入<span id="strcount1">40</span>个字符</label>
+              </div>
+              <div class="d1">
+                <label for="title">公众号:</label>
+                <input name="wxaccount" id="wxaccount" class="i1" type="text" value="{$vo.wxaccount}">
+              </div>
+              <div class="d1">
+                <label for="content">公众号简介:</label>
+                <textarea name="content" id="content" style="margin-left:5px;width:400px;height:120px;" onkeyup='value=value.substr(0,255);document.getElementById("strcount").innerHTML=255-value.length;'>{$vo.wxaccount}</textarea>
+                <p style="text-align:right;color:#aaa;width:520px;">还可以输入<span id="strcount">255</span>个字</p>
+              </div>
+              <div class="d1" id="fm1">
+                <label for="filedata2">封面：</label>
+                <div>
+                  <notempty name="vo.logo">
+                    <div>
+									<input type="hidden"  name="logo"  width="100" id="logo" value="{$vo.logo}">
+									<img id="logosrc"  width="100" src="__ROOT__/Uploads/{$vo.logo}">
+                    </div>
+                    <else/>
+				  <div>
+									<input type="hidden"  name="logo"  width="100" id="logo">
+									<img id="logosrc"  width="100" src="/404/fengmian.jpg">
+				  </div>
+				  </notempty>
+                </div>
+              </div>
+              <div class="d1" id="fm2">
+                <label for="filedata">二维码：</label>
+                <div>
+                  <notempty name="vo.qrcode">
+                  <div>
+									<input type="hidden"  name="qrcode"  width="100" id="qrcode"  value="{$vo.qrcode}">
+									<img id="qrcodesrc"  width="100" src="__ROOT__/Uploads/{$vo.qrcode}">
+                  </div>
+                  <else/>
+				  <div>
+									<input type="hidden"  name="qrcode"  width="100" id="qrcode">
+									<img id="qrcodesrc"  width="100" src="/404/erweima.jpg">
+				  </div>
+                  </notempty>
+                </div>
+              </div>
+            <else/>
+              <table class="table" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tbody>
+                  <tr>
+                    <td class="td1" width="90">QQ：</td>
+                    <td class="td2" width="">
+                      <input style="width:200" id="qq" name="qq" type="text" value="{$vo.qq}">
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <table class="table" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tbody>
+                  <tr>
+                    <td class="td1" width="90">微信：</td>
+                    <td class="td2" width="">
+                      <input name="wxaccount" id="wxaccount" style="width:200" type="text" value="{$vo.wxaccount}">
+                    </td>
+                  </tr>
+ 				  <tr>
+				  	<td class="td1" width="90">微信名称：</td>
+				  	<td class="td2" width="">
+				  		<input name="pubaccount" id="pubaccount" style="width:200" type="text" value="{$vo.pubaccount}">
+				  	</td>
+				  </tr>
+               </tbody>
+              </table>
+              <div class="d1">
+                <label>货源图片：</label>&nbsp;<span style="color:#e00;">最多只能上传5张图片</span>
+                <div class="add_box">
+
+                  <notempty name="vo.img1">
+                    
+									<input type="hidden"  name="img1"  width="100" id="img1" value="{$vo.img1}">
+									<img id="image1src"  width="100" src="__ROOT__/Uploads/{$vo.img1}">
+                    
+                    <else/>
+				  
+									<input type="hidden"  name="img1"  width="100" id="img1">
+									<img id="image1src"  width="100" src="/404/fengmian.jpg">
+				  
+				  </notempty>              
+				  <notempty name="vo.img1">
+                    
+									<input type="hidden"  name="img2"  width="100" id="img2" value="{$vo.img2}">
+									<img id="image2src"  width="100" src="__ROOT__/Uploads/{$vo.img2}">
+                    
+                    <else/>
+				  
+									<input type="hidden"  name="img2"  width="100" id="img2">
+									<img id="image2src"  width="100" src="/404/fengmian.jpg">
+				  
+				  </notempty>
+				  <notempty name="vo.img3">
+                    
+									<input type="hidden"  name="img3"  width="100" id="img3" value="{$vo.img3}">
+									<img id="image3src"  width="100" src="__ROOT__/Uploads/{$vo.img3}">
+                    
+                    <else/>
+				  
+									<input type="hidden"  name="img3"  width="100" id="img3">
+									<img id="image3src"  width="100" src="/404/fengmian.jpg">
+				  
+				  </notempty>
+				  <notempty name="vo.img4">
+                    
+									<input type="hidden"  name="img4"  width="100" id="img4" value="{$vo.img4}">
+									<img id="image4src"  width="100" src="__ROOT__/Uploads/{$vo.img4}">
+                    
+                    <else/>
+				  
+									<input type="hidden"  name="img4"  width="100" id="img4">
+									<img id="image4src"  width="100" src="/404/fengmian.jpg">
+				  
+				  </notempty>
+				  <notempty name="vo.img5">
+                   
+									<input type="hidden"  name="img5"  width="100" id="img5" value="{$vo.img5}">
+									<img id="image5src"  width="100" src="__ROOT__/Uploads/{$vo.img5}">
+                    
+                    <else/>
+				  
+									<input type="hidden"  name="img5"  width="100" id="img5">
+									<img id="image5src"  width="100" src="/404/fengmian.jpg">
+				  
+				  </notempty>
+                 
+                </div>
+              </div>
+              <div class="d1">
+                <label for="title">货源名称:</label>
+                <input name="pubaccount" id="pubaccount" class="i1" onkeyup='value=value.substr(0,40);document.getElementById("strcount1").innerHTML=40-value.length;' type="text" value="{$vo.pubaccount}">
+                <label>还可输入<span id="strcount1">40</span>个字符</label>
+              </div>
+              <div class="d1">
+                <label for="maidian">货源卖点:</label>
+                <textarea name="maidian" id="maidian" style="margin-left:5px;width:400px;height:120px;" onkeyup='value=value.substr(0,255);document.getElementById("strcount").innerHTML=255-value.length;'>{$vo.pubaccount}</textarea>
+                <p style="text-align:right;color:#aaa;width:520px;">还可以输入<span id="strcount">255</span>个字</p>
+              </div>
+              <div class="d1">
+                <label class="ueditor-text">货源描述：</label>
+                <div class="ueditor-div">
+                  <textarea name="content" id="myEditor1">{$vo.content}</textarea>
+                            <script type="text/javascript">
+                              var url = '__ROOT__/admin/Tpl/Public/ueditor/';
+                                var editor = new UE.ui.Editor({initialFrameHeight:100,initialFrameWidth:400 });
+                                //editor.setOpt('initialFrameWidth', '200');
+                                editor.render("myEditor1");
+                                //1.2.4以后可以使用一下代码实例化编辑器
+                                //UE.getEditor('myEditor')
+                            </script>
+                          </div>
+              </div>
+              <div class="d1" id="fm1">
+                <label for="filedata2">封面：</label>
+                <div>
+                  <notempty name="vo.logo">
+                    <div>
+									<input type="hidden"  name="logo"  width="100" id="logo" value="{$vo.logo}">
+									<img id="logosrc"  width="100" src="__ROOT__/Uploads/{$vo.logo}">
+                    </div>
+                    <else/>
+				  <div>
+									<input type="hidden"  name="logo"  width="100" id="logo">
+									<img id="logosrc"  width="100" src="/404/fengmian.jpg">
+				  </div>
+				  </notempty>
+                </div>
+              </div>
+              <div class="d1" id="fm2">
+                <label for="filedata">二维码：</label>
+                <div>
+                  <notempty name="vo.qrcode">
+                  <div>
+									<input type="hidden"  name="qrcode"  width="100" id="qrcode"  value="{$vo.qrcode}">
+									<img id="qrcodesrc"  width="100" src="__ROOT__/Uploads/{$vo.qrcode}">
+                  </div>
+                  <else/>
+				  <div>
+									<input type="hidden"  name="qrcode"  width="100" id="qrcode">
+									<img id="qrcodesrc"  width="100" src="/404/erweima.jpg">
+				  </div>
+                  </notempty>
+                </div>
+              </div>
+            </if>
+            <div class="d1">
+              <label for="filedata">抢位：</label>
+              <volist name="qiangwei" id="vo1" key="k">
+                <empty name="vo1"><input name="qiangwei_sort" value="{$k}" type="radio" <eq name="vo.qiangwei_sort" value="{$k}">checked</eq> /><span class="qw-no">（{$k}号）未抢占</span><else/><input name="qiangwei_sort" value="{$k}" type="radio" disabled="disabled" <eq name="vo.qiangwei_sort" value="$k">checked</eq> /><span class="qw-yes">（{$k}号）已抢占</span></empty>
+              </volist>
+              <input type="hidden" name="id" value="{$vo.id}">
+              <input type="hidden" name="check_qiangwei_sort" value="{$vo.qiangwei_sort}">
+              <input type="hidden" name="qiangwei_time" value="{$vo.qiangwei_time}">
+              <input type="submit" class="b1" value="提交">
+            </div>
+          </form>
+          <br class="clear">
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+.popBox1 { background:#e5e5e5;width:700px;height:500px;border:1px solid #bdbdbd;margin:0 auto;position:fixed;top: 25%;left: 30%;z-index:100;display:none; }
+.popBox1 h4 { width:680px;height:40px;line-height:40px;background:url(/404/popBox1_t_bg.jpg) repeat-x;font-size:14px;padding:0 10px; }
+.popArea { width:690px;height:455px;margin:0 5px 5px 5px;background:#fff;border:1px solid #d2d2d2; }
+.popBox1 .closed,#imgfmsrc,#litpicsrc{cursor: pointer;}
+  </style>
+  <!-- 内容 END -->
+  <div class="popBox1" style="display: none;">
+	<h4><span id="poptit">上传</span><span class="fRight mt5 closed1" title="关闭"><img src="/404/popBox1_close.png" alt="关闭"></span></h4>
+    <div class="popArea">
+    <iframe marginheight="0" marginwidth="0" frameborder="0" scrolling="no" width="630" height="430" id="iframepage" name="iframepage" src=""></iframe>
+    </div>
+</div>
+  <!-- 内容 END -->
+ <script>
+     $("#image1src").click(function(){
+        var url="/404/user-wxuploadi1.htm";
+        $("#poptit").html("上传图片");
+        $(".popBox1").show();
+        $("#iframepage").attr('src',url);
+    });
+    $("#image2src").click(function(){
+        var url="/404/user-wxuploadi2.htm";
+        $("#poptit").html("上传图片");
+        $(".popBox1").show();
+        $("#iframepage").attr('src',url);
+    });
+    $("#image3src").click(function(){
+        var url="/404/user-wxuploadi3.htm";
+        $("#poptit").html("上传图片");
+        $(".popBox1").show();
+        $("#iframepage").attr('src',url);
+    });
+    $("#image4src").click(function(){
+        var url="/404/user-wxuploadi4.htm";
+        $("#poptit").html("上传图片");
+        $(".popBox1").show();
+        $("#iframepage").attr('src',url);
+    });
+    $("#image5src").click(function(){
+        var url="/404/user-wxuploadi5.htm";
+        $("#poptit").html("上传图片");
+        $(".popBox1").show();
+        $("#iframepage").attr('src',url);
+    });
+   $("#logosrc").click(function(){
+        var url="/404/user-wxuploadf.htm";
+        $("#poptit").html("上传封面");
+        $(".popBox1").show();
+        $("#iframepage").attr('src',url);
+    });
+    $("#qrcodesrc").click(function(){
+        var url="/404/user-wxuploade.htm";
+        $("#poptit").html("上传二维码");
+        $(".popBox1").show();
+        $("#iframepage").attr('src',url);
+    });
+    $(".closed1").click(function(){
+        closed1();
+    });
+    function closed1()
+    {
+        $(".popBox1").hide();
+        $("#iframepage").attr('src','');
+    }
+
+    function validate_required(field,alerttxt)
+    {
+    with (field)
+      {
+      if (value==null||value==""||value==0)
+        {alert(alerttxt);return false}
+      else {return true}
+      }
+    }
+    
+    function validate_form(thisform)
+    {
+        
+    with (thisform)
+      {
+         if (validate_required(logo,"头像没有上传!")==false)
+            {logo.focus();return false}  
+      }
+    }
+</script>  
+
+
+  <script type="text/javascript">
+
+    $(function(){
+        
+        //选择省份
+        $("#province option[value='{$vo.province}']").attr("selected", true); 
+        loadArea($("#province").val(),'city');
+        
+        //选择城市
+        $("#province").change(function(){
+            var ajaxurl="{:U('Ajax/getArea')}";
+            var areaId=this.value;
+            var areaType='city';
+            var city="{$vo.city}";
+            
+            $.post(ajaxurl,{'areaId':areaId},function(data){
+
+                if(areaType==='city'){
+                   $('#'+areaType).html('<option value="-1">城市</option>');
+
+                   $('#district').html('<option value="-1">镇/区</option>');
+                }else if(areaType==='district'){
+                   $('#'+areaType).html('<option value="-1">镇/区</option>');
+                }
+                if(areaType!=='null'){
+                    $.each(data,function(no,items){
+                        if(items.id===city){
+                            $('#'+areaType).append('<option value="'+items.id+'" selected="selected">'+items.area_name+'</option>');
+                        }else{
+                            $('#'+areaType).append('<option value="'+items.id+'">'+items.area_name+'</option>');
+                        }
+                       
+                    });
+                    
+                }
+            });
+        });
+        
+    });
+    
+    function foreverdelthumb(cur,img){
+       var nodename=img;
+       var id="{$vo['id']}";
+       var url="{:U('Member/delfile')}";
+
+        //创建删除节点
+        $.get(url,{id:id,file:nodename},function(){
+            //插入新节点
+            var html='\r\n<input type="file" class="ipt5" name="'+nodename+'" />\r\n';
+            $(cur).parent().after(html);
+            //移除当前节点
+            $(cur).parent().remove();
+        });
+    }
+
+</script>
+<include file="Member:footer" />    

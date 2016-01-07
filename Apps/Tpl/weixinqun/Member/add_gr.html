@@ -1,0 +1,393 @@
+<include file="Member:header1" />
+<script language="javascript" src="../Public/js/swfobject.js"></script>
+<script language="javascript" src="../Public/js/fullAvatarEditor.js"></script>
+<script type="text/javascript" src="../Public/js/area.js"></script>
+<script>var ajaxurl="{:U('Ajax/getArea')}"; var city="{$vo.city}"</script>
+<script type="text/javascript" src="../Public/js/select-option-disabled-emulation.js"></script>
+	<script type="text/javascript">
+		function change_publish_type(){
+			var publish_type_id = $("#publish_type_id").val();
+			//var url = "{:U('Member/add',array('publish_type_id'=>'\"+publish_type_id+\"'))}";
+			var url = "./index.php?m=Member&a=add&publish_type_id="+publish_type_id;
+
+			//var nodename='111111';
+       		//var url="{:U('Weixin/delfile',array('id'=>$vo['id'],'file'=>'"+nodename+"'))}";
+	        window.location.href = url;	   
+	    }
+	</script>
+    <script src="jquery.js"></script>
+    <script>
+	$(function(){
+		$(".a1").click(function(){
+			$("#one").attr("style","display:block;");
+			$("#two").attr("style","display:none;");
+			$(".bg1").attr("style","color:#F00");
+			$(".bg2").attr("style","");
+		})
+		$(".a2").click(function(){
+			$("#one").attr("style","display:none;");
+			$("#two").attr("style","display:block;");
+			$(".bg1").attr("style","");
+			$(".bg2").attr("style","color:#F00");
+		})
+		$("#catid").change(function(){
+			var lm_id = $("#catid").val();
+			$.get("{:U('Member/gold')}",{lm_id:lm_id},function(data){
+				$("#gold").text(data+"个金币");
+			})
+		})
+	})
+	</script>
+	<!-- 内容 START -->
+	<div class="center-content mt20" id="one" style="display:block;">
+		<div class="wrap w1200">
+			<include file="Member:left" />
+            
+            
+			<div class="centerContent ml10">
+                <div class="centerTitle">
+                    
+                    <h2 class="bg1" style="color:#F00;">
+                        <font class="a1" style="cursor:pointer;">发布个人微信号</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </h2>
+                    <h2 class="bg2">
+                        <font class="a2" style="cursor:pointer;">
+                        <switch name="publish_type_status" >
+                          <case value="44" break="1">已发布的微信群</case>
+                          <case value="48" break="1">已发布的个人微信</case>
+                          <case value="47" break="1">已发布的公众号</case>
+                          <case value="1" break="1">已发布的货源</case>
+                        </switch>
+                        </font>
+                    </h2>
+                </div>
+                <div class="centerDisArea">
+					<form method='post' id="form1" name="form1" action="{:U('Member/add_gr')}"  enctype="multipart/form-data">
+                    
+                     <table class="comTab mt20" border="0">
+                      <tbody>
+                <tr>
+                	<td class="line">发布类别:</td>
+                    <td><select class="s0 c42d" name="publish_type_id" id="publish_type_id" onchange="change_publish_type()">
+		                            <option value="48" <eq name="publish_type_id" value="48">selected="selected"</eq>>
+		                                个人微信号
+		                            </option> 
+							</select> <span style="color:red;font-size:12px;">提示：请选择正确的分类</span></td>
+                </tr>
+                 <tr>
+                	<td class="line">栏目:</td>
+                    <td><input type="hidden" id="hidden_wxqtype" name="wxqtype" value="0"> 
+										<span id="span_wxqtype">
+											<select id="catid" name="catid">
+									            <option value="" >请选择</option>
+									            <volist name="categorylist" id="catvo">	             
+									                <option value="{$catvo['id']}">
+									                    {$catvo['catname']}       
+									              	</option>
+									            </volist>
+									        </select>  
+										</span></td>
+                </tr>
+                <tr>
+                	<td class="line">地区:</td>
+                    <td><input type="hidden" id="hidden_nativeplace" name="nativeplace" value="0"> 
+										<span id="span_nativeplace">
+											<select name="province" id="province">
+									            <option value="-1" selected>省份</option>
+									            <volist name="province" id="one">
+									              <option value="{$one.id}">{$one.area_name}</option>
+									            </volist>
+									        </select>
+									        <select name="city" id="city">
+									            <option value="-1">城市</option>
+									        </select>
+					                        <span class="tip"></span>
+										</span></td>
+                </tr>
+                
+                
+           
+                
+                <tr>
+					<td class="line">微信号：</td>
+					<td>
+						<input type="text" name="wxaccount" id="wxaccount" style="width:200" type="text">
+					</td>
+				</tr>
+                
+                <tr>
+					<td class="line">手机号：</td>
+					<td>
+						<input style="width:200" id="phone" name="phone" type="text">
+					</td>
+				</tr>
+                
+                <tr>
+					<td class="line">QQ：</td>
+					<td>
+						<input style="width:200" id="qq" name="qq" type="text">
+					</td>
+				</tr>
+                
+                
+                <tr>
+					<td class="line">微信名称：</td>
+					<td>
+						<input name="pubaccount" id="pubaccount" class="i1" onkeyup='value=value.substr(0,40);document.getElementById("strcount1").innerHTML=40-value.length;' type="text">
+						<label>还可输入<span id="strcount1">40</span>个字符</label>
+					</td>
+				</tr>
+                
+                
+                <tr>
+					<td class="line">简介：</td>
+					<td>
+						<textarea name="content" id="content" style="margin-left:5px;width:400px;height:120px;" onkeyup='value=value.substr(0,255);document.getElementById("strcount").innerHTML=255-value.length;'></textarea>
+						<p style="text-align:right;color:#aaa;width:520px;">还可以输入<span id="strcount">255</span>个字</p>
+					</td>
+				</tr>
+                
+                
+                <tr>
+					<td class="line">封面：</td>
+					<td>
+						<input type="hidden" value="" name="logo"  width="100" id="logo">
+						<img id="logosrc"  width="100" src="/404/fengmian.jpg">	
+					</td>
+				</tr>
+                
+                
+                <tr>
+					<td class="line">二维码：</td>
+					<td>
+						<input type="hidden" value="" name="qrcode"  width="100" id="qrcode">
+						<img id="qrcodesrc"  width="100" src="/404/erweima.jpg">
+					</td>
+				</tr>               
+                
+               
+              
+                
+                <if condition="$publish_type_id eq 4">
+				<else/>
+               <!-- <tr>
+					<td class="line">抢位：</td>
+					<td>
+						<span class="qw-no"><a href="javascript:qwbox({$publish_type_id})">点击抢位</a></span>
+						<span id="qwinfo" style="color:#F00"></span>
+						<br class="clear"><br class="clear">
+						<input type="hidden" name="qiangwei_sort" id="qiangwei_sort" value="" />
+						<input type="hidden" name="id" value="">
+						<input type="submit" class="b1" value="提交">	
+					</td>
+				</tr>-->
+                 <tr>
+					<td class="line">发布所需金币:</td>
+					<td>
+						<span class="qw-no" id="gold"></span>
+						<span id="qwinfo" style="color:#F00"><a href="{:U('Member/pay')}">&nbsp;&nbsp&nbsp;充值</a></span>
+						<br class="clear"><br class="clear">
+						<input type="hidden" name="qiangwei_sort" id="qiangwei_sort" value="" />
+						<input type="hidden" name="id" value="">
+						<input type="submit" class="b1" value="提交">	
+					</td>
+				</tr>
+				</if>
+                
+                </tbody>
+                </table>
+					</form>
+					<br class="clear">
+				</div>
+			</div>
+		</div>
+	</div>
+    
+    
+    
+    
+    <div class="center-content mt20" id="two" style="display:none;">
+      <div class="wrap w1200">
+        <include file="Member:left" />
+        
+          <div class="centerContent ml10">
+                <div class="centerTitle">
+                    <h2 class="bg1" style="color:#F00;">
+                       <font class="a1" style="cursor:pointer;">发布个人微信号</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </h2>
+                    <h2 class="bg2">
+                       <font class="a2" style="cursor:pointer;">
+                       <switch name="publish_type_status" >
+                          <case value="44" break="1">已发布的微信群</case>
+                          <case value="48" break="1">已发布的个人微信</case>
+                          <case value="47" break="1">已发布的公众号</case>
+                          <case value="1" break="1">已发布的货源</case>
+                        </switch>
+                       </font>
+                    </h2>
+                </div>
+                <div class="centerDisArea">
+          
+          
+          
+            <table align="center" border="1" bordercolor="#e3e7ea" width="90%">
+              <tbody>
+                <tr>
+                  <td align="center" height="40" valign="middle" width="10%">ID</td>
+                  <td align="center" height="40" valign="middle" width="25%">标题</td>
+                  <td align="center" height="40" valign="middle" width="15%">栏目</td>
+                  <th align="center" height="40" valign="middle" width="15%">状态</th>
+                  <td align="center" height="40" valign="middle" width="15%">添加时间</td>
+                  <td align="center" height="40" valign="middle" width="20%">操作</td>
+                </tr>
+                <volist name="list" id="vo">
+                  <tr>
+                    <td align="center" height="40" valign="middle">{$vo.id}</td>
+                    <td align="center" height="40" valign="middle">
+                        <if condition="$vo.status eq 1">
+                           <a href="{:U('Weixin/show',array('id'=>$vo['id']))}" target='_blank'>{$vo.title}</a>
+                        <else />
+                            {$vo.title}
+                        </if>
+                        
+                    </td>
+                    <td align="center" height="40" valign="middle">{$vo.catid|getCategoryName}</td>
+                    <td align="center" height="40" valign="middle">
+                        <if condition="$vo.status eq 1">
+                            已审核
+                        <elseif condition="$vo.status eq 2" />
+                            待审核
+                        <elseif condition="$vo.status eq 0" />
+                            已禁用
+                        <else />
+                            未通过
+                        </if>
+                    </td>
+                    <td align="center" height="40" valign="middle">{$vo.create_time|toDate='Y-m-d H:i'}</td>
+                    <td align="center" height="40" valign="middle">
+                        <span class="qwstr" <if condition="$vo['status'] eq 1">onclick="qwbox('{$vo.id}','{$vo.publish_type_id}')" title="打开抢位窗"<else />onclick="alert('未审核不能抢位')" title="未审核不能抢位"</if>>抢位</span>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{:U('Member/edit',array('id'=>$vo['id']))}">修改</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:;" onclick="foreverdel({:U('Member/delete',array('id'=>$vo['id']))});">删除</a>
+                    </td>
+                  </tr>
+                </volist>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+<style>
+.popBox1 { background:#e5e5e5;width:700px;height:500px;border:1px solid #bdbdbd;margin:0 auto;position:fixed;top: 25%;left: 30%;z-index:100000;display:none; }
+.popBox1 h4 { width:680px;height:40px;line-height:40px;background:url(/404/popBox1_t_bg.jpg) repeat-x;font-size:14px;padding:0 10px; }
+.popArea { width:690px;height:455px;margin:0 5px 5px 5px;background:#fff;border:1px solid #d2d2d2; }
+.popBox1 .closed,#imgfmsrc,#litpicsrc{cursor: pointer;}
+</style>
+  <div id="light">
+      <iframe marginheight="0" marginwidth="0" scrolling="no" id="iframepage2" name="iframepage" frameborder="0" height="250" width="600"></iframe>
+    </div>
+    <div id="sl_box"></div>
+    <script>
+      var obj = $('#light');
+      var objbg = $('#sl_box');
+      var objiframe=$('#iframepage2');
+      objbg.click(function(){close()});
+      function qwbox(tid)
+      {
+          obj.show();
+          objbg.show();
+		  var Furl = "/member-showQwInfo-tid-"+tid+".html";
+          objiframe.attr('src',Furl);
+      }
+      function close()
+      {
+          obj.hide();
+          objbg.hide();
+          objiframe.attr('src','');
+      }
+    </script>
+  <!-- 内容 END -->
+  <div class="popBox1" style="display: none;">
+	<h4><span id="poptit">上传头像</span><span class="fRight mt5 closed1" title="关闭"><img src="/404/popBox1_close.png" alt="关闭"></span></h4>
+    <div class="popArea">
+    <iframe marginheight="0" marginwidth="0" frameborder="0" scrolling="no" width="630" height="430" id="iframepage" name="iframepage" src=""></iframe>
+    </div>
+</div>
+ <script>
+    $("#logosrc").click(function(){
+        var url="/404/user-wxuploadf.htm";
+        $("#poptit").html("上传封面");
+        $(".popBox1").show();
+        $("#iframepage").attr('src',url);
+    });
+	$("#logo1src").click(function(){
+        var url="/404/user-wxuploadf1.htm";
+        $("#poptit").html("上传封面");
+        $(".popBox1").show();
+        $("#iframepage").attr('src',url);
+    });
+    $("#image1src").click(function(){
+        var url="/404/user-wxuploadi1.htm";
+        $("#poptit").html("上传图片");
+        $(".popBox1").show();
+        $("#iframepage").attr('src',url);
+    });
+    $("#image2src").click(function(){
+        var url="/404/user-wxuploadi2.htm";
+        $("#poptit").html("上传图片");
+        $(".popBox1").show();
+        $("#iframepage").attr('src',url);
+    });
+    $("#image3src").click(function(){
+        var url="/404/user-wxuploadi3.htm";
+        $("#poptit").html("上传图片");
+        $(".popBox1").show();
+        $("#iframepage").attr('src',url);
+    });
+    $("#image4src").click(function(){
+        var url="/404/user-wxuploadi4.htm";
+        $("#poptit").html("上传图片");
+        $(".popBox1").show();
+        $("#iframepage").attr('src',url);
+    });
+    $("#image5src").click(function(){
+        var url="/404/user-wxuploadi5.htm";
+        $("#poptit").html("上传图片");
+        $(".popBox1").show();
+        $("#iframepage").attr('src',url);
+    });
+    $("#qrcodesrc").click(function(){
+        var url="/404/user-wxuploade.htm";
+        $("#poptit").html("上传二维码");
+        $(".popBox1").show();
+        $("#iframepage").attr('src',url);
+    });
+    $(".closed1").click(function(){
+        closed1();
+    });
+    function closed1()
+    {
+        $(".popBox1").hide();
+        $("#iframepage").attr('src','');
+    }
+
+    function validate_required(field,alerttxt)
+    {
+    with (field)
+      {
+      if (value==null||value==""||value==0)
+        {alert(alerttxt);return false}
+      else {return true}
+      }
+    }
+    
+    function validate_form(thisform)
+    {
+        
+    with (thisform)
+      {
+         if (validate_required(logo,"头像没有上传!")==false)
+            {logo.focus();return false}  
+      }
+    }
+</script>  
+
+<include file="Member:footer" />		

@@ -1,0 +1,155 @@
+<include file="Public:header" />
+<link href="__PUBLIC__/css/goods.css" rel="stylesheet" type="text/css">
+<link href="__PUBLIC__/css/columns.css" rel="stylesheet" type="text/css">
+<!-- 头部 END -->
+<div class="wrap">
+  <div class="ws-content yahei">
+  	<div class="page_nav com_bb"><a href="./index.php">首页</a> &gt; <span class="b_nav"><a href="{:U('Weixin/huoyuan',array('id'=>1))}">微商货源</a></span> &gt;  <span class="c7f">{$da.title}</span></div>
+    <div class="w920">
+      <div class="area1">
+        <div class="code_img">
+			<a href="Uploads{$da['qrcode']}"><img src="Uploads{$da['qrcode']}" alt="{$da.title}" width="250"></a>
+		</div>
+        <div class="some-info">
+          <h2>{$da.title}</h2>
+          <p><b>货源介绍：</b>{$da.maidian}</p>
+          <p><b>发布人微信：</b>{$da.wxaccount}</p>
+          <p><b>发布人QQ：</b>{$da.qq}</p>
+          
+		 
+            <div><div class="gb"><span class="zan" onclick="xh(this,{$da.id},'xh');"><em class="txt_num" id="znum{$da.id}" znum="1">1</em></span><span class="cai" onclick="xh(this,{$da.id},'nxh');"><em class="txt_num" id="cnum{$da.id}" cnum="0">0</em></span></div><span style="line-height:64px;margin-left:15px;color:red;">查看:{$da.hits}</span></div>
+            <br>
+<script>
+function xh(cur,id,type){
+       $.get("{:U('Weixin/xh')}",{id:id,type:type},function(data){
+            if(data.status==1){
+                $(cur).children('em').html(data.info);
+            }else{
+                
+                alert(data.info);
+            }
+            
+       });
+    }
+</script>
+
+
+<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"> <a class="bds_tsina"></a> <a class="bds_qzone"></a> <a class="bds_tqq"></a> <a class="bds_tieba"></a> <a class="bds_renren"></a> <a class="bds_sqq"></a> <span class="bds_more">更多</span> <a class="shareCount"></a>
+            </div>
+
+		
+
+        </div>
+      </div>
+      <div class="area2 dash_b">
+      	<h4 class="pt10 pb10 f16 c_gee">货源详细介绍</h4>
+        <p class="dash_t">{$da.content}</p>
+          
+          <h4 class="pt10 pb10 f16 c_gee">货源图片介绍</h4>
+          <if condition="$da['img1']">
+		  <p class="dash_t" align="center"><img src="/Uploads{$da['img1']}" alt="{$da['title']}"></p>
+		  </if>
+		  <if condition="$da['img2']">
+		  <p class="dash_t" align="center"><img src="/Uploads{$da['img2']}" alt="{$da['title']}"></p>
+		  </if>
+		  <if condition="$da['img3']">
+		  <p class="dash_t" align="center"><img src="/Uploads{$da['img3']}" alt="{$da['title']}"></p>
+		  </if>
+		  <if condition="$da['img4']">
+		  <p class="dash_t" align="center"><img src="/Uploads{$da['img4']}" alt="{$da['title']}"></p>
+		  </if>
+		  <if condition="$da['img5']">
+		  <p class="dash_t" align="center"><img src="/Uploads{$da['img5']}" alt="{$da['title']}"></p>
+		  </if>
+		  
+      </div>
+      
+      <div class="area3 dash_b">
+	  <notempty name='beforeda.id'><span class="fLeft">上一篇:&nbsp;<a rel="prev" href="{:U('Weixin/huoyuanshow',array('id'=>$beforeda['id']))}" title="{$beforeda.title}"><b>{$beforeda.title}</b></a></span>
+	  </notempty>
+	  <notempty name='afterda.id'><span class="fRight">下一篇:&nbsp;<a rel="next" href="{:U('Weixin/huoyuanshow',array('id'=>$afterda['id']))}" title="{$afterda.title}"><b>{$afterda.title}</b></a></span>
+	  </notempty></div>
+      
+      <div class="area3">
+      	<h4 style="height:40px;line-height:40px;background:#e5edf2;">&nbsp;&nbsp;您可能还感兴趣</h4>
+        <table border="0" cellpadding="0" cellspacing="0" class="tb-in mt10">
+        	<tbody><tr>
+            <td>
+			<yufu:weixin1 catid="'.$da['catid'].'" order="rand()" num="14">
+			
+			<td>
+				<p>
+					<a href="{:U('Weixin/huoyuanshow',array('id'=>$weixin['id']))}" title="{$weixin.pubaccount}">
+						<img src="<empty name='weixin.logo'><empty name='weixin.weblogo'>../Public/images/nopic.gif<else />{$weixin.weblogo}</empty><else />__ROOT__/Uploads{$weixin.logo}</empty>" width="130" alt="{$weixin.pubaccount|msubstr=0,5}">
+					</a>
+				</p>
+				<p>
+					<a href="{:U('Weixin/huoyuanshow',array('id'=>$weixin['id']))}">{$weixin.pubaccount|msubstr=0,5}…</a>
+				</p>
+			</td>
+			
+			
+			</yufu:weixin1>
+			</td>
+            </tr>
+        </tbody></table>
+      </div>
+      
+<!--       <div class="box3">
+      	<h4>最新评论:</h4>
+       
+        <volist name="pinglun_list" id="vo">
+		<div class="t1" style="margin-bottom:3px;"><strong>{$vo.membername}</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<php>echo date('Y-m-d',$vo['create_time']);</php></div>
+		<div class="t2" style="margin-bottom:3px;border-bottom:1px solid #e2e2e2;">{$vo.content}</div>
+        </volist>
+            
+       
+      </div> -->
+      <div class="box4">
+      <style type="text/css">
+       .box4 textarea{width: 98%;
+height: 100px;
+padding: 5px 0px 0px 10px;
+margin: 10px 0px;}
+
+      </style>
+       <if condition="$da['iscomment'] eq 1">
+          <eq name="iscomment" value="1">
+            <eq name="commenttype" value="2">
+              <div class="comment">
+                <yufu:other settag="duoshuo" />
+              </div>
+            </eq>
+            <eq name="commenttype" value="1">
+              <?php $url=U('Weixin/addcomment');?>
+              <include file="Public:comment1" /> </eq>
+          </eq>
+        </if>
+        </div>
+                <script>
+                    function validate_required(field,alerttxt)
+                    {
+                    with (field)
+                      {
+                      if (value==null||value==""||value==0)
+                        {alert(alerttxt);return false}
+                        else {return true}
+                      }
+                    }
+                    
+                    function validate_form(thisform)
+                    {
+                        with (thisform)
+                          {
+                              
+                              if (validate_required(content,"你想说什么呢？内容必须填写!")==false)
+                                {content.focus();return false}
+                          }
+                    }
+                </script>      
+    </div>
+  </div>
+</div>
+<!-- 文章页 -->
+
+<include file="Public:footer" />

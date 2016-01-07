@@ -1,0 +1,18 @@
+  <div class="mleftbox fl">
+    <ul>
+     <li><a href="http://gOpe.cn">返回首页</a></li>
+    <li><a href="{:U('Member/index')}" <eq name="position" value="index">class="cur"</eq>>个人中心</a></li>
+    <li><a href="{:U('Member/add')}" <eq name="position" value="add">class="cur"</eq>>提交公号</a></li>
+    <li><a href="{:U('Member/manage')}" <eq name="position" value="manage">class="cur"</eq>>公号管理</a></li>
+    <li><a href="{:U('Member/tjlist')}" <eq name="position" value="tjlist">class="cur"</eq>>自助推荐</a></li>
+    <li><a href="{:U('Member/promotionlist',array('catid'=>131))}" <eq name="position" value="promotionlist">class="cur"</eq>>促销活动</a></li>
+    <li><a href="{:U('Member/pay')}" <eq name="position" value="pay">class="cur"</eq>>在线充值</a></li>
+    <li><a href="{:U('Member/paylist')}" <eq name="position" value="paylist">class="cur"</eq>>充值记录</a></li>
+    <li><a href="{:U('Member/change')}" <eq name="position" value="change">class="cur"</eq>>积分兑换</a></li>
+    <li><a href="{:U('Member/spendlist')}" <eq name="position" value="spendlist">class="cur"</eq>>消费记录</a></li>
+    <li><a href="{:U('Member/information')}" <eq name="position" value="information">class="cur"</eq>>修改资料</a></li>
+    <li><a href="{:U('Member/password')}" <eq name="position" value="password">class="cur"</eq>>修改密码</a></li>
+    <li><a href="{:U('Member/logout')}">退出</a></li>
+</ul>
+  
+  </div>

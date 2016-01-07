@@ -1,0 +1,253 @@
+<!-- 底部 START -->
+    <div class="footer mt20">
+      <div class="wrap w1000">
+        <div class="f-content">
+          <div class="f-code fLeft"> <span><img src="../Public/images/code1.jpg"></span>
+ <span><p><strong>扫描二维码</strong></p><p>手机客户端更便捷<br>关注我们，快速了解商家信息，商家活动</p></span>
+
+          </div>
+          <div class="f-info fRight">
+            <ul>
+              <volist name="footer_info" id="vo">
+              <li>
+                <p><strong>{$vo.catname}</strong>
+                </p>
+                <volist name="vo.child" id="vo1">
+                <p><a href="{:U('Article/show',array('id'=>$vo1['id']))}" title="{$vo1.sitetitle}">{$vo1.sitetitle|strip_tags|msubstr=0,10}</a>
+                </p>
+                </volist>
+              </li>
+              </volist>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="background:#5b5b5b;height:70px;text-align:center;color:#aaa;">
+      <p style="padding-top:15px;">Copyright © 2003-2014 weixinqun.com, All Rights Reserved　
+        <br>微信群发布平台</p>
+    </div>
+    <div class="help_box" style="">
+      <a href="javascript:;" class="float_qq" data-show="1"></a> 
+      <!--<a class="free_go" href="http://s.weixinqun.com/" title="加盟分销" target="_blank">加盟分销</a>  -->
+      <a class="zixun" href="javascript:;" id="help_qq1">客服咨询</a>  
+      <a class="join" href="javascript:;" id="help_qq2">广告合作</a>  
+      <b class="tels">咨询热线<br>
+          400-6666-666
+        </b>
+
+      <div>
+        <img src="../Public/images/code.jpg">
+      </div>
+      <p class="tc">扫一扫立即体验</p>
+      <div class="qq_list" id="qq_list1" style="display: none;" data-show="1">
+        <a href="javascript:;" class="close_qq" id="close_qq1"></a>
+         <h4>客服咨询</h4>
+
+        <div class="area_qq">
+          <p><span>蒙蒙</span>
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=771046963&site=s.weixinqun.com&menu=yes" target="_blank" rel="nofollow">
+              <img border="0" src="http://wpa.qq.com/pa?p=2:771046963:41" alt="给我留言">
+            </a>
+          </p>
+          <p><span>文文</span>
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=1752404417&site=s.weixinqun.com&menu=yes" target="_blank" rel="nofollow">
+              <img border="0" src="http://wpa.qq.com/pa?p=2:1752404417:41" alt="给我留言">
+            </a>
+          </p>
+          <p><span>宇宇</span>
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=2625407466&site=s.weixinqun.com&menu=yes" target="_blank" rel="nofollow">
+              <img border="0" src="http://wpa.qq.com/pa?p=2:2625407466:41" alt="给我留言">
+            </a>
+          </p>
+          <p><span>松松</span>
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=452047320&site=s.weixinqun.com&menu=yes" target="_blank" rel="nofollow">
+              <img border="0" src="http://wpa.qq.com/pa?p=2:452047320:41" alt="给我留言">
+            </a>
+          </p>
+          <p><span>程程</span>
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=2574669546&site=s.weixinqun.com&menu=yes" target="_blank" rel="nofollow">
+              <img border="0" src="http://wpa.qq.com/pa?p=2:2574669546:41" alt="给我留言">
+            </a>
+          </p>
+        </div>
+      </div>
+      <div class="qq_list join_bg" id="qq_list2" style="display: none;">
+        <a href="javascript:;" class="close_qq" id="close_qq2"></a>
+         <h4>广告咨询</h4>
+
+        <div class="area_qq">
+          <p><span>小微</span>
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=1819088888&site=s.weixinqun.com&menu=yes" target="_blank" rel="nofollow">
+              <img border="0" src="http://wpa.qq.com/pa?p=2:1819088888:41" alt="给我留言">
+            </a>
+          </p>
+          <p><span>玟玟</span>
+            <a href="http://wpa.qq.com/msgrd?v=3&uin=21563829&site=s.weixinqun.com&menu=yes" target="_blank" rel="nofollow">
+              <img border="0" src="http://wpa.qq.com/pa?p=2:21563829:41" alt="给我留言">
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+<script>
+  $(function(){
+    $(".float_qq").click(function(){
+      if($(this).attr("data-show") == 1)
+      {
+        $(this).attr("data-show",0);
+        $(this).addClass("active");
+        $(".help_box").animate({"right":"-140px"});
+      }else{
+        $(this).attr("data-show",1);
+        $(this).removeClass("active");
+        $(".help_box").animate({"right":"0"});
+      }
+      
+      });
+    $("#help_qq1").click(function(){
+      $("#qq_list2").hide();
+      if($("#qq_list1").is(":hidden"))
+      {
+        $("#qq_list1").slideDown();
+      }else{
+        $("#qq_list1").slideUp();
+      }
+      });
+    $("#close_qq1").click(function(){
+      $("#qq_list1").slideUp();     
+      }); 
+    $("#help_qq2").click(function(){
+      $("#qq_list1").hide();
+      if($("#qq_list2").is(":hidden"))
+      {
+        $("#qq_list2").slideDown();
+      }else{
+        $("#qq_list2").slideUp();
+      }
+      });
+    $("#close_qq2").click(function(){
+      $("#qq_list2").slideUp();     
+      }); 
+    });
+</script>
+
+
+
+<!-- 弹出登陆 -->
+
+<script>
+    $("#loginbox").click(function(){
+        $("#Tourl").val('');
+        $(".popDoc").show();
+        return false;
+    });
+    $("#loginbox2").click(function(){
+        $(".popDoc").show();
+        return false;
+    });
+    $(".loginbox").click(function(){
+        var tourl=$(this).attr('href');
+        $("#Tourl").val(tourl);
+        $(".popDoc").show();
+        return false;
+    });
+    function validate_form(thisform)
+    {
+        var urls="/user-login.html";
+        var username=thisform.username.value;
+        var userpass=thisform.userpass.value;
+        var Tourl=thisform.Tourl.value;
+        var tmpmsg='';
+        if(username==''){tmpmsg+="请输入用户名!\n"}
+        if(userpass==''){tmpmsg+="请输入密码!\n"}
+        if(Tourl!=''){
+           $.ajax({
+            type: "post",
+            dataType: "json",
+            url: urls,
+            data: "json=1&username="+username+"&userpass="+userpass+"&action=login",
+            success: function(result){
+
+                if(result.status){
+                    location.href = Tourl;
+                    //alert(result.msg);
+                }else{
+                    alert(result.msg);
+                }
+                
+                }
+            });
+           
+           
+           return false;
+        }
+        if(tmpmsg!=''){
+            alert(tmpmsg);
+            return false;
+        }
+    }
+</script><!-- 底部 END -->
+<script type="text/javascript">
+  $('#navmenu_company,#navmenu_personal').mouseover(function(event){
+    $('#navmenu_company,#navmenu_personal').removeClass('active');
+    $(this).toggleClass('active');
+    event.stopPropagation();
+    });
+  $('#navmenu_company,#navmenu_personal').mouseout(function(event){
+    $('#navmenu_company,#navmenu_personal').removeClass('active');
+    event.stopPropagation();
+    });
+</script>
+<div style="display:none;"><!--<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe631b3a1fedd3e3a3970479d2e0d0da6' type='text/javascript'%3E%3C/script%3E"));
+</script>-->
+<script src="__PUBLIC__/js/h.js" type="text/javascript"></script><a href="http://tongji.baidu.com/hm-web/welcome/ico?s=e631b3a1fedd3e3a3970479d2e0d0da6" target="_blank"><img border="0" src="__PUBLIC__/qianduan/21.gif" width="20" height="20"></a></div>
+<script src="__PUBLIC__/js/keffect.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+  $('#tab span').bind('mouseover',function(){
+    var index = $(this).index();
+    var mores = $('#tab > div');
+    var divs = $('#box > .boxone ');
+    $(this).parent().children("span").attr("style", "border-bottom:1px solid #dbdee1;border-top:2px solid #fafafa;");
+    $(this).attr("style", "color: #42d83b;");
+    divs.hide();
+    mores.hide();
+    divs.eq(index).show();
+    mores.eq(index).show();
+  })
+})
+</script>
+<script type="text/javascript">
+$(document).ready(function () {
+  $('#tab1 span').bind('mouseover',function(){
+    var index = $(this).index();
+    var mores = $('#tab1 > div');
+    var divs = $('#box2 > .boxtwo ');
+    $(this).parent().children("span").attr("style", "border-bottom:1px solid #dbdee1;border-top:2px solid #fafafa;");
+    $(this).attr("style", "color: #42d83b;");
+    divs.hide();
+    mores.hide();
+    divs.eq(index).show();
+    mores.eq(index).show();
+  })
+})
+</script>
+<script type="text/javascript">
+$(document).ready(function () {
+  $('#tab2 span').bind('mouseover',function(){
+    var index = $(this).index();
+    var divs = $('#box3 > .boxtwo ');
+    $(this).parent().children("span").attr("style", "border-bottom:1px solid #dbdee1;border-top:2px solid #fafafa;");
+    $(this).attr("style", "color: #42d83b;");
+    divs.hide();
+    divs.eq(index).show();
+  })
+})
+</script>
+
+
+
+</body></html>

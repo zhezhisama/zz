@@ -1,0 +1,48 @@
+<include file="Public:header" />
+<link href="__PUBLIC__/css/common.css" rel="stylesheet" type="text/css">
+<!-- 头部 END -->
+
+<div class="hy mt20 clear">
+  <div class="w1000 wrap">
+    <div class="c-content command">
+      <div class="c-top">
+        <p>我的位置：<a href="http://ys.qunduoduo.com/">首页</a> &gt; 
+          <volist name="position" id="vo">
+          <eq name="vo['id']" value="87"> <a href="{:U('Weixin/area',array('id'=>$vo['id']))}">{$vo.catname}</a>&nbsp;&gt;
+            <volist name="positionarea" id="voarea">
+              <neq name='voarea.level' value='0'>
+                <present name="voarea.province"> <a href="{:U('Weixin/index',array('catid'=>$voarea['id'],'province'=>$voarea['province']))}">{$voarea.areaname}</a>
+                </present>
+                <eq name="voarea.level" value='1'> <a href="{:U('Weixin/index',array('catid'=>$position[0]['id'],'province'=>$voarea['id']))}">{$voarea.areaname}</a>&nbsp;&gt;</eq>
+                <eq name="voarea.level" value='2'> <a href="{:U('Weixin/index',array('catid'=>$position[0]['id'],'city'=>$voarea['id']))}">{$voarea.areaname}</a>
+                </eq>
+              </neq>
+            </volist>
+            <else /> <a href="{:U('Weixin/index',array('id'=>$vo['id']))}">{$vo.catname}</a>
+          </eq>
+        </volist>
+        </p>
+      </div>
+      <div class="c-left fLeft">
+        <ul class="article">
+          <volist name="list" id="vo">
+            <li>
+              <span class="fLeft">
+                <a href="{:U('Article/show',array('id'=>$vo['id']))}">{$vo.title}</a>
+              </span>
+              <span class="fRight">{$vo.create_time|date='Y-m-d H:i',###}</span>
+            </li>
+          </volist>
+        </ul>
+        <div class="pageNo vm center">
+          {$page}
+        </div>
+      </div>
+      <include file="Public:right_block" />
+    </div>
+  </div>
+</div>
+
+
+<!-- 底部 START -->
+<include file="Public:footer" />

@@ -1,0 +1,134 @@
+<include file="Member:header" />
+<script language="javascript" src="../Public/js/YMDClass.js"></script>
+<script type="text/javascript" src="../Public/js/area.js"></script>
+<script>var ajaxurl="{:U('Ajax/getArea')}"; var city="{$udata.city}"</script>
+<script type="text/javascript" src="../Public/js/select-option-disabled-emulation.js"></script>
+
+  <script type="text/javascript">
+    function change_publish_type(){
+      var publish_type_id = $("#publish_type_id").val();
+      //var url = "{:U('Member/add',array('publish_type_id'=>'\"+publish_type_id+\"'))}";
+      var url = "./index.php?m=Member&a=add&publish_type_id="+publish_type_id;
+
+      //var nodename='111111';
+          //var url="{:U('Weixin/delfile',array('id'=>$vo['id'],'file'=>'"+nodename+"'))}";
+          window.location.href = url;    
+      }
+  </script>
+  <!-- 内容 START -->
+  <div class="center-content mt20">
+    <div class="wrap w1000">
+      <include file="Member:left" />
+      <div class="right-content fRight">
+        <h2>修改个人信息</h2>
+        <div class="mainbody mt10">
+          <form method='post' id="formInformation" name="formInformation" action="{:U('Member/checkInformation')}" enctype="multipart/form-data">
+            <div class="d1">
+              <label for="name">昵称：</label>
+              <input name="nickname" id="nickname" class="i1" value="{$udata.nickname}" type="text">
+            </div>
+            <div class="d1">
+              <label for="wxh">个人微信号：</label>
+              <input name="wxaccount" id="wxaccount" class="i1" type="text" value="{$udata.wxaccount}">
+            </div>
+            <div class="d1">
+              <label>性别：</label>
+              <input name="gender" value="1" type="radio" <eq name="udata.gender" value="1">checked</eq>>男
+              <input name="gender" value="2" type="radio" <eq name="udata.gender" value="2">checked</eq>>女</div>
+            <div class="d1">
+              <label>生日:</label>
+              <select name="year"></select>
+              <select name="month"></select>
+              <select name="day"></select>
+              <script>
+                var year = "{$udata.year}";
+                var month = "{$udata.month}";
+                var day = "{$udata.day}";
+                //new YMDselect('year1','month1');
+                //new YMDselect('year1','month1',1990);
+                //new YMDselect('year1','month1',1990,2);
+                //new YMDselect('year1','month1','day1');
+                new YMDselect('year','month','day',year,month,day);
+                //new YMDselect('year1','month1','day1',1990,2);
+                //new YMDselect('year1','month1','day1',1990,2,10);
+              </script>
+            </div>
+            <div class="d1">
+              <label>所在地:</label>
+              <select name="province" id="province">
+                  <option value="-1" selected>省份</option>
+                  <volist name="province" id="one">
+                      <option value="{$one.id}">{$one.area_name}</option>
+                  </volist>
+              </select>
+              <select name="city" id="city">
+                  <option value="-1">城市</option>
+              </select>
+            </div>
+            <div class="d1">
+              <input type="hidden" name="id" value="{$udata.id}">
+              <input class="b1" value="提交" type="submit">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 内容 END -->
+   <script type="text/javascript">
+
+    $(function(){
+        
+        //选择省份
+        $("#province option[value='{$udata.province}']").attr("selected", true); 
+        loadArea($("#province").val(),'city');
+        
+        //选择城市
+        $("#province").change(function(){
+            var ajaxurl="{:U('Ajax/getArea')}";
+            var areaId=this.value;
+            var areaType='city';
+            var city="{$udata.city}";
+            
+            $.post(ajaxurl,{'areaId':areaId},function(data){
+
+                if(areaType==='city'){
+                   $('#'+areaType).html('<option value="-1">城市</option>');
+
+                   $('#district').html('<option value="-1">镇/区</option>');
+                }else if(areaType==='district'){
+                   $('#'+areaType).html('<option value="-1">镇/区</option>');
+                }
+                if(areaType!=='null'){
+                    $.each(data,function(no,items){
+                        if(items.id===city){
+                            $('#'+areaType).append('<option value="'+items.id+'" selected="selected">'+items.area_name+'</option>');
+                        }else{
+                            $('#'+areaType).append('<option value="'+items.id+'">'+items.area_name+'</option>');
+                        }
+                       
+                    });
+                    
+                }
+            });
+        });
+        
+    });
+    
+    function foreverdelthumb(cur,img){
+       var nodename=img;
+       var id="{$vo['id']}";
+       var url="{:U('Member/delfile')}";
+
+        //创建删除节点
+        $.get(url,{id:id,file:nodename},function(){
+            //插入新节点
+            var html='\r\n<input type="file" class="ipt5" name="'+nodename+'" />\r\n';
+            $(cur).parent().after(html);
+            //移除当前节点
+            $(cur).parent().remove();
+        });
+    }
+
+</script>
+<include file="Member:footer" />    

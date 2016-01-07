@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="/Apps/Tpl/weixinqun/Public/css/base.css" rel="stylesheet" type="text/css" />
+<link href="/Apps/Tpl/weixinqun/Public/css/center.css" rel="stylesheet" type="text/css" />
+<script src="/Apps/Tpl/weixinqun/Public/js/jquery.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+<div class="sl_box">
+	<h4>选择抢占位置<span class="c7f f12" style="font-weight:300">（对应首页位置）</span><span class="fRight sl_close"><img src="http://weixinqun.xiaoxiaowu.info/template/images/close_02.png" /></span></h4>
+    <ul id="sl_ul">
+		<volist name="qiangwei" id="vo">
+		<php>
+		if (is_array($vo)) {
+		</php>
+        <li class="active">已被占领</li>
+		<php>
+		} else {
+		</php>
+		<li onclick='qzw({$id},{$publish_type_id},{$key},2);'>可抢占</li>
+		<php>
+		}
+		</php>
+		</volist>
+    </ul>
+    <div class="sl_btn">
+    	<a class="btn sl_sure" href="#">确 定</a>&nbsp;&nbsp;<a class="btn sl_cancle" href="#">取 消</a>
+    </div>	
+</div>
+<script>
+$(function(){
+    $(".sl_sure,.sl_close,.sl_cancle").click(function(){window.parent.close();$('#qid', window.parent.document).attr("checked",false);});
+});
+function qzw(id1,id2,id3,type){
+    if(type==2){
+        var Furl="/member-qiang-id-"+id1+"-tid-"+id2+"-qwsort-"+id3+".html";
+		
+		$.get(Furl, function(result){
+			if(result.type){
+				 //$("#iframepage").attr('src',Furl);
+				 //$("#light").show();
+				 alert(result.msg);
+				 window.parent.close();
+			  }else{
+				alert(result.msg);
+			}
+		}, 'json');
+		
+       /* $.ajax({
+                type: "GET",
+                url: Furl,
+                data: {id:id1,tid:id2,qwsort:id3},     
+                dataType: 'json',
+                success: function(result){
+                    if(result.type){
+                         //$("#iframepage").attr('src',Furl);
+                         //$("#light").show();
+                         alert(result.msg);
+                         window.parent.close();
+                      }else{
+                        alert(result.msg);
+                    }
+                }
+                });*/
+    }
+    if(type==1){
+        $('#qid', window.parent.document).val(id1);
+        $('#qid', window.parent.document).attr("checked",true);
+        window.parent.close();
+    }
+    
+}
+</script>
+</body>
+</html>

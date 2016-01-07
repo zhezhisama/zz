@@ -1,0 +1,45 @@
+<div class="footer">
+  <div class="foot">
+    <ul>
+      <img src="../Public/images/footer_logo.png" width="152" height="46" />
+      <p>Copyright (c) 2014 好站长微信导航<br />
+        京ICP备12010xxx号-1
+     
+
+
+      </p>
+    </ul>
+    <ul class="footmid">
+      <a href="" class="gohome" title="扔赞网首页"></a><a href="{:U('Member/index')}" class="setting" title="个人中心"></a><a href="{:U('Member/logout')}" class="goout" title="退出扔赞网"></a>
+    </ul>
+    <ul style="width:365px;">
+      <p class="addr"><i style="font-size:12px"><a href="" title="">ABOUT US</a></i><br>
+www.haoid.cn </p>
+      <img src="../Public/images/world_map.png" class="fr"/>
+    </ul>
+  </div>
+</div>
+<script src="../Public/js/rengzan.js" type="text/javascript"></script>
+ <SCRIPT>
+    function toueme(){
+    document.getElementById("unlogin_fixHeader").style.display="none";
+    }
+    </SCRIPT>
+<div id="unlogin_fixHeader" style="display: none;">
+ <a style="CURSOR: hand" onClick=toueme() class="cursoecs">
+   </a>
+<div class="s_q_wrap">
+<p>
+<strong> 想快速推广微信？</strong><br>
+提交微信公众号，开启免费推广吧
+</p>
+<div class="btn">
+<if condition="$Think.session.account != null"><a class="sina" onclick="analyticsReg(4,'/sns/login/sina');return false;" href="{:U('Member/add')}"></a>
+ <else /><a class="sina" onclick="analyticsReg(4,'/sns/login/sina');return false;" href="{:U('Member/login')}"></a>
+ </if>
+<a class="qq" onclick="analyticsReg(5,'/sns/login/qzone');return false;" href="http://wpa.qq.com/msgrd?v=3&uin=2052977199&site=扔赞网&Menu=yes"></a>
+</div>
+</div>
+</div>
+</body>
+</html>

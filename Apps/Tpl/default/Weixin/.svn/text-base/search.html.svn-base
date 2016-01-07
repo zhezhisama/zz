@@ -1,0 +1,127 @@
+<include file="Public:header"/>
+<div class="main">
+  <div class="position"><span>当前位置：</span><a href="">首页</a> &gt; 
+  <volist name="position" id="vo">
+            <a href="{:U('Weixin/search',array('id'=>$vo['id'],'keyword'=>$text))}">{$vo.catname}</a> &gt; 
+        </volist>
+  </div>
+  <div class="rightbox artlist fl">
+    <div class="superSearch">
+      <div class="hycatalog">
+        <div class="catalog1">
+          <div class="cata-lft">分类:</div>
+          <div class="cata-rht"> <a <if condition="($parentcatid eq '') and ($catid eq '')">class="title current"<else />class="title"</if> href="{:U('Weixin/search',array('id'=>$id,'keyword'=>$text,'province'=>$province,'city'=>$city))}">全部</a>
+                            <volist name="categorylist" id="category2">
+                                <eq name="category2['level']" value="2">
+                                <a <if condition="($parentcatid eq $category2['id'])">class="title current"<else />class="title"</if> href="{:U('Weixin/search',array('id'=>$id,'catid'=>$category2['id'],'keyword'=>$text,'province'=>$province,'city'=>$city))}" title="{$category2['catname']}" >{$category2['catname']}</a>
+                                </eq>
+                            </volist></div>
+        </div>
+          <notempty name="childcatlist">
+                    <div class="catalog2">
+                        <volist name="childcatlist" id="category3">
+                             <a <if condition="($parentcatid neq '') and ($catid eq $category3['id'])">class="current"</if> href="{:U('Weixin/search',array('id'=>$id,'catid'=>$category3['id'],'keyword'=>$text,'province'=>$province,'city'=>$city))}" title="{$category3['catname']}" >{$category3['catname']}</a>
+                        </volist>
+                    </div>
+                    </notempty>
+      </div>
+      <div class="hycatalog">
+        <div class="catalog1">
+          <div class="cata-lft">地区:</div>
+            <div class="cata-rht">
+                            <a <if condition="($province eq '') and ($city eq '')">class="title current"<else />class="title"</if> href="{:U('Weixin/search',array('id'=>$id,'catid'=>$cat,'keyword'=>$text))}">全部</a>
+                            <volist name="provincelist" id="vp">
+                                <a <if condition="($province eq $vp['id'])">class="title current"<else />class="title"</if> href="{:U('Weixin/search',array('id'=>$id,'province'=>$vp['id'],'catid'=>$cat,'keyword'=>$text))}" title="{$vp['area_name']}" >{$vp['area_name']}</a>
+                            </volist>
+                        </div>
+        </div>
+            <notempty name="citylist">
+                    <div class="catalog2">
+                        <volist name="citylist" id="vc">
+                             <a <if condition="($province neq '') and ($city eq $vc['id'])">class="current"</if> href="{:U('Weixin/search',array('id'=>$id,'city'=>$vc['id'],'province'=>$province,'catid'=>$catid,'keyword'=>$text))}" title="{$vc['area_name']}" >{$vc['area_name']}</a>
+                        </volist>
+                    </div>
+                    </notempty>
+      </div>
+    </div>
+      <notempty name="list">
+    <div class="sechbox">
+      <ul>
+          <volist name="list" id="vo">
+              <li {$key%2==0?'style="background:#fff"':'class="whitebg"'}>  
+          <div class="pic fl">    <neq name="vo['status']" value="1"><img src="<empty name='vo.logo'><empty name='vo.weblogo'>../Public/images/nopic.gif<else />{$vo.weblogo}</empty><else />__ROOT__/Uploads{$vo.logo}</empty>" width="120" height="120"><else /><a href="{:U('Weixin/show',array('id'=>$vo['id']))}" target="_blank"><img src="<empty name='vo.logo'><empty name='vo.weblogo'>../Public/images/nopic.gif<else />{$vo.weblogo}</empty><else />__ROOT__/Uploads{$vo.logo}</empty>"></a></neq></div>
+          <div class="cont fr">
+            <h2><a href="{:U('Weixin/show',array('id'=>$vo['id']))}" class="ssytj" title="{$vo.pubaccount}" target="_blank">{$vo.pubaccount}</a></h2>
+            <div class="time">{$vo.hits} 人关注&nbsp;&nbsp;&nbsp;&nbsp;Tags:<eq name="position[0]['id']" value="87">{$vo.tag|changeA}<else />{$vo.tag|changeA=###,$position[0]['id']}</eq>&nbsp;</div>
+            <div class="desc">{$vo.content|strip_tags|msubstr=0,85}</div>
+            <eq name="vo['status']" value="0"><span><img src="../Public/images/wtg.png" /></span></eq>
+                            <eq name="vo['status']" value="2"><span><img src="../Public/images/shz.png" /></span></eq>
+          </div>
+        </li>
+          </volist>
+      </ul>
+      <div class="bk10"></div>
+      <div class="page">      {$page}</div>
+    </div>
+    
+      </notempty>
+  </div>
+  <div class="leftbox fr">
+  
+    <a href="http://gOpe.cn" target="_blank"><img src="../Public/images/index250.jpg"></a>
+    <div class="bk10"></div>
+    <div class="news box">
+      <h2>微资讯<a href="{:U('Article/index',array('id'=>'55'))}" class="more">more</a></h2>
+      <ul>
+           <yufu:article catid="55" field="id,title" order="create_time desc" num="5" >
+                        <li>
+                            <a href="{:U('Article/show',array('id'=>$article['id']))}" title="{$article['title']}" target='_blank'>{$article['title']}</a>
+                        </li>
+                    </yufu:article>
+      </ul>
+    </div>
+    <div class="bk10"></div>
+    <div class="gzbox box">
+      <h2>关注排行榜<a href="{:U('Weixin/order',array('id'=>'89'))}" class="more">more</a></h2>
+      <ul>
+        <yufu:weixin catid="53" field="id,logo,pubaccount,hits" order="hits desc" num="6" >
+        <li><i class="fl">{$key+1}</i><a href="{:U('Weixin/show',array('id'=>$weixin['id']))}" title="{$weixin.pubaccount}" target='_blank' class="fl mr10"><img src="<empty name='weixin.logo'><empty name='weixin.weblogo'>../Public/images/nopic.gif<else />{$weixin.weblogo}</empty><else />__ROOT__/Uploads{$weixin.logo}</empty>" class='img' width="40" height="40" /></a>{$weixin.pubaccount}<a href="{:U('Weixin/show',array('id'=>$weixin['id']))}" title="{$weixin.pubaccount}" target='_blank' class="gz">加关注</a></li>
+        </yufu:weixin>
+      </ul>
+    </div>
+    <div class="bk10"></div>
+    <div class="gzbox box">
+      <h2>最新收录<a href="{:U('Weixin/news',array('id'=>'90'))}" target="_blank" class="more">more</a></h2>
+      <ul>
+           
+       <yufu:weixin catid="53" field="id,logo,pubaccount" order="create_time desc" num="5" >
+      
+        <li><i class="fl">{$key+1}</i><a href="{:U('Weixin/show',array('id'=>$weixin['id']))}" title="{$weixin.pubaccount}" target='_blank' class="fl mr10"><img src="<empty name='weixin.logo'><empty name='weixin.weblogo'>../Public/images/nopic.gif<else />{$weixin.weblogo}</empty><else />__ROOT__/Uploads{$weixin.logo}</empty>" class='img' width="40" height="40" /></a>{$weixin.pubaccount|msubstr=0,6}<a href="{:U('Weixin/show',array('id'=>$weixin['id']))}" title="{$weixin.pubaccount}" target='_blank' class="gz">加关注</a></li>
+        
+              </yufu:weixin>
+      </ul>
+    </div>
+    <div class="bk10"></div>
+    <img src="../Public/images/slider1.jpg" width="255" height="195" /></div>
+</div>
+<div class="bk10"></div>
+<div id="rightButton">
+  <ul id="right_ul">
+    <li id="right_ewm" onmousemove="$('#ewm').show();" onmouseout="$('#ewm').hide();">
+      <p id="ewm" style="display:none"><img src="../Public/images/octwein.jpg" /></p>
+    </li>
+    <li id="right_qq" class="right_ico" show="qq" hide="tel"></li>
+    <li id="right_tel" class="right_ico" show="tel" hide="qq"></li>
+    <li id="right_tip" class="png">
+      <p class="flagShow_p1 flag_tel">商务合作</p>
+      <p class="flagShow_p2 flag_tel line91">023-58101029 </p>
+      <p class="lxname">匡先生</p>
+      <p class="flagShow_p1 flag_qq">咨询QQ</p>
+      <p class="flagShow_p2 flag_qq"><a href="http://wpa.qq.com/msgrd?v=3&uin=75943938&site=qq&menu=yes" target="_blank"><img border="0" src="../Public/images/qqon.png"></a><span>75943938</span></p>
+    </li>
+  </ul>
+</div>
+<div id="backToTop"><a href="javascript:;" onfocus="this.blur();" class="backToTop_a png"></a></div>
+<!--[if lte IE 6]><script src="js/phone/PNG.js" type="text/javascript"></script><script>        if( typeof(PNG) == 'object') PNG.fix('.png');
+    </script><![endif]-->
+<include file="Public:footer"/>

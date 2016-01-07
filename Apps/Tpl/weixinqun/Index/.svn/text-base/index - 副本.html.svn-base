@@ -1,0 +1,334 @@
+<include file="Public:header" />
+<link href="__PUBLIC__/css/main.css" rel="stylesheet" type="text/css">
+<!-- 广告区域 -->
+<div class="wrap w1000">
+  <div class="gg_box">
+    <div class="gg_con border">
+      <h4><span class="h_bg"><a>品牌推荐</a></span><span class="h_btn"><a href="{:U('Content/index',array('id'=>138))}" target="_blank">我要上推荐</a></span></h4>
+      <div class="ul_con">
+        <ul>
+          <volist name="tjlist" id="tuijian">
+          <li>
+          <div class="con_img">
+            <a href="{:U('Weixin/show',array('id'=>$tuijian['id']))}" title="{$tuijian.pubaccount}"><img src="<empty name='tuijian.logo'><empty name='tuijian.weblogo'>../Public/images/nopic.gif<else/>{$tuijian.weblogo}</empty><else/>__ROOT__/Uploads{$tuijian.logo}</empty>" alt="" width="130" height="130/"></a>
+          </div>
+          <div class="con_txt">
+            <a href="{:U('Content/index',array('id'=>138))}" title="">{$tuijian.pubaccount|msubstr=0,6}</a>
+          </div>
+          </li>
+          </volist>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 抢位 START -->
+<div class="brand mt20 clear">
+  <div class="wrap w1000">
+    <div class="brand-content fLeft border">
+      <div class="titleBg" id="tab">
+        <span class="title fLeft" style="border-bottom:1px solid #dbdee1;border-top:2px solid #fafafa;"><a>微信群</a></span><span class="title fLeft" style="color: #42d83b;"><a>公众号</a></span><span class="title fLeft" style="border-bottom:1px solid #dbdee1;border-top:2px solid #fafafa;"><a>个人微信</a></span>
+        <div class="fRight more" style="display: none;">
+          <a href="{:U('Weixin/index',array('id'=>44))}">更多&gt;</a>
+        </div>
+        <div class="fRight more" style="display: block;">
+          <a href="{:U('Weixin/index',array('id'=>47))}">更多&gt;</a>
+        </div>
+        <div class="fRight more" style="display: none;">
+          <a href="{:U('Weixin/index',array('id'=>48))}">更多&gt;</a>
+        </div>
+      </div>
+      <div id="box">
+        <?php $now = time();$sessionid = session("id"); ?>
+        <ul class="boxone" style="display: none;">
+          <volist name="qiangwei_qun" id="vo" key="k">
+          <li>
+          <div class="place">
+            <div class="site">
+              <span class="img"><a id="zw4274" href="{:U('Weixin/show',array('id'=>$vo['id']))}" title="{$vo.title}">
+              <img id="zi4274" src="/Uploads{$vo.logo}" width="130" height="130" alt="{$vo.title}"></a>
+              </span>
+            </div>
+          </div>
+          <p class="settime" endtime="<?php $a_time=$vo['qiangwei_time']+2*3600;echo date('Y-m-d H:i:s',$a_time); ?>
+            ">
+            <span id="zicon4274" class="sofa_<?php if($a_time<$now){echo 'y';}else{echo 'n';} ?> icon">
+            <a class="<?php if($sessionid<1){ echo 'loginbox'; }?>" id="zu4274" href="{:U('Member/add',array('publish_type_id'=>1,'qiangwei_sort'=>$k))}"></a>
+            </span>
+            <a class="sitename" zid="4274" href="{:U('Weixin/show',array('id'=>$vo['id']))}">{$vo.title}</a>
+            <span class="time"></span>
+          </p>
+          </li>
+          </volist>
+        </ul>
+        <ul class="boxone" style="display: block;">
+          <volist name="qiangwei_hao" id="vo" key="k">
+          <li>
+          <div class="place">
+            <div class="site">
+              <span class="img"><a id="zw4274" href="{:U('Weixin/show',array('id'=>$vo['id']))}" title="{$vo.title}"><img id="zi4274" src="/Uploads{$vo.logo}" width="130" height="130" alt="{$vo.title}"></a></span>
+            </div>
+          </div>
+          <p class="settime" endtime="<?php $a_time=$vo['qiangwei_time']+2*3600;echo date('Y-m-d H:i:s',$a_time);echo $vo['qiangwei_time']; ?>
+            ">
+            <span id="zicon4274" class="sofa_<?php if($a_time<$now){echo 'y';}else{echo 'n';} ?> icon">
+            <a class="<?php if($sessionid<1){ echo 'loginbox'; }?>" id="zu4274" href="{:U('Member/add',array('publish_type_id'=>3,'qiangwei_sort'=>$k))}"></a>
+            </span>
+            <a class="sitename" zid="4274" href="{:U('Weixin/show',array('id'=>$vo['id']))}">{$vo.title}</a>
+            <span class="time"></span>
+          </p>
+          </li>
+          </volist>
+        </ul>
+        <ul class="boxone" style="display: none;">
+          <volist name="qiangwei_person" id="vo" key="k">
+          <li>
+          <div class="place">
+            <div class="site">
+              <span class="img"><a id="zw4274" href="{:U('Weixin/show',array('id'=>$vo['id']))}" title="{$vo.title}"><img id="zi4274" src="/Uploads{$vo.logo}" width="130" height="130" alt="{$vo.title}"></a></span>
+            </div>
+          </div>
+          <p class="settime" endtime="<?php $a_time=$vo['qiangwei_time']+2*3600;echo date('Y-m-d H:i:s',$a_time);echo $vo['qiangwei_time']; ?>
+            ">
+            <span id="zicon4274" class="sofa_<?php if($a_time<$now){echo 'y';}else{echo 'n';} ?> icon">
+            <a class="<?php if($sessionid<1){ echo 'loginbox'; }?>" id="zu4274" href="{:U('Member/add',array('publish_type_id'=>2,'qiangwei_sort'=>$k))}"></a>
+            </span>
+            <a class="sitename" zid="4274" href="{:U('Weixin/show',array('id'=>$vo['id']))}">{$vo.title}</a>
+            <span class="time"></span>
+          </p>
+          </li>
+          </volist>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 抢位 END -->
+<script language="javascript">
+$(function(){
+	updateEndTime();
+});
+
+//倒计时函数
+function updateEndTime()
+{
+	var date = new Date();
+	var time = date.getTime();
+	$(".settime").each(function(i){
+	var endDate =this.getAttribute("endTime");
+	var endDate1 = eval('new Date(' + endDate.replace(/\d+(?=-[^-]+$)/, function (a) { return parseInt(a, 10) - 1; }).match(/\d+/g) + ')');
+	var endTime = endDate1.getTime();
+	var lag = (endTime - time) / 1000;
+	if(lag > 0)
+	{
+	var second = Math.floor(lag % 60); 
+	var minite = Math.floor((lag / 60) % 60);
+	var hour = Math.floor((lag / 3600) % 24);
+	var day = Math.floor((lag / 3600) / 24);
+	$(this).find('.time').html("到时抢位<br/>还剩"+hour+"小时"+minite+"分"+second+"秒");
+	}
+	else{
+	   var zid=$(this).find('.sitename').attr('zid');
+       //var zurl=$("#zu"+zid).attr('href');
+       //var zt="空位待抢";
+       //var zi="http://ys.qunduoduo.com/404/qw.jpg";
+       //$("#zw"+zid).attr('href',zurl);
+       //$("#zion"+zid).attr('src',zi);
+       //$(this).find('.sitename').attr('href',zurl);
+      // $(this).find('.sitename').html(zt);
+      $(this).find('span:first').addClass('sofa_y');
+      $(this).find('.time').html("<em style='float:left;padding:10px 0 0 20px;font-weight:bold;font-size:16px;'>立即抢位</em>");
+	}
+	
+});
+setTimeout("updateEndTime()",1000);
+}
+
+$('.settime > .icon').each(function() {
+    $(this).mouseover(
+		function(){
+			$(this).siblings('.time').show();
+			}
+	)
+	$(this).mouseout(
+		function(){
+			$(this).siblings('.time').hide();
+			}
+	)
+});
+</script>
+
+
+<!-- 微信群-热搜-推广 START -->
+
+<div class="group mt20 clear">
+	<div class="wrap w1000">
+    	
+        <div class="group-content border fLeft">
+        <div class="titleBg" id="tab1"><span class="title fLeft" style="color: #42d83b;"><a href="javascript:void(0)">微信群</a></span><span class="title fLeft" style="border-bottom:1px solid #dbdee1;border-top:2px solid #fafafa;"><a href="javascript:void(0)">公众号</a></span><span class="title fLeft" style="border-bottom:1px solid #dbdee1;border-top:2px solid #fafafa;"><a href="javascript:void(0)">个人微信</a></span><div class="fRight more" style="display: block;"><a href="http://ys.qunduoduo.com/wxq-9.html">更多&gt;</a></div><div class="fRight more" style="display: none;"><a href="http://ys.qunduoduo.com/gzh-14.html">更多&gt;</a></div><div class="fRight more" style="display: none;"><a href="http://ys.qunduoduo.com/gr-15.html">更多&gt;</a></div></div>
+        <div id="box2">          
+            <ul class="boxtwo" style="display: block;">
+            	<volist name="today_qun" id="vo">
+              <li>
+                <div class="qitem">
+                  <img src="Uploads{$vo.logo}">
+                  <span class="caption">
+                    <h4>{$vo.title}</h4><p>{$vo.pubaccount}</p>
+                  </span>
+                  <div style="background-image: url(Uploads{$vo.logo});">
+                  <a href="http://ys.qunduoduo.com/archives-14369.html"></a>
+                </div>
+                <div class="topLeft" style="top: 0px; left: 0px; width: 65px; height: 65px; background-image: url(Uploads{$vo.logo});"></div>
+                <div class="topRight" style="top: 0px; left: 65px; width: 65px; height: 65px; background-image: url(Uploads{$vo.logo});"></div>
+                <div class="bottomLeft" style="bottom: 0px; left: 0px; width: 65px; height: 65px; background-image: url(Uploads{$vo.logo});"></div>
+                <div class="bottomRight" style="bottom: 0px; left: 65px; width: 65px; height: 65px; background-image: url(Uploads{$vo.logo});"></div>
+              </div>
+          <p style="float:left;"><i></i><a href="http://ys.qunduoduo.com/archives-14369.html" class="mnews" title="{$vo.title}">{$vo.title}--</a></p></li>
+          </volist>
+
+         
+            </ul>
+            <ul class="boxtwo" style="display: none;">
+            	<volist name="today_hao" id="vo">
+              <li>
+                <div class="qitem">
+                  <img src="Uploads{$vo.logo}">
+                  <span class="caption">
+                    <h4>{$vo.title}</h4><p>{$vo.pubaccount}</p>
+                  </span>
+                  <div style="background-image: url(Uploads{$vo.logo});">
+                  <a href="http://ys.qunduoduo.com/archives-14369.html"></a>
+                </div>
+                <div class="topLeft" style="top: 0px; left: 0px; width: 65px; height: 65px; background-image: url(Uploads{$vo.logo});"></div>
+                <div class="topRight" style="top: 0px; left: 65px; width: 65px; height: 65px; background-image: url(Uploads{$vo.logo});"></div>
+                <div class="bottomLeft" style="bottom: 0px; left: 0px; width: 65px; height: 65px; background-image: url(Uploads{$vo.logo});"></div>
+                <div class="bottomRight" style="bottom: 0px; left: 65px; width: 65px; height: 65px; background-image: url(Uploads{$vo.logo});"></div>
+              </div>
+          <p style="float:left;"><i></i><a href="http://ys.qunduoduo.com/archives-14369.html" class="mnews" title="{$vo.title}">{$vo.title}--</a></p></li>
+          </volist>
+            </ul>
+            <ul class="boxtwo" style="display: none;">
+            	<volist name="today_person" id="vo">
+              <li>
+                <div class="qitem">
+                  <img src="Uploads{$vo.logo}">
+                  <span class="caption">
+                    <h4>{$vo.title}</h4><p>{$vo.pubaccount}</p>
+                  </span>
+                  <div style="background-image: url(Uploads{$vo.logo});">
+                  <a href="http://ys.qunduoduo.com/archives-14369.html"></a>
+                </div>
+                <div class="topLeft" style="top: 0px; left: 0px; width: 65px; height: 65px; background-image: url(Uploads{$vo.logo});"></div>
+                <div class="topRight" style="top: 0px; left: 65px; width: 65px; height: 65px; background-image: url(Uploads{$vo.logo});"></div>
+                <div class="bottomLeft" style="bottom: 0px; left: 0px; width: 65px; height: 65px; background-image: url(Uploads{$vo.logo});"></div>
+                <div class="bottomRight" style="bottom: 0px; left: 65px; width: 65px; height: 65px; background-image: url(Uploads{$vo.logo});"></div>
+              </div>
+          <p style="float:left;"><i></i><a href="http://ys.qunduoduo.com/archives-14369.html" class="mnews" title="{$vo.title}">{$vo.title}--</a></p></li>
+          </volist>
+            </ul>
+        </div>
+        </div>
+       <div class="w280 ml10 fRight">
+            <div class="hotword-content border fLeft">
+                <div class="titleBg" id="tab2"><span class="title fLeft"><a>热词搜索</a></span>
+                <span class="title fLeft" style="border-bottom:1px solid #dbdee1;border-top:2px solid #fafafa;"><a>快速导航</a></span>
+                </div>
+                <div id="box3">
+                <ul class="boxtwo">
+                  <li>
+					<volist name="recisousuo" id="vo" key="k">
+						<a class="lbc<php> echo (($k-1)%5)+1;</php>" href="{:U('Weixin/search',array('id'=>26,'keyword'=>$vo['search']))}" target="_blank">{$vo.search}</a>
+					</volist>
+					</li>
+                </ul>
+                <ul class="boxtwo" style="display:none;">
+                  <li>
+                    <volist name="kuaisudaohang" id="vo" key="k">
+                      <a class="lbc<php> echo (($k-1)%5)+1;</php>" href="{:U('Article/show',array('id'=>$vo['id']))}" target="_blank">{$vo.title}</a>
+                    </volist>
+				          </li>
+                </ul>
+                </div>
+              </div>
+            <div class="spread-content border fLeft mt20">
+                <div class="titleBg"><span class="title fLeft"><a href="{:U('Article/index',array('id'=>149))}">热门问答</a></span></div>
+                <ul>
+                 <volist name="remenwenda" id="vo">
+				 <li><i class="square"></i><a href="{:U('weixin/show',array('id'=>$vo['id']))}" title="{$vo.title}">{$vo.title}</a></li>
+				  </volist> 
+   
+                </ul>
+            </div>
+            
+       </div>     
+    </div>
+</div>
+
+<!--  微信群-热搜-推广 END -->
+
+<!-- 微信货源 START -->
+<div class="goods mt20 clear">
+	<div class="wrap w1000">
+    	<div class="goods-content border fLeft">
+    		<div class="titleBg"><span class="title fLeft"><a href="{:U('weixin/index',array('id'=>1))}" target="_blank">微商货源</a></span><span class="fRight more"><a href="{:U('weixin/index',array('id'=>1))}">更多</a></span></div> 
+            <ul>
+				<volist name="weixin_huoyuan" id="vo">
+                <li>
+					<p>
+						<a href="{:U('weixin/show',array('id'=>$vo['id']))}" title="{$vo.title}">
+							<img src="Uploads{$vo.logo}" width="215" height="133" alt="{$vo.title}"></a>
+					</p>
+					<p>
+						<a href="{:U('weixin/show',array('id'=>$vo['id']))}">{$vo.title}</a>
+					</p>
+				</li>
+				</volist>
+            </ul>
+        </div>        
+    </div>
+</div>
+<!-- 微信货源 END -->
+
+<!-- 微信营销 sTART -->
+<div class="market mt20 clear">
+	<div class="wrap w1000">
+    	<div class="market-content fLeft">
+        	<div class="market-col1 border fLeft mr20">
+            	<div class="titleBg"><span class="title fLeft"><a href="{:U('Article/index',array('id'=>142))}" target="_blank">微信营销</a></span><span class="fRight more"><a href="{:U('Article/index',array('id'=>142))}">更多</a></span></div>
+                <div class="photo">
+                    
+                </div>
+                <ul>
+                    <volist name="weixinyingxiao" id="vo">
+					<li><i class="square"></i><a href="{:U('Article/show',array('id'=>$vo['id']))}" title="{$vo.title}">{$vo.title}</a></li>
+					</volist>
+                </ul>
+            </div>
+            
+            <div class="market-col1 border fLeft mr20">
+            	<div class="titleBg"><span class="title fLeft"><a href="{:U('Article/index',array('id'=>55))}" target="_blank">微信资讯</a></span><span class="fRight more"><a href="{:U('Article/index',array('id'=>55))}">更多</a></span></div>
+                <div class="photo">
+                    
+                </div>
+                <ul>
+					 <volist name="weixinzixun" id="vo">
+					<li><i class="square"></i><a href="{:U('Article/show',array('id'=>$vo['id']))}" title="{$vo.title}">{$vo.title}</a></li>
+					</volist>
+					
+                </ul>
+            </div>
+            
+            <div class="market-col2 border fRight">
+            	<div class="titleBg"><span class="title fLeft"><a href="{:U('Article/index',array('id'=>150))}" target="_blank">微信学堂</a></span><span class="fRight more"><a href="{:U('Article/index',array('id'=>150))}">更多</a></span></div>
+                <div class="photo">
+                    <volist name="weixinxuetang" id="vo">
+					<p><i class="square"></i><a href="{:U('Article/show',array('id'=>$vo['id']))}" title="{$vo.title}">{$vo.title}</a></p>
+					</volist>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- 微信营销 END -->
+<include file="Public:footer" />

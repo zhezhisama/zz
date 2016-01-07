@@ -1,0 +1,18 @@
+
+    <div class="rbox">
+        <div class="rtit">关注排行榜<span><a href="{:U('Weixin/order',array('id'=>'89'))}" target="_blank">更多&gt;&gt;</a></span></div>
+        <div class="hot">
+            <ul>
+                <yufu:weixin catid="53" field="id,logo,pubaccount,hits" order="hits desc" num="8" >
+                    <li>
+                        <div class="order">{$key+1}</div>
+                        <a href="{:U('Weixin/show',array('id'=>$weixin['id']))}" title="{$weixin.pubaccount}" target='_blank'>
+                        <img src="<empty name='weixin.logo'><empty name='weixin.weblogo'>../Public/images/nopic.gif<else />{$weixin.weblogo}</empty><else />__ROOT__/Uploads{$weixin.logo}</empty>" class='img' width="40" height="40">
+                        <div class="title">{$weixin.pubaccount|msubstr=0,6}</div>
+                        <div class="sort">加关注</div>
+                        </a>
+                    </li>
+                </yufu:weixin>
+            </ul>
+        </div>
+    </div>

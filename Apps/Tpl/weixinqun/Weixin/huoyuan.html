@@ -1,0 +1,166 @@
+<include file="Public:header1" />
+<link href="__PUBLIC__/css/goods.css" rel="stylesheet" type="text/css">
+<!-- 头部 END -->
+<!-- 导航 -->
+<div class="wrap">
+  <div class="in-sort" style="width:980px;height:62px"> <span class="big-label yahei">微商货源</span>  
+  <div class="vocation-mark yahei">
+  <a class="mark cbg1 active" href="{:U('Weixin/huoyuan',array('id'=>1))}"> <span></span>所有</a> 
+  <volist name="type_list" id="vo" key="k">
+	<a class="mark cbg<php> echo ($k-1)%8+2; </php>" href="{:U('Weixin/huoyuan',array('catid'=>$vo['id']))}">{$vo.catname}</a>
+  </volist>
+  </div>
+  </div>
+  <div class="index-module yahei">
+    <div class="w990">
+		<volist name="list" id="vo">
+		 <ul class="post big-post">
+			<div class="cover"> <a href="{:U('Weixin/huoyuanshow',array('id'=>$vo['id']))}"><img src="/Uploads{$vo.logo}" width="250" height="250" alt="微商商城"></a>
+          <div class="w-cover">
+            <div class="picture"><img src="/Uploads{$vo.qrcode}" width="150" height="150" alt="微商商城"></div>
+            <div class="txt">
+              <p>{$vo.keywords} </p>
+              <p class="pt5"><a href="{:U('Weixin/huoyuanshow',array('id'=>$vo['id']))}" style="color:#318000;"><b>【进入查看详情】</b></a></p>
+            </div>
+          </div>
+        </div>
+        <li>
+        <label class="pr5">货源名称：</label>
+          <a class="nickname" href="{:U('Weixin/huoyuanshow',array('id'=>$vo['id']))}"><b>{$vo.title}</b></a>
+         </li>
+        <li> 
+        <label class="pr5">发布人微信：</label>
+          <span>{$vo.wxaccount}</span>
+          </li>
+      </ul>
+     </volist>   
+        </div>
+        <div class="pageNo vm center" style="height:36px;padding:10px 0px;">
+			{$page}
+                 <!--<a class="selected">1</a><a href="http://weixinqun.xiaoxiaowu.info/hy-19-2-or-3-vi-1.html" title="页 2">2</a>-->
+		</div>  </div>
+</div>
+<!-- 品牌直招 -->
+<!--
+<div class="wrap">
+  <div class="in-sort" style="width:980px;"> <span class="big-label yahei">认证微商</span><span class="fRight mt10 yahei"><a href="http://weixinqun.xiaoxiaowu.info/hy-19.html#">我要认证&gt;</a></span></div>
+  <div class="gundong">
+      <div class="index-module msp-mod yahei">
+          <div class="w990 mainlist piclist" style="width: 660px;">
+            <ul class="post small-post">      
+              <div class="cover">
+              <a href="http://weixinqun.xiaoxiaowu.info/archives-6068.html"><img src="./微商货源_微商代理,货源,微商,微店,微店货源,微信货源,网店货源,开网店怎么找货源,一手货源_files/2f886945c170f9868d3963e7eaafff1b-153-153.jpg" width="153" height="153" alt="奢饰品男鞋"></a>
+              </div>
+            <li>
+            <label class="pr5">用户名：</label>
+              <a class="nickname" href="http://weixinqun.xiaoxiaowu.info/archives-6068.html"><b>朱颖霞</b></a><i class="attest"></i>
+            </li>  
+            <li> 
+            <label class="pr5">微信号：</label>
+              <span>oo00258</span>
+            </li>
+            </ul>
+			<ul class="post small-post">      
+              <div class="cover">
+              <a href="http://weixinqun.xiaoxiaowu.info/archives-6454.html"><img src="./微商货源_微商代理,货源,微商,微店,微店货源,微信货源,网店货源,开网店怎么找货源,一手货源_files/a612f5e98d11d7a84ae6a445b774219b-153-153.jpg" width="153" height="153" alt="黄金首饰"></a>
+              </div>
+            <li>
+            <label class="pr5">用户名：</label>
+              <a class="nickname" href="http://weixinqun.xiaoxiaowu.info/archives-6454.html"><b>金秘书</b></a><i class="attest"></i>
+            </li>  
+            <li> 
+            <label class="pr5">微信号：</label>
+              <span>www_hjjg_com</span>
+            </li>
+            </ul><ul class="post small-post">      
+              <div class="cover">
+              <a href="http://weixinqun.xiaoxiaowu.info/archives-6077.html"><img src="./微商货源_微商代理,货源,微商,微店,微店货源,微信货源,网店货源,开网店怎么找货源,一手货源_files/b61473a5b643cd75e5d401b802871894-153-153.jpg" width="153" height="153" alt="微商男士护肤第一品牌—MICHAEL JACKSON"></a>
+              </div>
+            <li>
+            <label class="pr5">用户名：</label>
+              <a class="nickname" href="http://weixinqun.xiaoxiaowu.info/archives-6077.html"><b>王蒙蒙</b></a><i class="attest"></i>
+            </li>  
+            <li> 
+            <label class="pr5">微信号：</label>
+              <span>202872237</span>
+            </li>
+            </ul><ul class="post small-post">      
+              <div class="cover">
+              <a href="http://weixinqun.xiaoxiaowu.info/archives-6062.html"><img src="./微商货源_微商代理,货源,微商,微店,微店货源,微信货源,网店货源,开网店怎么找货源,一手货源_files/7630fede164699d404be044c392f6128-153-153.jpg" width="153" height="153" alt="广州妆后公司-艾薇格丝美痘人精华"></a>
+              </div>
+            <li>
+            <label class="pr5">用户名：</label>
+              <a class="nickname" href="http://weixinqun.xiaoxiaowu.info/archives-6062.html"><b>亲爱的</b></a><i class="attest"></i>
+            </li>  
+            <li> 
+            <label class="pr5">微信号：</label>
+              <span>931341756</span>
+            </li>
+            </ul>
+          </div>
+          <div class="piclist swaplist" style="width: 660px;">
+            <ul class="post small-post">      
+              <div class="cover">
+              <a href="http://weixinqun.xiaoxiaowu.info/archives-6068.html"><img src="./微商货源_微商代理,货源,微商,微店,微店货源,微信货源,网店货源,开网店怎么找货源,一手货源_files/2f886945c170f9868d3963e7eaafff1b-153-153.jpg" width="153" height="153" alt="奢饰品男鞋"></a>
+              </div>
+            <li>
+            <label class="pr5">用户名：</label>
+              <a class="nickname" href="http://weixinqun.xiaoxiaowu.info/archives-6068.html"><b>朱颖霞</b></a><i class="attest"></i>
+            </li>  
+            <li> 
+            <label class="pr5">微信号：</label>
+              <span>oo00258</span>
+            </li>
+            </ul><ul class="post small-post">      
+              <div class="cover">
+              <a href="http://weixinqun.xiaoxiaowu.info/archives-6454.html"><img src="./微商货源_微商代理,货源,微商,微店,微店货源,微信货源,网店货源,开网店怎么找货源,一手货源_files/a612f5e98d11d7a84ae6a445b774219b-153-153.jpg" width="153" height="153" alt="黄金首饰"></a>
+              </div>
+            <li>
+            <label class="pr5">用户名：</label>
+              <a class="nickname" href="http://weixinqun.xiaoxiaowu.info/archives-6454.html"><b>金秘书</b></a><i class="attest"></i>
+            </li>  
+            <li> 
+            <label class="pr5">微信号：</label>
+              <span>www_hjjg_com</span>
+            </li>
+            </ul><ul class="post small-post">      
+              <div class="cover">
+              <a href="http://weixinqun.xiaoxiaowu.info/archives-6077.html"><img src="./微商货源_微商代理,货源,微商,微店,微店货源,微信货源,网店货源,开网店怎么找货源,一手货源_files/b61473a5b643cd75e5d401b802871894-153-153.jpg" width="153" height="153" alt="微商男士护肤第一品牌—MICHAEL JACKSON"></a>
+              </div>
+            <li>
+            <label class="pr5">用户名：</label>
+              <a class="nickname" href="http://weixinqun.xiaoxiaowu.info/archives-6077.html"><b>王蒙蒙</b></a><i class="attest"></i>
+            </li>  
+            <li> 
+            <label class="pr5">微信号：</label>
+              <span>202872237</span>
+            </li>
+            </ul><ul class="post small-post">      
+              <div class="cover">
+              <a href="http://weixinqun.xiaoxiaowu.info/archives-6062.html"><img src="./微商货源_微商代理,货源,微商,微店,微店货源,微信货源,网店货源,开网店怎么找货源,一手货源_files/7630fede164699d404be044c392f6128-153-153.jpg" width="153" height="153" alt="广州妆后公司-艾薇格丝美痘人精华"></a>
+              </div>
+            <li>
+            <label class="pr5">用户名：</label>
+              <a class="nickname" href="http://weixinqun.xiaoxiaowu.info/archives-6062.html"><b>亲爱的</b></a><i class="attest"></i>
+            </li>  
+            <li> 
+            <label class="pr5">微信号：</label>
+              <span>931341756</span>
+            </li>
+            </ul>
+          </div>
+     </div>
+  	 <div class="og_prev"></div>
+     <div class="og_next"></div>
+    </div>
+</div> --><!-- 代理招商 -->
+<script type="text/javascript">
+	$(".cover").each(function() {
+		//alert($(this));
+        $(this).hover(
+			function(){
+				$(this).children(".w-cover").slideToggle(200);
+		});
+    });
+</script>
+<include file="Public:footer" />

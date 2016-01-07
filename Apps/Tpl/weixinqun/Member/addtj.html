@@ -1,0 +1,162 @@
+<include file="Public:header1" />
+<script type="text/javascript" src="../Public/js/select-option-disabled-emulation.js"></script>
+<link rel="stylesheet" type="text/css" href="../Public/js/calendar/jscal2.css"/>
+<link rel="stylesheet" type="text/css" href="../Public/js/calendar/border-radius.css"/>
+<link rel="stylesheet" type="text/css" href="../Public/js/calendar/win2k.css"/>
+<script type="text/javascript" src="../Public/js/calendar/calendar.js"></script>
+<script type="text/javascript" src="../Public/js/calendar/lang/en.js"></script>
+<div class="main">
+            <div class="box_tit">
+                <h2>添加推荐</h2>
+            </div>
+            <div class="form_list w12">
+                <form method='post' id="form1" name="form1" action="{:U('Weixin/addtj')}">
+                <div class="form_list_top">
+                <dl>
+                    <dt> 推荐公号：</dt>
+                    <dd>
+                        <input type="hidden" name="wxid" id="wxid" value="{$wxid}">
+                        <input type="text" name="pubaccount" id="pubaccount" value="{$pubaccount}" class="ipt5 huise" style="background: #E9E8E2;" readonly="readonly">
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 推荐位置：</dt>
+                    <dd>
+                        <select name="recommendid" id="recommendid">
+                            <volist name="recommendlist" id="recommendvo">
+                            <option value="{$recommendvo.id}" name="{$recommendvo.intergral}">{$recommendvo.recommendname}</option>
+                            </volist>
+                        </select>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 时间限制：</dt>
+                    <dd>
+                        <input type="radio" name="timelimit" value="0" checked="checked" />&nbsp;永久&nbsp;&nbsp;<input type="radio" name="timelimit" value="1" />&nbsp;在设定时间范围内有效<span class="fontcolor">设为永久排序将在设定时间之后</span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 时间范围：</dt>
+                    <dd>
+                        <input type="text" name="starttime" id="starttime" class="ipt3" style="background: #EBEBE4;" disabled="disabled">
+                        <script type="text/javascript">
+                            Calendar.setup({
+                                weekNumbers: true,
+                                inputField : "starttime",
+                                trigger    : "starttime",
+                                dateFormat: "%Y-%m-%d",
+                                showTime: true,
+                                minuteStep: 1,
+                                onSelect   : function() {this.hide();starttime();}
+                            });
+                        </script>
+                        
+                        <span>至</span>
+                      
+                        <input type="text" name="endtime" id="endtime" class="ipt3" style="background: #EBEBE4;" disabled="disabled">
+                        <script type="text/javascript">
+                            Calendar.setup({
+                                weekNumbers: true,
+                                inputField : "endtime",
+                                trigger    : "endtime",
+                                dateFormat: "%Y-%m-%d",
+                                showTime: true,
+                                minuteStep: 1,
+                                onSelect   : function() {this.hide();endtime();}
+                            });
+
+                        </script>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 消费积分：</dt>
+                    <dd>
+                        <input type="text" name="intergral" value="0" id="intergral" class="ipt2" style="background: #E9E8E2;" readonly="readonly">
+                    </dd>
+                </dl>
+                
+                </div>
+                <div class="form_b">
+                    <input type="submit" class="submit btn7" id="submit" value="提 交">
+                </div>
+               </form>
+            </div>
+
+            
+        </div>
+<script type="text/javascript">
+    $(function(){
+        $('input[name=timelimit]').click(function(){
+            if($(this).val()==="1"){
+                $('#starttime').css('background','');
+                  
+                $('#endtime').css('background','');
+                
+                $("#starttime").attr("disabled",false);   
+                $("#endtime").attr("disabled",false);   
+            }else{
+                $('#starttime').css('background','#EBEBE4');
+                $('#endtime').css('background','#EBEBE4');
+                $("#starttime").attr("disabled",true);   
+                $("#endtime").attr("disabled",true);  
+            }
+        });
+    });
+    function starttime(){
+        var starttime=$("#starttime").val();
+        var endtime=$("#endtime").val();
+        
+        if(starttime==="" || endtime===""){
+            return;
+        }
+
+        if(starttime>endtime){
+           alert('结束日期不能小于开始日期');
+           $("#intergral").val('0');
+        }else{
+            //计算出相差天数
+//            var days=daysBetween(starttime,endtime)+1;
+//            var intergralnum=$('#recommendid option:selected').attr('name');
+//            $("#intergral").val(days*intergralnum);
+              $("#intergral").val(0);
+        }
+    }
+        function endtime(){
+            var starttime=$("#starttime").val();
+            var endtime=$("#endtime").val();
+            if(starttime==="" || endtime===""){
+                return;
+            }
+       
+            if(starttime>endtime){
+               alert('结束日期不能小于开始日期');
+               $("#intergral").val('0');
+            }else{
+        
+                //计算出相差天数
+//                var days=daysBetween(starttime,endtime)+1;
+//                var intergralnum=$('#recommendid option:selected').attr('name');
+//                $("#intergral").val(days*intergralnum);
+                $("#intergral").val(0);
+            }
+        };
+
+function daysBetween(DateOne,DateTwo) 
+{  
+
+    var OneMonth = DateOne.substring(5,DateOne.lastIndexOf ('-')); 
+    var OneDay = DateOne.substring(DateOne.length,DateOne.lastIndexOf ('-')+1); 
+    var OneYear = DateOne.substring(0,DateOne.indexOf ('-'));
+
+    var TwoMonth = DateTwo.substring(5,DateTwo.lastIndexOf ('-')); 
+    var TwoDay = DateTwo.substring(DateTwo.length,DateTwo.lastIndexOf ('-')+1); 
+    var TwoYear = DateTwo.substring(0,DateTwo.indexOf ('-'));
+
+    var cha=((Date.parse(OneMonth+'/'+OneDay+'/'+OneYear)- Date.parse(TwoMonth+'/'+TwoDay+'/'+TwoYear))/86400000);   
+    return Math.abs(cha); 
+}
+
+</script>
+<include file="Public:footer" />
+
+

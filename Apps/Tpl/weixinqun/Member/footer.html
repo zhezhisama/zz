@@ -1,0 +1,250 @@
+<!-- 底部 START -->
+    <div class="footer mt20">
+      <div class="wrap w1000">
+        <div class="f-content">
+          <div class="f-code fLeft"> <span><img src="__ROOT__/Uploads<yufu:set settag="qrcode"/>" width="115" height="115"></span>
+ <span><p><strong>扫描二维码</strong></p><p>手机客户端更便捷<br>关注我们，快速了解商家信息，商家活动</p></span>
+
+          </div>
+          <div class="f-info fRight">
+            <ul>
+              <volist name="footer_info" id="vo">
+              <li>
+                <p><strong>{$vo.catname}</strong>
+                </p>
+                <volist name="vo.child" id="vo1">
+                <p><a href="{:U('Article/show',array('id'=>$vo1['id']))}" title="{$vo1.title}">{$vo1.title|strip_tags}</a>
+                </p>
+                </volist>
+              </li>
+              </volist>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="background:#5b5b5b;height:70px;text-align:center;color:#aaa;">
+      <p style="padding-top:25px;"><yufu:other settag="footer" /></p>
+    </div>
+    <div class="help_box" style="">
+      <a href="javascript:;" class="float_qq" data-show="1"></a> 
+      <a class="zixun" href="javascript:;" id="help_qq1">客服咨询</a>  
+      <a class="join" href="javascript:;" id="help_qq2">广告合作</a>  
+      <b class="tels">咨询热线<br>
+          <yufu:other settag="zxrx" />
+        </b>
+
+      <div>
+        <img src="__ROOT__/Uploads<yufu:set settag="qrcode" />">
+      </div>
+      <p class="">扫一扫立即体验</p>
+      <div class="qq_list" id="qq_list1" style="display: none;" data-show="1">
+        <a href="javascript:;" class="close_qq" id="close_qq1"></a>
+         <h4>客服咨询</h4>
+
+        <div class="area_qq">
+		<yufu:other settag="kfzx" />
+        </div>
+      </div>
+      <div class="qq_list join_bg" id="qq_list2" style="display: none;">
+        <a href="javascript:;" class="close_qq" id="close_qq2"></a>
+         <h4>广告咨询</h4>
+
+        <div class="area_qq">
+		<yufu:other settag="ggzx" />
+
+        </div>
+      </div>
+    </div>
+    <script>
+      $(function(){
+        $(".float_qq").click(function(){
+          if($(this).attr("data-show") == 1)
+          {
+            $(this).attr("data-show",0);
+            $(this).addClass("active");
+            $(".help_box").animate({"right":"-140px"});
+          }else{
+            $(this).attr("data-show",1);
+            $(this).removeClass("active");
+            $(".help_box").animate({"right":"0"});
+          }
+          
+          });
+        $("#help_qq1").click(function(){
+          $("#qq_list2").hide();
+          if($("#qq_list1").is(":hidden"))
+          {
+            $("#qq_list1").slideDown();
+          }else{
+            $("#qq_list1").slideUp();
+          }
+          });
+        $("#close_qq1").click(function(){
+          $("#qq_list1").slideUp();     
+          }); 
+        $("#help_qq2").click(function(){
+          $("#qq_list1").hide();
+          if($("#qq_list2").is(":hidden"))
+          {
+            $("#qq_list2").slideDown();
+          }else{
+            $("#qq_list2").slideUp();
+          }
+          });
+        $("#close_qq2").click(function(){
+          $("#qq_list2").slideUp();     
+          }); 
+        });
+    </script>
+    <!-- 底部 END -->
+    <script type="text/javascript">
+      $('#navmenu_company,#navmenu_personal').mouseover(function(event){
+        $('#navmenu_company,#navmenu_personal').removeClass('active');
+        $(this).toggleClass('active');
+        event.stopPropagation();
+        });
+      $('#navmenu_company,#navmenu_personal').mouseout(function(event){
+        $('#navmenu_company,#navmenu_personal').removeClass('active');
+        event.stopPropagation();
+        });
+    </script>
+    <div style="display:none;">
+      <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe631b3a1fedd3e3a3970479d2e0d0da6' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script src="../Public/images/h.js" type="text/javascript"></script>
+      <a href="http://tongji.baidu.com/hm-web/welcome/ico?s=e631b3a1fedd3e3a3970479d2e0d0da6" target="_blank">
+        <img border="0" src="../Public/images/21.gif" width="20" height="20">
+      </a>
+    </div>
+    <div class="popBox">
+        <h4><span id="poptit"></span><span class="fRight mt5 closed" title="关闭"><img src="../Public/images/popBox_close.png" alt="关闭"></span></h4>
+
+      <div class="popArea">
+        <iframe marginheight="0" marginwidth="0" frameborder="0" scrolling="no" width="630" height="430" id="iframepage" name="iframepage"></iframe>
+      </div>
+    </div>
+    <div id="light">
+      <iframe marginheight="0" marginwidth="0" frameborder="0" scrolling="no" width="600" height="250" id="iframepage2" name="iframepage2"></iframe>
+    </div>
+    <div id="sl_box"></div>
+    <script>
+/*      var obj = $('#light');
+      var objbg = $('#sl_box');
+      var objiframe=$('#iframepage2');
+      //objbg.click(function(){close()});
+      function qwbox(id,tid)
+      {
+          obj.show();
+          objbg.show();
+          var Furl = "/member-showQw.html?id="+id+"&tid="+tid;
+		  objiframe.attr('src',Furl);
+      }
+      function close()
+      {
+          obj.hide();
+          objbg.hide();
+          objiframe.attr('src','');
+      }*/
+          $("#imgfmsrc").click(function(){
+              var url="{:U('Member/wxupload','w=250&h=250&type=imgfm')}";
+              $("#poptit").html("上传封面");
+              $(".popBox").show();
+              $("#iframepage").attr('src',url);
+          });
+          $("#litpicsrc").click(function(){
+              var url="/user-wxupload.html?w=250&h=317&type=litpic";
+              $("#poptit").html("上传二维码");
+              $(".popBox").show();
+              $("#iframepage").attr('src',url);
+          });
+          $(".closed").click(function(){
+              closed();
+          });
+          function closed()
+          {
+              $(".popBox").hide();
+              $("#iframepage").attr('src','');
+          }
+      
+          function validate_required(field,alerttxt)
+          {
+          with (field)
+            {
+            if (value==null||value==""||value==0)
+              {alert(alerttxt);return false}
+            else {return true}
+            }
+          }
+          
+          function validate_form(thisform)
+          {
+              
+          with (thisform)
+            {
+      
+                if (validate_required(wxqtype,"微信栏目没选择!")==false)
+                  {wxqtype.focus();return false}
+                  
+                if (validate_required(rensu,"上限人数没选择!")==false)
+                  {rensu.focus();return false}
+                  
+                if (validate_required(rensu2,"现有人数没填写!")==false)
+                  {rensu2.focus();return false}
+                  
+                if (validate_required(weixinhao,"群主微信号没填写!")==false)
+                  {weixinhao.focus();return false} 
+                   
+                    
+                if (validate_required(title,"微信名称必须填写!")==false)
+                  {title.focus();return false}
+                  
+                    
+                if (validate_required(description,"微信简介必须填写!")==false)
+                  {description.focus();return false}
+                   
+               if (validate_required(imgfm,"封面没有上传!")==false)
+                  {imgfm.focus();return false} 
+                              
+                if (validate_required(litpic,"二维码没有上传!")==false)
+                  {litpic.focus();return false}  
+                              
+            }
+          }
+    </script>
+
+
+    <script type="text/javascript">
+        $(function(){
+            $("#province").change(function(){
+                
+                var ajaxurl="{:U('Ajax/getArea')}";
+                var areaId=this.value;
+                var areaType='city';
+                $.post(ajaxurl,{'areaId':areaId},function(data){
+
+                        if(areaType==='city'){
+                           $('#'+areaType).html('<option value="-1">城市</option>');
+
+                           $('#district').html('<option value="-1">镇/区</option>');
+                        }else if(areaType==='district'){
+                           $('#'+areaType).html('<option value="-1">镇/区</option>');
+                        }
+                        if(areaType!=='null'){
+                            $.each(data,function(no,items){
+                                $('#'+areaType).append('<option value="'+items.id+'">'+items.area_name+'</option>');
+                            });
+                        }
+                });
+
+            });
+            
+        });
+
+    </script>
+
+  </body>
+
+</html>

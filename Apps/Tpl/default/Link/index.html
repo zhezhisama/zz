@@ -1,0 +1,30 @@
+<include file="Public:header"/>
+<div class="main">
+    <div class="position">
+        <span>当前位置：</span>
+        <a href="__APP__">首页</a> &gt; 友情链接
+    </div>
+    <div class="newsbox">
+        <div class="newsl">
+            <div class="view">
+                <volist name="list" id="vo">
+                    <if condition="$vo['type'] eq 1 ">
+                        <if condition="$vo['linktype'] eq 0">
+                            <a href="{$vo.url}" target="_blank">{$vo.name}</a>&nbsp;|&nbsp;
+                        <else />
+                            <a href="{$vo.url}" target="_blank"><img src="__ROOT__/Uploads{$vo.logo}" alt="{$vo.name}" /></a>&nbsp;|&nbsp;
+                        </if>
+                    </if>
+                </volist>
+            </div>
+        </div>
+        <div class="newsr">
+        <include file="Public:ggw" />
+        <include file="Public:gzphb" />
+        <include file="Public:wxzx" />
+        <include file="Public:zxsl" />
+        </div>
+    </div>
+</div>
+
+<include file="Public:footer"/>

@@ -1,0 +1,22 @@
+<div class="footer">
+  <div class="foot">
+    <ul>
+      <img src="../Public/images/footer_logo.png" width="152" height="46" />
+      <p>Copyright © 2014 好站长微信导航<br />
+        京ICP备12010xxx号-1
+
+
+      </p>
+    </ul>
+    <ul class="footmid">
+      <a href="" class="gohome" title="扔赞网"></a><a href="{:U('Member/index')}" class="setting" title="个人中心"></a><a href="{:U('Member/logout')}" class="goout" title="退出扔赞网"></a>
+    </ul>
+    <ul style="width:365px;">
+      <p class="addr"><i style="font-size:12px"><a href="" title="">ABOUT US</a></i><br>
+        <a href="http://www.haoid.cn" target="_blank" class="textline">极品源码</a></p>
+      <img src="../Public/images/world_map.png" class="fr"/>
+    </ul>
+  </div>
+</div>
+</body>
+</html>

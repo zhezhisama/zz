@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no">
+        <style type="text/css">
+            body{
+                margin: 0;
+                padding: 0;
+                font-size: 12px;
+            }
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .main{
+                
+                margin: 20px 10px;
+                
+            }
+            .list{
+                margin-top: 10px;
+                border-radius: 5px; 
+                background: #F2F2F2;
+                padding: 10px;
+                padding-right: 0;
+            }
+            .list .jwgz{
+                margin-top: 10px;
+            }
+            .list .info{
+                margin: 10px 10px 10px 0;
+                padding: 10px;
+                border: 1px solid #DEDEDE;
+                
+            }
+            .list .info .pubaccount{
+                font-size: 14px;
+            }
+            .list .info .wxaccount{
+                margin-top: 10px;
+            }
+            .list .info .content{
+                margin-top: 10px;
+            }
+            .clear{
+                clear: both;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <div class="main">
+            
+            <div class="list">
+                <div class="logo"><img src="Uploads{$data.qrcode}" width="150" height="150" /></div>
+                <div class="jwgz">
+                    加为关注的方法：<br>
+                    1、点击（需长按）二维码保存至图库，启动微信扫一扫，从相册选择二维码关注。<br>
+                    2、点击（需长按）公众帐号复制，启动微信选择朋友们-添加朋友-查找微信公众帐号关注。
+                </div>
+                <div class="info">
+                    
+                    <div class="pubaccount">{$data.pubaccount}</div>
+                    <div class="wxaccount">微信帐号：{$data.wxaccount}</div>
+                    <div class="content">帐号介绍：<br>
+                        {$data.content}
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        </div>
+    </body>
+</html>

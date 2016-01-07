@@ -1,0 +1,82 @@
+<include file="Member:header" />
+
+<div class="memberbox">   
+        <div class="memberleft">
+            <include file="Member:left" />
+        </div>
+        <div class="memberright">
+            <div class="member_detail">充值记录</div>
+            <div class="member_content">
+                <div class="operate">
+                  
+                        <form method="post" action="{:U('Member/paylist',array('catid'=>$catid))}">
+                            <input type="text" name="name" title="请输入支付单号" class="ipt5">
+                            
+                            <input type="submit" class="submit btn5" value="查  询">
+                        </form>
+
+                </div>
+                <div class="list paylist">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                        <tr class="nbg">
+                            <th>编号</th>
+                            <th>支付单号</th>
+                            <th>支付时间</th>
+                            <th>支付方式</th>
+                            <th>存入金额</th>
+                            <th>付款状态</th>
+                            <th>操作</th>
+                        </tr>
+                        <volist name="list" id="vo">
+                        <tr>
+                            <td>{$vo.id}</td>
+                            <td>{$vo.payno}</td>
+                            <td>{$vo.create_time|toDate="Y-m-d H:i:s"}</td>
+                            <td>{$vo.paytypename}</td>
+                            <td>{$vo.paymoney|round=###,2}<eq name="vo.type" value="1">元<else />点</eq></td>
+                            <td>
+                                <if condition="$vo['status'] eq 1">
+                                    交易成功
+                                <elseif condition="$vo['status'] eq 2" />
+                                    等待付款
+                                <elseif condition="$vo['status'] eq 3" />
+                                    交易未支付
+                                    <elseif condition="$vo['status'] eq 0" />
+                                    交易取消
+                                </if>
+                        
+                            </td>
+                            <td align="center">
+                                <if condition="$vo['status'] eq 3" >
+                                    {$vo.pay_btn}
+                                </if>
+                            </td>
+                        </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+                    <div class="th" style="clear: both;">{$page}</div>
+                </div>
+                
+                
+            </div>
+        </div>
+</div>
+<script type="text/javascript">
+    function foreverdel(url){
+        if(confirm("确定要删除该条记录吗？删除后将不可恢复！")){
+            location.href=url;
+        } 
+    }
+    $(function(){
+        //选中列表行变色
+        $(".list tr").mouseover(function(){
+            $(this).addClass("currow");
+        }).mouseout(function(){
+            $(this).removeClass("currow");
+        });
+    });
+    
+</script>
+<include file="Public:footer" />

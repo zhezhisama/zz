@@ -1,0 +1,88 @@
+<script type="text/javascript">
+    $(function(){
+       
+        //会员登录
+        $('#formlogin').ajaxForm({
+            beforeSubmit:  checkFormlogin, 
+            success:       completelogin, 
+            dataType: 'json'
+        });
+
+        function checkFormlogin(){
+            if( '' == $.trim($('#account').val())){
+                alert('用户名不能为空');
+                return false;
+            }
+        }
+        function completelogin(data){
+            if (data.status==1){
+                closeBg();
+                
+            }else{
+                alert(data.info);
+                fleshVerify();
+            }
+        }
+        
+    });
+    
+    //验证码刷新
+    function fleshVerify(){ 
+         //重载验证码
+        $('#verifyImg').attr('src',"{:U('Member/verify',array('t'=>time()))}");
+    }
+</script>
+
+<!--遮罩-->
+<div id="fullbg"></div>
+<div id="dialog" style="height: 220px;">
+<p class="close"><a href="#" onclick="closeBg();">关闭</a></p>
+<div class="login">
+    <h1>会员登录</h1>
+    <form method='post' id="formlogin" action="{:U('Member/checkLogin')}" >      
+        <table cellpadding=3 cellspacing=3 >
+            <tr>
+                <td>用户名：</td>
+                <td><input type="text" id="account" name="account" class="ipt4"></td>
+            </tr>
+            <tr>
+                <td>密 码：</td>
+                <td><input type="password" id="password" name="password" class="ipt4"></td>
+            </tr>
+            <tr>
+                <td>验证码：</td>
+                <td>
+                    <input type="text" style="width: 95px;" id="verify" name="verify" class="ipt3"> 
+                    <img id="verifyImg" src="{:U('Member/verify')}" onClick="fleshVerify()" border="0" alt="点击刷新验证码" style="cursor:pointer" align="absmiddle">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="center"><input type="submit" id="submit" value="登 录" class="submit medium hMargin"></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div class="register">
+    还不是会员<br>
+    <a href="{:U('Member/register')}" target="_blank">马上注册</a>
+</div>
+</div>
+<!--遮罩结束-->
+<script type="text/javascript">
+//显示灰色 jQuery 遮罩层
+function showBg() {
+    var bh = $("body").height();
+    var bw = $("body").width();
+    $("#fullbg").css({
+        height:document.body.scrollHeight,
+        width:document.body.scrollWidth,
+        display:"block"
+    });
+    $("#dialog").show();
+}
+//关闭灰色 jQuery 遮罩
+function closeBg() {
+    $("#fullbg,#dialog").hide();
+}
+</script> 

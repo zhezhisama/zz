@@ -1,0 +1,140 @@
+@charset "utf-8";
+/* CSS Document */
+/*----------head ---------*/
+.head-d {
+	width: 100%;
+	height: 170px;
+	background-color: #ffffff;
+	overflow: hidden;
+	}
+.head-top {
+	width: 100%;
+	height: 30px !important;
+	height: 31px;
+	border-bottom: 1px #e8e8e8 solid;
+	background-color: #f3f3f3;
+	font-size:12px;
+	}
+.head-zhong {
+	width: 100%;
+	height: 100px;
+
+	}
+.head-footer {
+	width: 100%;
+	height: 40px;
+	background: #e0d9d9 url(../images/dh-top.jpg) repeat-x;
+	}
+#hht ,#hhz , #hhf {
+	width: 1000px;
+	margin: auto;
+	overflow: hidden;
+	}
+#hht {
+	height: 30px;
+	line-height: 30px;
+	overflow: hidden;
+	}
+#hht a {
+	line-height: 30px;
+	}
+#hht-img {
+	float: left;
+	margin-top: 5px;
+}
+#hht-left {
+	float: left;
+	margin-top:1px;
+}
+#hht-right {
+	float: right;
+	}
+.top-fenge {
+	margin: 0px 8px 2px 9px;
+	}
+.top-fenge1 {
+	margin: 0px 7.5px 1px 8.5px;
+	}
+.top-fenge2 {
+	margin: 0px 8px 1px 9px;
+	}
+#hhz {
+	height: 100px;
+	}
+#hhz div {
+	float: left;
+	}
+.logo {
+	width: 160px;
+	height: 60px;
+	margin-top: 20px;
+	margin-right: 20px;
+	}
+.hhzfg {
+	width: 1px;
+	height: 60px;
+	background: url(../images/header-line.png) no-repeat;
+	margin-top: 20px;
+	margin-right: 19px;
+	}
+.hhzfg1 {
+	width: 1px;
+	height: 60px;
+	background: url(../images/header-line.png) no-repeat;
+	margin-top: 25px;
+	margin-right: 24px;
+	}
+.hhzxf {
+	width: 154px;
+	height: 60px;
+	background: url(../images/slogan.png) no-repeat;
+	margin-top: 20px;
+	margin-right: 16px;
+	}
+.hhzdh {
+	width: 370px;
+	height: 60px;
+	margin-top: 25px;
+	margin-right: 20px;
+	}
+.hhz400 {
+	width: 165px;
+	height: 60px;
+	margin-top: 30px;
+	}
+#hhf {
+	background-color: #c02626;
+	}
+#hhf ul li {
+	float: left;
+	line-height: 40px;
+	width: 104px;
+	text-align: center;
+	background-color: #c02626;
+	}
+#hhf ul li a {
+	line-height: 40px;
+	font-size: 14px;
+	font-weight: bold;
+	color: #ffffff;
+	display: block;
+	width: 104px;
+	height: 40px;
+	}
+#hhf ul li.indexhover {
+	width: 102px;
+	}
+#hhf ul li.indexhover a {
+	width: 102px;
+	}
+#hhf li.menujg {
+	width: 2px;
+	height: 40px;
+	background: url(../images/dhjg.jpg) no-repeat;
+	}
+#hhf ul li:hover {
+	background-color: #9f1e00;
+	}
+#hhf ul li.hover {
+	background-color: #761600;
+	}

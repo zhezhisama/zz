@@ -1,0 +1,278 @@
+ <include file="Public:headerone"/> 
+<script type="text/javascript">
+ 
+$(function()
+{
+ 
+   $("#btnShow").click(function()
+ 
+   {
+ 
+     // var str="我是弹出对话框";
+ 
+    //  $(".form").html(str);
+ 
+      $("#BgDiv").css({ display:"block",height:$(document).height()});
+ 
+      var yscroll=document.documentElement.scrollTop;
+ 
+      $("#DialogDiv").css("top","100px");
+ 
+      $("#DialogDiv").css("display","block");
+ 
+      document.documentElement.scrollTop=0;
+ 
+   });
+ 
+   $("#btnClose").click(function()
+ 
+   {
+ 
+      $("#BgDiv").css("display","none");
+ 
+      $("#DialogDiv").css("display","none");
+ 
+   });
+ 
+});
+ 
+</script>
+<div class="main">
+  <div class="position"><span>当前位置：</span><a href="">首页</a> &gt;
+    <volist name="position" id="vo"> <a href="{:U('Weixin/index',array('id'=>$vo['id']))}">{$vo.catname}</a> &gt; </volist>
+  </div>
+  <div class="rightbox fl">
+    <div class="showbox box">
+      <div class="photo fl"> <img src="<empty name='data.logo'><empty name='data.weblogo'>../Public/images/nopic.gif<else />{$data.weblogo}</empty><else />__ROOT__/Uploads{$data.logo}</empty>" /></br>
+<div id="BgDiv"></div>
+<div id="DialogDiv" style="display:none">
+  <h2>留言<a href="#" id="btnClose">关闭</a></h2>
+  <div class="form"> 
+  
+   <form method='post' id="form1234" action="{:U('Message/index')}" >
+      <dl>
+        <dt>姓名:<span id="accounterror" class="red">*</span></dt>
+       <dd>  <input type="text" class="ipt4" name="name"></dd>
+      </dl>
+      <dl>
+        <dt>常用电话:<span id="passworderror" class="red">*</span></dt>
+       <dd>    <input type="text" class="ipt4" name="tel"></dd>
+      </dl>
+      <dl>
+        <dt>联系QQ:<span id="repassworderror" class="red">*</span></dt>
+       <dd> <input type="text" class="ipt4" name="qq"></dd>
+      </dl>
+      <dl>
+        <dt>邮箱:<span id="emailerror" class="red">*</span></dt>
+       <dd>  <input type="text" class="ipt4" name="email"></dd>
+      </dl>
+      <dl>
+        <dt>性别:<span id="nicknameerror" class="red">*</span></dt>
+         <dd> <input type="radio" name="sex" value="0" checked="checked" />&nbsp;男&nbsp;&nbsp;<input type="radio" name="sex" value="1" />&nbsp;女</dd>
+      </dl>
+       <dl>
+        <dt>纠错内容:<span id="nicknameerror" class="red">*</span></dt>
+     <dd>  <textarea name="content" rows="8" cols="60"></textarea></dd>
+      </dl>
+      <div class="bk10"></div>
+      <dl>
+         <input type="submit" class="submit btn7" id="submit" value="提 交">
+      </dl>
+     
+    </form>
+  
+  
+   </div>
+</div>
+<div class="liuyandiv">
+  <input value="我要纠错" class="but" type="button" id="btnShow" />
+</div>
+      </div>
+      <div class="info fr">
+        <h1>{$data.pubaccount}<span>所属分类：
+          <volist name="position" id="vo"><a href="{:U('Weixin/index',array('id'=>$vo['id']))}">{$vo.catname}</a>&nbsp;</volist>
+          </span></h1>
+        <ul class="ilist fl">
+          <li><span>公众帐号：</span>{$data.pubaccount}&nbsp;<a target="_self" href="javascript:void(0)" onclick="window.clipboardData.setData('Text', '{$data.pubaccount}'); alert('复制成功');" onfocus="body.focus();"><font id="copytext" color="#FD9400">[复制公众帐号]</font></a></li>
+          <li><span>微信帐号：</span>{$data.wxaccount}</li>
+          <li><span>关注度：</span>{$data.hits}人关注</li>
+          <li><span>评价度：</span><img src="../Public/images/xx{$data.xingji}.jpg" /></li>
+          <li><span>所在地区：</span>中国&nbsp;{$data.province|getAreasName}&nbsp;{$data.city|getAreasName}</li>
+          <li><span>收录时间：</span>{$data.create_time|toDate='Y-m-d'}</li>
+          <li><span>标签：</span>{$data.tag|changeA=###,$position[0]['id']}</li>
+          <li style="height:42px; padding:5px 0 3px;">
+            <if condition="$data.website == null"> <img src="../Public/images/guan_off.png" width="50" height="42" />
+              <else />
+              <a rel="nofollow" target="_blank" href="{$data.website}"><img width="50" height="42" src="../Public/images/guan_on.png"></a> </if>
+              
+            <if condition="($data.sinaweibo == null)"> <img src="../Public/images/sina_off.png" width="50" height="42" />
+              <else />
+              <a rel="nofollow" target="_blank" href="{$data.sinaweibo}"><img width="50" height="42" src="../Public/images/sina_on.png"></a> </if>
+            <if condition="$data.tencentweibo == null"> <img src="../Public/images/txwb_off.png" width="50" height="42" />
+              <else />
+              <a rel="nofollow" target="_blank" href="{$data.tencentweibo}"><img width="50" height="42" src="../Public/images/txwb_on.png"></a> </if>
+            <if condition="$data.tbshopurl == null"> <img src="../Public/images/tao_off.png" width="50" height="42" />
+              <else />
+              <a rel="nofollow" target="_blank" href="{$data.tbshopurl}"><img width="50" height="42" src="../Public/images/tao_on.png"></a> </if>
+            <if condition="$data.ppshopurl == null"> <img src="../Public/images/papa_off.png" width="50" height="42" />
+              <else />
+              <a rel="nofollow" target="_blank" href="{$data.ppshopurl}"><img width="50" height="42" src="../Public/images/papa_on.png"></a> </if>
+          </li>
+<li>
+ <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare"> <a class="bds_tsina"></a> <a class="bds_qzone"></a> <a class="bds_tqq"></a> <a class="bds_tieba"></a> <a class="bds_renren"></a> <a class="bds_sqq"></a> <span class="bds_more">更多</span> <a class="shareCount"></a> </div>
+</li>
+        </ul>
+        <ul class="iewm fl">
+          <img src="<empty name='data.qrcode'><empty name='data.webqrcode'>../Public/images/nopic.gif<else />{$data.webqrcode}</empty><else />__ROOT__/Uploads{$data.qrcode}</empty>" title="使用微信安装并打开二维码扫描工具，将手机摄像头对准网页上的二维码图片扫描即可。" width="230" height="230" />
+          <p style="color:#666; line-height:26px; text-align:center">二维码扫描订阅，精品信息推送分享</p>
+        </ul>
+      </div>
+      <div class="bk10"></div>
+      <div class="view">
+        <li class="good"><a href="javascript:return false;" class='xh' onmouseover="this.style.backgroundPosition='0 0'" onmouseout="this.style.backgroundPosition='-189px 0'" onclick="xh(this,{$data['id']},'xh')">&nbsp;&nbsp;<strong style="color:#fff;">{$data.xh}</strong></a></li>
+        <li class="soso"><a href="javascript:return false;" class='xh' onmouseover="this.style.backgroundPosition='-567px 0'" onmouseout="this.style.backgroundPosition='-378px 0'" onclick="xh(this,{$data['id']},'nxh')">&nbsp;&nbsp;<strong style="color:#383838">{$data.nxh}</strong></a></li>
+      </div>
+      <div class="bk10"></div>
+      <div class="sprom">
+        <h3>相关活动</h3>
+        <ul class="plist">
+          <volist name='articlelist' id='vo'>
+            <li><a href="{:U('Promotion/show',array('id'=>$vo['id']))}" target="_blank">{$vo.title}</a></li>
+          </volist>
+        </ul>
+      </div>
+      <div class="bk10"></div>
+      <div class="cont">
+        <h3>账号介绍</h3>
+        <div class="content fz14"> {$data.content}</div>
+      </div>
+      <div class="itembox">
+        <h3>同类帐号</h3>
+        <ul class="tl">
+          <yufu:weixin catid="'.$data['catid'].'" order="rand()" num="14">
+            <li><a href="{:U('Weixin/show',array('id'=>$weixin['id']))}" title="{$weixin.pubaccount}" target='_blank'><img src="<empty name='weixin.logo'><empty name='weixin.weblogo'>../Public/images/nopic.gif<else />{$weixin.weblogo}</empty><else />__ROOT__/Uploads{$weixin.logo}</empty>" width="80" height="80"></a>
+              <p><a href="{:U('Weixin/show',array('id'=>$weixin['id']))}" title="{$weixin.pubaccount}" target='_blank'>{$weixin.pubaccount|msubstr=0,5}</a></p>
+            </li>
+          </yufu:weixin>
+        </ul>
+      </div>
+      <div class="bk10"></div>
+      <div class="comment">
+        <if condition="$data['iscomment'] eq 1">
+          <eq name="iscomment" value="1">
+            <eq name="commenttype" value="2">
+              <div class="comment">
+                <yufu:other settag="duoshuo" />
+              </div>
+            </eq>
+            <eq name="commenttype" value="1">
+              <?php $url=U('Weixin/addcomment');?>
+              <include file="Public:comment" /> </eq>
+          </eq>
+        </if>
+      </div>
+    </div>
+  </div>
+  <div class="leftbox  fr">
+    <!--<img src="../home/images/b2.jpg" width="255" />-->
+    <a href="http://gOpe.cn" target="_blank"><img src="../Public/images/index250.jpg"></a>
+    <div class="bk10"></div>
+    <div class="gzbox box">
+      <h2>关注排行榜<a href="{:U('Weixin/order',array('id'=>'89'))}" class="more">more</a></h2>
+      <ul>
+        <yufu:weixin catid="53" field="id,logo,pubaccount,hits" order="hits desc" num="6" >
+          <li><i class="fl">{$key+1}</i><a href="{:U('Weixin/show',array('id'=>$weixin['id']))}" title="{$weixin.pubaccount}" target='_blank' class="fl mr10"><img src="<empty name='weixin.logo'><empty name='weixin.weblogo'>../Public/images/nopic.gif<else />{$weixin.weblogo}</empty><else />__ROOT__/Uploads{$weixin.logo}</empty>" class='img' width="40" height="40" /></a>{$weixin.pubaccount}<a href="{:U('Weixin/show',array('id'=>$weixin['id']))}" title="{$weixin.pubaccount}" target='_blank' class="gz">加关注</a></li>
+        </yufu:weixin>
+      </ul>
+    </div>
+    <div class="bk10"></div>
+    <div class="gzbox box">
+      <h2>最新收录<a href="{:U('Weixin/news',array('id'=>'90'))}" target="_blank" class="more">more</a></h2>
+      <ul>
+        <yufu:weixin catid="53" field="id,logo,pubaccount" order="create_time desc" num="5" >
+          <li><i class="fl">{$key+1}</i><a href="{:U('Weixin/show',array('id'=>$weixin['id']))}" title="{$weixin.pubaccount}" target='_blank' class="fl mr10"><img src="<empty name='weixin.logo'><empty name='weixin.weblogo'>../Public/images/nopic.gif<else />{$weixin.weblogo}</empty><else />__ROOT__/Uploads{$weixin.logo}</empty>" class='img' width="40" height="40" /></a>{$weixin.pubaccount|msubstr=0,6}<a href="{:U('Weixin/show',array('id'=>$weixin['id']))}" title="{$weixin.pubaccount}" target='_blank' class="gz">加关注</a></li>
+        </yufu:weixin>
+      </ul>
+    </div>
+    <div class="bk10"></div>
+    <img src="../Public/images/slider1.jpg" width="255" height="195" /></div>
+</div>
+<script type="text/javascript">    $(function(){
+        $('#pubaccount').click(function(){
+            alert('a');
+            copyToClipBoard("aaaaaaaaaaaaaaa");
+        })
+        
+    })
+    function xh(cur,id,type){
+       $.get("{:U('Weixin/xh')}",{id:id,type:type},function(data){
+            if(data.status==1){
+                $(cur).children('strong').html(data.info);
+            }else{
+                
+                alert(data.info);
+            }
+            
+       });
+    }
+</script>
+<script type="text/javascript" language="javascript">        //复制到剪切板js代码
+        function copyToClipBoard(s) {
+            
+            //alert(s);
+            if (window.clipboardData) {
+                window.clipboardData.setData("Text", s);
+                alert("已经复制到剪切板！"+ "\n" + s);
+            } else if (navigator.userAgent.indexOf("Opera") != -1) {
+                window.location = s;
+            } else if (window.netscape) {
+
+                try {
+                    netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                } catch (e) {
+                    alert("被浏览器拒绝！\n请在浏览器地址栏输入'about:config'并回车\n然后将'signed.applets.codebase_principal_support'设置为'true'");
+                }
+                var clip = Components.classes['@mozilla.org/widget/clipboard;1'].createInstance(Components.interfaces.nsIClipboard);
+                if (!clip)
+                    return;
+                var trans = Components.classes['@mozilla.org/widget/transferable;1'].createInstance(Components.interfaces.nsITransferable);
+                if (!trans)
+                    return;
+                trans.addDataFlavor('text/unicode');
+                var str = new Object();
+                var len = new Object();
+                var str = Components.classes["@mozilla.org/supports-string;1"].createInstance(Components.interfaces.nsISupportsString);
+                var copytext = s;
+                str.data = copytext;
+                trans.setTransferData("text/unicode", str, copytext.length * 2);
+                var clipid = Components.interfaces.nsIClipboard;
+                if (!clip)
+                    return false;
+                clip.setData(trans, null, clipid.kGlobalClipboard);
+                alert("已经复制到剪切板！" + "\n" + s)
+            }else{
+
+            }
+        }
+    </script>
+<div class="bk10"></div>
+<div id="rightButton">
+  <ul id="right_ul">
+    <li id="right_ewm" onmousemove="$('#ewm').show();" onmouseout="$('#ewm').hide();">
+      <p id="ewm" style="display:none"><img src="../Public/images/octwein.jpg" /></p>
+    </li>
+    <li id="right_qq" class="right_ico" show="qq" hide="tel"></li>
+    <li id="right_tel" class="right_ico" show="tel" hide="qq"></li>
+    <li id="right_tip" class="png">
+      <p class="flagShow_p1 flag_tel">商务合作</p>
+      <p class="flagShow_p2 flag_tel line91">023-58101029 </p>
+      <p class="lxname">匡先生</p>
+      <p class="flagShow_p1 flag_qq">咨询QQ</p>
+      <p class="flagShow_p2 flag_qq"><a href="http://wpa.qq.com/msgrd?v=3&uin=75943938&site=qq&menu=yes" target="_blank"><img border="0" src="../Public/images/qqon.png"></a><span>75943938</span></p>
+    </li>
+  </ul>
+</div>
+<div id="backToTop"><a href="javascript:;" onfocus="this.blur();" class="backToTop_a png"></a></div>
+<!--[if lte IE 6]><script src="js/phone/PNG.js" type="text/javascript"></script><script>        if( typeof(PNG) == 'object') PNG.fix('.png');
+    </script><![endif]-->
+<include file="Public:footer"/>

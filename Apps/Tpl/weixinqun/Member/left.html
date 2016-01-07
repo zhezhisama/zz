@@ -1,0 +1,141 @@
+<div class="left-nav fLeft">
+	<div class="left_head">
+    
+    <!--会员中心左边头像部分-->
+    	<div class="left_row">
+        
+            <div class="avatar">
+                <a href="javascript:void(0)" title="头像">
+                    <img src="<empty name='Think.session.avatar'>../Public/images/avatar.jpg<else />{$Think.session.avatar}</empty>" alt="头像">
+                </a>
+            </div>
+
+            <div class="myInfo">
+                <p class="name ellips mt20"><empty name='Think.session.avatar'><a href='/member-information.html'>还未设置昵称</a><else />{$Think.session.nickname}</empty></p>
+                <p class="integral" style="display:none;">等级:<span class=" Pink">VIP.0</span></p>
+            </div>
+
+        </div>
+        
+    </div>
+    <ul id="leftNav">
+        <li <eq name="position" value="add">class="active"</eq>>
+            <div class="menu_bg">
+                    <span class="centerICON icon_1"></span>
+                     <a href="{:U('Member/add')}" class="link">微信群发布
+                        <i class="hot centerICON icon_5"></i>
+                    </a>
+            </div>
+        </li>
+        <li <eq name="position" value="add">class="active"</eq>>
+            <div class="menu_bg">
+                    <span class="centerICON icon_1"></span>
+                     <a href="{:U('Member/add_gr')}" class="link">个人微信
+                        <i class="hot centerICON icon_5"></i>
+                    </a>
+            </div>
+        </li>
+        <li <eq name="position" value="add">class="active"</eq>>
+            <div class="menu_bg">
+                    <span class="centerICON icon_1"></span>
+                     <a href="{:U('Member/add_gz')}" class="link">微信公众号
+                        <i class="hot centerICON icon_5"></i>
+                    </a>
+            </div>
+        </li>
+        <li <eq name="position" value="add">class="active"</eq>>
+            <div class="menu_bg">
+                    <span class="centerICON icon_1"></span>
+                     <a href="{:U('Member/add_hy')}" class="link">微信货源
+                        <i class="hot centerICON icon_5"></i>
+                    </a>
+            </div>
+        </li>
+        
+        <li <eq name="publish_type_status" value="pay">class="active"</eq>>
+          <div class="menu_bg">
+                    <span class="centerICON icon_1"></span>
+                     <a href="{:U('Member/pay')}" class="link">在线充值
+                        <i class="hot centerICON icon_5"></i>
+                    </a>
+            </div> 
+        </li>
+        <li <eq name="publish_type_status" value="paylist">class="active"</eq>>
+          <div class="menu_bg">
+                    <span class="centerICON icon_1"></span>
+                     <a href="{:U('Member/paylist')}" class="link">充值记录
+                        <i class="hot centerICON icon_5"></i>
+                    </a>
+            </div> 
+        </li>
+        <!--添加个人中心链接 php@zz-->
+        <li <eq name="publish_type_status" value="paylist">class="active"</eq>>
+          <div class="menu_bg">
+                    <span class="centerICON icon_1"></span>
+                     <a href="{:U('Member/information_info')}" class="link">个人中心
+                        <i class="hot centerICON icon_5"></i>
+                    </a>
+            </div> 
+        </li>
+        
+         <!--余额兑换金币 php@zz-->
+        <li <eq name="publish_type_status" value="paylist">class="active"</eq>>
+          <div class="menu_bg">
+                    <span class="centerICON icon_1"></span>
+                     <a href="{:U('Member/information_dh')}" class="link">兑换金币
+                        <i class="hot centerICON icon_5"></i>
+                    </a>
+            </div> 
+        </li>
+        
+          <!--金币兑换余额 php@zz-->
+        <li <eq name="publish_type_status" value="paylist">class="active"</eq>>
+          <div class="menu_bg">
+                    <span class="centerICON icon_1"></span>
+                     <a href="{:U('Member/information_hd')}" class="link">兑换余额
+                        <i class="hot centerICON icon_5"></i>
+                    </a>
+            </div> 
+        </li>
+        
+          <!--余额提现 php@zz-->
+        <li <eq name="publish_type_status" value="paylist">class="active"</eq>>
+          <div class="menu_bg">
+                    <span class="centerICON icon_1"></span>
+                     <a href="{:U('Member/information_tx')}" class="link">余额提现
+                        <i class="hot centerICON icon_5"></i>
+                    </a>
+            </div> 
+        </li>
+        
+        <li <eq name="position" value="information">class="active"</eq>>
+          <div class="menu_bg">
+                    <span class="centerICON icon_1"></span>
+                     <a href="{:U('Member/information')}" class="link">修改个人信息
+                        <i class="hot centerICON icon_5"></i>
+                    </a>
+            </div> 
+        </li>
+		<!-- <li <eq name="position" value="avatar">class="active"</eq>>
+          <div class="menu_bg">
+                    <span class="centerICON icon_1"></span>
+                     <a href="{:U('Member/avatar')}" class="link">修改头像
+                        <i class="hot centerICON icon_5"></i>
+                    </a>
+            </div> 
+        </li>
+       	<li <eq name="position" value="password">class="active"</eq>>
+          <div class="menu_bg">
+                    <span class="centerICON icon_1"></span>
+                     <a href="{:U('Member/password')}" class="link">修改密码
+                        <i class="hot centerICON icon_5"></i>
+                    </a>
+            </div> 
+        </li> -->
+    </ul>
+    <script>
+        $('#leftNav li').click(function(){
+                    $(this).addClass('active').siblings('li').removeClass('active');
+                    });
+    </script>
+</div>

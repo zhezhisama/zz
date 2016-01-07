@@ -1,0 +1,93 @@
+<include file="Member:header" />
+
+<div class="memberbox">   
+        <div class="memberleft">
+            <include file="Member:left" />
+        </div>
+        <div class="memberright">
+            <div class="member_detail">支付确认</div>
+            <div class="member_content">
+                <div class="form">
+                    <div>
+                        <label>费用：</label>
+                        <span>{$paymoney}</span><span>元</span>
+                        
+                    </div>
+                    <div>
+                        <label>合计：</label>
+                        <span style="font-size: 22px;font-family: Georgia,Arial;font-weight: 700;color: #FF0000;}">{$paymoney}</span><span>元</span>
+                    </div>
+                    
+                    <div>
+                        <label>支付方式：</label>
+                        
+                        <span>{$paytypename}</span>
+                    
+                    </div>
+                    <div>
+                        {$html_text}
+                    </div>
+                  </div>  
+            </div>
+        </div>
+            
+            
+</div>
+
+
+<script type="text/javascript">
+    function starttime(){
+        var starttime=$("#starttime").val();
+        var endtime=$("#endtime").val();
+        
+        if(starttime==="" || endtime===""){
+            return;
+        }
+
+        if(starttime>endtime){
+           alert('结束日期不能小于开始日期');
+           $("#intergral").val('');
+        }else{
+            //计算出相差天数
+            var days=daysBetween(starttime,endtime)+1;
+            var intergralnum=$('#recommendid option:selected').attr('name');
+            $("#intergral").val(days*intergralnum);
+        }
+    }
+        function endtime(){
+            var starttime=$("#starttime").val();
+            var endtime=$("#endtime").val();
+            if(starttime==="" || endtime===""){
+                return;
+            }
+       
+            if(starttime>endtime){
+               alert('结束日期不能小于开始日期');
+               $("#intergral").val('');
+            }else{
+        
+                //计算出相差天数
+                var days=daysBetween(starttime,endtime)+1;
+                var intergralnum=$('#recommendid option:selected').attr('name');
+                $("#intergral").val(days*intergralnum);
+            }
+        };
+
+function daysBetween(DateOne,DateTwo) 
+{  
+
+    var OneMonth = DateOne.substring(5,DateOne.lastIndexOf ('-')); 
+    var OneDay = DateOne.substring(DateOne.length,DateOne.lastIndexOf ('-')+1); 
+    var OneYear = DateOne.substring(0,DateOne.indexOf ('-'));
+
+    var TwoMonth = DateTwo.substring(5,DateTwo.lastIndexOf ('-')); 
+    var TwoDay = DateTwo.substring(DateTwo.length,DateTwo.lastIndexOf ('-')+1); 
+    var TwoYear = DateTwo.substring(0,DateTwo.indexOf ('-'));
+
+    var cha=((Date.parse(OneMonth+'/'+OneDay+'/'+OneYear)- Date.parse(TwoMonth+'/'+TwoDay+'/'+TwoYear))/86400000);   
+    return Math.abs(cha); 
+}
+
+</script>
+
+<include file="Public:footer" />

@@ -1,0 +1,48 @@
+<include file="Member:header1" />
+<script src="jquery.js"></script>
+<script>
+$(function(){
+	$("#money").keyup(function(){
+		var money = $("#money").val();
+		var total = parseInt(money)/100;
+		if(money==''){
+			$("#dhmoney").val(0);
+		}else{
+			$("#dhmoney").val(total);
+		}
+	})
+})
+</script>
+<div class="center-content mt20">
+		<div class="wrap w1200">
+        
+        <include file="Member:left" />
+        
+    <div class="centerContent ml10">
+                <div class="centerTitle">
+                    <span class="centerICON icon_6">
+                    </span>
+                    <h2>
+                        余额提现
+                    </h2>
+                </div>
+    
+    
+    <div class="centerDisArea">
+      <form method='post' id="form1" name="form1" action="{:U('Member/chkduihuan_hd')}">
+      		  <table class="comTab mt20" border="0">
+                      <tbody>
+                        <tr>
+                            <td class="line">对不起</td>
+                            <td>
+                                功能开发中
+                            </td>
+                        </tr>
+                      
+                 	</tbody>
+                </table>
+      </form>
+    </div>
+  </div>
+</div>
+<include file="Member:footer" />    

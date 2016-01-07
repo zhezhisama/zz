@@ -1,0 +1,126 @@
+<include file="Member:header" />
+<script type="text/javascript" language="JavaScript">
+    <!--
+    $(function(){
+
+        $('#form1').ajaxForm({
+            beforeSubmit:  checkForm, 
+            success:       complete, 
+            dataType: 'json'
+        });
+
+        function checkForm(){
+            if( '' === $.trim($('#account').val())){
+                alert('用户名不能为空');
+                return false;
+            }
+            if( '' === $.trim($('#password').val())){
+                alert('密码不能为空');
+                return false;
+            }
+            if( $.trim($('#repassword').val()) !== $.trim($('#password').val())){
+                alert('密码与确认密码不一致');
+                return false;
+            }
+            if( '' === $.trim($('#nickname').val())){
+                alert('昵称不能为空');
+                return false;
+            }
+            
+        }
+        function complete(data){
+            if (data.status===1){
+                alert('注册成功！');
+                window.location.href="{:U('Member/login')}";
+            }else{
+                alert(data.info);
+            }
+        }
+        
+        $("#account").blur(function(){
+            var account=$("#account").val();
+            $.post("{:U('Member/checkAccount')}",{account:account}, function(data){
+                   $("#accounterror").html(data['info']);
+            });
+        });
+        $("#password").blur(function(){
+            var password=$("#password").val();
+            if(password===""){
+                $("#passworderror").html("密码不能空！"); 
+            }else{
+                $("#passworderror").html("*"); 
+            }
+        });
+        $("#repassword").blur(function(){
+            var password=$("#password").val();
+            var repassword=$("#repassword").val();
+            if(repassword!==password){
+                $("#repassworderror").html("密码与确认密码不一致！"); 
+            }else{
+                $("#repassworderror").html("*"); 
+            }
+        });
+        $("#nickname").blur(function(){
+            var nickname=$("#nickname").val();
+            if(nickname===""){
+               $("#nicknameerror").html("昵称不能空！"); 
+            }else{
+                $("#nicknameerror").html("*"); 
+            }
+        });
+        
+    });
+    //验证码刷新
+    function fleshVerify(){ 
+        //重载验证码
+        $('#verifyImg').attr('src',"{:U('Member/verify',array('t'=>time()))}");
+    }
+    //-->
+</script>
+
+    <div class="memberbox">
+        <div class="memberbox_left">
+        <h1>会员注册</h1>
+        <form method='post' id="form1" action="{:U('Member/checkRegister')}" >
+            <table cellpadding="3" cellspacing="3" style="width: 530px; text-align: left;">
+                <tr>
+                    <td width="60">用户名：</td>
+                    <td><input type="text" id="account" name="account" class="ipt4"><span id="accounterror" class="red">*</span></td>
+                </tr>
+                <tr>
+                    <td>密码：</td>
+                    <td><input type="password" id="password" name="password" class="ipt4"><span id="passworderror" class="red">*</span></td>
+                </tr>
+                <tr>
+                    <td>确认密码：</td>
+                    <td><input type="password" id="repassword" name="repassword" class="ipt4"><span id="repassworderror" class="red">*</span></td>
+                </tr>
+                <tr>
+                    <td>昵称：</td>
+                    <td><input type="text" id="nickname" name="nickname" class="ipt4"><span id="nicknameerror" class="red">*</span></td>
+                </tr>
+                <tr>
+                    <td>验证码：</td>
+                    <td>
+                        <input type="text" style="width: 95px;" id="verify" name="verify" class="ipt3"> 
+                        <img id="verifyImg" src="{:U('Member/verify')}" onClick="fleshVerify()" border="0" alt="点击刷新验证码" style="cursor:pointer" align="absmiddle">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="hidden" name="role_id" value="15" >
+                        <input type="submit" id="submit" value="注 册" class="submit btn7">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        </div>
+        <div class="memberbox_right">
+            <div style="font-size: 18px; margin-bottom: 20px;">已是会员</div>
+            <div style="margin-bottom: 20px;"><a href="{:U('Member/login')}">登录</a></div>
+            <div><a href="__APP__">返回首页</a></div>
+        </div>
+    </div>
+<div class="clear10"></div>
+<include file="Public:footer" />

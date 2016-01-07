@@ -1,0 +1,59 @@
+<include file="Member:header" />
+  <!-- 内容 START -->
+  <div class="center-content mt20">
+    <div class="wrap w1000">
+      <include file="Member:left" />
+      <script type="text/javascript">
+        $(function(){
+           $("#form1").ajaxForm({
+                beforeSubmit:  checkForm, 
+                success:  complete, 
+                dataType: 'json'
+            });
+            function checkForm(){
+                if( '' == $.trim($('#password').val())){
+                    alert('新密码不能为空');
+                    return false;
+                }
+                if( $.trim($('#repassword').val()) != $.trim($('#password').val())){
+                    alert('两次输入的新密码不一致');
+                    return false;
+                }
+            }
+            function complete(data){
+                alert(data.info);
+                $('#form1').resetForm();
+            }
+        });
+      function fleshVerify(){ 
+            //重载验证码
+            $('#verifyImg').attr('src',"{:U('Member/verify',array('t'=>time()))}");
+        }
+    </script>
+      <div class="right-content fRight">
+        <h2>修改头像</h2>
+        <div class="mainbody mt10">
+          <form method='post' id="formInformation" name="formInformation" action="{:U('Member/changeAvatar')}" enctype="multipart/form-data">
+            <div class="d1">
+                <label>我的头像：</label>
+                <div>
+                  <notempty name="udata.thumb">
+                  <img src="__ROOT__/Uploads/{$udata.thumb}" width="80" height="80" />
+                  <a href="{:U('Member/delthumb',array('id'=>$udata['id'],'file'=>'thumb'))}" title="你确定要删除头像吗？">删除头像</a>
+                  <else/>
+                  <input type="file" class="thumb" name="thumb" />
+                  </notempty>
+                </div>
+            </div>
+            <div class="d1">
+            	<input type="hidden" name="id" value="{$udata.id}">
+              	<input class="b1" value="提交" type="submit">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 内容 END -->
+   
+<include file="Member:footer" />    

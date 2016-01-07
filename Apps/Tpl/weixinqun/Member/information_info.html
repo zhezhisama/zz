@@ -1,0 +1,355 @@
+<include file="Member:header1" />
+<script language="javascript" src="../Public/js/YMDClass.js"></script>
+<script type="text/javascript" src="../Public/js/area.js"></script>
+<script>var ajaxurl="{:U('Ajax/getArea')}"; var city="{$udata.city}"</script>
+<script type="text/javascript" src="../Public/js/select-option-disabled-emulation.js"></script>
+
+  <script type="text/javascript">
+    function change_publish_type(){
+      var publish_type_id = $("#publish_type_id").val();
+      //var url = "{:U('Member/add',array('publish_type_id'=>'\"+publish_type_id+\"'))}";
+      var url = "./index.php?m=Member&a=add&publish_type_id="+publish_type_id;
+
+      //var nodename='111111';
+          //var url="{:U('Weixin/delfile',array('id'=>$vo['id'],'file'=>'"+nodename+"'))}";
+          window.location.href = url;    
+      }
+  </script>
+  <style>
+  .centerRgt{float:right;width:820px;}
+.centerExp{float:right;width:860px;padding:10px 20px;background-color:#fff;line-height: 50px;margin-bottom:20px; }
+.centerExp span {vertical-align: middle;}
+.centerExp .exp_box{position: relative;display: inline-block;width:220px;height:20px;line-height:20px;border-radius: 10px;border:1px solid #e3e3e3;text-align:center;vertical-align: middle;color:#da4664;z-index:1;}
+.centerExp .exp_num{position: absolute;top:0;left:0;width:100px;height:20px;border-radius: 10px 0 0 10px;background-color:#fcd252;z-index:0;}
+.centerExp .exp_txt{position:relative;z-index:2;}
+.centerExp .exp_tip{margin-left:10px;color:#aaa; float:right}
+.centerExp .exp_tip a:hover{text-decoration: underline;}
+.centerExp .exp_tip .btn_pink,
+.centerExp .exp_tip .btn_green
+{ padding:0 5px; line-height:normal; border-radius:3px; font-size:14px;color:#fff;}
+
+.centerStep{float:right; width:100%;margin-top:40px;}
+.centerStep .st{float:left;width:100px;text-align:center;padding:10px;line-height: 46px;color:#fff;background-color:#ff5b84;font-size:26px;}
+.centerStep ul{position:relative;float:left;overflow: hidden; }
+.centerStep .line{position:absolute;top:52px;left:0;width:780px;height:1px;background-color:#e8e8e8;z-index:-1;}
+.centerStep ul{z-index:1; width:740px;}
+.centerStep ul li{float:left;width:130px;text-align: center;}
+
+.centerStep ul li p{ font:14px/30px "微软雅黑"}
+.centerStep ul li .task_btn{ border-radius:6px; padding:3px 15px; background:#1acce6; color:#fff;}
+.centerStep ul li .task_btn.active{background:#ccc; }
+.jingli{border-radius:6px; padding:3px 15px; background:#1acce6; color:#fff;}
+.centerStep ul li .inIcon_1_no{background-position:-40px 0;}
+.centerStep ul li .inIcon_2_no{background-position:-40px -40px;}
+.centerStep ul li .inIcon_3_no{background-position:-40px -80px;}
+.centerStep ul li .inIcon_4_no{background-position:-40px -120px;}
+.centerStep ul li span{width:40px;height:40px;}
+.centerDisArea a.btn_orange{ color:#fff;}
+.comTab .line { width:170px;text-align: right;padding-right: 20px; }
+.infoICON{display: inline-block;background:url('../Public/images/centerInfo.png') no-repeat;}
+.inIcon_1,.inIcon_2,.inIcon_3,.inIcon_4{width:40px;height:40px;background-position:  0 0;}
+.colNav{float:right;width:900px;}
+.colNav ul{width:920px;}
+.colNav ul li{position:relative;float:left;width:213px;margin-right:10px;margin-bottom:10px;background-color:#fff;text-align: center;border:2px solid #fff; }
+.colNav ul li .colName{font-size:18px;line-height: 80px;}
+.colNav ul li .hisNum {line-height: 60px;font-size:20px;}
+.colNav ul li .hisNum em{font-size:32px;margin:0 10px;}
+.colNav ul li .hisNum a:hover{text-decoration: underline;}
+.colNav ul li:hover{border:2px solid #f0924a;}
+.colNav .Edit{ position:absolute; top:5px; right:5px;}
+.inIcon_5,.inIcon_6,.inIcon_7,.inIcon_8,.inIcon_9,.inIcon_10,.inIcon_11,.inIcon_12{width:100px;height:100px;margin-top:15px; margin-bottom:15px;}
+  </style>
+  <script src="jquery.js"></script>
+  <script>
+  $(function(){
+	  $("#user_sign").click(function(){
+		  $("#user_sign").css("background","#999");
+		  $("#user_sign").text("已领");
+		  var id = $("#id").val();
+		  $.get("{:U('Member/gold_add')}",{id:id},function(data){
+			  var new_gold = parseInt($("#gold").text())+15;
+			  $("#gold").text(new_gold);
+			  alert(data);
+		  })
+	  })
+	  $(".jingli").click(function(){
+		  var id = $("#id").val();
+		  var suo = $(".jingli").index(this);
+		  var ren = $(".jingli").eq(suo).attr("ren");
+		  var jin = $(".jingli").eq(suo).attr("jin");
+		  $.get("{:U('Member/gold_jingli')}",{id:id,ren:ren,jin:jin},function(data){
+			  if(data == "您已成功获取了"+jin+"个金币!"){
+			  var new_gold = parseInt($("#gold").text())+parseInt(jin);
+			  $(".jingli").eq(suo).text("");
+			  $("#gold").text(new_gold);
+			  }
+			  alert(data);
+		  })
+	  })
+	  
+  })
+  </script>
+  <!--新版内容-->
+  
+    <div class="center-content mt20">
+    	<div class="wrap w1200">
+  <include file="Member:left" />
+  <div class="centerContent ml10">
+    <div class="centerTitle">
+        <h2 style="font-weight:100;">
+            <span class="ml20" style="margin-left:20px;">欢迎您，<span style="color:pink;">{$udata.nickname}</span>！
+           	<if condition="$udata.last_login_time eq 0">
+            	您上次登录时间是：{$udata.create_time|date='Y-m-d',###}
+            <else />	
+                您上次登录时间是：{$udata.last_login_time|date='Y-m-d',###}
+           	</if>
+            </span>
+
+        <span class="exp_tip" style="margin-left:20px;color:#aaa;">
+            金币：<font id="gold">{$udata.intergral}</font>个
+            <a href="{:U('Member/information_dh')}" class=" btn_pink mr5 duihuan">兑换</a>余额：{$udata.amount}元
+            <a href="{:U('Member/pay')}" class=" btn_pink mr5">充值</a>
+        </span>
+        </h2>
+    </div>
+   
+   
+   
+   
+   <div class="centerExp mt20" style="padding-bottom:40px; padding-top:0px;">
+
+
+
+        <div style="border-bottom:1px solid #ff3265; padding-left:10px; line-height:80px; height:80px;">
+
+            <span class="f20" style="font-weight:200">用户ID：{$udata.id}</span>
+
+
+            <span class="exp_tip"><a href="http://www.weixinqun.com/task" class="Pink"></a></span>
+
+        </div>
+
+		<input type="hidden" id="id" value="{$udata.id}" />
+        <div class="centerStep">
+
+            <div class="st">做任务领金币</div>
+
+            <ul>
+
+                <span class="line"></span>
+
+                <li style="width:80px;" class="ml10">
+
+                    <p>签到15金币</p>
+
+                    <p><span class="infoICON inIcon_1" style="background-position: -40px 0px;"></span></p>
+					
+                    <if condition="$tg eq 1">
+                    <a href="javascript:;" class="task_btn" id="user_sign">领金币</a>
+					<else />
+                    <a href="javascript:;" class="task_btn" style="background:#999;">已领</a>
+                    </if>
+                 <!--   <p class="registration">您已成功签到，并增加了15个金币！</p>-->
+
+                </li>
+
+                <li>
+
+                    <p>推荐人数2个</p>
+
+                    <p><span class="infoICON inIcon_2"></span></p>
+					<if condition="$udata.cs1 eq 0">
+                    <a href="javascript:;" ren="2" jin="100" class="jingli">奖励100金币</a>
+                    <else />
+                    <a href="javascript:;" class="task_btn" style="background:#999;">已领</a>
+					</if>
+                </li>
+
+                <li>
+
+                    <p>推荐人数5个</p>
+
+                    <p><span class="infoICON inIcon_3"></span></p>
+					<if condition="$udata.cs2 eq 0">
+                    <a href="javascript:;" ren="5" jin="300" class="jingli">奖励300金币</a>
+                    <else />
+                    <a href="javascript:;" class="task_btn" style="background:#999;">已领</a>
+					</if>
+                </li>
+
+                <li>
+
+                    <p>推荐人数10个</p>
+
+                    <p><span class="infoICON inIcon_4"></span></p>
+					<if condition="$udata.cs3 eq 0">
+                    <a href="javascript:;" ren="10" jin="800" class="jingli">奖励800金币</a>
+                    <else />
+                    <a href="javascript:;" class="task_btn" style="background:#999;">已领</a>
+					</if>
+                </li>
+
+                <li>
+
+                    <p>推荐人数20个</p>
+
+                    <p><span class="infoICON inIcon_1"></span></p>
+					<if condition="$udata.cs4 eq 0">
+                    <a href="javascript:;" ren="20" jin="1500" class="jingli">奖励1500金币</a>
+                    <else />
+                    <a href="javascript:;" class="task_btn" style="background:#999;">已领</a>
+					</if>
+                </li>
+
+                <li>
+
+                    <p>推荐人数50个</p>
+
+                    <p><span class="infoICON inIcon_1"></span></p>
+					<if condition="$udata.cs5 eq 0">
+                    <a href="javascript:;" ren="50" jin="3000" class="jingli">奖励3000金币</a>
+                    <else />
+                    <a href="javascript:;" class="task_btn" style="background:#999;">已领</a>
+					</if>
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+   
+   
+   
+   
+    <div class="colNav">
+
+        <ul>
+
+            <li>
+
+                <a href="{:U('Member/add')}"><span class="infoICON inIcon_13 Edit"> </span></a>
+
+                <p class="colName">微信群管理</p>
+
+                <a href="{:U('Member/add')}"><p><span class="infoICON inIcon_5" style="background:url('../Public/images/centerInfo.png') no-repeat 0 -200px;"></span></p></a>
+
+                <p class="hisNum">共<a href="{:U('Member/add')}"><em>{$total1}</em></a>条</p>
+
+            </li>
+
+            <li>
+
+                <a href="{:U('Member/add_gz')}"><span class="infoICON inIcon_13 Edit"> </span></a>
+
+                <p class="colName">公众号管理</p>
+
+                <a href="{:U('Member/add_gz')}"><p><span class="infoICON inIcon_7" style="background:url('../Public/images/centerInfo.png') no-repeat 0 -300px;"></span></p></a>
+
+                <p class="hisNum">共<a href="{:U('Member/add_gz')}"><em>{$total3}</em></a>条</p>
+
+            </li>
+
+            <li>
+
+                <a href="{:U('Member/add_gr')}"><span class="infoICON inIcon_13 Edit"> </span></a>
+
+                <p class="colName">个人微信号管理</p>
+
+                <a href="{:U('Member/add_gr')}"><p><span class="infoICON inIcon_8" style="background:url('../Public/images/centerInfo.png') no-repeat 0 -400px;"></span></p></a>
+
+                <p class="hisNum">共<a href="{:U('Member/add_gr')}"><em>{$total2}</em></a>条</p>
+
+            </li>
+
+            <li>
+
+                <a href="{:U('Member/add_hy')}"><span class="infoICON inIcon_13 Edit"> </span></a>
+
+                <p class="colName">微商货源管理</p>
+
+                <a href="{:U('Member/add_hy')}"><p><span class="infoICON inIcon_9" style="background:url('../Public/images/centerInfo.png') no-repeat 0 -500px;"></span></p></a>
+
+                <p class="hisNum">共<a href="{:U('Member/add_hy')}"><em>{$total4}</em></a>条</p>
+
+            </li>
+
+
+        </ul>
+
+    </div>
+
+</div>
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+</div>
+
+</div>
+</div>
+ 
+  <!-- 内容 END -->
+   <script type="text/javascript">
+
+    $(function(){
+        
+        //选择省份
+        $("#province option[value='{$udata.province}']").attr("selected", true); 
+        loadArea($("#province").val(),'city');
+        
+        //选择城市
+        $("#province").change(function(){
+            var ajaxurl="{:U('Ajax/getArea')}";
+            var areaId=this.value;
+            var areaType='city';
+            var city="{$udata.city}";
+            
+            $.post(ajaxurl,{'areaId':areaId},function(data){
+
+                if(areaType==='city'){
+                   $('#'+areaType).html('<option value="-1">城市</option>');
+
+                   $('#district').html('<option value="-1">镇/区</option>');
+                }else if(areaType==='district'){
+                   $('#'+areaType).html('<option value="-1">镇/区</option>');
+                }
+                if(areaType!=='null'){
+                    $.each(data,function(no,items){
+                        if(items.id===city){
+                            $('#'+areaType).append('<option value="'+items.id+'" selected="selected">'+items.area_name+'</option>');
+                        }else{
+                            $('#'+areaType).append('<option value="'+items.id+'">'+items.area_name+'</option>');
+                        }
+                       
+                    });
+                    
+                }
+            });
+        });
+        
+    });
+    
+    function foreverdelthumb(cur,img){
+       var nodename=img;
+       var id="{$vo['id']}";
+       var url="{:U('Member/delfile')}";
+
+        //创建删除节点
+        $.get(url,{id:id,file:nodename},function(){
+            //插入新节点
+            var html='\r\n<input type="file" class="ipt5" name="'+nodename+'" />\r\n';
+            $(cur).parent().after(html);
+            //移除当前节点
+            $(cur).parent().remove();
+        });
+    }
+
+</script>
+<include file="Member:footer" />    

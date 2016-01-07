@@ -1,0 +1,23 @@
+<div class="left-nav fLeft">
+    <ul id="leftNav">
+        <li <eq name="position" value="add">class="active"</eq>><a href="{:U('Member/add')}"><i class="icon fabu"></i>发布我的二维码</a></li>
+        <li <eq name="publish_type_status" value="44">class="active"</eq>><a href="{:U('Member/manage',array('publish_type_id'=>44))}"><i class="icon nofabu"></i>已发布的微信群</a>
+        </li>
+        <li <eq name="publish_type_status" value="48">class="active"</eq>><a href="{:U('Member/manage',array('publish_type_id'=>48))}"><i class="icon nofabu"></i>已发布的个人微信</a>
+        </li>
+        <li <eq name="publish_type_status" value="47">class="active"</eq>><a href="{:U('Member/manage',array('publish_type_id'=>47))}"><i class="icon nofabu"></i>已发布的公众号</a>
+        </li>
+        <li <eq name="publish_type_status" value="1">class="active"</eq>><a href="{:U('Member/manage',array('publish_type_id'=>1))}"><i class="icon nofabu"></i>已发布的货源</a>
+        </li>
+        <li <eq name="position" value="information">class="active"</eq>><a href="{:U('Member/information')}"><i class="icon xginfo"></i>修改个人信息</a>
+        </li>
+        <li <eq name="position" value="avatar">class="active"</eq>><a href="{:U('Member/avatar')}"><i class="icon xginfo"></i>修改头像</a>
+        <li <eq name="position" value="password">class="active"</eq>><a href="{:U('Member/password')}"><i class="icon xgpassword"></i>修改密码</a>
+        </li>
+    </ul>
+    <script>
+        $('#leftNav li').click(function(){
+                    $(this).addClass('active').siblings('li').removeClass('active');
+                    });
+    </script>
+</div>

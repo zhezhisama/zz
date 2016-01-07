@@ -1,0 +1,91 @@
+<include file="Public:header" />
+<link href="../Public/css/pinpai.css" rel="stylesheet" type="text/css">
+<!-- 头部 END -->
+<div class="brand mt20">
+  <div class="wrap w1000">
+    <div class="brand-sort">
+      <div class="t1"><i></i>Hi，想让别人看到你的品牌吗？马上<a class="fs" href="{:U('Member/add')}">上传品牌</a> 让大家知道的品牌吧！</div>
+      <div class="sortBox">
+        <div class="sortBoxLeft">
+          <div class="d2">  <span class="fLeft"><strong>类型:</strong></span>
+            <ul class="fLeft">
+              <li <eq name="so.catid" value="0">class="active"</eq>> 
+                <eq name="so.catid" value="$category['id']">
+                        全部
+                <else/>
+                  <a class="ti" href="{:U('Weixin/hot',array('id'=>$so['id'],'catid'=>0,'o'=>$so['o'],'between'=>$so['between']))}" title="全部">全部
+                  </a>
+                </eq>
+              </li>
+              <volist name="childCatList" id="category" key="k">
+                <li <eq name="so.catid" value="$category['id']">class="active"</eq>> 
+                <eq name="so.catid" value="$category['id']">
+                        {$category['catname']}
+                <else/>
+                  <a class="ti" href="{:U('Weixin/hot',array('id'=>$so['id'],'catid'=>$category['id'],'o'=>$so['o'],'between'=>$so['between']))}">{$category['catname']}
+                  </a>
+                </eq>
+                </li>
+              </volist>
+            </ul>
+          </div>
+          <div class="d2">  <span class="fLeft"><strong>排序:</strong></span>
+            <ul class="fLeft">
+              <li <eq name="so.o" value="create_time">class="active"</eq>><a href="{:U('Weixin/hot',array('id'=>$so['id'],'catid'=>$so['catid'],'o'=>'create_time','between'=>$so['between']))}">最新上传</a>
+              </li>
+              <li <eq name="so.o" value="xh">class="active"</eq>><a href="{:U('Weixin/hot',array('id'=>$so['id'],'catid'=>$so['catid'],'o'=>'xh','between'=>$so['between']))}">推荐最多</a>
+              </li>
+              <li <eq name="so.o" value="hits">class="active"</eq>><a href="{:U('Weixin/hot',array('id'=>$so['id'],'catid'=>$so['catid'],'o'=>'hits','between'=>$so['between']))}">人气最高</a>
+              </li>
+            </ul>
+          </div>
+          <div class="d2">  <span class="fLeft"><strong>时间:</strong></span>
+            <ul class="fLeft">
+              <li <eq name="so.between" value="0">class="active"</eq>><a href="{:U('Weixin/hot',array('id'=>$so['id'],'catid'=>$so['catid'],'o'=>$so['o'],'between'=>0))}">不限</a>
+              </li>
+              <li <eq name="so.between" value="3">class="active"</eq>><a href="{:U('Weixin/hot',array('id'=>$so['id'],'catid'=>$so['catid'],'o'=>$so['o'],'between'=>3))}">三天内</a>
+              </li>
+              <li <eq name="so.between" value="7">class="active"</eq>><a href="{:U('Weixin/hot',array('id'=>$so['id'],'catid'=>$so['catid'],'o'=>$so['o'],'between'=>7))}">本周内</a>
+              </li>
+              <li <eq name="so.between" value="30">class="active"</eq>><a href="{:U('Weixin/hot',array('id'=>$so['id'],'catid'=>$so['catid'],'o'=>$so['o'],'between'=>30))}">一月内</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="sortBoxRight"><span class="f1">Total</span>
+          <br> <span class="f2">{$count}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- qun start -->
+<div class="qun clear">
+  <div class="wrap w1000">
+    <div class="qun-content fLeft">
+      <ul class="w1000">
+        <volist name="list" id="vo">
+        <li>
+          <div class="dt">
+            <a href="{:U('Weixin/show',array('id'=>$vo['id']))}" title="{$vo.pubaccount|msubstr=0,6}">
+              <img src="<empty name='vo.logo'><empty name='vo.weblogo'>../Public/images/nopic.gif<else />{$vo.weblogo}</empty><else />__ROOT__/Uploads{$vo.logo}</empty>" alt="{$vo.pubaccount|msubstr=0,6}" height="170" width="170">
+            </a>
+          </div>
+          <div class="db">
+            <p class="p1"><i class="title"></i><a href="{:U('Weixin/show',array('id'=>$vo['id']))}" title="{$vo.pubaccount|msubstr=0,6}">{$vo.pubaccount|msubstr=0,6}</a><span class="view"><a href="{:U('Weixin/show',array('id'=>$vo['id']))}"><img src="../Public/images/c_view.jpg" alt="人气" height="18" width="20"></a></span>
+            </p>
+            <p class="p2"><span class="fLeft"><font class="fs">{$vo['past_time']}</font>前上传</span><span class="fRight">查看：<font class="fs">{$vo.hits}</font></span>
+            </p>
+            <p class="p3">{$vo.content|strip_tags|msubstr=0,20}</p>
+          </div>
+        </li>
+        </volist>
+      </ul>
+      <div class="pageNo vm center">
+        {$page}
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 底部 START -->
+<include file="Public:footer" />

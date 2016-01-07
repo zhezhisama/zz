@@ -1,0 +1,187 @@
+<include file="Member:header1" />
+<script language="javascript" src="../Public/js/YMDClass.js"></script>
+<script type="text/javascript" src="../Public/js/area.js"></script>
+<script>var ajaxurl="{:U('Ajax/getArea')}"; var city="{$udata.city}"</script>
+<script type="text/javascript" src="../Public/js/select-option-disabled-emulation.js"></script>
+
+  <script type="text/javascript">
+    function change_publish_type(){
+      var publish_type_id = $("#publish_type_id").val();
+      //var url = "{:U('Member/add',array('publish_type_id'=>'\"+publish_type_id+\"'))}";
+      var url = "./index.php?m=Member&a=add&publish_type_id="+publish_type_id;
+
+      //var nodename='111111';
+          //var url="{:U('Weixin/delfile',array('id'=>$vo['id'],'file'=>'"+nodename+"'))}";
+          window.location.href = url;    
+      }
+  </script>
+  <!--新版内容-->
+  
+    <div class="center-content mt20">
+    	<div class="wrap w1200">
+  <include file="Member:left" />
+  <div class="centerContent ml10">
+    <div class="centerTitle">
+        <span class="centerICON icon_6">
+        </span>
+        <h2>
+            修改资料
+        </h2>
+    </div>
+    <div class="centerDisArea">
+       <form method='post' id="formInformation" name="formInformation" action="{:U('Member/checkInformation')}" enctype="multipart/form-data">
+        <input type="hidden" name="_xsrf" value="2|e3ea2a31|256b51fe016a852b106c746631625232|1449201299">
+            
+            
+            <input type="hidden" name="id" value="415443">
+            
+        <table class="comTab mt20" border="0">
+            <tbody>
+                <tr>
+                    <td class="line">
+                        昵称：
+                    </td>
+                    <td>
+                        <input name="nickname" id="nickname" class="i1" value="{$udata.nickname}" type="text">
+                    </td>
+                </tr>
+                <tr>
+                	 <td class="line">个人微信号:</td>
+                    <td>
+              			<input name="wxaccount" id="wxaccount" class="i1" type="text" value="{$udata.wxaccount}">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="line">
+                        头像：
+                    </td>
+                    <td>
+                    	
+                    </td>
+                </tr>
+                 <tr>
+                    <td class="line">
+                        性别：
+                    </td>
+                    <td>
+                    	<input name="gender" value="1" class="radio1" type="radio" <eq name="udata.gender" value="1">checked</eq>>男
+             			<input name="gender" value="2" class="radio1"  type="radio" <eq name="udata.gender" value="2">checked</eq>>女
+                    </td>
+                </tr>
+                <tr>
+                    <td class="line">生日：</td>
+                    <td>
+                        <select name="year"></select>
+                      <select name="month"></select>
+                      <select name="day"></select>
+                      <script>
+                        var year = "{$udata.year}";
+                        var month = "{$udata.month}";
+                        var day = "{$udata.day}";
+                        //new YMDselect('year1','month1');
+                        //new YMDselect('year1','month1',1990);
+                        //new YMDselect('year1','month1',1990,2);
+                        //new YMDselect('year1','month1','day1');
+                        new YMDselect('year','month','day',year,month,day);
+                        //new YMDselect('year1','month1','day1',1990,2);
+                        //new YMDselect('year1','month1','day1',1990,2,10);
+                      </script>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="line">
+                        地区：
+                    </td>
+                    <td>
+                    	<select name="province" id="province">
+                              <option value="-1" selected>省份</option>
+                              <volist name="province" id="one">
+                                  <option value="{$one.id}">{$one.area_name}</option>
+                              </volist>
+                          </select>
+                          <select name="city" id="city">
+                              <option value="-1">城市</option>
+                          </select>
+					</td>
+                </tr>
+                <if condition="$udata.tuijian_id lt 0">
+                <tr>
+                    <td class="line">
+                        推荐人id：
+                    </td>
+                    <td>
+                    	<input name="tuijian_id" id="tuijian_id" class="i1" type="text" value="">
+					</td>
+                </tr>
+                </if>
+            </tbody>
+        </table>
+            <div class="centerSubmit">
+           		 <input type="hidden" name="id" value="{$udata.id}">
+                 <input class="b1" value="修改资料" type="submit">
+            </div>
+        </form>
+    </div>
+</div>
+
+</div>
+</div>
+ 
+  <!-- 内容 END -->
+   <script type="text/javascript">
+
+    $(function(){
+        
+        //选择省份
+        $("#province option[value='{$udata.province}']").attr("selected", true); 
+        loadArea($("#province").val(),'city');
+        
+        //选择城市
+        $("#province").change(function(){
+            var ajaxurl="{:U('Ajax/getArea')}";
+            var areaId=this.value;
+            var areaType='city';
+            var city="{$udata.city}";
+            
+            $.post(ajaxurl,{'areaId':areaId},function(data){
+
+                if(areaType==='city'){
+                   $('#'+areaType).html('<option value="-1">城市</option>');
+
+                   $('#district').html('<option value="-1">镇/区</option>');
+                }else if(areaType==='district'){
+                   $('#'+areaType).html('<option value="-1">镇/区</option>');
+                }
+                if(areaType!=='null'){
+                    $.each(data,function(no,items){
+                        if(items.id===city){
+                            $('#'+areaType).append('<option value="'+items.id+'" selected="selected">'+items.area_name+'</option>');
+                        }else{
+                            $('#'+areaType).append('<option value="'+items.id+'">'+items.area_name+'</option>');
+                        }
+                       
+                    });
+                    
+                }
+            });
+        });
+        
+    });
+    
+    function foreverdelthumb(cur,img){
+       var nodename=img;
+       var id="{$vo['id']}";
+       var url="{:U('Member/delfile')}";
+
+        //创建删除节点
+        $.get(url,{id:id,file:nodename},function(){
+            //插入新节点
+            var html='\r\n<input type="file" class="ipt5" name="'+nodename+'" />\r\n';
+            $(cur).parent().after(html);
+            //移除当前节点
+            $(cur).parent().remove();
+        });
+    }
+
+</script>
+<include file="Member:footer" />    

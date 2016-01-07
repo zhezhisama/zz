@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$title}-{$sitename}</title>
+<link href="../Public/css/style.css" rel="stylesheet" type="text/css" />
+<link href="../Public/css/styles.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../Public/js/jquery-1.7.2.min.js"></script>
+<script language="javascript" src="../Public/js/jquery.easing.min.js"></script>
+<script language="javascript" src="../Public/js/custom.js"></script>
+<script type="text/javascript" src="../Public/js/jquery.form.js"></script>
+<script type="text/javascript" src="../Public/js/formValidator-4.0.1.min.js"></script>
+<script type="text/javascript" src="../Public/js/formValidatorRegex.js"></script>
+<script type="text/javascript" src="../Public/js/qqk.js"></script>
+<script type="text/javascript" language="JavaScript">
+    function fleshVerify(){ 
+        //重载验证码
+        $('#verifyImg').attr('src',"{:U('Member/verify',array('t'=>time()))}");
+    }
+    //-->
+</script>
+</head>
+<body>
+<div id="header" class="mheader" >
+  <div class="mhead"><a href="http://gOpe.cn" class="bkhome"></a>
+    <div class="mlog">
+      <ul>
+        <li class="openlogin"><a href="" onclick="return false;">会员登录</a>&nbsp;&nbsp;&nbsp;&nbsp;</li>
+        <li class="reg"><a href="" onclick="return false;">会员注册</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

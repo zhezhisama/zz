@@ -1,0 +1,207 @@
+@charset "utf-8";
+/* CSS Document */
+.header .utility {
+    height: 30px;
+    width: 100%;
+    background: #f0f0f0;
+}
+.header .w1000 {
+    width: 1000px;
+    margin: 0 auto;
+}
+.header .utility-container {
+    line-height: 30px;
+}
+.header .utility .title1 {
+    font-size: 12px;
+    color: #505050;
+    text-decoration: none;
+}
+.header .utility .right {
+    float: right;
+}
+.header .utility .item.seagreen {
+    color: #760176;
+    width: 30px;
+}
+.header .utility .item {
+    display: inline-block;
+    /* width: 60px; */
+    text-align: center;
+    font-size: 12px;
+    color: #505050;
+    text-decoration: none;
+    cursor: pointer;
+}
+.header .utility b, .header .utility strong {
+    font-weight: bold;
+}
+.header .operate {
+    height: 100px;
+    width: 100%;
+    background: #fff;
+}
+.header .logo {
+    float: left;
+    width: 210px;
+}
+.header .search {
+    float: left;
+    width: 506px;
+    margin-left: 34px;
+	margin-top:24px;
+}
+.header .input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+}
+.header .input-group .glyphicon {
+    position: absolute;
+    z-index: 99;
+    font-size: 20px;
+    color: #969696;
+    top: 10px;
+    left: 12px;
+}
+.header .glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.header .search .form-control {
+    border: 2px solid #17c8bf;
+    height: 40px;
+    padding-left: 38px;
+    color: #969696;
+}
+.header .search .input-group .form-control:not(:first-child):not(:last-child) {
+    border-radius: 10px 0px 0px 10px;
+}
+.header .input-group-btn {
+    position: relative;
+	width:94px;
+	height:40px;
+	display:block;
+	float:left;
+}
+.header .input-group .glyphicon {
+    position: absolute;
+    z-index: 99;
+    font-size: 20px;
+    color: #969696;
+    top: 10px;
+    left: 12px;
+}
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.search00{
+	border: 2px solid #770175;
+    height: 29px;
+	line-height:29px;
+	padding: 5px 0px;
+    padding-left: 38px;
+    color: #969696;
+	position: relative;
+    z-index: 2;
+    float: left;
+    width: 367px;
+    margin-bottom: 0;
+	border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+	float:left;
+}
+
+.input-btn00{
+    background: #770175;
+    width: 95px;
+    color: #fff;
+    border: 1px solid #770175;
+    padding: 6.5px 12px;
+    font-size: 18px;
+	border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;		
+}
+.header .trait-icon {
+    background-image: url(../images/icons.png);
+    background-repeat: no-repeat;
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    margin-top: 1px;
+    margin-bottom: 7px;
+}
+.header .trait {
+    float: left;
+	margin-left: 96px;
+    margin-top: 26px;
+}
+.header .trait-item {
+    float: left;
+    margin-right: 25px;
+    color: #17c8bf;
+    font-size: 12px;
+}
+.header .trait-icon.one {
+    background-position: -5px -5px;
+}
+.header .trait-icon.two {
+    background-position: -55px -5px;
+}
+.header .trait-icon.three {
+    background-position: -105px -5px;
+}
+.search_div{ width:409px; height:43px; float:left; position:relative;
+}
+.input-icon0{    position: absolute;
+       top: 6px;
+    left: 4px;
+    width: 30px;
+    height: 30px;
+    background: url(../images/icon-search.png);
+    height: 30px;
+    width: 30px;
+    display: block;
+    z-index: 9;}
+#floatPanel {
+    width: 50px;
+    height: 210px;
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    margin-left: 500px;
+}
+#floatPanel .items {
+    margin-top: 2px;
+}
+
+#floatPanel .wxq_qrcode {
+    position: absolute;
+    left: -150px;
+    top: 70px;
+    display: none;
+}
+
+
+
+
+
+
+

@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="text/javascript" src="/wxdh/404/scripts/jquery.min.js"></script>
+<script type="text/javascript" src="/wxdh/404/scripts/swfobject.js"></script>
+<script type="text/javascript" src="/wxdh/404/scripts/fullAvatarEditor.js"></script>
+<style>
+body {
+    background: none repeat scroll 0 0 #fff !important;
+    padding: 10px;
+}
+</style>
+</head>
+<body>
+<p id="swfContainer123"></p>
+<script type="text/javascript">
+            swfobject.addDomLoadEvent(function () {
+                var swf = new fullAvatarEditor("swfContainer123", {
+					    id: 'swf',
+						upload_url: 'php/upload.php',
+                        tab_visible : false,				//不显示选项卡，外部自定义
+                        //button_visible : false,				//不显示按钮，外部自定义
+                        src_size:'1024KB',
+						src_upload : 2,						//是否上传原图片的选项：2-显示复选框由用户选择，0-不上传，1-上传
+                        checkbox_visible : false,			//不显示复选框，外部自定义
+                        browse_box_align : 'center',				//图片选择框的水平对齐方式。left：左对齐；center：居中对齐；right：右对齐；数值：相对于舞台的x坐标
+                		webcam_box_align : 'center',				//摄像头拍照框的水平对齐方式，如上。
+                		avatar_sizes : '150*150',			//定义单个头像
+                		avatar_sizes_desc :'150*150像素',	//头像尺寸的提示文本。
+                		avatar_intro : '     最终会生成下面这个尺寸的图片',
+                		avatar_tools_visible:false			//是否显示颜色调整工具
+					}, function (msg) {
+						switch(msg.code)
+						{
+							//case 1 : alert("页面成功加载了组件！");break;
+							//case 2 : alert("已成功加载默认指定的图片到编辑面板。");break;
+							case 3 :
+								if(msg.type == 0)
+								{
+									alert("摄像头已准备就绪且用户已允许使用。");
+								}
+								else if(msg.type == 1)
+								{
+									alert("摄像头已准备就绪但用户未允许使用！");
+								}
+								else
+								{
+									alert("摄像头被占用！");
+								}
+							break;
+							case 5 : 
+								if(msg.type == 0)
+								{
+									if(msg.content.avatarUrls)
+									{
+                                        var ptype="thumb";
+                                        var ppic=""+msg.content.avatarUrls[0];
+                                        $('#'+ptype, window.parent.document).val("/../../../"+msg.content.avatarUrls[0]);
+                                        $('#'+ptype+'src', window.parent.document).attr('src',ppic);
+                                        //$('.popBox', window.parent.document).closed();
+                                        window.parent.closed();
+									}
+									//alert("头像已成功保存至服务器，url为：\n" + msg.content.avatarUrls.join("\n"));
+								}
+							break;
+						}
+					}
+				);
+				
+            });
+        </script>
+</body>
+</html>

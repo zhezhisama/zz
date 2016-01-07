@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	    <title>发布二维码</title>
+	    <link href="../Public/css/base.css" rel="stylesheet" type="text/css">
+	    <script type="text/javascript" src="../Public/fullAvatarEditor/scripts/swfobject.js"></script>
+	    <script type="text/javascript" src="../Public/fullAvatarEditor/scripts/fullAvatarEditor.js"></script>
+  	</head>
+  	<style>
+	body {
+	    background: none repeat scroll 0 0 #fff !important;
+	    padding: 10px;
+	}
+	</style>
+    <body>
+		<div style="width:630px;margin: 0 auto;">
+			<div>
+				<p id="swfContainer">
+                    本组件需要安装Flash Player后才可使用，请从<a href="http://www.adobe.com/go/getflashplayer">这里</a>下载安装。
+				</p>
+			</div>
+        </div>
+		<script type="text/javascript">
+			var type = '{$type}';
+			if(type == 'imgfm')
+				var upload_url="{:U('Member/wxupload?type=imgfm')}";
+			else if(type == 'litpic')
+				var upload_url="{:U('Member/wxupload?type=litpic')}";
+			//var upload_url="{:U('Member/wxupload')}";
+
+            swfobject.addDomLoadEvent(function () {
+                var swf = new fullAvatarEditor("swfContainer",{
+					    id: 'swf',
+						upload_url: upload_url,
+						src_upload : 2,						//是否上传原图片的选项：2-显示复选框由用户选择，0-不上传，1-上传
+						
+					}, function (msg) {
+						switch(msg.code)
+						{
+
+							case 1 : alert("页面成功加载了组件！");break;
+							case 2 : alert("已成功加载默认指定的图片到编辑面板。");break;
+							case 3 :
+								if(msg.type == 0)
+								{
+									alert("摄像头已准备就绪且用户已允许使用。");
+								}
+								else if(msg.type == 1)
+								{
+									alert("摄像头已准备就绪但用户未允许使用！");
+								}
+								else
+								{
+									alert("摄像头被占用！");
+								}
+							break;
+							case 5 : 
+								if(msg.type == 0)
+								{
+									if(msg.content.sourceUrl)
+									{
+										alert("原图已成功保存至服务器，url为：\n" +　msg.content.sourceUrl);
+									}
+									alert("头像已成功保存至服务器，url为：\n" + msg.content.avatarUrls.join("\n"));
+								}
+							break;
+						}
+					}
+				);
+				document.getElementById("upload").onclick=function(){
+					swf.call("upload");
+				};
+            });
+			var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+			document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F5f036dd99455cb8adc9de73e2f052f72' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+    </body>
+</html>

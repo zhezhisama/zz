@@ -1,0 +1,346 @@
+<include file="Public:header" />
+<script type="text/javascript" src="../Public/js/select-option-disabled-emulation.js"></script>
+<script type="text/javascript">
+    $(function(){
+        $.formValidator.initConfig({formID:"form1",debug:false,submitOnce:true,
+		onError:function(msg,obj,errorlist){
+			alert(msg);
+		},
+		submitAfterAjaxPrompt : '有数据正在异步验证，请稍等...'
+	});
+        
+        $("#catid").formValidator({onShow:"请选择所属分类",onFocus:"所属分类必须选择",onCorrect:"输入正确"}).inputValidator({min:1,onError: "请选择所属分类!"});
+		
+        $("#pubaccount").formValidator({onShow:"请输入公众号名称",onFocus:"公众号名称必须填写",onCorrect:"输入正确"}).inputValidator({min:1,onError:"请输入正确的公众号名称!"})
+	    .ajaxValidator({
+		dataType : "json",
+		async : true,
+		url : "{:U('Weixin/checkPubAccount')}",
+		success : function(data){
+                    if(data.status ===0) return true;    
+                    if(data.status ===1) return false;    
+                    return false;
+		},
+		buttons: $("#button"),
+		error: function(jqXHR, textStatus, errorThrown){alert("服务器没有返回数据，可能服务器忙，请重试"+errorThrown);},
+		onError : '此公众号名称已存在',
+		onWait : "正在对公众号名称进行合法性校验，请稍候..."
+            });
+		 $("#wxaccount").formValidator({onShow:"请输入关联微信号名称",onFocus:"关联微信号必须填写",onCorrect:"输入正确"}).inputValidator({min:1,onError:"请输入正确的关联微信号!"}).ajaxValidator({
+		dataType : "json",
+		async : true,
+		url : "{:U('Weixin/checkwxaccount')}",
+		success : function(data){
+                    if(data.status ===0) return true;  
+                    if(data.status ===1) return false;
+                    return false;
+		},
+		buttons: $("#submit"),
+		error: function(jqXHR, textStatus, errorThrown){alert("服务器没有返回数据，可能服务器忙，请重试"+errorThrown);},
+		onError : '此关联微信号已存在',
+		onWait : "正在对微信原始号进行合法性校验，请稍候..."
+            });
+		
+        $("#ghweixin").formValidator({empty:true,onShow:"请输入微信原始号",onFocus:"可以不填",onCorrect:"输入正确"}).inputValidator({min:1,onError:"请输入微信原始号!"}).ajaxValidator({
+		dataType : "json",
+		async : true,
+		url : "{:U('Weixin/checkghweixin')}",
+		success : function(data){
+                    if(data.status ===0) return true;  
+                    if(data.status ===1) return false;
+                    return false;
+		},
+		buttons: $("#submit"),
+		error: function(jqXHR, textStatus, errorThrown){alert("服务器没有返回数据，可能服务器忙，请重试"+errorThrown);},
+		onError : '此微信原始号已存在',
+		onWait : "正在对微信原始号进行合法性校验，请稍候..."
+            });
+		  $("#province").formValidator({onShow:"请选择所属地区",onFocus:"所属地区必须选择",onCorrect:"输入正确"}).inputValidator({min:1,onError: "请选择所属地区!"});
+        $("#logo").formValidator({onShow:"选择正方形图片，小于不超过512KB,<br>支持jpg,gif,png格式!",onFocus:"本地头像和网络头像至少填一项",onCorrect:"输入正确！"}).functionValidator({fun:allEmpty});
+        $("#weblogo").formValidator({onShow:"本地头像和网络头像至少填一项,带http://",onFocus:"本地头像和网络头像至少填一项",onCorrect:"输入正确！"}).functionValidator({fun:allEmpty});
+        $("#qrcode").formValidator({onShow:"选择正方形图片，小于不超过512KB,<br>支持jpg,gif,png格式!",onFocus:"本地二维码和网络二维码至少填一项,带http://",onCorrect:"输入正确！"}).functionValidator({fun:oneEmpty});
+        $("#webqrcode").formValidator({onShow:"本地二维码和网络二维码至少填一项,带http://",onFocus:"本地二维码和网络二维码至少填一项,带http://",onCorrect:"输入正确！"}).functionValidator({fun:oneEmpty});
+        $("#content").formValidator({onShow:"请输入公号介绍",onFocus:"至少要输入5个汉字<br>或10个字符",onCorrect:"输入正确"}).inputValidator({min:10,onError:"你输入的介绍长度不正确,<br>请确认"});        
+        $("#realname").formValidator({onShow:"请输入联系人姓名",onCorrect:"输入正确"}).inputValidator({min:1,onError:"请输入联系人姓名"});
+        $("#phone").formValidator({onShow:"请输入你的手机或电话，可以为空哦",onFocus:"格式例如：0577-88888888或11位手机号码",onCorrect:"输入正确"}).inputValidator({min:1,onError:"请正确输入联系方式"});
+        $("#qq").formValidator({onShow:"请输入QQ号码",onCorrect:"输入正确"}).regexValidator({regExp:"qq",dataType:"enum",onError:"QQ号码格式不正确"});
+    });
+    function allEmpty(val,elem) { 
+        return ($("#logo").val()==="" && $("#weblogo").val()==="") ? '本地头像和网络头像至少填一项,带http://' :true; 
+    } 
+    function oneEmpty(val,elem) { 
+        return ($("#qrcode").val()==="" && $("#webqrcode").val()==="") ? '本地二维码和网络二维码至少填一项,带http://' :true; 
+    } 
+   
+</script>
+<div class="main">
+            <div class="box_tit">
+                <h2>提交微信公众号</h2>
+            </div>
+            <div class="clear"></div>
+            <div class="form_list">
+                <form method='post' id="form1" name="form1" action="{:U('Weixin/add')}"  enctype="multipart/form-data">
+                
+                <div class="form_list_top">
+                <dl>
+                    <dt> 帐号类型：</dt>
+                    <dd>
+                        <input type="radio" name="typeid" value="2" checked="checked" />&nbsp;企业号&nbsp;&nbsp;<input type="radio" name="typeid" value="1"  />&nbsp;订阅号
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 所属分类：</dt>
+                    <dd>
+                        <select name="catid" id="catid">
+                            <option value="" >请选择</option>
+                            <volist name="categorylist" id="catvo">
+                                <if condition="$categorylist[$key]['level'] egt $categorylist[$key+1]['level']">
+                                <option value="{$catvo['id']}">
+                                <else />
+                                <option value="{$catvo['id']}" disabled="disabled">
+                                </if>
+
+                                <for start="1" end="$catvo['level']">
+                                &nbsp;&nbsp;
+                                </for>
+                                <if condition="$catvo['level'] gt 1">
+                                ├&nbsp;
+                                </if>
+                                {$catvo['catname']}
+                                </option>
+                            </volist>
+                        </select>
+                        
+                    </dd>
+                    <dd><span id="catidTip"></span></dd>
+                </dl>
+               
+                <dl>
+                    <dt> 公众号名称：</dt>
+                    <dd>
+                        <input type="text" class="ipt4" name="pubaccount" id="pubaccount">
+                    </dd>
+                    <dd><span id="pubaccountTip"></span></dd>
+                </dl>
+                <dl>
+                    <dt> 关联微信号：</dt>
+                    <dd>
+                        <input type="text" class="ipt4" name="wxaccount" id="wxaccount">
+                    </dd>
+                    <dd><span id="wxaccountTip"></span></dd>
+                </dl>
+                <dl>
+                    <dt> 微信原始号：</dt>
+                    <dd>
+                        <input type="text" class="ipt4" name="ghweixin" id="ghweixin">
+                        
+                    </dd>
+                    <dd>
+                        <span id="ghweixinTip"></span>
+                        <span class="tip"><a href="">点击查看教程微信原始号怎么获取？</a></span>
+                        <span style="color: #999999;">未认证公号gh_xxxxxxxxxxxxxx 格式，已认证公号格式自定义，<br>点击微信官方二维码图片下载，文件名里面有。</span>
+                    </dd>
+                    
+                </dl>
+                    
+                <dl>
+                    <dt> 网站地址：</dt>
+                    <dd>
+                        <input type="text" class="ipt6" name="website" value="">
+                    </dd>
+                    <dd><span>带http://</span></dd>
+                </dl>
+                <dl>
+                    <dt> 新浪微博：</dt>
+                    <dd>
+                        <input type="text" class="ipt6" name="sinaweibo" value="">
+                    </dd>
+                    <dd><span>带http://</span></dd>
+                </dl>
+                <dl>
+                    <dt> 腾讯微博：</dt>
+                    <dd>
+                        <input type="text" class="ipt6" name="tencentweibo" value="">
+                    </dd>
+                    <dd><span>带http://</span></dd>
+                </dl>
+                <dl>
+                    <dt> 淘宝店铺地址：</dt>
+                    <dd>
+                        <input type="text" class="ipt6" name="tbshopurl" value="">
+                    </dd>
+                    <dd><span>带http://</span></dd>
+                </dl>
+                <dl>
+                    <dt> 拍拍店铺地址：</dt>
+                    <dd>
+                        <input type="text" class="ipt6" name="ppshopurl" value="">
+                    </dd>
+                    <dd><span>带http://</span></dd>
+                </dl>
+                <dl>
+                    <dt> 所属地区：</dt>
+                    <dd>
+                       <select name="province" id="province" >
+                            <option value="-1" selected>省份</option>
+                            <volist name="province" id="one">
+                                <option value="{$one.id}">{$one.area_name}</option>
+                            </volist>
+                        </select>
+                        <select name="city" id="city">
+                            <option value="-1">城市</option>
+                        </select>
+                        
+                    </dd>
+                    <dd><span>全不选则默认中国，城市可以不选。</span></dd>
+                </dl>
+                <dl>
+                    <dt> 微信头像：</dt>
+                    <dd>
+                        <input type="file" name="logo" id="logo" class="thumb"  />
+                    </dd>
+                    <dd><span id="logoTip"></span></dd>
+                </dl>
+                <dl>
+                    <dt> 微信网络头像：</dt>
+                    <dd>
+                        <input type="text" name="weblogo" id="weblogo" class="ipt6" value="">
+                    </dd>
+                    <dd><span id="weblogoTip"></span></dd>
+                </dl>
+                <dl>
+                    <dt> 微信二维码：</dt>
+                    <dd>
+                        <input type="file" name="qrcode" id="qrcode" class="thumb"  />
+                    </dd>
+                    <dd><span id="qrcodeTip"></span></dd>
+                </dl>
+                <dl>
+                    <dt> 微信网络二维码：</dt>
+                    <dd>
+                        <input type="text" name="webqrcode" id="webqrcode" class="ipt6" >
+                    </dd>
+                    <dd><span id="webqrcodeTip"></span></dd>
+                </dl>
+                <dl>
+                    <dt> Tag标签：</dt>
+                    <dd>
+                        <input type="text" class="ipt6" name="tag">
+                    </dd>
+                    <dd><span class="fontcolor">用空格隔开</span></dd>
+                </dl>
+                <dl>
+                    <dt> 账号介绍：</dt>
+                    <dd>
+                        <textarea name="content" id="content" style="float: left;"></textarea>
+                    </dd>
+                    <dd><span id="contentTip"></span></dd>
+                </dl>
+                <dl>
+                    <dt>联系人：</dt>
+                    <dd>
+                    <input type="text" name="realname" id="realname" class="ipt4">
+                    </dd>
+                    <dd><span id="realnameTip"></span></dd>
+                </dl>
+                <dl>
+                    <dt>联系方式：</dt>
+                    <dd>
+                    <input type="text" name="phone" id="phone" class="ipt5">
+                    </dd>
+                    <dd><span id="phoneTip"></span></dd>
+                </dl>
+                <dl>
+                    <dt>联系QQ：</dt>
+                    <dd>
+                    <input type="text" name="qq" id="qq" class="ipt4">
+                    </dd>
+                    <dd><span id="qqTip"></span></dd>
+                </dl>
+                <dl>
+                    <dt> title：</dt>
+                    <dd>
+                        <input type="text" class="ipt6" name="title">
+                    </dd>
+                    <dd><span class="fontcolor">网页title标签的设置。如果不填，默认为公众账号</span></dd>
+                </dl>
+                <dl>
+                    <dt> keywords：</dt>
+                    <dd>
+                        <input type="text" class="ipt6" name="keywords">
+                    </dd>
+                    <dd><span class="fontcolor">网页meta标签 keywords网页关键词的设置，利于搜索</span></dd>
+                </dl>
+                <dl>
+                    <dt> description：</dt>
+                    <dd>
+                        <textarea name="description" style="float: left;"></textarea>
+                    </dd>
+                    <dd><span class="fontcolor" style="float: left; width: 150px;">网页meta标签 description网页描述的设置，利于搜索</span></dd>
+                </dl>
+                </div>
+                <div class="form_b">
+                    <input type="submit" class="submit btn7" id="submit" value="提 交">
+                </div>
+               </form>
+                <div class="shyz">
+                <h3>审核原则</h3>
+                <yufu:other settag="shenheyz" />
+                </div>
+            </div>
+             <div class="newsr">
+                <div class="rbox">
+                    <div class="rtit">最新提交</div>
+                    <div class="newstj">
+                        <ul>
+                            <yufu:weixin catid="53" field="id,pubaccount,status,create_time" status="all" order="create_time desc" num="30" >
+                                <li>
+                                   
+                                    <div class="title"><eq name="weixin.status" value="1"> <a href="{:U('Weixin/show',array('id'=>$weixin['id']))}" target='_blank'>{$weixin.pubaccount|msubstr=0,6}</a><else />{$weixin.pubaccount|msubstr=0,6}</eq></div>
+                                    <div class="fr">
+                                        <div class="status"><eq name="weixin.status" value="0">未通过</eq><eq name="weixin.status" value="1">已审核</eq><eq name="weixin.status" value="2">审核中</eq></div>
+                                        <div class="date">{$weixin.create_time|toDate='m-d H;i'}</div>
+                                    </div>
+                                </li>
+                            </yufu:weixin>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            
+</div>
+
+
+<script type="text/javascript">
+    $(function(){
+        $("#province").change(function(){
+            
+            var ajaxurl="{:U('Ajax/getArea')}";
+            var areaId=this.value;
+            var areaType='city';
+            $.post(ajaxurl,{'areaId':areaId},function(data){
+                
+                if(areaType==='city'){
+                   $('#'+areaType).html('<option value="-1">城市</option>');
+
+                   $('#district').html('<option value="-1">镇/区</option>');
+                }else if(areaType==='district'){
+                   $('#'+areaType).html('<option value="-1">镇/区</option>');
+                }
+                if(areaType!=='null'){
+                    $.each(data,function(no,items){
+                        $('#'+areaType).append('<option value="'+items.id+'">'+items.area_name+'</option>');
+                    });
+                }
+            });
+            
+        });
+
+    });
+    
+
+    
+</script>
+
+<include file="Public:footer" />

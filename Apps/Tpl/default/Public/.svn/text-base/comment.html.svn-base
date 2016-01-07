@@ -1,0 +1,69 @@
+<script type="text/javascript">
+    //验证码刷新
+    function fleshVerify(cur){ 
+        $(cur).attr('src',"{:U('Member/verify',array('t'=>time()))}");
+    }
+    function reply(cur,id){
+        $('.replyform').children().remove();
+        var html='<div class="replyform">';
+            html+='<form id="formreply" action="{$url}" method="post">';
+            html+='<div class="commenttxt"><textarea name="content" id="content" ></textarea></div>';
+            html+='<div class="commentoperate">';
+                html+='<div class="commentcheckcode">';
+                    html+='<input type="text" class="ipt2" id="verify" name="verify"> ';
+                    html+='<img id="verifyImg" src="{:U("Member/verify",array("t"=>time()))}" onClick="fleshVerify(this)" border="0" alt="点击刷新验证码" style="cursor:pointer" align="absmiddle">';
+                html+='</div>';
+                html+='<div class="commentsubmit">';
+                    html+='<input type="hidden" name="pid" value='+id+'>';
+                    html+='<input type="hidden" name="catid" value="{$data.catid}">';
+                    html+='<input type="hidden" name="objectid" value="{$data.id}">';
+                    html+='<input type="hidden" name="reply" value="1">';
+                    html+='<input type="submit" id="replybutton" value="回复评论" class="btn7" >';
+                   
+                html+='</div>';
+            html+='</div>';
+            html+='</form>';
+            html+='</div>';
+        $(cur).parent().next('.replyform').html(html);
+       
+    }
+</script>
+
+<div class="comment">
+    <h3 style="border-bottom:none;">发布评论<span>{$count}条评论</span></h3>
+    <div class="commentform">
+        <form id="formcomment" action="{$url}"  method="post">
+            <div class='commenttxt'>
+                <textarea name="content" id="content" ></textarea>
+            </div>
+            <div class="commentoperate">
+                <div class="commentcheckcode">
+                    <input type="text" class="ipt2" id="verify" name="verify"> 
+                    <img src="{:U('Member/verify')}" onClick="fleshVerify(this)" border="0" alt="点击刷新验证码" style="cursor:pointer" align="absmiddle">
+                </div>
+                <div class="commentsubmit">
+                    <input type='hidden' name='catid' value='{$data.catid}'>
+                    <input type='hidden' name='objectid' value='{$data.id}'>
+                    <input type='hidden' name='reply' value='0'>
+                    <input type='submit' id="submit" value='发表评论' class="btn7">
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <div class="clear"></div>
+    <div class="commentlist">
+        <volist name="list" id="vo">
+            <div class="commentinfo">
+                <div class="memberimg"><?php $logo=getMemberULogo($vo['membername']);?><img src="<empty name='logo'>../Public/images/nopic.gif<else />__ROOT__/Uploads{$logo}</empty>" width="48" height="48" /></div>
+                <div class="memberother">
+                    <div class="membername">{$vo.membername}</div>
+                    <div class="commentcontent"><eq name="vo.reply" value="1"><span>回复&nbsp;{$vo.pid|getPidMembername}：</span>{$vo.content|nl2br}<else />{$vo.content|nl2br}</eq></div>
+                    <div class="commentreply"><span title="{$vo.create_time|toDate='Y-m-d H:i:s'}">{$vo.create_time|commentDate}</span>&nbsp;&nbsp;<a href="javascript:return false;" onclick="reply(this,{$vo.id});">回复</a></div>
+                    <div class="replyform"></div>
+                </div>
+            </div>
+        </volist>
+    </div>
+    <div class="page">{$page}</div>
+</div>
