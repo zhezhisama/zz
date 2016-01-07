@@ -1,0 +1,38 @@
+<include file="Public:header" />
+<div class="main">
+            <div class="box_tit">
+                <h2>修改资料</h2>
+            </div>
+            <div class="form_list">
+                <form method='post' id="form1" name="form1" action="{:U('Public/change')}"  enctype="multipart/form-data">
+                <div class="form_list_top">
+                
+                <dl>
+                    <dt> 真实姓名：</dt>
+                    <dd>
+                        <input type="text" class="ipt3" name="nickname" value="{$vo.nickname}" />
+                    </dd>
+                </dl>
+                
+                <dl>
+                    <dt> Email：</dt>
+                    <dd>
+                        <input type="text" class="ipt6" name="email" value="{$vo.email}" />
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 备  注：</dt>
+                    <dd>
+                        <textarea class="large bLeft"  name="remark" rows="5" cols="57">{$vo.remark}</textarea>
+                    </dd>
+                </dl>
+                
+                </div>
+                <div class="form_b">
+                    <input type="hidden" name="id" value="{$vo.id}">
+                    <input type="submit" class="submit btn7" id="submit" value="提 交">
+                </div>
+               </form>
+            </div>
+        </div>
+<include file="Public:footer" />

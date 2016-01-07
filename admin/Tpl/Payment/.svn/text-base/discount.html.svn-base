@@ -1,0 +1,46 @@
+<include file="Public:header" />
+<div class="main">
+            <div class="box_tit">
+                <h2>订单改价</h2>
+            </div>
+           
+            <div class="form_list">
+                
+                <form method='post' id="form1" name="form1" action="{:U('Payment/discountupdate')}"  enctype="multipart/form-data">
+                <div class="form_list_top">
+                <dl>
+                    <dt style="width: 120px;"> 支付单号：</dt>
+                    <dd>
+                        <span>{$vo.payno}</span>
+                    </dd>
+                </dl>
+                
+                <dl>
+                    <dt style="width: 120px;"> 交易加价/减价：</dt>
+                    <dd>
+                        <input type="text" class="ipt2" name="discount" value="{$vo.discount}" />&nbsp;元<span class="fontcolor">要给顾客便宜10元,降价请输入“-10”</span>
+                    </dd>
+                </dl>
+                </div>
+                <div class="form_b">
+                    <input type="hidden" name="id" value="{$vo.id}" >
+                    <input type="submit" class="submit btn7" id="submit" value="提 交">
+                </div>
+               </form>
+            </div>
+
+            
+        </div>
+<script type="text/javascript">
+    $(function(){
+        $("#resetPwd").click(function(){
+            var pass=$("input[name=resetPwd]").val();
+            var id=$("input[name=id]").val();
+            $.post("{:U('Member/resetPwd')}",{id:id,password:encodeURIComponent(pass)}, function(result){
+                   alert(result['info']);
+            },"JSON");
+            
+        });
+    });
+</script>
+<include file="Public:footer" />

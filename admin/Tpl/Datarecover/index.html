@@ -1,0 +1,33 @@
+<include file="Public:header" />
+<div class="main">
+    <div class="box_tit">
+        <h2>数据恢复</h2>
+    </div>
+
+    <div class="list">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr class="nbg">
+                <th><input type="checkbox" id="check"></th>
+                <th>文件名称</th>
+                <th>文件大小</th>
+                <th>备份时间</th>
+                <th>操作</th>
+            </tr>
+            <volist name="list" id="vo">
+            <tr>
+                <td><input type="checkbox" name="key" value="{$vo.id}"></td>
+                <td>{$vo.name}</td>
+                
+                <td>{$vo.size} </td>
+                <td>{$vo.time}</td>
+               
+                <td><a href="{:U('Datarecover/recover',array('file'=>$vo['name']))}">数据恢复</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{:U('Datarecover/deletebak',array('file'=>$vo['name']))}">删除</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{:U('Datarecover/downloadBak',array('file'=>$vo['name']))}">下载</a></td>
+            </tr>
+            </volist>
+            </tbody>
+        </table>
+        <div class="th" style="clear: both;"></div>
+    </div>
+</div>
+<include file="Public:footer" />

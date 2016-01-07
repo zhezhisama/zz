@@ -1,0 +1,25 @@
+<include file="Public:header" />
+<div class="main">
+    <div class="box_tit">
+        <h2>清除缓存</h2>
+    </div>
+    <div class="form_list">
+        <div style="background: #FFFCED;border: 1px solid #FFBE7A; padding: 10px;">
+            <strong>1.</strong>{$home}Runtime/Cache&nbsp;清除完成！<br />
+            <strong>2.</strong>{$home}Runtime/Data&nbsp;清除完成！<br />
+            <strong>3.</strong>{$home}Runtime/Logs&nbsp;清除完成！<br />
+            <strong>4.</strong>{$home}Runtime/Temp&nbsp;清除完成！<br />
+            <strong>5.</strong>{$home}Runtime/~runtime.php&nbsp;清除完成！<br />
+            
+            <strong>6.</strong>{$admin}Runtime/Cache 清除完成！<br />
+            <strong>7.</strong>{$admin}Runtime/Data 清除完成！<br />
+            <strong>8.</strong>{$admin}Runtime/Logs 清除完成！<br />
+            <strong>9.</strong>{$admin}Runtime/Temp 清除完成！<br />
+            <strong>10.</strong>{$admin}Runtime/~runtime.php&nbsp;清除完成！<br />
+            
+            
+        </div>
+        
+    </div>
+</div>
+<include file="Public:footer" />

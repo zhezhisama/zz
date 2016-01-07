@@ -1,0 +1,64 @@
+<include file="Public:header" />
+<div class="main">
+    <div class="box_tit">
+        <h2>回复留言</h2>
+    </div>
+    <div class="form_list">
+        <form method='post' id="form1" name="form1" action="{:U('Message/update')}"  enctype="multipart/form-data">
+        <div class="form_list_top">
+
+        <dl>
+            <dt> 姓名：</dt>
+            <dd>
+                <input type="text" class="ipt4 readonly" name="name" readonly="readonly" value="{$vo.name}">
+            </dd>
+        </dl>
+        <dl>
+            <dt> 性别：</dt>
+            <dd>
+                <input type="radio" name="sex" readonly="readonly" value="0" {$vo['sex']==0 ? 'checked="checked"':''} />&nbsp;男&nbsp;&nbsp;<input type="radio" name="sex" readonly="readonly" value="1" {$vo['sex']==1 ? 'checked="checked"':''} />&nbsp;女
+            </dd>
+        </dl>
+        <dl>
+            <dt> 联系QQ：</dt>
+            <dd>
+
+                <input type="text" class="ipt4 readonly" name="qq" readonly="readonly" value="{$vo.qq}">
+            </dd>
+        </dl>
+        <dl>
+            <dt> 电子邮箱：</dt>
+            <dd>
+                <input type="text" class="ipt4 readonly" name="email" readonly="readonly" value="{$vo.email}">
+            </dd>
+        </dl>
+        <dl>
+            <dt> 常用电话：</dt>
+            <dd>
+                <input type="text" class="ipt4 readonly" name="tel" readonly="readonly" value="{$vo.tel}">
+
+            </dd>
+        </dl>
+        <dl>
+            <dt> 留言内容：</dt>
+            <dd>
+                <textarea name="content" class="readonly" readonly="readonly" rows="8" cols="60">{$vo.content}</textarea>
+            </dd>
+        </dl>
+        <dl>
+            <dt> 回复内容：</dt>
+            <dd>
+                <textarea name="reply" rows="8" cols="60">{$vo.reply}</textarea>
+            </dd>
+        </dl>
+        </div>
+
+        <div class="form_b">
+            <input type="hidden" name="id" value="{$vo.id}">
+            <input type="submit" class="submit btn7" id="submit" value="提 交">
+        </div>
+        </form>
+    </div>
+</div>
+
+<include file="Public:footer" />

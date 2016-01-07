@@ -1,0 +1,49 @@
+<include file="Public:header" />
+<div class="main">
+    <div class="box_tit">
+        <h2>栏目列表</h2>
+    </div>
+    <div class="operate">
+        <div class="fLeft"><input type="button" onclick="add()" class="submit btn5" value="添加栏目"></div>
+        <div class="fLeft"><input type="button" onclick="foreverdel()" class="submit btn5" value="删除选中"></div>
+        
+    </div>
+    <div class="list">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr class="nbg">
+                <th style='width: 40px;'><input type="checkbox" id="check"></th>
+                <th style='width: 60px;'>编号</th>
+                <th style='text-align: left;'>栏目名称</th>
+                <th>所属模型</th>
+                <th>排序</th>
+                <th>是否前台显示</th>
+                <th>操作</th>
+            </tr>
+            <volist name="list" id="vo">
+            <tr>
+                <td><input type="checkbox" name="key" value="{$vo.id}"></td>
+                <td>{$vo.id}</td>
+                <td style="text-align: left;">
+                    <for start="1" end="$vo['level']">
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    </for>
+                    <if condition="$vo['level'] eq 1">
+                        {$vo.catname}
+                    <else/> 
+                        ├─{$vo.catname}
+                    </if> 
+                </td>
+                <td>{$vo.modelname|getModelName} </td>
+                <td>{$vo.listorder}</td>
+                <td>{$vo['status'] == 1 ?"是":"否"}</td>
+                <td><a href="{:U('Category/add',array('id'=>$vo['id'],'model'=>$vo['modelname']))}">添加子栏目</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{:U('Category/edit',array('id'=>$vo['id']))}">修改</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{:U('Category/foreverdelete',array('id'=>$vo['id']))}" onclick="foreverdel({$vo['id']}); return false;">删除</a></td>
+            </tr>
+            </volist>
+            </tbody>
+        </table>
+        <div class="th" style="clear: both;">{$page}</div>
+    </div>
+</div>
+
+<include file="Public:footer" />

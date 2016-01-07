@@ -1,0 +1,63 @@
+<include file="Public:header" />
+<div class="main">
+            <div class="box_tit">
+                <h2>修改支付宝接口</h2>
+            </div>
+            <div class="form_list">
+                <form method='post' id="form1" name="form1" action="{:U('Payment/paytypeupdate')}">
+                <div class="form_list_top">
+                
+                <dl>
+                    <dt> 支付方式：</dt>
+                    <dd>
+                        <input type="text" class="ipt3" name="payname" value="{$vo.payname}" disabled=true /><strong class="red">*</strong>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 支付宝帐户：</dt>
+                    <dd>
+                        <input type="text" class="ipt5" name="pay_account" value="{$vo.pay_account}" /><span class="fontcolor"></span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 交易安全校验码(key)：</dt>
+                    <dd>
+                        <input type="text" class="ipt5" name="pay_key" value="{$vo.pay_key}" /><span class="fontcolor"></span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 合作者身份(parterID)：</dt>
+                    <dd>
+                        <input type="text" class="ipt5" name="pay_parter" value="{$vo.pay_parter}" /><span class="fontcolor"></span>
+                    </dd>
+                </dl>
+                
+                <dl>
+                    <dt> 排序值：</dt>
+                    <dd>
+                        <input type="text" class="ipt1" name="listorder" value="{$vo.listorder}" />
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 状态：</dt>
+                    <dd>
+                        <select name="status">
+                            
+                            <option value="1" <eq name="vo.status" value="1">selected="selected"</eq>>启用</option>
+                            <option value="0" <eq name="vo.status" value="0">selected="selected"</eq>>禁用</option>
+                        </select>
+                    </dd>
+                </dl>
+                
+                </div>
+                <div class="form_b">
+                    
+                    <input type="hidden" name="id" value="{$vo.id}">
+                    <input type="submit" class="submit btn7" id="submit" value="提 交">
+                </div>
+               </form>
+            </div>
+
+            
+        </div>
+<include file="Public:footer" />

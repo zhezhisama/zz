@@ -1,0 +1,107 @@
+<include file="Public:header" />
+<div class="main">
+    <div class="box_tit">
+        <h2>修改内容</h2>
+    </div>
+    <div class="form_list">
+        <include file="Public:notice" />
+        <form method='post' id="form1" name="form1" action="{:U('Article/update')}"  enctype="multipart/form-data">
+        <div class="listtop">
+        <dl>
+            <dt> 栏目：</dt>
+            <dd>
+                
+                <select name="catid" id="catid">
+                    <volist name="categorylist" id="catvo">
+                        <if condition="$categorylist[$key]['level'] egt $categorylist[$key+1]['level']">
+                            <option value="{$catvo['id']}" <eq name="vo.catid" value="$catvo['id']">selected="selected"</eq>>
+                        <else />
+                        <option value="{$catvo['id']}" disabled="disabled">
+                        </if>
+
+                        <for start="1" end="$catvo['level']">
+                        &nbsp;&nbsp;
+                        </for>
+                        <if condition="$catvo['level'] gt 1">
+                        ├&nbsp;
+                        </if>
+                        {$catvo['catname']}
+                        </option>
+                    </volist> 
+                </select>
+            </dd>
+        </dl>
+        <dl>
+            <dt> 标题：</dt>
+            <dd>
+                <input type="text" class="ipt8" name="title" value="{$vo.title}"><strong class="red">*</strong>
+            </dd>
+        </dl>
+   
+        <dl>
+            <dt>title：</dt>
+            <dd>
+                <input type="text" class="ipt8" name="sitetitle" value="{$vo.sitetitle}"><span class="fontcolor">网页title标签的设置(SEO优化)，<br>不填则默认使用标题</span>
+            </dd>
+        </dl>
+        <dl>
+            <dt>keywords：</dt>
+            <dd>
+                <input type="text" class="ipt5" name="keywords" value="{$vo.keywords}"><span class="fontcolor">网页meta标签keywords网页关键词的设置(SEO优化)</span>
+            </dd>
+        </dl>
+        <dl>
+            <dt>description：</dt>
+            <dd>
+                <textarea name="description" class="fLeft">{$vo.description}</textarea><span class="fontcolor" style="float: left; width: 200px;">网页meta标签description网页描述的设置(SEO优化)</span>
+            </dd>
+        </dl>
+
+        <dl>
+            <dt> 缩略图：</dt>
+            <dd>
+                <notempty name="vo.thumb">
+                <img src="__ROOT__/Uploads/{$vo.thumb}" name="thumb" width="60" height="60" />
+                <a href="javascript:return false;" onclick="foreverdelthumb(this);" title="你确定要删除缩略图吗？">删除缩略图</a>
+                <else/>
+                <input type="file" class="thumb" name="thumb" />
+                </notempty>
+            </dd>
+        </dl>
+        <dl>
+            <dt> 内容：</dt>
+        </dl>
+        </div>
+        <div class="listbottom">
+                <textarea name="content" id="myEditor">{$vo.content}</textarea>
+                <script type="text/javascript">
+                    var editor = new UE.ui.Editor();
+                    editor.render("myEditor");
+                    //1.2.4以后可以使用一下代码实例化编辑器
+                    //UE.getEditor('myEditor')
+                </script>
+        </div>
+
+        <div class="form_b">
+            <input type="hidden" name="id" value="{$vo.id}">
+            <input type="submit" class="submit btn7" id="submit" value="提 交">
+        </div>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+   function foreverdelthumb(cur){
+        var nodename=$(cur).prev().attr('name');
+        var url="{:U('Article/delfile',array('id'=>$vo['id'],'file'=>'"+nodename+"'))}";
+        //删除文件
+        $.get(url,function(){
+            //创建新节点
+            var html='<dd>\r\n<input type="file" class="thumb" name="'+nodename+'" />\r\n</dd>';
+            $(cur).parent().after(html);
+
+            //移除当前节点
+            $(cur).parent().remove();
+        });
+    }
+</script>
+<include file="Public:footer" />

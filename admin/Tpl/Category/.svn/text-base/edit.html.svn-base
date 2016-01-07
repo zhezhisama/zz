@@ -1,0 +1,120 @@
+<include file="Public:header" />
+<div class="main">
+            <div class="box_tit">
+                <h2>修改栏目</h2>
+            </div>
+            <div class="form_list">
+                <form method='post' id="form1" name="form1" action="{:U('Category/update')}"  enctype="multipart/form-data">
+                <div class="form_list_top">
+                <dl>
+                    <dt> 选择模型：</dt>
+                    <dd>
+                        <select name="modelname">
+                            <volist name="mdldata" id="mvo">
+                                <if condition="$mvo['table'] eq $vo['modelname']">   
+                                <option value="{$mvo['table']}" selected="selected">
+                                <else />
+                                <option value="{$mvo['table']}">
+                                </if>   
+                                {$mvo['name']}
+                                </option>
+                            </volist>
+                        </select>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 上级栏目：</dt>
+                    <dd>
+                        <select name="pid">
+                            <option value="0">≡ 作为一级栏目 ≡</option>
+                            <volist name="list" id="cvo">
+                                <if condition="$cvo['id'] eq $vo['pid']">   
+                                <option value="{$cvo['id']}" selected="selected">
+                                <else />
+                                <option value="{$cvo['id']}">
+                                </if>
+                                    <for start="1" end="$cvo['level']">
+                                    &nbsp;&nbsp;
+                                    </for>
+                                    <if condition="$cvo['level'] gt 1">
+                                    ├&nbsp;
+                                    </if>
+                                    {$cvo['catname']}
+                                </option>
+                            </volist> 
+                        </select>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 栏目名称：</dt>
+                    <dd>
+                        <input type="text" class="ipt3" name="catname" value="{$vo.catname}" /><strong class="red">*</strong>
+                    </dd>
+                </dl>
+                  <dl>
+                    <dt> 栏目.名称：</dt>
+                    <dd>
+                        <input type="text" class="ipt3" name="catnamea" value="{$vo.catnamea}" /><strong class="red">*</strong>
+                    </dd>
+                </dl>
+                  <dl>
+                    <dt> 栏目别名：</dt>
+                    <dd>
+                        <input type="text" class="ipt3" name="catnameb" value="{$vo.catnameb}" /><strong class="red">*</strong>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 英文目录：</dt>
+                    <dd>
+                        <input type="text" class="ipt3" name="catdir" value="{$vo.catdir}" /><span class="fontcolor">默认留空，不建议非开发人员填写，（主要功能为当前模型创建子页面）,只能输入小写的英文字母</span>
+                    </dd>
+                </dl>
+                
+                <dl>
+                    <dt> 排序值：</dt>
+                    <dd>
+                        <input type="text" class="ipt1" name="listorder" value="{$vo.listorder}" />
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 状态：</dt>
+                    <dd>
+                        <select name="status">
+                            <option value="1" <eq name="vo.status" value="1">selected="selected"</eq>>显示</option>
+                            <option value="0" <eq name="vo.status" value="0">selected="selected"</eq>>不显示</option>
+                        </select>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>栏目标题：</dt>
+                    <dd>
+                        <input type="text" class="ipt6" name="title" value="{$vo.title}" />
+                        <span class="fontcolor">title（栏目标题）针对搜索引擎设置的标题</span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>栏目关键词：</dt>
+                    <dd>
+                        <input type="text" class="ipt6" name="keywords" value="{$vo.keywords}" />
+                        <span class="fontcolor">meta keywords（栏目关键词）关键字中间用半角逗号隔开</span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>栏目描述：</dt>
+                    <dd>
+                        <textarea name="description" class="fLeft" style="width:400px; height:60px; padding-left: 3px;">{$vo.description}</textarea>
+                        <span class="fontcolor fLeft" style="width:260px;">meta description（栏目描述）针对搜索引擎设置的网页描述</span>
+                    </dd>
+                </dl>
+                </div>
+                <div class="form_b">
+                    
+                    <input type="hidden" name="id" value="{$vo.id}">
+                    <input type="submit" class="submit btn7" id="submit" value="提 交">
+                </div>
+               </form>
+            </div>
+
+            
+        </div>
+<include file="Public:footer" />

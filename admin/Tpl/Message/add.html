@@ -1,0 +1,57 @@
+<include file="Public:header" />
+<div class="main">
+    <div class="box_tit">
+        <h2>添加留言</h2>
+    </div>
+    <div class="form_list">
+        <form method='post' id="form1" name="form1" action="{:U('Message/insert')}"  enctype="multipart/form-data">
+        <div class="form_list_top">
+
+        <dl>
+            <dt> 姓名：</dt>
+            <dd>
+                <input type="text" class="ipt4" name="name">
+            </dd>
+        </dl>
+        <dl>
+            <dt> 性别：</dt>
+            <dd>
+                <input type="radio" name="sex" value="0" checked="checked" />&nbsp;男&nbsp;&nbsp;<input type="radio" name="sex" value="1" />&nbsp;女
+            </dd>
+        </dl>
+        <dl>
+            <dt> 联系QQ：</dt>
+            <dd>
+
+                <input type="text" class="ipt4" name="qq">
+            </dd>
+        </dl>
+        <dl>
+            <dt> 电子邮箱：</dt>
+            <dd>
+                <input type="text" class="ipt4" name="email">
+            </dd>
+        </dl>
+        <dl>
+            <dt> 常用电话：</dt>
+            <dd>
+                <input type="text" class="ipt4" name="tel">
+
+            </dd>
+        </dl>
+        <dl>
+            <dt> 填写留言：</dt>
+            <dd>
+                <textarea name="content" rows="8" cols="60"></textarea>
+            </dd>
+        </dl>
+        </div>
+
+        <div class="form_b">
+            <input type="submit" class="submit btn7" id="submit" value="提 交">
+        </div>
+        </form>
+    </div>
+</div>
+
+<include file="Public:footer" />

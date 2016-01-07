@@ -1,0 +1,45 @@
+<include file="Public:header" />
+<div class="main">
+    <div class="box_tit">
+        <h2>消费记录</h2>
+    </div>
+    <div class="operate">
+        <div class="fLeft"><input type="button" onclick="location.href='{:U('Payment/index')}'" class="submit btn5" value="充值记录"></div>
+        <div class="fLeft"><input type="button" onclick="location.href='{:U('Payment/payspend')}'" class="submit btn5" value="消费记录"></div>
+        <div class="fLeft"><input type="button" onclick="location.href='{:U('Payment/pay')}'" class="submit btn5" value="充值入账"></div>
+        <div class="fLeft"><input type="button" onclick="location.href='{:U('Payment/paytype')}'" class="submit btn5" value="支付方式"></div>
+        <div class="fLeft">
+            
+        </div>
+    </div>
+    <div class="list">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr class="nbg">
+              
+                <th>编号</th>
+                <th>用户名</th>
+                <th>消费内容</th>
+                <th>消费时间</th>
+                <th>操作人</th>
+                <th>消费类型</th>
+                <th>消费数量</th>
+            </tr>
+            <volist name="list" id="vo">
+            <tr>
+                
+                <td>{$vo.id}</td>
+                <td>{$vo.membername}</td>
+                <td>{$vo.msg}</td>
+                <td>{$vo.create_time|toDate="Y-m-d H:i:s"}</td>
+                <td><empty name="vo.username">自身<else />{$vo.username}</empty></td>
+                <td><eq name='vo.type' value='1'>金钱<else />积分</eq></td>
+                <td>{$vo.value}</td>
+            </tr>
+            </volist>
+            </tbody>
+        </table>
+        <div class="th" style="clear: both;">{$page}</div>
+    </div>
+</div>
+<include file="Public:footer" />

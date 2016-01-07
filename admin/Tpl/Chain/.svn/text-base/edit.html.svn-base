@@ -1,0 +1,56 @@
+<include file="Public:header" />
+
+<div class="main">
+    <div class="box_tit">
+        <h2>修改链接</h2>
+    </div>
+    <div class="form_list">
+        <form method='post' id="form1" name="form1" action="{:U('Chain/update')}"  enctype="multipart/form-data">
+        <div class="form_list_top">
+        <dl>
+            <dt> 关键词：</dt>
+            <dd>
+                <input type="text" class="ipt6" name="keyword" value="{$vo.keyword}">
+            </dd>
+        </dl>
+        <dl>
+            <dt> 链接地址：</dt>
+            <dd>
+                <input type="text" class="ipt6" name="url" value="{$vo.url}">
+            </dd>
+        </dl>
+        <dl>
+            <dt> 窗口：</dt>
+            <dd>
+                <select name="target">
+                    <option value="_blank" {$vo['target']=='_blank' ? 'selected="selected"':'' }>新窗口</option>
+                    <option value="_self" {$vo['target']=='_self' ? 'selected="selected"':'' }>原窗口</option>
+                </select>
+            </dd>
+        </dl>
+        <dl>
+            <dt> 频率：</dt>
+            <dd>
+                <input type="text" class="ipt1" name="number" value="{$vo.number}">
+            </dd>
+        </dl>
+        <dl>
+            <dt> 状态：</dt>
+            <dd>
+                 <select name="status">
+                    <option value="1" {$vo['status']==1 ? 'selected="selected"':'' }>显示</option>
+                    <option value="0" {$vo['status']==0 ? 'selected="selected"':'' }>不显示</option>
+                </select>
+            </dd>
+        </dl>
+        </div>
+
+        <div class="form_b">
+            <input type="hidden" name="id" value="{$vo.id}">
+            <input type="submit" class="submit btn7" id="submit" value="提 交">
+        </div>
+        </form>
+    </div>
+</div>
+
+<include file="Public:footer" />

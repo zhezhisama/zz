@@ -1,0 +1,651 @@
+/*html { overflow-x: hidden; overflow-y: auto; }*/
+/*html{overflow-y: auto; }*/
+body, button, input, textarea {
+    font: 12px/1.5 Tahoma,Helvetica,Arial,'SimSun',sans-serif;
+}
+body{
+    color: #333;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    padding: 0;
+    margin: 0;
+}
+input,select{
+    vertical-align: middle;
+}
+ol, ul, ul li, div li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #06C;
+}
+a.textline {
+    text-decoration: underline;
+}
+textarea{
+    border: 1px solid #D4D4D4;
+    padding-left: 3px;
+    width: 385px;
+    height: 60px;
+}
+.huise{
+    background: #AAAAAA;
+}
+.red {
+    color: #D90000;
+}
+span.red{
+    margin-left: 5px;
+    color: #D90000;
+}
+.white{
+    color: #FFF;
+}
+.readonly{
+    background: #F3F3F3;
+}
+.fontb{
+    font-weight: bold;
+}
+.fLeft{
+    float: left;
+}
+.tleft{
+    text-align: left;
+}
+.tright{
+    text-align: right;
+}
+.tcenter{
+    text-align: center;
+}
+.cboth{
+    clear: both;
+}
+.indent25{
+    text-indent: 20px;
+}
+.indent50{
+    text-indent: 40px;
+}
+.ipt1, .ipt2, .ipt3, .ipt4, .ipt5, .ipt6, .ipt7, .ipt8 {
+    width: 136px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #D4D4D4;
+    background:#FFF url("../images/input_bg.png") repeat-x top;
+    padding-left: 3px;
+}
+.ipt1.readonly, .ipt2.readonly, .ipt3.readonly, .ipt4.readonly, .ipt5.readonly, .ipt6.readonly, .ipt7.readonly, .ipt8.readonly {
+    background: #F3F3F3;
+}
+
+.ipt1 {
+    width: 30px;
+}
+.ipt2 {
+    width: 75px;
+}
+.ipt3 {
+    width: 110px;
+}
+.ipt4 {
+    width: 155px;
+}
+.ipt5 {
+    width: 200px;
+}
+.ipt6 {
+    width: 245px;
+}
+.ipt7 {
+    width: 300px;
+}
+.ipt8 {
+    width: 380px;
+}
+
+.iptt6 {
+    width: 245px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #D5D5D5;
+    background: url("../images/input_bg.png") repeat-x top;
+    padding-left: 3px;
+    margin-left: 20px;
+}
+.mL20{
+    margin-left: 20px;
+}
+.font14{
+    font-size: 14px;
+}
+.fontcolor{
+    color: #bbb;
+    margin-left: 10px;
+}
+.btn5,.btn6,.btn7{
+    width: 81px;
+    height: 26px;
+    border: none;
+    cursor: pointer;
+    margin: 0 5px;
+    font-size: 14px;
+    font-weight: bold; 
+}
+.btn5 {
+    background: url("../images/btnbg.png") no-repeat;
+    color: #646464;
+}
+.btn6{
+    background: url("../images/submit_bg.png") no-repeat;
+    color: #2473A2;
+}
+.btn7 {
+    background: url("../images/btnbg.png") no-repeat;
+    color: #06C;
+}
+
+.label{
+    display: block;
+    width: 155px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #D4D4D4;
+    background: #EBEBE4;
+    padding-left: 3px;
+    
+}
+.thumb {
+    width: 245px;
+    height: 24px;
+    line-height: 24px;
+    border: 1px solid #CCCCCC;
+    background: #FFF;
+    padding-left: 3px;
+
+}
+select{
+    vertical-align: middle;
+    background: none repeat scroll 0 0 #F9F9F9;
+    border-color: #666 #CCC #CCC #666;
+    border-style: solid;
+    border-width: 1px;
+    color: #333;
+    padding: 2px;
+}
+
+.clear{
+    clear: both;
+}
+/******顶部*******/
+.top{
+    height: 50px;
+    background: url("../images/topbg.png") repeat-x;
+}
+.top .logo{
+    float: left;
+    width: 360px;
+    height: 50px;
+    background: url(../images/logo.png) no-repeat;
+    margin-bottom: 0px;
+    display: inline;
+}
+.top .logo a {
+    display: block;
+    width: 360px;
+    height: 30px;
+    line-height: 200px;
+    overflow: hidden;
+}
+.info {
+    float: right;
+    padding: 18px 25px 0 0;
+}
+.info a{
+    margin: 0 2px;
+}
+/**********导航*************/
+.nav {
+    clear: both;
+    overflow: hidden;
+    height: 38px;
+    background: url("../images/nav_bg.png") repeat-x;
+    margin-bottom: 14px;
+    padding: 0 10px 0 80px;
+}
+.nav li {
+    float: left;
+    background: url("../images/nav_li_bg.png") no-repeat left center;
+    padding: 0 20px;
+    font-size: 14px;
+}
+.nav li.bgn {
+    background: none;
+}
+.nav li span {
+    float: left;
+    height: 38px;
+}
+.nav li em {
+    float: left;
+    height: 29px;
+    padding: 9px 0 0 0;
+    font-weight: normal;
+    font-style: normal;
+}
+.nav li span.cur {
+    background: url("../images/nav_li_cur.png") no-repeat left;
+    padding-left: 20px;
+}
+.nav li span.cur em {
+    float: left;
+    background: url("../images/nav_li_cur_em.png") no-repeat right;
+    padding-right: 20px;
+}
+.nav li a, .nav li a:hover {
+    color: #595959;
+}
+.nav li span.cur a, .nav li span.cur a:hover {
+    font-weight: bold;
+    color: white;
+}
+/*************底部******************/
+.bottom{ 
+    clear:both; 
+    padding:8px 0px; 
+    width:100%; 
+    text-align:center; 
+    font:normal normal normal 11px Verdana,Geneva,Arial,Helvetica,sans-serif; 
+    border-top:1px solid #DBDBDB; 
+    color:#444;
+}
+.bottom a{
+    color:#000;
+    text-decoration:none; 
+}
+.bottom a:hover{
+    color:silver; 
+    text-decoration: underline;
+}
+/**********左侧******************/
+.box {
+    clear: both;
+    margin-bottom: 11px;
+}
+.box_tit {
+    height: 32px;
+    line-height: 32px;
+    background: url("../images/box_tit.png") repeat-x;
+    padding-right: 8px;
+}
+.box_tit h2 {
+    float: left;
+    font-size: 14px;
+    color: #487C09;
+    padding-left: 15px;
+}
+.box_tit .hopen {
+    float: right;
+    width: 15px;
+    height: 11px;
+    overflow: hidden;
+    background: url("../images/hopen.png") no-repeat;
+    margin: 8px 0 0 8px;
+    cursor: pointer;
+}
+.box_tit .hopen.cur {
+    background: url("../images/hclose.png") no-repeat;
+}
+.box_list {
+    clear: both;
+    overflow: hidden;
+    zoom: 1;
+}
+.box_list ul {
+    clear: both;
+    padding: 10px 0 6px;
+}
+.m-expanded ul{
+    padding-left: 15px;
+}
+.box_list li {
+    margin-bottom: 5px;
+    height: auto !important;
+    height: 24px;
+    line-height: 24px;
+}
+.box_list li a{
+    display: block;
+    padding-left: 30px;
+    font-size: 14px;
+    background: url(../images/lopen.png) no-repeat 15px center;
+    color: #595959;
+    cursor: pointer;
+}
+.box_list li span{
+    display: block;
+    padding-left: 30px;
+    font-size: 14px;
+    background: url(../images/lopen.png) no-repeat 15px center;
+    color: #595959;
+    cursor: pointer;
+}
+.box_list li.on {
+    background-color: whiteSmoke;
+}
+.box_list li span:hover{
+    background-color: whiteSmoke;
+    font-weight: bold;
+    color: #06C;
+}
+.box_list li a:hover{
+    background-color: whiteSmoke;
+    font-weight: bold;
+    color: #06C;
+}
+.box_list li.on a{
+    font-weight: bold;
+    color: #06C;
+}
+
+/**********右侧*******************/
+.main .box_tit h2{
+    margin-left: 10px;
+    color: #646464;
+    font-weight: bold;
+    background: url("../images/home.png") no-repeat left center;
+    padding-left: 20px;
+    display:inline;
+}
+/***********操作****************/
+.operate{
+    float: left;
+    padding: 10px;
+    color: #646464;
+    display: inline;
+}
+.resetPwdOperate{
+    padding: 15px 10px;
+    border-bottom: 1px solid #D4D4D4;
+}
+/***********列表****************/
+.list{
+    clear: both;
+    margin:0 10px 10px 10px;
+    border-left: 1px solid #D4D4D4;
+    border-right: 1px solid #D4D4D4;
+    color: #646464;
+}
+.list table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.list tr.currow{
+    background-color:#CFC;
+}
+.list tr.nbg{
+    background:none;
+}
+.list th,.list .th{
+    border-top: 1px solid #D4D4D4;
+    border-bottom: 1px solid #D4D4D4;
+    height: 32px;
+    font-weight: bold;
+    background: url("../images/th_bg.png") repeat-x bottom;
+}
+.list .th{
+     border-top: none;
+     text-align: right;
+     line-height: 32px;
+     padding-right: 10px;
+}
+.list td {
+    border-top: 1px solid #D4D4D4;
+    border-bottom: 1px solid #D4D4D4;
+    height: 32px;
+    text-align: center;
+}
+/**************from表单**********************/
+
+.listtop,.listbottom{
+   margin-left: 10px; 
+}
+.listtop{
+    margin-top: 10px;
+    border:1px  solid #CCCCCC;
+    border-bottom: none;
+    padding-left: 10px; 
+    padding-bottom: 15px;
+    width: 710px;
+    background: #F5F5F5;
+}
+.con_edit{
+    margin: 10px;
+}
+.form_txt4 {
+    padding-left: 40px;
+}
+.form_list_top{
+    padding-left: 10px; 
+    padding-bottom: 15px;
+}
+.form_list dl {overflow: hidden;zoom: 1;padding: 10px 0;}
+.form_list dt {float: left;width: 90px;font-size: 14px;padding: 3px 0 0 0;color: #666;}
+.form_list.w12 dt {width: 120px;}
+.form_list dd {
+    float: left;
+    line-height: 22px;
+}
+.form_list select, .form_list input {
+    vertical-align: middle;
+}
+
+.form_list dd p {
+    clear: both;
+    color: #A0A0A0;
+    padding: 4px 0 0 0;
+    line-height: 16px;
+}
+.form_list dd.img img {
+    max-width: 300px;
+    max-height: 60px;
+    overflow: hidden;
+}
+.form_b {
+    text-align: left;
+    padding: 20px 0 45px 145px;
+}
+.form_list .btn7 {
+    margin-left: 10px;
+}
+/***********权限组*************************/
+
+/* 菜单项 */
+.st_tree ul li{ 
+    font-size:12px; 
+    color:#222; 
+    line-height:28px;
+    border-top: 1px solid #EEEEEE;
+    cursor:pointer;
+    padding-left: 15px;
+}
+.st_tree ul li span.zj,.st_tree ul li span.zjj{ 
+    display: inline-block;
+    width: 15px;
+    height: 16px;
+}
+.st_tree ul li span.zj{
+    background: url("../images/tv-collapsable.gif") no-repeat left 80%;
+}
+.st_tree ul li.m-expanded span.zj{ 
+    background: url("../images/tv-expandable.gif") no-repeat left 80%;
+}
+
+/*************权限组结束*****************/
+/********订单信息***********/
+.orderinfo{
+    font-size: 12px;
+    margin: 10px 0 10px 10px;
+    background: #FFFCED;
+    border: 1px solid #FFBE7A;
+}
+.orderinfo ul{
+    padding-left: 10px;
+}
+.orderinfo ul li{
+    margin-bottom: 10px;
+}
+.orderother{
+    font-size: 12px;
+    margin: 10px 0 10px 10px;
+    border: 1px solid #FFBE7A;
+}
+.ordertitle{
+    height: 28px;
+    line-height: 28px;
+    background: #FFFCED;
+    padding-left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+.prolist{
+    padding-left: 10px;
+}
+.prolist th{
+    background: #FFFCED;
+}
+.ordertext{
+    padding-left: 10px;
+    height: 28px;
+    line-height: 28px;
+}
+/***********订单信息结束******************/
+
+/***********管理员登录*****************/
+
+.login{
+    background: url("../images/houtailogin3.png") no-repeat;
+    width: 650px;
+    height: 260px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    overflow: hidden;
+    margin: -130px 0 0 -325px;
+    background: url("../images/login2.png") no-repeat;
+    width: 700px;
+    height: 350px;
+    margin: -175px 0 0 -350px;
+    
+}
+.loginbox{
+    position: absolute;
+    top:260px;
+    left: 60px; 
+}
+.login table{
+    position: absolute;
+    top:50px;
+    right: 20px;  
+}
+.login table tr{
+    margin-bottom: 10px;
+    height: 35px;
+}
+.login .account{
+    position: absolute;
+    top:220px;
+    left: 50px;
+    color: #FFF;
+}
+.login .version{
+    position: absolute;
+    top:220px;
+    right: 50px;
+    color: #FFF;
+}
+#result{
+    width: 170px;
+    position: absolute;
+    top:30px;
+    right: 10px;  
+}
+.login .shuom{
+    width: 520px;
+    position: absolute;
+    bottom:10px;
+    right: 10px;  
+}
+.btn4{
+    width: 65px;
+    height: 26px;
+    border: none;
+    cursor: pointer;
+    background: url("../images/btnlogin.png") no-repeat;
+    color:#FFF;
+    margin-left: 5px;
+}
+/************管理员登录结束**********************/
+
+/**************起始页*****************/
+.col{
+    width: 405px;
+    margin: 7px 0 7px 10px;
+    border: 1px solid #EEEEEE;
+    float: left;
+    display: inline;
+}
+.col_top{
+    height: 28px;
+    line-height: 28px;
+    padding-left: 10px;
+    font-weight: bold;
+    color: #646464;
+    background: #EEF3F7;
+    background: url("../images/box_tit.png") repeat-x;
+    position: relative;
+}
+.col_top a{
+    position: absolute;
+    top:0px;
+    right: 5px;
+    font-weight: normal;
+}
+.col_zk ul li,.col_kx ul li,.col_ll ul li,.col_cp ul li{
+    padding-left: 20px;
+    border-bottom: 1px dashed #F0F0F0;
+    font-size: 12px;
+    height: 26px;
+    line-height: 26px;
+    background: url(../images/d.gif) no-repeat 10px center;
+    overflow:hidden; 
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    width: 365px;
+}
+.col_zk .xt span{
+    color: #0066CC;
+}
+
+/************起始页结束*******************/
+.apptable{
+    margin-top: 10px; 
+    margin-left: 10px; 
+    font-size: 14px;
+}
+.apptable tr{
+    line-height: 28px;
+}
+
+/************新加*******************/
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}

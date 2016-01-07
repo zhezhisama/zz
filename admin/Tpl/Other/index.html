@@ -1,0 +1,37 @@
+<include file="Public:header" />
+<div class="main">
+    <div class="box_tit">
+        <h2>扩展功能列表</h2>
+    </div>
+    
+    <div class="operate">
+        <div class="fLeft"><input type="button" onclick="add()" class="submit btn5" value="添加扩展"></div>
+        <div class="fLeft"><input type="button" onclick="foreverdel()" class="submit btn5" value="删除选中"></div>
+    </div>
+    <div class="list">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr class="nbg">
+                <th width="5%"><input type="checkbox" id="check"></th>
+                <th width="8%">编号</th>
+                <th width="20%">功能名称</th>
+                <th width="15%">标签名称</th>
+                <th width="27%">模板代码</th>
+                <th width="15%">操作</th>
+            </tr>
+            <volist name="list" id="vo">
+            <tr>
+                <td><input type="checkbox" name="key" value="{$vo.id}"></td>
+                <td>{$vo.id}</td>
+                <td>{$vo.setname|htmlspecialchars}</td>
+                <td>{$vo.settag|htmlspecialchars}</td>
+                <td title="复制模板代码，放在前台模板需要显示的地方">&lt;yufu:other settag=&quot;{$vo.settag|htmlspecialchars}&quot; /&gt;</td>
+                <td><a href="{:U('Other/edit',array('id'=>$vo['id']))}">修改</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{:U('Other/foreverdel',array('id'=>$vo['id']))}" onclick="foreverdel({$vo['id']}); return false;">删除</a></td>
+            </tr>
+            </volist>
+            </tbody>
+        </table>
+        <div class="th" style="clear: both;">{$page}</div>
+    </div>
+</div>
+<include file="Public:footer" />

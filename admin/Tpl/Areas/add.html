@@ -1,0 +1,50 @@
+<include file="Public:header" />
+<div class="main">
+            <div class="box_tit">
+                <h2>添加城市</h2>
+            </div>
+            <div class="form_list">
+                <form method='post' id="form1" name="form1" action="{:U('Areas/insert')}"  enctype="multipart/form-data">
+                <div class="form_list_top">
+                
+                <dl>
+                    <dt> 上级城市：</dt>
+                    <dd>
+                        <label class="label">{$parent_id|getAreasName}</label><input type="hidden" name="parent_id" value="{$parent_id}">
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 城市名称：</dt>
+                    <dd>
+                        <input type="text" class="ipt3" name="area_name" />
+                    </dd>
+                </dl>
+                
+                <dl>
+                    <dt> 排序值：</dt>
+                    <dd>
+                        <input type="text" class="ipt1" name="listorder" value='0' />
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 热门城市：</dt>
+                    <dd>
+                        <select name="recommend">
+                            <option value="0">否</option>
+                            <option value="1">是</option>
+                            
+                        </select>
+                    </dd>
+                </dl>
+                
+                </div>
+                <div class="form_b">
+                    
+                    <input type="submit" class="submit btn7" id="submit" value="提 交">
+                </div>
+               </form>
+            </div>
+
+            
+        </div>
+<include file="Public:footer" />

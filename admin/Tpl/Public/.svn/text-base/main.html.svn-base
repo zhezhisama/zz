@@ -1,0 +1,65 @@
+<include file="Public:header" />
+        <div class="main">
+            <div class="box_tit">
+                <h2>起始页</h2>
+            </div>
+           
+            <div class="col">
+                <div class="col_top">网站信息</div>
+                <div class="col_zk">
+                    <ul class="xt">
+                        <li>当前版本：微信群发布平台V1.0</li>
+                        <li>浏览统计：今日<span>【{$tjnum}】</span>次&nbsp;昨日<span>【{$tjnum1}】</span>次&nbsp;当月<span>【{$tjnum2}】</span>次</li>
+                        <li>百度收录：今日<span>【{$lynum}】</span>页&nbsp;本周<span>【{$lynum1}】</span>页&nbsp;当月<span>【{$lynum2}】</span>页</li>
+                    </ul>
+                    <ul class="gf">
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="col">
+                <div class="col_top">预留位置</div>
+                <div class="col_kx">
+
+                </div>
+            </div>
+            <div class="clear"></div>
+      
+            <div class="col">
+                <div class="col_top">预留位置</div>
+                <div class="col_ll">
+                    
+                </div>
+            </div>
+            <div class="col">
+                <div class="col_top">预留位置</div>
+                <div class="col_cp">
+
+                </div>
+            </div>
+   
+    </div>
+<script type="text/javascript">
+    /*$.getJSON("{$Think.session.yufu5url}/doc/zx1.php?callback=?",function(json){
+        if(json.status==1){
+            $(".col_zk .gf").html(json.data);
+        }
+    });
+    $.getJSON("{$Think.session.yufu5url}/doc/zx2.php?callback=?",function(json){
+        if(json.status==1){
+            $(".col_kx").html(json.data);
+        }
+    });
+    $.getJSON("{$Think.session.yufu5url}/doc/zx3.php?callback=?",function(json){
+        if(json.status==1){
+            $(".col_ll").html(json.data);
+        }
+    });
+    $.getJSON("{$Think.session.yufu5url}/doc/zx4.php?callback=?",function(json){
+        if(json.status==1){
+            $(".col_cp").html(json.data);
+        }
+    });*/
+
+</script>
+<include file="Public:footer" />

@@ -1,0 +1,38 @@
+<include file="Public:header" />
+<div class="main">
+    <div class="box_tit">
+        <h2>城市列表</h2>
+    </div>
+    <div class="operate">
+        <div class="fLeft"><input type="button" onclick="add()" class="submit btn5" value="添加城市"></div>
+        <div class="fLeft"><input type="button" onclick="foreverdel()" class="submit btn5" value="删除选中"></div>
+        
+    </div>
+    <div class="list">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr class="nbg">
+                <th style="width: 40px;"><input type="checkbox" id="check"></th>
+                <th style="width: 60px;">编号</th>
+                <th style="text-align: 60%">城市名称</th>
+                <th>排序</th>
+                <th>热门城市</th>
+                <th>操作</th>
+            </tr>
+            <volist name="list" id="vo">
+            <tr>
+                <td><input type="checkbox" name="key" value="{$vo.id}"></td>
+                <td>{$vo.id}</td>
+                <td>{$vo.area_name}</td>
+                <td>{$vo.listorder}</td>
+                <td><eq name="vo.recommend" value="1">是<else />否</eq></td>
+                <td><a href="{:U('Areas/index',array('id'=>$vo['id']))}">管理子菜单</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{:U('Areas/add',array('id'=>$vo['id']))}">添加子菜单</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{:U('Areas/edit',array('id'=>$vo['id']))}">修改</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:return false;" onclick="foreverdel({$vo['id']}); ">删除</a></td>
+            </tr>
+            </volist>
+            </tbody>
+        </table>
+        <div class="th" style="clear: both;">{$page}</div>
+    </div>
+</div>
+
+<include file="Public:footer" />

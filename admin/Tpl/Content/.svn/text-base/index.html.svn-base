@@ -1,0 +1,26 @@
+<include file="Public:header" />
+<div class="main">
+    <div class="box_tit">
+        <h2>编辑数据</h2>
+    </div>
+    <div class="form_list">
+        <form method='post' id="form1" name="form1" action="{:U('Content/index')}"  enctype="multipart/form-data">
+        <div class="con_edit">
+            <textarea name="content" id="myEditor">{$list.content}</textarea>
+            <script type="text/javascript">
+                var editor = new UE.ui.Editor();
+                editor.render("myEditor");
+                //1.2.4以后可以使用一下代码实例化编辑器
+                //UE.getEditor('myEditor')
+            </script>  
+        </div>
+        <div class="form_b">
+            <input type="hidden" name="id" value="{$list.id}">
+            <input type="submit" class="submit btn7" id="submit" value="保 存">
+        </div>
+        </form>
+    </div>
+</div>
+<include file="Public:footer" />
+
+

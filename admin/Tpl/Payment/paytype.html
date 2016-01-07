@@ -1,0 +1,44 @@
+<include file="Public:header" />
+<div class="main">
+    <div class="box_tit">
+        <h2>支付方式</h2>
+    </div>
+    <div class="operate">
+        <div class="fLeft"><input type="button" onclick="location.href='{:U('Payment/index')}'" class="submit btn5" value="充值记录"></div>
+        <div class="fLeft"><input type="button" onclick="location.href='{:U('Payment/payspend')}'" class="submit btn5" value="消费记录"></div>
+        <div class="fLeft"><input type="button" onclick="location.href='{:U('Payment/pay')}'" class="submit btn5" value="充值入账"></div>
+        <div class="fLeft"><input type="button" onclick="location.href='{:U('Payment/paytype')}'" class="submit btn5" value="支付方式"></div>
+    </div>
+    <div class="list">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr class="nbg">
+              
+                <th>编号</th>
+                <th>支付方式</th>
+                <th>支付宝帐户</th>
+                <th>交易安全校验码(key)</th>
+                <th>合作者身份(parterID)</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+            <volist name="list" id="vo">
+            <tr>
+                
+                <td>{$vo.id}</td>
+                <td>{$vo.payname}</td>
+                <td>{$vo.pay_account}</td>
+                <td>{$vo.pay_key}</td>
+                <td>{$vo.pay_parter}</td>
+                <td><eq name='vo.status' value='1'>启用<else />禁用</eq></td>
+                <td align="center">
+                    <a href="{:U('Payment/paytypeedit',array('id'=>$vo['id']))}">配置</a>
+                </td>
+            </tr>
+            </volist>
+            </tbody>
+        </table>
+        <div class="th" style="clear: both;">{$page}</div>
+    </div>
+</div>
+<include file="Public:footer" />

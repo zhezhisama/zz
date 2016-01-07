@@ -1,0 +1,86 @@
+<include file="Public:header" />
+<div class="main">
+            <div class="box_tit">
+                <h2>添加会员</h2>
+            </div>
+            <div class="form_list">
+                <form method='post' id="form1" name="form1" action="{:U('Member/insert')}"  enctype="multipart/form-data">
+                <div class="form_list_top">
+                <dl>
+                    <dt> 用户名：</dt>
+                    <dd>
+                        <input type="text" class="ipt4" name="account" id="account"><span id="accounterror" class="red"></span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 密码：</dt>
+                    <dd>
+                        <input type="password" class="ipt4" name="password" />
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 昵称：</dt>
+                    <dd>
+                        <input type="text" class="ipt4" name="nickname" />
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 邮箱：</dt>
+                    <dd>
+                        <input type="text" class="ipt6" name="email" />
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 会员组：</dt>
+                    <dd>
+                        <select name="role_id"> 
+                            <volist name="list" id="l">
+                                <option value="{$l['id']}">
+                                {$l['name']}
+                                </option>
+                            </volist>    
+                        </select>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 积分点数：</dt>
+                    <dd>
+                        <input type="text" class="ipt3" name="intergral" value='0' />
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 状态：</dt>
+                    <dd>
+                        <select name="status">
+                            <option value="1">启用</option>
+                            <option value="0">禁用</option>
+                        </select>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>备  注：</dt>
+                    <dd>
+                        <textarea name="remark" style="width:400px; height:60px;"></textarea>
+                    </dd>
+                </dl>
+                </div>
+                <div class="form_b">
+                    <input type="submit" class="submit btn7" id="submit" value="提 交">
+                </div>
+               </form>
+            </div>
+
+            
+        </div>
+<script type="text/javascript">
+    $(function(){
+        $("#account").blur(function(){
+            var account=$("#account").val();
+            $.post("{:U('Member/checkAccount')}",{account:account}, function(result){
+                   $("#accounterror").html(result['info']);
+            },"JSON");
+            
+        });
+    });
+</script>
+<include file="Public:footer" />

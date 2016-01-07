@@ -1,0 +1,51 @@
+<include file="Public:header" />
+<div class="main">
+    <div class="box_tit">
+        <h2>留言列表</h2>
+    </div>
+    <div class="operate">
+        <div class="fLeft"><input type="button" onclick="add()" class="submit btn5" value="添加留言"></div>
+        <div class="fLeft"><input type="button" onclick="foreverdel()" class="submit btn5" value="删除选中"></div>
+        
+    </div>
+    <div class="list">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr class="nbg">
+                <th><input type="checkbox" id="check"></th>
+                <th>编号</th>
+                <th>留言内容</th>
+                <th>留言时间</th>
+                <th>联系人</th>
+                <th>性别</th>
+                <th>电话</th>
+                <th>状态</th>
+                <th>操作</th>
+            </tr>
+            <volist name="list" id="vo">
+            <tr>
+                <td><input type="checkbox" name="key" value="{$vo.id}"></td>
+                <td>{$vo.id}</td>
+                <td><a href="{:U('Message/edit',array('id'=>$vo['id']))}">{$vo.content}</a></td>
+                <td>{$vo.create_time|toDate="Y-m-d H:i:s"}</td>
+                <td>{$vo.name}</td>
+                <td>{$vo['sex']==0?"男":"女"}</td>
+                <td>{$vo.tel}</td>
+                <td>{$vo.status|getMessageStatus}</td>
+                <td align="center">
+                    <if condition="$vo.status eq 0">
+                        <a href="{:U('Message/checkPass',array('id'=>$vo['id']))}">通过审核</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <elseif condition="$vo.status eq 1" />
+                        <a href="{:U('Message/forbid',array('id'=>$vo['id']))}">取消审核</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    </if>
+                    <a href="{:U('Message/edit',array('id'=>$vo['id']))}">留言回复</a>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="{:U('Message/foreverdelete',array('id'=>$vo['id']))}" onclick="foreverdel({$vo['id']}); return false;">删除</a>
+                </td>
+            </tr>
+            </volist>
+            </tbody>
+        </table>
+        <div class="th" style="clear: both;">{$page}</div>
+    </div>
+</div>
+<include file="Public:footer" />

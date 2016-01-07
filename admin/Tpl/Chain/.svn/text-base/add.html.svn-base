@@ -1,0 +1,54 @@
+<include file="Public:header" />
+
+<div class="main">
+    <div class="box_tit">
+        <h2>添加链接</h2>
+    </div>
+    <div class="form_list">
+        <form method='post' id="form1" name="form1" action="{:U('Chain/insert')}"  enctype="multipart/form-data">
+        <div class="form_list_top">
+        <dl>
+            <dt> 关键词：</dt>
+            <dd>
+                <input type="text" class="ipt6" name="keyword">
+            </dd>
+        </dl>
+        <dl>
+            <dt> 链接地址：</dt>
+            <dd>
+                <input type="text" class="ipt6" name="url" value="http://">
+            </dd>
+        </dl>
+        <dl>
+            <dt> 窗口：</dt>
+            <dd>
+                <select name="target">
+                    <option value="_blank">新窗口</option>
+                    <option value="_self">原窗口</option>
+                </select>
+            </dd>
+        </dl>
+        <dl>
+            <dt> 频率：</dt>
+            <dd>
+                <input type="text" class="ipt1" name="number" value="1">
+            </dd>
+        </dl>
+        <dl>
+            <dt> 状态：</dt>
+            <dd>
+                 <select name="status">
+                    <option value="1">显示</option>
+                    <option value="0">不显示</option>
+                </select>
+            </dd>
+        </dl>
+        </div>
+        <div class="form_b">
+            <input type="submit" class="submit btn7" id="submit" value="提 交">
+        </div>
+        </form>
+    </div>
+</div>
+
+<include file="Public:footer" />

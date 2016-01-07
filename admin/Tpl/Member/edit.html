@@ -1,0 +1,92 @@
+<include file="Public:header" />
+<div class="main">
+            <div class="box_tit">
+                <h2>修改会员</h2>
+            </div>
+            <div class="resetPwdOperate">
+                <span style="margin-right: 6px; font-size: 14px; font-weight: normal;">输入新密码：</span><input type="password" class="ipt4" name="resetPwd" /><input type="button" value="确定修改" id="resetPwd" class="submit btn7">
+            </div>
+            <div class="form_list">
+                
+                <form method='post' id="form1" name="form1" action="{:U('Member/update')}"  enctype="multipart/form-data">
+                <div class="form_list_top">
+                <dl>
+                    <dt> 用户名：</dt>
+                    <dd>
+                        <input type="text" class="ipt4" name="account" readonly style="background: #F3F3F3;" value="{$vo.account}">
+                    </dd>
+                </dl>
+                
+                <dl>
+                    <dt> 昵称：</dt>
+                    <dd>
+                        <input type="text" class="ipt4" name="nickname" value="{$vo.nickname}" />
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 邮箱：</dt>
+                    <dd>
+                        <input type="text" class="ipt6" name="email" value="{$vo.email}" />
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 会员组：</dt>
+                    <dd>
+                        <select name="role_id"> 
+                            <volist name="list" id="l">
+                                <if condition="$l['id'] eq $vo['role_id']">       
+                                <option value="{$l['id']}" selected="selected">
+                                <else />
+                                <option value="{$l['id']}">
+                                </if>
+                                {$l['name']}
+                                </option>
+                            </volist>    
+                        </select>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 积分点数：</dt>
+                    <dd>
+                        <input type="text" class="ipt3" name="intergral" value='{$vo.intergral}' />
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 状态：</dt>
+                    <dd>
+                        
+                        <select name="status">
+                        <option <eq name="vo.status" value="1" >selected</eq> value="1">启用</option>
+                        <option <eq name="vo.status" value="0" >selected</eq> value="0">禁用</option>
+                        </select>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>备  注：</dt>
+                    <dd>
+                        <textarea name="remark" style="width:400px; height:60px;">{$vo.remark}</textarea>
+                    </dd>
+                </dl>
+                </div>
+                <div class="form_b">
+                    <input type="hidden" name="id" value="{$vo.id}" >
+                    <input type="submit" class="submit btn7" id="submit" value="提 交">
+                </div>
+               </form>
+            </div>
+
+            
+        </div>
+<script type="text/javascript">
+    $(function(){
+        $("#resetPwd").click(function(){
+            var pass=$("input[name=resetPwd]").val();
+            var id=$("input[name=id]").val();
+            $.post("{:U('Member/resetPwd')}",{id:id,password:encodeURIComponent(pass)}, function(result){
+                   alert(result['info']);
+            },"JSON");
+            
+        });
+    });
+</script>
+<include file="Public:footer" />

@@ -1,0 +1,58 @@
+<include file="Public:header" />
+<div class="main">
+    <div class="box_tit">
+        <h2>分页设置</h2>
+    </div>
+    
+    <div class="list">
+        <form method="post" action="{:U('Pageset/index')}">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr class="nbg">
+                <th>模型名称</th>
+                <th>每页显示行数</th>
+                <th>头信息</th>
+                <th>上一页</th>
+                <th>下一页</th>
+                <th>首页</th>
+                <th>末页</th>
+                <th>样式主题</th>
+            </tr>
+            <volist name="list" id="vo">
+            <tr style="background: #FFF;">
+                <td>
+                    <input type="text" class="ipt2" style="background: #EBEBE4;" name="name[]" readonly="readonly" value="{$vo.name}">
+                    <input type="hidden" name="id[]" value="{$vo.id}">
+                </td>
+                <td>      
+                    <input type="text" class="ipt2" name="listrows[]" value="{$vo.listrows}">
+                </td> 
+                <td>     
+                    <input type="text" class="ipt2" name="header[]" value="{$vo.header}">
+                </td> 
+                <td>     
+                    <input type="text" class="ipt2" name="prev[]" value="{$vo.prev}">
+                </td> 
+                <td>    
+                    <input type="text" class="ipt2" name="next[]" value="{$vo.next}">
+                </td> 
+                <td>      
+                    <input type="text" class="ipt2" name="first[]" value="{$vo.first}">
+                </td> 
+                <td> 
+                    <input type="text" class="ipt2" name="last[]" value="{$vo.last}">
+                </td>
+                <td> 
+                    <input type="text" class="ipt2" name="theme[]" value="{$vo.theme|htmlspecialchars}">
+                </td>
+            </tr>
+            </volist>
+            </tbody>
+        </table>
+            <div class="th" style="clear: both; margin-top: 5px;"><input type="submit" value="保存设置"  class="btn7"></div>
+        </form>
+        
+        
+    </div>
+</div>
+<include file="Public:footer" />

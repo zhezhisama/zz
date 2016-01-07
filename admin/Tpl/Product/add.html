@@ -1,0 +1,75 @@
+<include file="Public:header" />
+<div class="main">
+            <div class="box_tit">
+                <h2>添加产品</h2>
+            </div>
+            <div class="form_list">
+                <form method='post' id="form1" name="form1" action="{:U('Product/insert')}"  enctype="multipart/form-data">
+                <div class="listtop">
+                <dl>
+                    <dt> 栏目：</dt>
+                    <dd>
+                        <label class="label">{$catid|getCategoryName}</label><input type="hidden" name="catid" value="{$catid}">
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 标题：</dt>
+                    <dd>
+                        <input type="text" class="ipt8" name="title"><strong class="red">*</strong>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>自定义title：</dt>
+                    <dd>
+                        <input type="text" class="ipt8" name="sitetitle"><span class="fontcolor">如果title为空，默认用标题作为title内容</span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>keywords：</dt>
+                    <dd>
+                        <input type="text" class="ipt5" name="keywords"><span class="fontcolor">网页Meta标签的keywords关键词处显示,此处会显示在商品页的本商品页面!</span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>description：</dt>
+                    <dd>
+                        <textarea name="description" class="fLeft"></textarea><span class="fontcolor" style="float: left; width: 200px;">网页Meta标签的description处显示,此处会显示在商品页的本商品页面!</span>
+                    </dd>
+                </dl> 
+                <dl>
+                    <dt> 产品价格：</dt>
+                    <dd>
+                        <input type="text" class="ipt2" name="price">
+                    </dd>
+                </dl>
+
+                <dl>
+                    <dt> 产品图片：</dt>
+                    <dd>
+                        <input type="file" class="thumb" name="thumb" />
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 产品描述：</dt>
+                </dl>
+                </div>
+                <div class="listbottom">
+               
+                        <textarea name="content" id="myEditor"></textarea>
+                        <script type="text/javascript">
+                            var editor = new UE.ui.Editor();
+                            editor.render("myEditor");
+                            //1.2.4以后可以使用一下代码实例化编辑器
+                            //UE.getEditor('myEditor')
+                        </script>
+                 </div>
+                
+                <div class="form_b">
+                    <input type="submit" class="submit btn7" id="submit" value="提 交">
+                </div>
+               </form>
+            </div>
+
+            
+        </div>
+<include file="Public:footer" />

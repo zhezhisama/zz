@@ -1,0 +1,51 @@
+<include file="Public:header" />
+
+<div class="main">
+    <div class="box_tit">
+        <h2>APP模板设置</h2>
+    </div>
+    <form method='post' id="form1" action="{:U('Appmodel/save')}">
+        <table cellpadding=3 cellspacing=3 >
+            <tr>
+                <td class="tright" style="width: 80px;">选择模板：</td>
+                <td class="tleft">
+                    <div style="float: left; width: 250px; height: 427px; overflow: hidden;  position: relative; display: inline;">
+                        
+                        <img id="item" src="__ROOT__/{$templateDir}{$user_config['DEFAULT_THEME']}/img.png" width="210" height="380" style="position:absolute; top: 20px; left: 20px;" />
+                        
+                    </div>
+                    <ul style="float: left; margin-left: 20px; list-style: none; width: 360px; padding-bottom: 20px; display: inline;">
+                        <volist name="templateList" id="vo">
+                            <li style="float: left; width: 98px; margin-right: 20px; margin-top: 20px; display: inline;">
+                                <div class="imgitem">
+                                   
+                                        <img name="itemradio" src="__ROOT__/{$templateDir}{$key}/img.png" width="88" height="160" style="cursor: pointer; display: block;" />
+                                    
+                                </div>
+                                <div class="tcenter"><input type="radio" name="DEFAULT_THEME" value="{$key}" {$key==$user_config['DEFAULT_THEME'] ? 'checked="true"':''}>&nbsp;&nbsp;{$vo}</div>  
+                            </li>
+                        </volist>
+                    </ul>
+                    
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"><div class="tcenter cboth"><input type="submit" value="保  存" class="btn7"></div></td>
+            </tr>
+        </table>
+    </form>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+  $("input[name='DEFAULT_THEME']").click(function(){
+        var vl= $("input[name='DEFAULT_THEME']:checked").val(); 
+        $("#item").attr("src","__ROOT__/{$templateDir}"+vl+"/img.png");
+  });
+  $("img[name='itemradio']").click(function(){
+        $(this).parent().next().children("input[name='DEFAULT_THEME']").attr("checked",true);
+        var vl= $("input[name='DEFAULT_THEME']:checked").val(); 
+        $("#item").attr("src","__ROOT__/{$templateDir}"+vl+"/img.png");
+  });
+});
+</script>
+<include file="Public:footer" />

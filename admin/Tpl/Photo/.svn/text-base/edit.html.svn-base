@@ -1,0 +1,149 @@
+<include file="Public:header" />
+<div class="main">
+            <div class="box_tit">
+                <h2>修改内容</h2>
+            </div>
+            <div class="form_list">
+                <form method='post' id="form1" name="form1" action="{:U('Photo/update')}"  enctype="multipart/form-data">
+                <div class="listtop">
+                <dl>
+                    <dt> 栏目：</dt>
+                    <dd>
+                        <label class="label">{$vo.catid|getCategoryName}</label><input type="hidden" name="catid" value="{$vo.catid}">
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 标题：</dt>
+                    <dd>
+                        <input type="text" class="ipt8" name="title" value="{$vo.title}"><strong class="red">*</strong>
+                    </dd>
+                </dl>
+                <dl>
+                <dt>自定义title：</dt>
+                    <dd>
+                        <input type="text" class="ipt8" name="sitetitle" value="{$vo.sitetitle}"><span class="fontcolor">如果title为空，默认用标题作为title内容</span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>keywords：</dt>
+                    <dd>
+                        <input type="text" class="ipt5" name="keywords" value="{$vo.keywords}"><span class="fontcolor">网页Meta标签的keywords关键词处显示,此处会显示在商品页的本商品页面!</span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>description：</dt>
+                    <dd>
+                        <textarea name="description" class="fLeft">{$vo.description}</textarea><span class="fontcolor" style="float: left; width: 200px;">网页Meta标签的description处显示,此处会显示在商品页的本商品页面!</span>
+                    </dd>
+                </dl>
+                
+                <dl>
+                    <dt> 缩略图：</dt>
+                    <dd>
+                        <notempty name="vo.thumb">
+                        <img src="__ROOT__/Uploads/{$vo.thumb}" width="60" height="60" />
+                        <a href="{:U('Photo/delfile',array('id'=>$vo['id'],'file'=>'thumb'))}" title="你确定要文件吗？">删除文件</a>
+                        <else/>
+                        <input type="file" class="thumb" name="thumb" />
+                        </notempty>
+                    </dd>
+                </dl>
+                <dl>
+                        <dt>本地图片1：</dt>
+                        <dd>
+                            <notempty name="vo.photo1">
+                            <label>__ROOT__/Uploads/{$vo.photo1}</label>
+                            <a href="{:U('Photo/delfile',array('id'=>$vo['id'],'file'=>'photo1'))}" title="你确定要文件吗？">删除文件</a>
+                            <else/>
+                            <input type="file" class="thumb" name="photo1" />
+                            </notempty>
+                        </dd>
+                </dl>
+                <dl>
+                        <dt>本地图片2：</dt>
+                        <dd>
+                            <notempty name="vo.photo2">
+                            <label>__ROOT__/Uploads/{$vo.photo2}</label>
+                            <a href="{:U('Photo/delfile',array('id'=>$vo['id'],'file'=>'photo2'))}" title="你确定要文件吗？">删除文件</a>
+                            <else/>
+                            <input type="file" class="thumb" name="photo2" />
+                            </notempty>
+                        </dd>
+                </dl>
+                <dl>
+                        <dt>本地图片3：</dt>
+                        <dd>
+                            <notempty name="vo.photo3">
+                            <label>__ROOT__/Uploads/{$vo.photo3}</label>
+                            <a href="{:U('Photo/delfile',array('id'=>$vo['id'],'file'=>'photo3'))}" title="你确定要文件吗？">删除文件</a>
+                            <else/>
+                            <input type="file" class="thumb" name="photo3" />
+                            </notempty>
+                        </dd>
+                </dl>
+                <dl>
+                        <dt>本地图片4：</dt>
+                        <dd>
+                            <notempty name="vo.photo4">
+                            <label>__ROOT__/Uploads/{$vo.photo4}</label>
+                            <a href="{:U('Photo/delfile',array('id'=>$vo['id'],'file'=>'photo4'))}" title="你确定要文件吗？">删除文件</a>
+                            <else/>
+                            <input type="file" class="thumb" name="photo4" />
+                            </notempty>
+                        </dd>
+                </dl>
+                <dl>
+                        <dt>本地图片5：</dt>
+                        <dd>
+                            <notempty name="vo.photo5">
+                            <label>__ROOT__/Uploads/{$vo.photo5}</label>
+                            <a href="{:U('Photo/delfile',array('id'=>$vo['id'],'file'=>'photo5'))}" title="你确定要文件吗？">删除文件</a>
+                            <else/>
+                            <input type="file" class="thumb" name="photo5" />
+                            </notempty>
+                        </dd>
+                </dl>
+                <dl>
+                        <dt>网络图片1：</dt>
+                        <dd><input type="text" class="ipt6" name="photo_url1" value="{$vo.photo_url1}"></dd>
+                </dl>
+                <dl>
+                        <dt>网络图片2：</dt>
+                        <dd><input type="text" class="ipt6" name="photo_url2" value="{$vo.photo_url2}"></dd>
+                </dl>
+                <dl>
+                        <dt>网络图片3：</dt>
+                        <dd><input type="text" class="ipt6" name="photo_url3" value="{$vo.photo_url3}"></dd>
+                </dl>
+                <dl>
+                        <dt>网络图片4：</dt>
+                        <dd><input type="text" class="ipt6" name="photo_url4" value="{$vo.photo_url4}"></dd>
+                </dl>
+                <dl>
+                        <dt>网络图片5：</dt>
+                        <dd><input type="text" class="ipt6" name="photo_url5" value="{$vo.photo_url5}"></dd>
+                </dl>
+                <dl>
+                    <dt> 内容：</dt>
+                </dl>
+                </div>
+                <div class="listbottom">
+                        <textarea name="content" id="myEditor">{$vo.content}</textarea>
+                        <script type="text/javascript">
+                            var editor = new UE.ui.Editor();
+                            editor.render("myEditor");
+                            //1.2.4以后可以使用一下代码实例化编辑器
+                            //UE.getEditor('myEditor')
+                        </script>
+                </div>
+                
+                <div class="form_b">
+                    <input type="hidden" name="id" value="{$vo.id}">
+                    <input type="submit" class="submit btn7" id="submit" value="提 交">
+                </div>
+               </form>
+            </div>
+
+            
+        </div>
+<include file="Public:footer" />

@@ -1,0 +1,60 @@
+<include file="Public:header" />
+<div class="main">
+            <div class="box_tit">
+                <h2>添加菜单</h2>
+            </div>
+            <div class="form_list">
+                <form method='post' id="form1" name="form1" action="{:U('Node/insert')}"  enctype="multipart/form-data">
+                <div class="form_list_top">
+                <dl>
+                    <dt> 上级菜单：</dt>
+                    <dd>
+                        <select name="pid">
+                            <option value="0">作为一级菜单</option>
+                            {$selecttree}
+                        </select>
+                    </dd>
+                </dl>
+                
+                <dl>
+                    <dt> 菜单名称：</dt>
+                    <dd>
+                        <input type="text" class="ipt3" name="title" />
+                    </dd>
+                </dl>
+                
+                <dl>
+                    <dt> 英文名称：</dt>
+                    <dd>
+                        <input type="text" class="ipt3" name="name" />
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>排序值：</dt>
+                    <dd><input type="text" class="ipt1"  name="sort" value="0"></dd>
+                </dl>
+                <dl>
+                    <dt> 状态：</dt>
+                    <dd>
+                        <select name="status">
+                            <option value="1">启用</option>
+                            <option value="0">禁用</option>
+                        </select>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>描述：</dt>
+                    <dd>
+                        <textarea name="remark" style="width:400px; height:60px;"></textarea> 
+                    </dd>
+                </dl>
+                </div>
+                <div class="form_b">
+                    <input type="submit" class="submit btn7" id="submit" value="提 交">
+                </div>
+               </form>
+            </div>
+
+            
+        </div>
+<include file="Public:footer" />

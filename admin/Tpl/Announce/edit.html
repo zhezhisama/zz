@@ -1,0 +1,80 @@
+<include file="Public:header" />
+<link rel="stylesheet" type="text/css" href="../Public/js/calendar/jscal2.css"/>
+<link rel="stylesheet" type="text/css" href="../Public/js/calendar/border-radius.css"/>
+<link rel="stylesheet" type="text/css" href="../Public/js/calendar/win2k.css"/>
+<script type="text/javascript" src="../Public/js/calendar/calendar.js"></script>
+<script type="text/javascript" src="../Public/js/calendar/lang/en.js"></script>
+<div class="main">
+    <div class="box_tit">
+        <h2>修改公告</h2>
+    </div>
+    <div class="form_list">
+        <form method='post' id="form1" name="form1" action="{:U('Announce/update')}"  enctype="multipart/form-data">
+        <div class="listtop">
+
+        <dl>
+            <dt> 公告标题：</dt>
+            <dd>
+                <input type="text" class="ipt6" name="title" value="{$vo.title}">
+            </dd>
+        </dl>
+        <dl>
+            <dt> 起始日期：</dt>
+            <dd>
+                
+                <input type="text" class="ipt4" name="starttime" id="starttime" value="{$vo.starttime|toDate='Y-m-d H:i:s'}">
+                <script type="text/javascript">
+                    Calendar.setup({
+                        weekNumbers: true,
+                        inputField : "starttime",
+                        trigger    : "starttime",
+                        dateFormat: "%Y-%m-%d %H:%M:%S",
+                        showTime: true,
+                        minuteStep: 1,
+                        onSelect   : function() {this.hide();}
+                    });
+                </script>
+            </dd>
+        </dl>
+        <dl>
+            <dt> 截止日期：</dt>
+            <dd>
+                <input type="text" class="ipt4" name="endtime" id="endtime" value="{$vo.endtime|toDate='Y-m-d H:i:s'}">
+                <script type="text/javascript">
+                    Calendar.setup({
+                        weekNumbers: true,
+                        inputField : "endtime",
+                        trigger    : "endtime",
+                        dateFormat: "%Y-%m-%d %H:%M:%S",
+                        showTime: true,
+                        minuteStep: 1,
+                        onSelect   : function() {this.hide();}
+                    });
+
+                </script>
+            </dd>
+        </dl>
+        <dl>
+            <dt> 公告内容：</dt>
+        </dl>
+        </div>
+          <div class="listbottom">
+                <textarea name="content" id="myEditor">{$vo.content}</textarea>
+                <script type="text/javascript">
+                    var editor = new UE.ui.Editor();
+                    editor.render("myEditor");
+                    //1.2.4以后可以使用一下代码实例化编辑器
+                    //UE.getEditor('myEditor')
+                </script>
+   
+        </div>
+
+        <div class="form_b">
+            <input type="hidden" name="id" value="{$vo.id}">
+            <input type="submit" class="submit btn7" id="submit" value="提 交">
+        </div>
+        </form>
+    </div>
+</div>
+
+<include file="Public:footer" />

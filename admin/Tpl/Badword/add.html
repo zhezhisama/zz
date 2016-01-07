@@ -1,0 +1,38 @@
+<include file="Public:header" />
+<div class="main">
+    <div class="box_tit">
+        <h2>添加敏感词</h2>
+    </div>
+    <div class="form_list">
+        <form method='post' id="form1" name="form1" action="{:U('Badword/insert')}"  enctype="multipart/form-data">
+        <div class="form_list_top">
+            <dl>
+                <dt> 敏感词：</dt>
+                <dd>
+                    <input type="text" class="ipt4" name="badword"><strong class="red">*</strong>
+                </dd>
+            </dl>
+            <dl>
+                <dt> 替换词：</dt>
+                <dd>
+                    <input type="text" class="ipt4" name="replaceword">
+                </dd>
+            </dl>
+            <dl>
+                <dt> 敏感级别：</dt>
+                <dd>
+                <select name="level">
+                    <option value="1">一般</option>
+                    <option value="2">危险</option>
+                </select>
+                (一般: 用替换词替换 , 危险: 直接去除)
+                </dd>
+            </dl>
+        </div>
+        <div class="form_b">
+            <input type="submit" class="submit btn7" id="submit" value="提 交">
+        </div>
+       </form>
+    </div>
+</div>
+<include file="Public:footer" />

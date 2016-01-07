@@ -1,0 +1,44 @@
+<include file="Public:header" />
+<div class="main">
+    <div class="box_tit">
+        <h2>敏感词列表</h2>
+    </div>
+    <div class="operate">
+        <div class="fLeft"><input type="button" onclick="add({$catid})" class="submit btn5" value="添加敏感词"></div>
+        <div class="fLeft"><input type="button" onclick="foreverdel()" class="submit btn5" value="删除选中"></div>
+        <div class="fLeft">
+            <form method="post" action="{:U('Badword/index')}">
+                <input type="text" name="name" title="敏感词" class="iptt6"><input type="hidden" name="catid" value="{$catid}">
+                <input type="submit" class="submit btn5" value="查  询">
+            </form>
+        </div>
+    </div>
+    <div class="list">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr class="nbg">
+                <th><input type="checkbox" id="check"></th>
+                <th>编号</th>
+                <th>敏感词</th>
+                <th>替换词</th>
+                <th>敏感级别</th>
+                <th>发表时间</th>
+                <th>操作</th>
+            </tr>
+            <volist name="list" id="vo">
+            <tr>
+                <td><input type="checkbox" name="key" value="{$vo.id}"></td>
+                <td>{$vo.id}</td>
+                <td>{$vo.badword}</td>
+                <td>{$vo.replaceword}</td>
+                <td><eq name="vo.level" value="1">一般</eq><eq name="vo.level" value="2">危险</eq></td>
+                <td>{$vo.create_time|toDate='Y-m-d H:i'}</td>
+                <td><a href="{:U('Badword/edit',array('id'=>$vo['id']))}">修改</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="{:U('Badword/foreverdelete',array('id'=>$vo['id']))}" onclick="foreverdel({$vo['id']}); return false;">删除</a></td>
+            </tr>
+            </volist>
+            </tbody>
+        </table>
+        <div class="th" style="clear: both;">{$page}</div>
+    </div>
+</div>
+<include file="Public:footer" />

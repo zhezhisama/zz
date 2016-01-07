@@ -1,0 +1,68 @@
+<include file="Public:header" />
+<div class="main">
+            <div class="box_tit">
+                <h2>添加内容</h2>
+            </div>
+            <div class="form_list">
+                <include file="Public:notice" />
+                <form method='post' id="form1" name="form1" action="{:U('Article/insert')}"  enctype="multipart/form-data">
+                <div class="listtop">
+                <dl>
+                    <dt> 栏目：</dt>
+                    <dd>
+                        <label class="label">{$catid|getCategoryName}</label><input type="hidden" name="catid" value="{$catid}">
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 标题：</dt>
+                    <dd>
+                        <input type="text" class="ipt8" name="title"><strong class="red">*</strong>
+                    </dd>
+                </dl>
+              
+                <dl>
+                    <dt>title：</dt>
+                    <dd>
+                        <input type="text" class="ipt8" name="sitetitle"><span class="fontcolor">网页title标签的设置(SEO优化)，<br>不填则默认使用标题</span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>keywords：</dt>
+                    <dd>
+                        <input type="text" class="ipt5" name="keywords"><span class="fontcolor">网页meta标签keywords网页关键词的设置(SEO优化)</span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt>description：</dt>
+                    <dd>
+                        <textarea name="description" class="fLeft"></textarea><span class="fontcolor" style="float: left; width: 200px;">网页meta标签description网页描述的设置(SEO优化)</span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 缩略图：</dt>
+                    <dd>
+                        <input name="thumb" class="thumb" type="file" />
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 内容：</dt>
+                </dl>
+                </div>
+                <div class="listbottom">
+                    <textarea name="content" id="myEditor"></textarea>
+                    <script type="text/javascript">
+                        var editor = new UE.ui.Editor();
+                        editor.render("myEditor");
+                        //1.2.4以后可以使用一下代码实例化编辑器
+                        //UE.getEditor('myEditor')
+                    </script>
+                </div>
+                <div class="form_b">
+                    <input type="submit" class="submit btn7" id="submit" value="提 交">
+                </div>
+               </form>
+            </div>
+
+            
+        </div>
+<include file="Public:footer" />

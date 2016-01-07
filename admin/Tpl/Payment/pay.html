@@ -1,0 +1,64 @@
+<include file="Public:header" />
+<div class="main">
+    <div class="box_tit">
+        <h2>充值入账</h2>
+    </div>
+    <div class="operate">
+        <div class="fLeft"><input type="button" onclick="location.href='{:U('Payment/index')}'" class="submit btn5" value="充值记录"></div>
+        <div class="fLeft"><input type="button" onclick="location.href='{:U('Payment/payspend')}'" class="submit btn5" value="消费记录"></div>
+        <div class="fLeft"><input type="button" onclick="location.href='{:U('Payment/pay')}'" class="submit btn5" value="充值入账"></div>
+        <div class="fLeft"><input type="button" onclick="location.href='{:U('Payment/paytype')}'" class="submit btn5" value="支付方式"></div>
+    </div>
+    
+            <div class="form_list" style="clear: both;margin-left: 10px;border-top: 1px solid #eee;">
+                
+                <form method='post' id="form1" name="form1" action="{:U('Payment/payinsert')}"  enctype="multipart/form-data">
+                <div class="form_list_top">
+                <dl>
+                    <dt style="width: 120px;"> 充值类型：</dt>
+                    <dd>
+                        <input type="radio" name="type" value="1" checked=true>&nbsp;金钱&nbsp;&nbsp;<input type="radio" name="type" value="2">&nbsp;积分
+                    </dd>
+                </dl>
+                <dl>
+                    <dt style="width: 120px;"> 用户名：</dt>
+                    <dd>
+                        <input type="text" class="ipt3" name="membername" value="" /><span class="fontcolor">请输入用户名</span>
+                    </dd>
+                </dl>
+                
+                <dl>
+                    <dt style="width: 120px;"> 交易额度：</dt>
+                    <dd>
+                        <input type="radio" name="optype" value="1" checked=true>&nbsp;增加&nbsp;&nbsp;<input type="radio" name="optype" value="2">&nbsp;减少&nbsp;&nbsp;<input type="text" class="ipt2" name="value" value="" />&nbsp;<span class="fontcolor">输入修改数量（资金或者点数）</span>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt style="width: 120px;"> 交易备注：</dt>
+                    <dd>
+                        <textarea name="msg"></textarea><span class="fontcolor">请输入要修改的理由</span>
+                    </dd>
+                </dl>
+                </div>
+                <div class="form_b">
+                    <input type="hidden" name="id" value="{$vo.id}" >
+                    <input type="submit" class="submit btn7" id="submit" value="提 交">
+                </div>
+               </form>
+            </div>
+
+  
+</div>
+<script type="text/javascript">
+    $(function(){
+        $("#resetPwd").click(function(){
+            var pass=$("input[name=resetPwd]").val();
+            var id=$("input[name=id]").val();
+            $.post("{:U('Member/resetPwd')}",{id:id,password:encodeURIComponent(pass)}, function(result){
+                   alert(result['info']);
+            },"JSON");
+            
+        });
+    });
+</script>
+<include file="Public:footer" />

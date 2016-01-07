@@ -1,0 +1,78 @@
+<include file="Public:header" />
+<div class="main">
+            <div class="box_tit">
+                <h2>修改友情链接</h2>
+            </div>
+            <div class="form_list">
+                <form method='post' id="form1" name="form1" action="{:U('Link/update')}"  enctype="multipart/form-data">
+                <div class="form_list_top">
+                
+                <dl>
+                    <dt> 链接类型：</dt>
+                    <dd>
+                       <input type="radio" name="linktype" value="0" {$vo['linktype']==0 ? 'checked="true"':""} />&nbsp;文字链接&nbsp;&nbsp;<input type="radio" name="linktype" value="1" {$vo['linktype']==1 ? 'checked="true"':""} />&nbsp;图片链接
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 网站名称：</dt>
+                    <dd>
+                        <input type="text" class="ipt6" name="name" value="{$vo.name}"><strong class="red">*</strong>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 网站地址：</dt>
+                    <dd>
+                        <input type="text" class="ipt6" name="url" value="{$vo.url}">
+                    </dd>
+                </dl>
+                <dl id="logo" {$vo['linktype']==0 ? 'style="display: none;"':""}>
+                    <dt> 图片LOGO：</dt>
+                    <dd>
+                        <notempty name="vo.logo">
+                        <img src="__ROOT__/Uploads/{$vo.logo}" width="60" height="60" />
+                        <a href="{:U('Link/delfile',array('id'=>$vo['id'],'file'=>'logo'))}" title="你确定要文件吗？">删除logo</a>
+                        <else/>
+                        <input type="file" name="logo" class="thumb" />
+                        </notempty>
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 排序值：</dt>
+                    <dd>
+                        <input type="text" class="ipt2" name="listorder" value="{$vo.listorder}">
+                    </dd>
+                </dl>
+                <dl>
+                    <dt> 所有分类：</dt>
+                    <dd>
+                        <input type="radio" name="type" value="0" {$vo['type']==0 ? 'checked="true"':""} />&nbsp;首页链接&nbsp;&nbsp;<input type="radio" name="type" value="1" {$vo['type']==1 ? 'checked="true"':""} />&nbsp;内页链接
+                    </dd>
+                </dl>
+                </div>
+                
+                <div class="form_b">
+                    <input type="hidden" name="id" value="{$vo.id}">
+                    <input type="submit" class="submit btn7" id="submit" value="提 交">
+                </div>
+               </form>
+            </div>
+
+            
+        </div>
+<script type="text/javascript">
+    $(document).ready(function(){
+
+        $("input[name='linktype']").click(function(){
+
+            var linktype=$('input[name="linktype"]:checked').val();
+            if(linktype==0){
+                $('#logo').hide();
+
+            }else if(linktype==1){
+                $('#logo').show();
+            }
+        });
+    });
+
+</script>
+<include file="Public:footer" />

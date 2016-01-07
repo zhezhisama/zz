@@ -1,0 +1,58 @@
+<include file="Public:header" />
+<div class="main">
+    <div class="box_tit">
+        <h2>数据备份</h2>
+    </div>
+    <div class="list">
+        <form id="form1" action="{:U('Databack/back')}" method="post">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr class="nbg">
+                <th colspan="3">备份设置</th>
+            </tr>
+            <tr>
+                <td>备份类型 :</td>
+                <td><input type="radio" name="filetype" value="0" checked="true" />全部备份（备份数据库所有表）<input type="radio" name="filetype" value="1" />自定义备份（根据自行选择备份数据表）</td>
+                <td><input type="submit" name="filesubmit" class="btn7" value="开始备份" /></td>
+            </tr>
+            </tbody>
+        </table>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" id="checkList" style="display: none;">
+            <tbody>
+            <tr class="nbg">
+                <th><input type="checkbox" id="check" onclick="CheckAll('checkList')"></th>
+                <th>表名</th>
+                <th>类型</th>
+                <th>编码</th>
+                <th>记录数</th>
+                <th>使用空间</th>
+            </tr>
+            <volist name="list" id="vo">
+            <tr>
+                <td><input type="checkbox" name="tab[]" value="{$vo.Name}"></td>
+                <td>{$vo.Name}</td>
+                <td>{$vo.Engine} </td>
+                <td>{$vo.Collation}</td>
+                <td>{$vo.Rows}</td>
+                <td>{$vo.Data_length} </td>
+            </tr>
+            </volist>
+            </tbody>
+        </table>
+        </form>
+        <div class="th" style="clear: both;"></div>
+    </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("input[name='filetype']").click(function(){
+        var vl= $("input[name='filetype']:checked").val(); 
+        if(vl==1){
+            $('#checkList').show();
+        }else{
+            $('#checkList').hide();
+        }
+    });
+});
+</script>
+<include file="Public:footer" />
